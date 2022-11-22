@@ -1,6 +1,6 @@
 using System;
 
-class CollectionsGenerics
+class Args
   
 {
   public static void Main (string[] args) {

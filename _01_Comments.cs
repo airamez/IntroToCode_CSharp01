@@ -1,6 +1,6 @@
 // This is a class to demonstrate comments in C#
 
-using System; // This line imports the 
+using System; // This line imports the basic C# API. Example Console.WriteLine
 
 /*
  * This is a multi line comment
