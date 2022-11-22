@@ -1,0 +1,26 @@
+run = "dotnet run"
+entrypoint = "main.cs"
+
+hidden = ["bin", "obj"]
+
+[env]
+DOTNET_NOLOGO = "1"
+DOTNET_CLI_TELEMETRY_OPTOUT = "1"
+
+[packager]
+language = "dotnet"
+
+[packager.features]
+packageSearch = true
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[nix]
+channel = "stable-21_11"
+
+[languages.csharp]
+pattern = "**/*.cs"
+
+  [languages.csharp.languageServer]
+  start = ["omnisharp", "--languageserver"]
