@@ -5,5 +5,4 @@
     <TargetFramework>netcoreapp6.0</TargetFramework>
 		<StartupObject>HelloWorld</StartupObject>
   </PropertyGroup>
-
 </Project>
