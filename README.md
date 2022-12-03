@@ -34,6 +34,12 @@
 * Args
 * Exceptions
 * Objects Oriented Programming
+  * Classe
+  * Object
+  * Encapsulation
+  * Inheritance
+  * Polymorphism
+* Unit Testing
 * Generic Data Structures
   * List
   * Queue
@@ -49,7 +55,9 @@
   * JSON files
   * DateTime
   * etc.
-
+* Version Control
+  * Git
+ 
 # Introduction to SQL
 * Database Server
   * SQL Server
@@ -79,3 +87,5 @@
 * JavaScript
 * [Angular](https://angular.io/)
 * [PrimeNG Components](https://www.primefaces.org/primeng/)
+
+# Web Services/API
