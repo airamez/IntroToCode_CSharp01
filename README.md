@@ -7,17 +7,18 @@
     * Web
   * Server-Side
   * Data
+* Data Processing Model
 * Algorithm
 
 # Introduction to Coding with C#
-* IDE
+* IDE - Integrated Development Environment
   * [Visual Studio](https://visualstudio.microsoft.com/)
   * [Visual Studio Code](https://code.visualstudio.com/)
   * [Replit](https://replit.com/)
 * Hello World
 * Comments
 * Variables
-* Input & Output (IO)
+* Input & Output (I/O)
 * Basic Operations
 * Math Operations
 * Logical Expression
@@ -81,7 +82,7 @@
     * Count
     * Group By
 
-# Web Development
+# Introduction to Web Development
 * HTML
 * CSS
 * JavaScript
