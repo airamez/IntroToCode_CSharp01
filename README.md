@@ -15,6 +15,11 @@
   * [Visual Studio](https://visualstudio.microsoft.com/)
   * [Visual Studio Code](https://code.visualstudio.com/)
   * [Replit](https://replit.com/)
+  * Demonstration of Application types with Visual Studio
+    * Console
+    * Windows
+    * Web
+    * Mobile
 * Hello World
 * Comments
 * Variables
