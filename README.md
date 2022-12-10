@@ -8,6 +8,9 @@
   * Server-Side
   * Data
 * Data Processing Model
+  * Input: Data
+  * Process
+  * Output: Information
 * Algorithm
 
 # Introduction to Coding with C#
