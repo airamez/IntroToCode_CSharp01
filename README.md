@@ -26,11 +26,13 @@
 * Hello World
 * Comments
 * Variables
-* Input & Output (I/O)
 * Basic Operations
 * Math Operations
+* Input & Output (I/O)
+  * Type Conversion
 * Logical Expression
 * if
+* switch
 * for
 * while
 * do while
