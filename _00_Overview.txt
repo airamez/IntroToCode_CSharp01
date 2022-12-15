@@ -1,0 +1,31 @@
+Overview:
+ - Part of: "Empower every person and every organization on the planet to archieve more". Microsoft
+ - Informal
+ - Material prepared on the go
+ - Light Material
+ - Aiming to be a live book
+ - Not just a C# Course
+ - Software Engineering basic concepts overviews
+ - Some tips abput the area and work
+ - Focused on fundamentals and practical features
+ - Using a lot of practices
+ - Lots of overviews
+ - Skip some complex and not so common features
+ - Not easy but I will simplify as much as possible
+ - Need to focus, review and practices
+ - Lots of exercises and homework
+ - Analogy with a gym :)
+
+C# URLs:
+- Documentation:        https://learn.microsoft.com/en-us/dotnet/csharp/
+- Language Reference:   https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/
+- Programming Guide:    https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/
+- Tour:                 https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/
+- Reserver words:       https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+- .Net API:             https://learn.microsoft.com/en-us/dotnet/api/?view=net-7.0
+- Introduction videos:  https://learn.microsoft.com/en-us/shows/csharp-101/?wt.mc_id=educationalcsharp-c9-scottha
+Book:
+- C# 10 in a Nutshell:  
+    https://www.oreilly.com/library/view/c-10-in/9781098121945/
+    Publisher(s): O'Reilly Media, Inc.
+    ISBN: 9781098121952

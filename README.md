@@ -25,11 +25,11 @@
     * Mobile
 * Hello World
 * Comments
-* Variables
+* Variables and Types
+* Input & Output (I/O)
+* Type Cast and Conversion
 * Basic Operations
 * Math Operations
-* Input & Output (I/O)
-  * Type Conversion
 * Logical Expression
 * if
 * switch
@@ -39,17 +39,21 @@
 * break and continue
 * Function and Procedure
 * Array
-* Matrix
-* Multi-Dimensional Matrix
 * Strings
 * Args
-* Exceptions
+* Matrix
+  * Multi-Dimensional Matrix
 * Objects Oriented Programming
   * Classe
   * Object
   * Encapsulation
+    * Set and Get
+    * Properties
+    * Indexers
   * Inheritance
   * Polymorphism
+  * Interfaces
+* Exceptions
 * Unit Testing
 * Generic Data Structures
   * List
