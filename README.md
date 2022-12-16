@@ -27,7 +27,7 @@
 * Comments
 * Variables and Types
 * Input & Output (I/O)
-* Type Cast and Conversion
+  * Type Conversion
 * Basic Operations
 * Math Operations
 * Logical Expression
