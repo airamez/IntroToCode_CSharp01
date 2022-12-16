@@ -8,7 +8,7 @@ Curiosity:
     - ASCII
   - A letter/character
     - Unicode
-  - What about all different types of information
+  - What about all different types of information?
     - Image
     - Sound
     - Video

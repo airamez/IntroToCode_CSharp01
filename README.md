@@ -1,19 +1,23 @@
-# Quick Overview about Software Engineering
+# Content
+
+## Quick Overview about Software Engineering
+
 * Layers
   * User Interface (UI) or Front-End
     * Console
     * Windows
     * Mobile
     * Web
-  * Server-Side
-  * Data
-* Data Processing Model
-  * Input: Data
-  * Process
-  * Output: Information
-* Algorithm
+    * Server-Side
+    * Data
+  * Data Processing Model
+    * Input: Data
+    * Process
+    * Output: Information
+  * Algorithm
 
-# Introduction to Coding with C#
+## Introduction to Coding with C#
+
 * IDE - Integrated Development Environment
   * [Visual Studio](https://visualstudio.microsoft.com/)
   * [Visual Studio Code](https://code.visualstudio.com/)
@@ -26,10 +30,9 @@
 * Hello World
 * Comments
 * Variables and Types
+* Basic Operations
 * Input & Output (I/O)
   * Type Conversion
-* Basic Operations
-* Math Operations
 * Logical Expression
 * if
 * switch
@@ -37,14 +40,19 @@
 * while
 * do while
 * break and continue
-* Function and Procedure
+* Modularization
+  * Subprogram / Subroutine
+  * Function
+  * Procedure
+
+* Math Operations
 * Array
 * Strings
 * Args
 * Matrix
   * Multi-Dimensional Matrix
 * Objects Oriented Programming
-  * Classe
+  * Class
   * Object
   * Encapsulation
     * Set and Get
@@ -72,8 +80,9 @@
   * etc.
 * Version Control
   * Git
- 
-# Introduction to SQL
+
+## Introduction to SQL
+
 * Database Server
   * SQL Server
 * Relational Database
@@ -96,11 +105,12 @@
     * Count
     * Group By
 
-# Introduction to Web Development
+## Introduction to Web Development
+
 * HTML
 * CSS
 * JavaScript
 * [Angular](https://angular.io/)
 * [PrimeNG Components](https://www.primefaces.org/primeng/)
 
-# Web Services/API
+## Web Services/API
