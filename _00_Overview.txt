@@ -1,19 +1,16 @@
 Overview:
- - Part of: "Empower every person and every organization on the planet to archieve more". Microsoft
- - Informal
+ - Part of: "Empower every person and every organization on the planet to achieve more". Microsoft
  - Material prepared on the go
  - Light Material
  - Aiming to be a live book
  - Not just a C# Course
  - Software Engineering basic concepts overviews
- - Some tips abput the area and work
- - Focused on fundamentals and practical features
- - Using a lot of practices
- - Lots of overviews
+ - Some tips about the area and best practices
+ - Focused on fundamentals and essential features
  - Skip some complex and not so common features
  - Not easy but I will simplify as much as possible
  - Need to focus, review and practices
- - Lots of exercises and homework
+ - Lots of practices, exercises and homeworks
  - Analogy with a gym :)
 
 C# URLs:
