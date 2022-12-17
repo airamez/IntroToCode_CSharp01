@@ -3,6 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp6.0</TargetFramework>
-		<StartupObject>HelloWorld</StartupObject>
+		<StartupObject>VariablesAndTypes</StartupObject>
   </PropertyGroup>
 </Project>

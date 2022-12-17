@@ -18,7 +18,7 @@ C# URLs:
 - Language Reference:   https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/
 - Programming Guide:    https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/
 - Tour:                 https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/
-- Reserver words:       https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
+- Reserved words:       https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/
 - .Net API:             https://learn.microsoft.com/en-us/dotnet/api/?view=net-7.0
 - Introduction videos:  https://learn.microsoft.com/en-us/shows/csharp-101/?wt.mc_id=educationalcsharp-c9-scottha
 Book:
