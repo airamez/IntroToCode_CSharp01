@@ -44,8 +44,8 @@
   * Subprogram / Subroutine
   * Function
   * Procedure
-
 * Math Operations
+* Random
 * Array
 * Strings
 * Args
