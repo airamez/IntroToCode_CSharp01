@@ -6,7 +6,7 @@
 - Arithmetic: + - * / %
   - Warning for: / %
 - Concatenation: +
-- Comparison: == < <= > >= !=
+- Comparison: == != < <= > >=
 - Operation precedence/priority
   - Use parentheses to increase priority: ()
  */
