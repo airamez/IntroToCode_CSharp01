@@ -27,7 +27,7 @@ Types
  - It is immutable
  - Most used type
 
- Declaration
+ Variable Declaration
    TYPE NAME
 
  Assignment

@@ -32,8 +32,10 @@
 * Variables and Types
 * Basic Operations
 * Input & Output (I/O)
-  * Type Conversion
+  * Type Cast and Conversion
+  * String Interpolation
 * Logical Expression
+* Math Operations
 * if
 * switch
 * for
@@ -44,7 +46,6 @@
   * Subprogram / Subroutine
   * Function
   * Procedure
-* Math Operations
 * Random
 * Array
 * Strings
