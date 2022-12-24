@@ -40,5 +40,6 @@ class BasicOperations
       // Console.WriteLine(c != b);
 
       double average = (a + b + c) / (double)3;
+      Console.WriteLine($"Average: {average}");
     }
 }
