@@ -30,10 +30,11 @@
 * Hello World
 * Comments
 * Variables and Types
-* Basic Operations
 * Input & Output (I/O)
-  * Type Cast and Conversion
+  * Type Casting
+  * Type Conversion
   * String Interpolation
+* Basic Operations
 * Logical Expression
 * Math Operations
 * if

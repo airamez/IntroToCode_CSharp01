@@ -15,13 +15,13 @@ class IO
 {
     public static void Main(string[] args)
     {
-      // Console.Write("Name: ");
-      // string userName = Console.ReadLine();
-      // Console.Write("Olá ");
-      // Console.WriteLine(userName);
-      // int i = 45675657;
-      // long l = Int64.MaxValue;
-      // i = (int)l;
+      Console.Write("Name: ");
+      string userName = Console.ReadLine();
+      Console.Write("Olá ");
+      Console.WriteLine(userName);
+      int i = 45675657;
+      long l = Int64.MaxValue;
+      i = (int)l;
       Console.Write("Name: ");
       string name = Console.ReadLine();
       Console.Write("Age: ");
