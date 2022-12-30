@@ -1,0 +1,18 @@
+Create programs to:
+01. Read a value in miles and convert to kilometers: 1 Mile = 1.60934KM.
+02. Read an integer number and print the three predecessors and successors.
+03. Read two integer numbers A and B and print the result of all arithmetic operations you know for A and B.
+04. Read three integer numbers and calculate the average.
+05. Read the base and length of a rectangle and calculate its area.
+06. Read an integer and print True if the number is Even and False if it is Odd.
+07. Read a temperature in Celsius and convert to Fahrenheit: F = C x 1.8 + 32.
+08. Read the buying price (cost), the desired profit percentage and
+    calculate the sales price of a product.
+09. Read the name, salary and salary increase percentage and 
+    print the name and the new salary.
+10. Read the name, salary, years of experience and numbers of kids and
+    calculate the name and the new salary using the following formula: 
+    - 0.5% per year of experience
+    - 2% per kid
+11. Read the duration of an experiment in seconds and 
+    calculate the duration in Hours, Minutes and Seconds.
