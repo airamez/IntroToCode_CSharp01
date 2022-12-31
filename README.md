@@ -65,6 +65,8 @@
   * Interfaces
 * Exceptions
 * Unit Testing
+* Version Control
+  * Git
 * Generic Data Structures
   * List
   * Queue
@@ -76,12 +78,12 @@
     * BST
   * Graph
 * .Net API
-  * Text files
-  * JSON files
+  * Files
+    * Text
+    * XML
+    * JSON
   * DateTime
   * etc.
-* Version Control
-  * Git
 
 ## Introduction to SQL
 
