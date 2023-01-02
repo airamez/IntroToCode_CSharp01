@@ -1,5 +1,5 @@
 using System;
-class PracticesIf
+class IfQuestion01
 {
     public static void Main(string[] args)
     {

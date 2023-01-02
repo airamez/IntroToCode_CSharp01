@@ -18,3 +18,7 @@ Create programs to:
     - 2% per kid
 12. Read the duration of an experiment in seconds and 
     calculate the duration in Hours, Minutes and Seconds.
+13. Read an integer number with 6 digits and separate it into two integers with 3 digits each
+14. Read an integer number with 6 digits and generate a new number with the digits in reverse order
+20. Read the description, quantity and unit price of 3 products in a shopping cart and 
+    print the total sales tax and the total order amount. The sales tax is 12%

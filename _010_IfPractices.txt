@@ -1,0 +1,69 @@
+Create C# programs to implement the requirements below:
+01. Read two integers numbers and print the one with highest value.
+    Assume the value are not the same
+02. Read two integers numbers and print the one with highest value.
+    If the values are equal, print "EQUALS".
+03. Read 3 integers and print the highest value. 
+04. Read 5 integer numbers and print the biggest one.
+05. Read 3 integers and print them in ascending order.
+06. Read a integer number and print if it is positive or negative.
+07. Read an age and print "Minor" if the age is smaller than 18
+08. Read an age and print "Minor" if the age is smaller than 18 and 
+    "ADULT" otherwise
+09. Read an integer number and print if the number is Even or Odd 
+10. Read two numbers, desired operation (+, -, *, /) and print an string representing the operation with the result
+11. Read the current hour (military time: 0 to 23) and print the appropriate salutation:
+    Good morning
+    Good Afternoon
+    Good evening
+    Good night
+12. Read a number representing a day of the week and print the description
+   1 = Sunday
+   2 = Monday
+   3 = Tuesday
+   4 = Wednesday
+   5 = Thursday
+   6 = Friday
+   7 = Saturday
+13. Read an letter and print if it is a consonant or vowel
+14. Read an age and print the age classification using the table below
+    - unborn      = 0
+    - Infant:     < 1
+    - Child:      1 to 12 years
+    - Adolescent: 13 to 17
+    - Adult:      18 to 55
+    - Senior:     56 to 75
+    - Elderly:    76+
+15. Read the quantity of a product in a shopping card and calculate the total price using the rules below:
+    Quantity    Unit price
+      1  to 5     $1.50
+      6  to 10    $1.45
+      11 to 50    $1.40
+      50 to 100   $1.30
+      > 100       $1.20
+16. Read the 3 scores (grades) of a student and calculate the weighted average using the weights: 30, 30 and 40.
+    Print if the student is "PASS" or "FAIL".
+    - The score (grade) is a real number from 0 to 10
+    - The approval average is 7.5
+17. Read an year and print if it is a Leap Year or Not
+    https://learn.microsoft.com/en-us/office/troubleshoot/excel/determine-a-leap-year
+    To determine whether a year is a leap year, follow these steps:
+      1. If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
+      2. If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
+      3. If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
+      4. The year is a leap year (it has 366 days).
+      5. The year is not a leap year (it has 365 days).
+18. Read the Name, Height and Sex (M = Male; F = Female) of a person and calculate the ideal weight using the rules below:
+    - Male  : Ideal weight = (72.7 x Height) - 58
+    - Female: Ideal weight = (62.1 x Height) - 44.7
+19. Read the values of the side of a triangle and print the type of the triangle
+    - Isosceles: Only two sides are equals
+    - Scalene: All sides are different
+    - Equilateral : All sides are equals
+20. Read the name and salary of a employee and calculate the new salary based on the rules below:
+    Salary               Raising %
+     0 to 50,000           20%
+     50,001 to 100,000     15%
+     100,001 to 150,000    10%
+     150,000 +              5%
+     Print the name, raising % and the new Salary
