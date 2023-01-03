@@ -1,6 +1,6 @@
 /*
  - The if statement
-   - The if statement is a conditioning statement that allow the execution of parts of the program (CODE BLOCK)
+   - The if statement is a conditioning (selection) statement that allow the execution of parts of the program (CODE BLOCK)
      depending on Logical Expressions values
    - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
  - CODE BLOCK
@@ -41,7 +41,6 @@
     } else {
         All LOGICAL_EXPRESSIONS are false
     }
-  
  */
 using System;
 class IF

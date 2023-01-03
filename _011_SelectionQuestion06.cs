@@ -1,5 +1,5 @@
 using System;
-class IfQuestion02
+class SelectionQuestion06
 {
     public static void Main(string[] args)
     {

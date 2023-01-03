@@ -17,14 +17,7 @@ Create C# programs to implement the requirements below:
     Good Afternoon
     Good evening
     Good night
-12. Read a number representing a day of the week and print the description
-   1 = Sunday
-   2 = Monday
-   3 = Tuesday
-   4 = Wednesday
-   5 = Thursday
-   6 = Friday
-   7 = Saturday
+12. Read a number representing a numeric digit and print the description.
 13. Read an letter and print if it is a consonant or vowel
 14. Read an age and print the age classification using the table below
     - unborn      = 0
