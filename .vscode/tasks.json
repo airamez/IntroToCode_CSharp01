@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/main.csproj",
+                "${workspaceFolder}/IntroToCoding.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/main.csproj",
+                "${workspaceFolder}/IntroToCoding.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/main.csproj"
+                "${workspaceFolder}/IntroToCoding.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
