@@ -1,5 +1,5 @@
 using System;
-class _006_Questions14
+class _006_BasicOperationsQuestions07
 {
     public static void Main(string[] args)
     {

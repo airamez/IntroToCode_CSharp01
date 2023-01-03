@@ -2,7 +2,7 @@
  * 01. Read a value in miles and convert to kilometers: 1 Mile = 1.60934KM.
  */
 using System;
-class _006_Questions01
+class _006_BasicOperationsQuestions01
 {
     public static void Main(string[] args)
     {

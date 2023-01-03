@@ -2,7 +2,7 @@
  * 05. Read the base and length of a rectangle and calculate its area.
  */
 using System;
-class _006_Questions05
+class _006_BasicOperationsQuestions05
 {
     public static void Main(string[] args)
     {

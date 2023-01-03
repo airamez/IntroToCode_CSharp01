@@ -4,7 +4,7 @@
 *      Operations: + - * / %
  */
 using System;
-class _006_Questions03
+class _006_BasicOperationsQuestions03
 {
     public static void Main(string[] args)
     {

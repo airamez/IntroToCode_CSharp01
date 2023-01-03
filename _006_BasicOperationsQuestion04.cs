@@ -2,7 +2,7 @@
  * 04. Read three integer numbers and calculate the average.
  */
 using System;
-class _006_Questions04
+class _006_BasicOperationsQuestions04
 {
     public static void Main(string[] args)
     {

@@ -2,7 +2,7 @@
  * 06. Read an integer and print True if the number is Even and False if it is Odd.
  */
 using System;
-class _006_Questions06
+class _006_BasicOperationsQuestions06
 {
     public static void Main(string[] args)
     {

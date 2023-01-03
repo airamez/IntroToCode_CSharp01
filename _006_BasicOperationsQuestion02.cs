@@ -2,7 +2,7 @@
  * 02. Read an integer number and print the three predecessors and successors.
  */
 using System;
-class _006_Questions02
+class _006_BasicOperationsQuestions02
 {
     public static void Main(string[] args)
     {
