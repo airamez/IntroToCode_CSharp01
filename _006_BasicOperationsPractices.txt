@@ -22,3 +22,5 @@ Create programs to:
 14. Read an integer number with 6 digits and generate a new number with the digits in reverse order
 15. Read the description, quantity and unit price of 3 products in a shopping cart and 
     print the total sales tax and the total order amount. The sales tax is 12%
+16. Read two integer numbers and swap the variables content
+
