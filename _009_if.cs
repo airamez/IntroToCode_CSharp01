@@ -1,8 +1,7 @@
 /*
- - The if statement
-   - The if statement is a conditioning (selection) statement that allow the execution of parts of the program (CODE BLOCK)
-     depending on Logical Expressions values
-   - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
+ - The if statement is a conditioning (selection) statement that allow the execution of parts of the program (CODE BLOCK)
+   depending on Logical Expressions values
+ - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements
  - CODE BLOCK
    - A CODE BLOCK is a group of coding statements (commands)
    - A CODE BLOCK is delimited by the '{' and '}' characters

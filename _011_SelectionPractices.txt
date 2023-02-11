@@ -1,6 +1,6 @@
 Create C# programs to implement the requirements below:
 01. Read two integers numbers and print the one with highest value.
-    Assume the value are not the same
+    Assume the values are not the same
 02. Read two integers numbers and print the one with highest value.
     If the values are equal, print "EQUALS".
 03. Read 3 integers and print the highest value. 
