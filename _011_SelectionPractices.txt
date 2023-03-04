@@ -5,7 +5,7 @@ Create C# programs to implement the requirements below:
     If the values are equal, print "EQUALS".
 03. Read 3 integers and print the highest value. 
 04. Read 5 integer numbers and print the biggest one.
-05. Read 3 integers and print them in ascending order.
+05. Read 3 integers and print them in ascending order. (non descending)
 06. Read a integer number and print if it is positive or negative.
 07. Read an age and print "Minor" if the age is smaller than 18
 08. Read an age and print "Minor" if the age is smaller than 18 and 
