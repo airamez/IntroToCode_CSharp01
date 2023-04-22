@@ -46,9 +46,11 @@ Create C# programs to implement the requirements below:
       3. If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
       4. The year is a leap year (it has 366 days).
       5. The year is not a leap year (it has 365 days).
-18. Read the Name, Height and Sex (M = Male; F = Female) of a person and calculate the ideal weight using the rules below:
+18. Read the Name, Height and Gender (M = Male; F = Female) of a person
+    and calculate the ideal weight using the rules below:
     - Male  : Ideal weight = (72.7 x Height) - 58
     - Female: Ideal weight = (62.1 x Height) - 44.7
+    The height is in meters and the weight in kilograms
 19. Read the values of the side of a triangle and print the type of the triangle
     - Isosceles: Only two sides are equals
     - Scalene: All sides are different
