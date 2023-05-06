@@ -51,7 +51,8 @@ Create C# programs to implement the requirements below:
     - Male  : Ideal weight = (72.7 x Height) - 58
     - Female: Ideal weight = (62.1 x Height) - 44.7
     The height is in meters and the weight in kilograms
-19. Read the values of the side of a triangle and print the type of the triangle
+19. Read the values of the side of a triangle and print the type 
+    of the triangle
     - Isosceles: Only two sides are equals
     - Scalene: All sides are different
     - Equilateral : All sides are equals
