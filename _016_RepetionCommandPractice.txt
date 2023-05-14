@@ -1,0 +1,110 @@
+'''
+Practices
+---------
+- Create a program to:
+01. Print the numbers from 1 to 1000 without using new lines after each number.
+02. Read two integer numbers representing an interval and print all numbers inside the interval.
+03. Read two integer numbers representing an interval and print all even numbers inside the interval.
+04. Read integer numbers (flag = empty) and print the average.
+05. Read integer numbers (flag = empty) and print the highest value.
+06. Read integer numbers (flag = empty) and print the two highest unique values.
+07. Read integer numbers (flag = empty) and print the smallest value and it's frequency.
+08. Print the Fibonacci sequence while the term is smaller than 5000.
+    Fibonacci = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+09. Print the multiplication table for numbers from 0 to 9.
+    e.g.
+    0 x 0 = 0
+    0 x 1 = 0
+    0 x 2 = 0
+    ...
+    0 x 9 = 0
+    1 x 0 = 0
+    1 x 1 = 1
+    1 x 2 = 2
+    ...
+    1 x 9 = 9
+    2 x 0 = 0
+    2 x 1 = 2
+    2 x 2 = 4
+    ...
+    9 x 9 = 81
+10. Create a multiplication table game following the specification below:
+    - The game must ask multiplication questions using random numbers from 0 to 9.
+      e.g 3 x 9 = ?
+          7 x 8 = ?
+          0 x 2 = ?
+          ...
+    - The game ends when the user type an empty value or if the user get 5 wrong answers;
+    - At the end of the game prints the score showing the number of right and wrong answers;
+11. Read a integer number and calculate its Factorial. f(n) = n.(n-1).(n-2)(n-3)...1
+    e.g
+    f(0) = 1 (Exception)
+    f(1) = 1
+    f(2) = 1 x 2
+    f(4) = 1 x 2 x 3 x 4 = 48
+    f(5) = 1 x 2 x 3 x 4 x 5 = 120
+    f(6) = 1 x 2 x 3 x 4 x 5 x 6 = 720
+12. Create a guessing game following the specification below:
+    - Generate a random integer number from 1 to 100 (inclusive)
+    - Let the user try to guess the number until it get the right number
+    - For every guess the program should update the new interval
+    - At the end print how many times the player guessed the number
+    - e.g. Generated number = 35 (The player can't see this number)
+    - If only one number left in the interval the player lose the game
+      Try to guess a number from:
+      1 to 100 => 20
+      21 to 100 => 65
+      21 to 64 => 30
+      31 to 64 => 41
+      31 to 40 => 36
+      31 to 35 => 35
+      Congratulations you guessed the right number with 6 attempts !
+13. Read an integer number with any length and reverse it's digits.
+    e.g
+    Input = 12345
+    Output = 54321
+14. Read an integer number and determine if it is a prime number or not.
+15. Read two integer numbers and calculate the "integer" division without use the division or % operator.
+16. Read an integer number H and print H lines composed of * characters start with one character and adding one * for each new line.
+    e.g.
+    Height = 7
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+    *******
+17. Same as the previous question but starting from the right.
+    e.g.
+    Height = 7
+          *
+         **
+        ***
+       ****
+      *****
+     ******
+    *******
+18. Read an integer number H and print a Christmas Tree with height H.
+    e.g.
+    Height = 7
+          *
+         ...
+        .....
+       .......
+      .........
+     ...........
+    .............
+          |
+          |
+19. Generated 10,000 random numbers from 1 to 5 and print how many times and the percentage of each numbers.
+    e.g.
+    1 = 200 times => 2%
+    2 = 5000 times = 50%
+    3 = 800 times = 8%
+    4 = 1000 times = 10%
+    5 = 3000 times = 30%
+20. Write a program that prints the numbers from 1 to 100 each one in a new line.
+    But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”.
+    For numbers which are multiples of both three and five print “FizzBuzz”.
+'''
