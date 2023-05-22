@@ -2,6 +2,11 @@ using System;
 /*
  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/statements#1392-the-while-statement
+
+   while (LOGICAL_EXPRESSION)
+   {
+    // Statements
+   }
  */
 class whileCommand
 {

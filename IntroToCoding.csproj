@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>whileCommand</StartupObject>
+		<StartupObject>RepetitionQuestion01</StartupObject>
   </PropertyGroup>
 </Project>
