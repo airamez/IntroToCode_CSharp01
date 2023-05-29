@@ -48,7 +48,7 @@ Practices
     - Generate a random integer number from 1 to 100 (inclusive)
     - Let the user try to guess the number until it get the right number
     - For every guess the program should update the new interval
-    - At the end print how many times the player guessed the number
+    - At the end, print how many tries the player used
     - e.g. Generated number = 35 (The player can't see this number)
     - If only one number left in the interval the player lose the game
       Try to guess a number from:
@@ -100,11 +100,10 @@ Practices
 19. Generated 10,000 random numbers from 1 to 5 and print how many times and the percentage of each numbers.
     e.g.
     1 = 200 times => 2%
-    2 = 5000 times = 50%
-    3 = 800 times = 8%
-    4 = 1000 times = 10%
-    5 = 3000 times = 30%
+    2 = 5000 times => 50%
+    3 = 800 times => 8%
+    4 = 1000 times => 10%
+    5 = 3000 times => 30%
 20. Write a program that prints the numbers from 1 to 100 each one in a new line.
     But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”.
     For numbers which are multiples of both three and five print “FizzBuzz”.
-'''
