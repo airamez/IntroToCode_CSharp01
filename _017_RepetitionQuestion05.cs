@@ -18,7 +18,7 @@ class RepetitionQuestion05
             if (numberStr != string.Empty) {
                 numberEntered = true;
                 number = Convert.ToInt32(numberStr);
-                highest = Math.Max(highest, number);
+                highest = Math.Max(highest, number); // Same effect as the next 3 lines
                 // if (number > highest) {
                 //     highest = number;
                 // }
