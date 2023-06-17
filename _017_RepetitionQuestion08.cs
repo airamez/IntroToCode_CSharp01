@@ -7,5 +7,15 @@ class RepetitionQuestion08
 {
     public static void Main(string[] args)
     {
+        int term1 = 0;
+        int term2 = 1;
+        Console.Write($"{term1}, ");
+        int newTerm = term1 + term2;
+        while (newTerm < 50000) {
+            Console.Write($"{newTerm}, ");
+            newTerm = term1 + term2;
+            term1 = term2;
+            term2 = newTerm; 
+        }
     }
 }
