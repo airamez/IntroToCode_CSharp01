@@ -11,7 +11,7 @@ class RepetitionQuestion08
         int term2 = 1;
         Console.Write($"{term1}, ");
         int newTerm = term1 + term2;
-        while (newTerm < 50000) {
+        while (newTerm < 5000) {
             Console.Write($"{newTerm}, ");
             newTerm = term1 + term2;
             term1 = term2;
