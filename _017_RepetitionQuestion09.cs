@@ -1,6 +1,6 @@
 /*
   Print the multiplication table for numbers from 0 to 9.
-    e.g.
+    .e.g
     0 x 0 = 0
     0 x 1 = 0
     0 x 2 = 0
@@ -22,6 +22,10 @@ class RepetitionQuestion09
 {
     public static void Main(string[] args)
     {
-
+      for (int i = 0; i <= 9; i++) {
+        for (int j = 0; j <= 9; j++) {
+          Console.WriteLine($"{i} x {j} = {i * j}");
+        }
+      }
     }
 }
