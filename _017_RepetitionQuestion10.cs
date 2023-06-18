@@ -5,8 +5,8 @@
           7 x 8 = ?
           0 x 2 = ?
           ...
-    - The game ends when the user type an empty value or if the user get 5 wrong answers;
-    - At the end of the game prints the score showing the number of right and wrong answers;
+    - The game ends when the user type an empty value or if the user get 5 incorrect answers;
+    - At the end of the game prints the score showing the number of correct and and incorrect answers;
 */
 using System;
 class RepetitionQuestion10

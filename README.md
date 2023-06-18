@@ -35,6 +35,7 @@
   * Type Conversion
   * String Interpolation
 * Basic Operations
+* Random Numbers
 * Logical Expression
 * Math Operations
 * if
@@ -47,7 +48,6 @@
   * Subprogram / Subroutine
   * Function
   * Procedure
-* Random
 * Array
 * Strings
 * Args
