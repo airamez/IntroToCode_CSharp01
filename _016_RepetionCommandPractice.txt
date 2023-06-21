@@ -40,10 +40,10 @@ Practices
     e.g
     f(0) = 1 (Exception)
     f(1) = 1
-    f(2) = 1 x 2
-    f(4) = 1 x 2 x 3 x 4 = 48
-    f(5) = 1 x 2 x 3 x 4 x 5 = 120
-    f(6) = 1 x 2 x 3 x 4 x 5 x 6 = 720
+    f(2) = 2 x 1
+    f(4) = 4 x 3 x 2 x 1 = 48
+    f(5) = 5 x 4 x 3 x 2 x 1 = 120
+    f(6) = 6 x 5 x 4 x 3 x 2 x 1 = 720
 12. Create a guessing game following the specification below:
     - Generate a random integer number from 1 to 100 (inclusive)
     - Let the user try to guess the number until it get the right number
