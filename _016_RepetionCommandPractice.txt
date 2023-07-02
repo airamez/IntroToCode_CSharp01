@@ -64,7 +64,7 @@ Practices
     Input = 12345
     Output = 54321
 14. Read an integer number and determine if it is a prime number or not.
-15. Read two integer numbers and calculate the "integer" division without use the division or % operator.
+15. Read two integer numbers and calculate the "integer" division without use the division operator.
 16. Read an integer number H and print H lines composed of * characters start with one character and adding one * for each new line.
     e.g.
     Height = 7
