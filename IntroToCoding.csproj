@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>RepetitionQuestion13</StartupObject>
+		<StartupObject>RepetitionQuestion14</StartupObject>
   </PropertyGroup>
 </Project>
