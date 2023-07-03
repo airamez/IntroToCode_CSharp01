@@ -16,7 +16,7 @@ class RepetitionQuestion14
                 break;
             }
         }
-        if (isPrime && number != 1) {
+        if (isPrime && number != 1 && number != 0) {
             Console.WriteLine($"{number } is Prime");
         } else {
             Console.WriteLine($"{number } is NOT Prime");
