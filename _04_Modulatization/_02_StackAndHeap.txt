@@ -1,0 +1,5 @@
+- Stack vs Heap
+  - How the computer memory works running programs
+  - Sub-routines execution
+  - Visualization of Stack and Heap
+  - Demo with _01_Intro_1.cs

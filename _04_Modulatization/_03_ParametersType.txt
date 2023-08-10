@@ -1,0 +1,7 @@
+* Types of parameters:
+  - value
+  - reference
+  - out
+  - params
+  - default or optional
+  - named

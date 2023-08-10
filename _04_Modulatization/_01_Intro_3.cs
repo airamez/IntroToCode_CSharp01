@@ -1,4 +1,7 @@
 /*
+
+NOTE: Show the power of modularization by refactoring the program below:
+
 18. Read an integer number H and print a Christmas Tree with height H.
     e.g.
     Height = 7
@@ -14,7 +17,7 @@
       |
 */
 using System;
-class RepetitionQuestion18
+class ModularizationIntro3
 {
     public static void Main(string[] args)
     {
@@ -29,15 +32,21 @@ class RepetitionQuestion18
         int leafs = 1;
 
         // Printing the leafs
-        for (int level = 1; level <= height; level++) {
-            for (int i = 1; i <= spaces; i++) {
+        for (int level = 1; level <= height; level++)
+        {
+            for (int i = 1; i <= spaces; i++)
+            {
                 Console.Write(SPACE);
             }
             // First level is the star (*)
-            if (level == 1) {
+            if (level == 1)
+            {
                 Console.WriteLine(STAR);
-            } else { // starting on second level, leafs (.)
-                for (int i = 1; i <= leafs; i++) {
+            }
+            else
+            { // starting on second level, leafs (.)
+                for (int i = 1; i <= leafs; i++)
+                {
                     Console.Write(LEAF);
                 }
                 Console.WriteLine();
@@ -47,8 +56,10 @@ class RepetitionQuestion18
         }
 
         // Printing the truck
-        for (int trunkCount = 1; trunkCount <= height / 2; trunkCount++) {
-            for (int i = 1; i <= height - 1; i++) {
+        for (int trunkCount = 1; trunkCount <= height / 2; trunkCount++)
+        {
+            for (int i = 1; i <= height - 1; i++)
+            {
                 Console.Write(SPACE);
             }
             Console.WriteLine("|");

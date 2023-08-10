@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>company.domain.project.module.ModularizationIntro</StartupObject>
+		<StartupObject>ModularizationIntro3</StartupObject>
   </PropertyGroup>
 </Project>

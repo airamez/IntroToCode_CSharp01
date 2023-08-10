@@ -49,6 +49,7 @@
   * Function
   * Procedure
 * Array
+* Char
 * Strings
 * Args
 * Matrix
