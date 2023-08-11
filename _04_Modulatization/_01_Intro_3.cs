@@ -17,6 +17,8 @@ NOTE: Show the power of modularization by refactoring the program below:
       |
 */
 using System;
+using OurCompany;
+
 class ModularizationIntro3
 {
     public static void Main(string[] args)
@@ -25,8 +27,7 @@ class ModularizationIntro3
         const char STAR = '*';
         const char LEAF = '.';
 
-        Console.Write("Height: ");
-        int height = Convert.ToInt32(Console.ReadLine());
+        int height = Library.ReadInteger("Height: ", "=");
 
         int spaces = height - 1;
         int leafs = 1;
@@ -34,10 +35,7 @@ class ModularizationIntro3
         // Printing the leafs
         for (int level = 1; level <= height; level++)
         {
-            for (int i = 1; i <= spaces; i++)
-            {
-                Console.Write(SPACE);
-            }
+            Library.RepeatChar(SPACE, spaces);
             // First level is the star (*)
             if (level == 1)
             {
@@ -45,10 +43,7 @@ class ModularizationIntro3
             }
             else
             { // starting on second level, leafs (.)
-                for (int i = 1; i <= leafs; i++)
-                {
-                    Console.Write(LEAF);
-                }
+                Library.RepeatChar(LEAF, leafs);
                 Console.WriteLine();
             }
             spaces--;
@@ -58,10 +53,7 @@ class ModularizationIntro3
         // Printing the truck
         for (int trunkCount = 1; trunkCount <= height / 2; trunkCount++)
         {
-            for (int i = 1; i <= height - 1; i++)
-            {
-                Console.Write(SPACE);
-            }
+            Library.RepeatChar(SPACE, height - 1);
             Console.WriteLine("|");
         }
     }
