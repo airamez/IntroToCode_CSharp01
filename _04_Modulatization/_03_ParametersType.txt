@@ -2,6 +2,5 @@
   - value
   - reference
   - out
-  - params
   - default or optional
   - named
