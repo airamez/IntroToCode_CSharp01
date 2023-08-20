@@ -45,9 +45,18 @@
 * do while
 * break and continue
 * Modularization
-  * Subprogram / Subroutine
+  * Subprogram, Subroutine, Routine
   * Function
   * Procedure
+  * Parameters types
+    * by value
+    * by reference (ref)
+    * default or optional
+    * out
+    * named
+    * params (see later when we learn array)
+
+  * Recursion
 * Array
 * Char
 * Strings

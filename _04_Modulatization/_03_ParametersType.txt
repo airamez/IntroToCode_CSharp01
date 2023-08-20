@@ -1,7 +1,8 @@
 * Types of parameters:
-  - value
-  - reference (ref)
-  - default or optional
-  - out
-  - named
-  - params (see later when we learn array)
+  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters
+  * By value
+  * By reference (ref)
+  * default or optional
+  * output: out
+  * named
+  * params (We will see later when we learn about array)
