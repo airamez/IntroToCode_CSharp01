@@ -54,6 +54,9 @@
 * Args
 * Matrix
   * Multi-Dimensional Matrix
+* Tuple
+  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
+  * Swaping variable
 * Objects Oriented Programming
   * Class
   * Object

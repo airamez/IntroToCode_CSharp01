@@ -1,21 +1,23 @@
 using System;
+using OurCompany;
 
 public class ParameterByValueByRef
 {
 
     public static void Main(string[] args)
     {
-        int a = 1;
-        int b = 2;
-        Console.WriteLine($"a = {a}; b = {b}");
+        int number1 = Library.ReadInteger("Number_1", "=");
+        int number2 = Library.ReadInteger("Number_2", "=");
+        Console.WriteLine($"number_1 = {number1}; number_2 = {number2}");
 
-        SwapByValue(a, b);
-        Console.WriteLine($"a = {a}; b = {b}");
+        SwapByValue(number1, number2);
+        Console.WriteLine($"number_1 = {number1}; number_2 = {number2}");
 
-        SwapByRef(ref a, ref b);
-        Console.WriteLine($"a = {a}; b = {b}");
+        SwapByRef(ref number1, ref number2);
+        Console.WriteLine($"number_1 = {number1}; number_2 = {number2}");
     }
 
+    // This is just to demonstrate the difference.The swap doesn't work
     public static void SwapByValue(int a, int b)
     {
         int aux = a;

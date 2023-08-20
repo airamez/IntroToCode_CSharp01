@@ -1,6 +1,7 @@
 * Types of parameters:
   - value
-  - reference
-  - out
+  - reference (ref)
   - default or optional
+  - out
   - named
+  - params (see later when we learn array)
