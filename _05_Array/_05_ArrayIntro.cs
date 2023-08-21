@@ -39,7 +39,8 @@ public class ArrayIntro
         Console.WriteLine(names[0]);
         Console.WriteLine(names[3]);
         Console.WriteLine(names[5] == null);
-        Console.WriteLine(names[10]);
 
+        // This will cause an error because there is no index 10
+        Console.WriteLine(names[10]);
     }
 }
