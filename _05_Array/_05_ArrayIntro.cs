@@ -9,6 +9,7 @@ using OurCompany;
    - The declare an array we use:
      - TYPE[]
    - The length of an array is stored in the property Length
+   - It is important to check if the index accesing an array element is a valid one
  */
 public class ArrayIntro
 {
@@ -21,13 +22,12 @@ public class ArrayIntro
         for (int i = 0; i < numbers.Length; i++) {
             Console.WriteLine(numbers[i]);
         }
-        Console.WriteLine();
 
         for (int i = 0; i < numbers.Length; i++) {
             numbers[i] = Library.ReadInteger($"number[{i}]");
         }
         for (int i = 0; i < numbers.Length; i++) {
-            Console.WriteLine(numbers[i]);
+            Console.WriteLine($"numbers[{i}] = {numbers[i]}");
         }
 
         string[] names = new string[5];
@@ -38,6 +38,8 @@ public class ArrayIntro
         Console.WriteLine(names[2]);
         Console.WriteLine(names[0]);
         Console.WriteLine(names[3]);
+        Console.WriteLine(names[5] == null);
+        Console.WriteLine(names[10]);
 
     }
 }
