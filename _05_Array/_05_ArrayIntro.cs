@@ -16,6 +16,8 @@ public class ArrayIntro
     {
         int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+        Console.WriteLine(numbers[5]);
+
         for (int i = 0; i < numbers.Length; i++) {
             Console.WriteLine(numbers[i]);
         }
