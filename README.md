@@ -59,7 +59,7 @@
 * Array
 * Char
 * Strings
-* Args
+* Args on Main
 * Matrix
   * Multi-Dimensional Matrix
 * Tuple
@@ -75,10 +75,9 @@
   * Inheritance
   * Polymorphism
   * Interfaces
+* Struct
 * Exceptions
 * Unit Testing
-* Version Control
-  * Git
 * Generic Data Structures
   * List
   * Queue
@@ -89,6 +88,8 @@
   * Binary Tree
     * BST
   * Graph
+* Version Control
+  * Git
 * .Net API
   * Files
     * Text
@@ -120,6 +121,8 @@
     * MAX, MIN, SUM and AVG
     * Count
     * Group By
+
+## ADO.NET
 
 ## Introduction to Web Development
 

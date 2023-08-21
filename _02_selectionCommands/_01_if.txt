@@ -41,10 +41,3 @@
         All LOGICAL_EXPRESSIONS are false
     }
  */
-using System;
-class IF
-{
-    public static void Main(string[] args)
-    {
-    }
-}

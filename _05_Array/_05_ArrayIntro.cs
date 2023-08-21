@@ -1,0 +1,41 @@
+using System;
+using OurCompany;
+
+/*
+   https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
+   - Array is a data structure to store a collection of variable of the same type
+   - Usually an Array has a fixed (static) type, define on declaration time
+   - The elements of an array are accessed by an index, from 0 to array length - 1
+   - The declare an array we use:
+     - TYPE[]
+   - The length of an array is stored in the property Length
+ */
+public class ArrayIntro
+{
+    public static void Main(string[] args)
+    {
+        int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        for (int i = 0; i < numbers.Length; i++) {
+            Console.WriteLine(numbers[i]);
+        }
+        Console.WriteLine();
+
+        for (int i = 0; i < numbers.Length; i++) {
+            numbers[i] = Library.ReadInteger($"number[{i}]");
+        }
+        for (int i = 0; i < numbers.Length; i++) {
+            Console.WriteLine(numbers[i]);
+        }
+
+        string[] names = new string[5];
+        names[0] = "José";
+        names[1] = "Leila";
+        names[2] = "Artur";
+        Console.WriteLine(names[1]);
+        Console.WriteLine(names[2]);
+        Console.WriteLine(names[0]);
+        Console.WriteLine(names[3]);
+
+    }
+}
