@@ -2,32 +2,33 @@ using System;
 using OurCompany;
 
 /*
- * The recursions definition is very siple: A routine can call itself
+ * The recursion definition is very siple: A routine can call itself
  * - Direct recursion is when a routine call itself directly
- * - Undirect recursions is when a routine call other routine and
+ * - Undirect recursion is when a routine call other routine and
  *   in some point the initial routine is called again
  * - Concepts:
  *   - Every recursion must have a stop condition
  *     - Usually called: base case or base condition
- *   - While the stop condition is not reached the function
+ *   - While the stop condition is not reached the routine
  *     execution is stacked
- *   - Many data-structures and advanced agororithm use recursion
+ *   - Many data-structures and advanced algorithm use recursion
  */
 
 public class RecursionIntro
 {
     public static void Main(string[] args)
     {
-        CountingReverse(10);
+        int value = Library.ReadInteger("Number");
+        CountingReverse(value);
         Console.WriteLine();
-        Counting(10);
+        Counting(value);
     }
 
     public static void CountingReverse (int number) {
-        Console.Write($"{number}, ");
-        if (number == 1) {
+        if (number == 0) {
             return;
         }
+        Console.Write($"{number}, ");
         CountingReverse(number - 1);
     }
 
