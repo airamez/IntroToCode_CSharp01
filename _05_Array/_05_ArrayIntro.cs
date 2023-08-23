@@ -4,8 +4,8 @@ using OurCompany;
 /*
    https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
    - Array is a data structure to store a collection of variable of the same type
-   - Usually an Array has a fixed (static) type, define on declaration time
-   - The elements of an array are accessed by an index, from 0 to array length - 1
+   - Usually (C#, Java, C, C++) an Array has a fixed (static) type and length, define on declaration time
+   - The elements of an array are accessed by an index, from 0 (first) to array length - 1 (last)
    - The declare an array we use:
      - TYPE[]
    - The length of an array is stored in the property Length
