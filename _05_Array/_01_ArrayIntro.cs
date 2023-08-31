@@ -4,7 +4,7 @@ using OurCompany;
 /*
    https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
    - Array is a data structure to store a collection of variable of the same type
-   - Usually (C#, Java, C, C++) an Array has a fixed (static) type and length, define on declaration time
+   - Usually (C#, Java, C, C++) an Array has a fixed (static) type and length, define at declaration time
    - The elements of an array are accessed by an index, from 0 (first) to array length - 1 (last)
    - The declare an array we use:
      - TYPE[]
@@ -15,7 +15,7 @@ public class ArrayIntro
 {
     public static void Main(string[] args)
     {
-        int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         Console.WriteLine(numbers[5]);
 
@@ -38,7 +38,7 @@ public class ArrayIntro
         Console.WriteLine(names[2]);
         Console.WriteLine(names[0]);
         Console.WriteLine(names[3]);
-        Console.WriteLine(names[5] == null);
+        Console.WriteLine(names[3] == null);
 
         // This will cause an error because there is no index 10
         Console.WriteLine(names[10]);
