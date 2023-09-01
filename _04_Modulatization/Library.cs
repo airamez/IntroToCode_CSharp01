@@ -23,4 +23,24 @@ public class Library
         quocient = dividend / divisor;
         remainder = dividend % divisor;
     }
+
+    public static void PrintArray(object[] array, bool inline = false)
+    {
+        if (inline) {
+            // Open Bracket
+            Console.Write("[");
+            // All elements but the last one
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write($"{array[i]}, ");
+            }
+            // Last element and the close bracket
+            Console.WriteLine($"{array[array.Length - 1]}]");
+        } else {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine($"[{i} = {array[i]}]");
+            }
+        }
+    }
 }
