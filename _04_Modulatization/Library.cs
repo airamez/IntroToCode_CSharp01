@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace OurCompany;
 public class Library
@@ -24,8 +25,11 @@ public class Library
         remainder = dividend % divisor;
     }
 
-    public static void PrintArray(int[] array, bool inline = false)
+    public static void PrinInttArray(int[] array, string label = null, bool inline = false)
     {
+        if (label != null) {
+            Console.Write($"{label}: ");
+        }
         if (inline) {
             // Open Bracket
             Console.Write("[");
