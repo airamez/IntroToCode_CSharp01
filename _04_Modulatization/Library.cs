@@ -25,12 +25,12 @@ public class Library
         remainder = dividend % divisor;
     }
 
-    public static void PrinInttArray(int[] array, string label = null, bool inline = false)
+    public static void PrintIntArray(int[] array, string label = null, bool inline = false)
     {
-        if (label != null) {
-            Console.Write($"{label}: ");
-        }
         if (inline) {
+            if (label != null) {
+                Console.Write($"{label}: ");
+            }
             // Open Bracket
             Console.Write("[");
             // All elements but the last one
@@ -41,9 +41,12 @@ public class Library
             // Last element and the close bracket
             Console.WriteLine($"{array[array.Length - 1]}]");
         } else {
+            if (label != null) {
+                Console.WriteLine($"{label}:");
+            }
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine($"[{i} = {array[i]}]");
+                Console.WriteLine($"[{i}]: {array[i]}");
             }
         }
     }
