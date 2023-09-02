@@ -24,7 +24,7 @@ public class Library
         remainder = dividend % divisor;
     }
 
-    public static void PrintArray(object[] array, bool inline = false)
+    public static void PrintArray(int[] array, bool inline = false)
     {
         if (inline) {
             // Open Bracket

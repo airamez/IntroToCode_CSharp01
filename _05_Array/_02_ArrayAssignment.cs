@@ -2,14 +2,7 @@ using System;
 using OurCompany;
 
 /*
-   https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
-   - Array is a data structure to store a collection of variable of the same type
-   - Usually (C#, Java, C, C++) an Array has a fixed (static) type and length, define at declaration time
-   - The elements of an array are accessed by an index, from 0 (first) to array length - 1 (last)
-   - The declare an array we use:
-     - TYPE[]
-   - The length of an array is stored in the property Length
-   - It is important to check if the index accesing an array element is a valid one
+ * Array is a reference type
  */
 public class ArrayAssignment
 {
@@ -22,15 +15,23 @@ public class ArrayAssignment
         numberCopy = 20;
         Console.WriteLine($"Number: {number}, NumberCopy: {numberCopy}");
 
-        string[] names = {"José", "Artur", "Leia"};
-        string[] namesCopy = names;
-
-        Library.PrintArray(names, true);
-        Library.PrintArray(namesCopy, true);
+        Console.WriteLine("Printing 'both' arrays");
+        int[] numbers = {1, 2, 3};
+        int[] numbersCopy = numbers;
+        Library.PrintArray(numbers, true);
+        Library.PrintArray(numbersCopy, true);
         
-        names[0] = "Jose Maria";
+        numbers[0] = 3;
+        numbers[2] = 1;
+        Console.WriteLine("Printing 'both' arrays, after changing the numbers array");
+        Library.PrintArray(numbers, true);
+        Library.PrintArray(numbersCopy, true);
 
-        Library.PrintArray(names, true);
-        Library.PrintArray(namesCopy, true);
+        Console.WriteLine("Cloning the array and changing the cloned one");
+        numbersCopy = (int[]) numbers.Clone(); // Using the Clone method from the array
+        numbersCopy[0] = 1;
+        numbersCopy[2] = 3;
+        Library.PrintArray(numbers, true);
+        Library.PrintArray(numbersCopy, true);
     }
 }
