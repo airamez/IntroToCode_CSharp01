@@ -25,7 +25,7 @@ public class Library
         remainder = dividend % divisor;
     }
 
-    public static void PrintIntArray(int[] array, string label = null, bool inline = false)
+    public static void PrintIntArray(int[] array, string label = null, bool inline = true)
     {
         if (inline) {
             if (label != null) {
