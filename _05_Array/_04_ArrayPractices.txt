@@ -1,0 +1,28 @@
+Implement a program to routine to clone an array of integers (DO NOT USE THE EXISTING CLONE METHOD)
+Implement a funtion to generate an integer array with randon numbers from a provided interval: int[] generateRandomArray(length, minValue, maxValue)
+Implement a routine to receive an integer array and return the min and max values as output values: FindMinAndMax(array, out min. out max)
+Implement a function to calculate the average of an array of integer: decimal ArrayAverage(array)
+Implement a routine to reverse an integer array (DO NOT USE THE EXISTING REVERSE METHOD). Try it in-place
+Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
+Implement a routine to fill an integer array with an specific value: Fill(array, value)
+Implement a function to indicate if a number does exist in a array of integers
+Implement a function to return how many times a value does exist in an array of integers
+Implement a routine to move all zeros of an integer array to the left side
+Implement a routine to receive two arrays of integers and return how many numbers exist on both array
+Implement a routine to receive two arrays of integers and print the intersection
+Implement a routine to rotate an array n positions to the left: RotateLeft(array, offset). Try it in-place
+Implement a routine to return an array with all elements duplicated in an array of integer
+Implement a function to remove all duplicated values in a array
+Implement a function to indicate if an array is in ascendent order
+Implement a function to indicate if two arrays of integer are equals (have the same values on same indexes)
+Implement a function to indicate if an array of integers has two values that sum to a provided value: bool HasSum(array, sum)
+Implement an function to receive two sorted arrays and return an union array sorted as well
+Implement a function to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
+Given an array of N non-negative integers arr[] representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+
+
+
+
+
+
+

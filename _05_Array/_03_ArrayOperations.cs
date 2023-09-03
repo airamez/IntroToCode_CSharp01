@@ -10,7 +10,6 @@ public class ArrayOperations
 {
     public static void Main(string[] args)
     {
-
         int[] myArray = { 9, 2, 1, 8, 6, 5, 4, 3, 0, 7 };
         Library.PrintIntArray(myArray, "myArray");
 
