@@ -1,5 +1,9 @@
 # Content
 
+## Playlist no Youtube
+
+* [Aprendendo a Programar](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
+
 ## Quick Overview about Software Engineering
 
 * Layers

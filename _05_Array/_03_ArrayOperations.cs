@@ -16,17 +16,13 @@ public class ArrayOperations
         // Length
         Console.WriteLine($"Length = {myArray.Length}");
 
-        // First Element
+        // First Element: [0]
         int first = myArray.First();
         Console.WriteLine($"First: {first}");
 
-        // Last Element
+        // Last Element: [a.Length - 1]
         int last = myArray.Last();
         Console.WriteLine($"Last: {last}");
-
-        // Average
-        double average = myArray.Average();
-        Console.WriteLine($"Average: {average}");
 
         // Min
         int min = myArray.Min();
@@ -39,6 +35,10 @@ public class ArrayOperations
         // Sum
         int sum = myArray.Sum();
         Console.WriteLine($"Sum: {sum}");
+
+        // Average
+        double average = myArray.Average();
+        Console.WriteLine($"Average: {average}");
 
         // Clone
         int[] myArrayClone = (int[])myArray.Clone();
