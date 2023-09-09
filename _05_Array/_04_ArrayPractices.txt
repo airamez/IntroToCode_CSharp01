@@ -22,3 +22,30 @@
 22. Implement a function to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
 23. Implement a funtion to given an array of N non-negative integers representing an elevation map where the width of each bar is 1,
     compute how much water it is able to trap after raining.
+24. Implement a function to randomize an array of integer by changing the existing values indexes
+25. Implement a game of decoding a sequence of integer digits
+    The game rules are:
+    - Generate an array of random integer digits without duplication
+    - Allow the player to provide 5 numbers each turn
+    - Show * for each digit that is in a correct position
+    - Show + for each digit that is out position
+    - Show - for each digit that is not part of the list
+    - Keep the game until the player get all five *
+    Example:
+    Secret: 02815
+    Turn 1
+    Input:  69234
+    Output: --+--   
+    Turn 2
+    Input:  02784
+    Ouput:  **-+-
+    Turn 3
+    Input:  02681
+    Output: **-++
+    Turn 4
+    Input:  02851
+    Output: ***++
+    Turn 5
+    Input:  02815
+    Output: *****
+    Congrats, You won!
