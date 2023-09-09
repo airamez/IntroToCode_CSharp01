@@ -1,8 +1,8 @@
 # Content
 
-## Playlist no Youtube
-
-* [Aprendendo a Programar](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
+## Media
+  * [Playlist no Youtube](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
+  * [Canal no Discord](https://discord.gg/QUxmPTZeNz)
 
 ## Quick Overview about Software Engineering
 
