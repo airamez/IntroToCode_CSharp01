@@ -55,7 +55,7 @@ public class ArrayOperations
         // Copy
         int[] myArrayCopy = new int[myArray.Length];
         Library.PrintIntArray(myArrayCopy, "Before copy");
-        Array.Copy(myArray, myArrayClone, myArray.Length);
+        Array.Copy(myArray, myArrayCopy, myArray.Length);
         Library.PrintIntArray(myArrayCopy, "After copy");
 
         // Copy range
@@ -94,13 +94,17 @@ public class ArrayOperations
         Library.PrintIntArray(myNewArray);
         Library.PrintIntArray(myNewArrayDistinct);
 
+        
+        int[] myArray2 = { 9, 2, 1, 8, 6, 5, 4, 3, 0, 7 };
+
         // Count
-        int evenCount = myArrayClone.Count(e => e % 2 == 0);
+        int evenCount = myArray2.Count(e => e % 2 == 0);
         Console.WriteLine($"Even count: {evenCount}");
 
         // Generating new array based on condition
-        int[] greaterThan5 = myArrayClone.Where(e => e > 5).ToArray();
+        int[] greaterThan5 = myArray2.Where(e => e > 5).ToArray();
         Library.PrintIntArray(greaterThan5, "Greater than 5");
-        Library.PrintIntArray(myArrayClone, "myArrayClone");
+        Library.PrintIntArray(myArray2, "myArray2");
+
     }
 }

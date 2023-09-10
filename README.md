@@ -196,6 +196,7 @@
 | 48 | [Modularization: Named parameter](https://youtube.com/live/0C_uCN5IpD8) | [_07_ParametersNames.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_04_Modulatization/_07_ParametersNames.cs) |
 | 49 | [Modularization: Introduction to Recursion](https://youtube.com/live/VJcgnSz-2XM) | [_08_RecursionIntro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_04_Modulatization/_08_RecursionIntro.cs) |
 | 50 | [Modularization: Factorial with recursion](https://youtube.com/live/2kCht3qqF4I) | [_09_RecursionFactorial.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_04_Modulatization/_09_RecursionFactorial.cs) |
-| 51 | [Intro to array: Why arrays](https://youtube.com/live/uRxlxvRWyvQ) | [_00_WhyArray.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_00_WhyArray.cs) |
-| 52 | [Intro to array: Overview](https://youtube.com/live/wI5nfqN968g) | [_01_ArrayIntro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_01_ArrayIntro.cs) |
-| 53 | [Intro to array: Assignment operation <br> (Array is a reference type (HEAP)](https://youtube.com/live/xwfMNOR2qLc) | [_02_ArrayAssignment.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_02_ArrayAssignment.cs) |
+| 51 | [Array: Why arrays](https://youtube.com/live/uRxlxvRWyvQ) | [_00_WhyArray.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_00_WhyArray.cs) |
+| 52 | [Array: Overview](https://youtube.com/live/wI5nfqN968g) | [_01_ArrayIntro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_01_ArrayIntro.cs) |
+| 53 | [Array: Assignment operation <br> (Array is a reference type (HEAP)](https://youtube.com/live/xwfMNOR2qLc) | [_02_ArrayAssignment.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_02_ArrayAssignment.cs) |
+| 54 | [Array: Operations](https://youtube.com/live/pnbFZyb96q4) | [_03_ArrayOperations.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_03_ArrayOperations.cs) |
