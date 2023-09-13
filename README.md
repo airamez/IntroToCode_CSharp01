@@ -200,3 +200,4 @@
 | 52 | [Array: Overview](https://youtube.com/live/wI5nfqN968g) | [_01_ArrayIntro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_01_ArrayIntro.cs) |
 | 53 | [Array: Assignment operation <br> (Array is a reference type (HEAP)](https://youtube.com/live/xwfMNOR2qLc) | [_02_ArrayAssignment.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_02_ArrayAssignment.cs) |
 | 54 | [Array: Operations](https://youtube.com/live/pnbFZyb96q4) | [_03_ArrayOperations.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_03_ArrayOperations.cs) |
+| 55 | [Array: Practices](https://youtube.com/live/P8hH1OkJ6YU) | [ 1. Implement a routine to clone an array of integers: int[] Clone(int[])](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions01.cs) |

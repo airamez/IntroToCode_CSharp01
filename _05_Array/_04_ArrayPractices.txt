@@ -1,4 +1,4 @@
- 1. Implement a routine to clone an array of integers: int[] Clone(array)
+ 1. Implement a routine to clone an array of integers: int[] Clone(int[])
  2. Implement a routine to receive an integer array and return the min and max values as output values: FindMinAndMax(array, out min. out max)
  3. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
  4. Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
