@@ -1,31 +1,34 @@
  1. Implement a routine to clone an array of integers: int[] Clone(int[])
  2. Implement a routine to read an array of integers from the Console: int[] ReadIntArray(string: label, int: length)
     Use 'label[index] = ' for each element
- 3. Implement a routine to receive an integer array and return the min and max values as output values: FindMinAndMax(array, out min. out max)
- 4. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
- 5. Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
- 6. Implement a routine to fill an integer array with an specific value: Fill(array, start, end, value)
- 7. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] generateRandomArray(length, minValue, maxValue)
- 8. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)
- 9. Implement a routine to check if an array of integer is palindrome
-10. Implement a routine to reverse an integer array. Try it in-place
-11. Implement a routine to return an array with all elements that are duplicated in an array of integer
-12. Implement a routine to return how many times a value occur in an array of integers
-13. Implement a routine to return a new array with only unique values from an array of integers
-14. Implement a routine to receive two arrays of integers and return an array with the intersection
-15. Implement a routine to receive two arrays of integers (ascending order) and return an array with the intersection
-16. Implement a routine to receive two arrays of integers and return a new array with the union
-17. Implement a routine to receive two arrays of integers (ascending order) and return a new array with the union
-18. Implement a routine to indicate if an array is in ascendent order
-19. Implement a routine to indicate if an array of integers has two values that sum to a provided value: bool HasSum(array, sum)
-20. Implement a routine to receive two sorted arrays and return an union array sorted as well
-21. Implement a routine to rotate an array n positions to the left: RotateLeft(array, offset).
-22. Implement a routine to move all zeros of an integer array to the left side
-23. Implement a routine to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
-24. Implement a routine to given an array of N non-negative integers representing an elevation map where the width of each bar is 1,
+ 3. Implement a routine to print an integer array allowing the options to provide a label and print the array inline or multi-line.
+    - Inline: all elements of the array in a single line, separated by commna "," and inside open/close brackets: e.g [1,2,3,4,5]
+    - Multi: each element in a new line after the index, the index should be inside brackets.
+ 4. Implement a routine to receive an integer array and return the min and max values as output values: FindMinAndMax(array, out min. out max)
+ 5. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
+ 6. Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
+ 7. Implement a routine to fill an integer array with an specific value: Fill(array, start, end, value)
+ 8. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] generateRandomArray(length, minValue, maxValue)
+ 9. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)
+10. Implement a routine to check if an array of integer is palindrome
+11. Implement a routine to reverse an integer array. Try it in-place
+12. Implement a routine to return an array with all elements that are duplicated in an array of integer
+13. Implement a routine to return how many times a value occur in an array of integers
+14. Implement a routine to return a new array with only unique values from an array of integers
+15. Implement a routine to receive two arrays of integers and return an array with the intersection
+16. Implement a routine to receive two arrays of integers (ascending order) and return an array with the intersection
+17. Implement a routine to receive two arrays of integers and return a new array with the union
+18. Implement a routine to receive two arrays of integers (ascending order) and return a new array with the union
+19. Implement a routine to indicate if an array is in ascendent order
+20. Implement a routine to indicate if an array of integers has two values that sum to a provided value: bool HasSum(array, sum)
+21. Implement a routine to receive two sorted arrays and return an union array sorted as well
+22. Implement a routine to rotate an array n positions to the left: RotateLeft(array, offset).
+23. Implement a routine to move all zeros of an integer array to the left side
+24. Implement a routine to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
+25. Implement a routine to given an array of N non-negative integers representing an elevation map where the width of each bar is 1,
     compute how much water it is able to trap after raining.
-25. Implement a routine to randomize an array of integer by changing the existing values indexes
-26. Implement a game of decoding a sequence of integer digits
+26. Implement a routine to randomize an array of integer by changing the existing values indexes
+27. Implement a game of decoding a sequence of integer digits
     The game rules are:
     - Generate an array of random integer digits without duplication
     - Allow the player to provide 5 numbers each turn
