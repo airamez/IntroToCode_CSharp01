@@ -4,7 +4,7 @@
  3. Implement a routine to print an integer array allowing the options to provide a label and print the array inline or multi-line.
     - Inline: all elements of the array in a single line, separated by commna "," and inside open/close brackets: e.g [1,2,3,4,5]
     - Multi: each element in a new line after the index, the index should be inside brackets.
- 4. Implement a routine to receive an integer array and return the min and max values as output values: FindMinAndMax(array, out min. out max)
+ 4. Implement a routine to receive an integer array and return the min and max values as output parameters: FindMinAndMax(array, out min, out max)
  5. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
  6. Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
  7. Implement a routine to fill an integer array with an specific value: Fill(array, start, end, value)
