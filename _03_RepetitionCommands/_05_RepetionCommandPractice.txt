@@ -1,6 +1,3 @@
-'''
-Practices
----------
 - Create a program to:
 01. Print the numbers from 1 to 1000 without using new lines after each number.
 02. Read two integer numbers representing an interval and print all numbers inside the interval.
