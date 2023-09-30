@@ -6,7 +6,7 @@
     - Multi: each element in a new line after the index, the index should be inside brackets.
  4. Implement a routine to receive an integer array and return the min and max values as output parameters: FindMinAndMax(array, out min, out max)
  5. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
- 6. Implement a routine to return the first and last elements of an array as output parameters: GetFirstAndLast(array, out first, out last)
+ 6. Implement a routine to return the first and last elements of an array of integers as output parameters: GetFirstAndLast(array, out first, out last)
  7. Implement a routine to fill an integer array with an specific value: Fill(array, start, end, value)
  8. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] generateRandomArray(length, minValue, maxValue)
  9. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)
