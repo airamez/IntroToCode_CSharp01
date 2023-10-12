@@ -8,7 +8,7 @@
  5. Implement a routine to calculate the average of an array of integer: decimal ArrayAverage(array)
  6. Implement a routine to return the first and last elements of an array of integers as output parameters: GetFirstAndLast(array, out first, out last)
  7. Implement a routine to fill an integer array with an specific value: Fill(array, start, end, value)
- 8. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] generateRandomArray(length, minValue, maxValue)
+ 8. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] GenerateRandomArray(length, minValue, maxValue)
  9. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)
 10. Implement a routine to check if an array of integer is palindrome
 11. Implement a routine to reverse an integer array. Try it in-place
