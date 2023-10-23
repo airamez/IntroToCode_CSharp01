@@ -12,7 +12,7 @@
  9. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)
 10. Implement a routine to check if an array of integer is palindrome
 11. Implement a routine to reverse an integer array. Try it in-place
-12. Implement a routine to return an array with all elements that are duplicated in an array of integer
+12. Implement a routine to return an array with all elements that are duplicated from an array of integer
 13. Implement a routine to return how many times a value occur in an array of integers
 14. Implement a routine to return a new array with only unique values from an array of integers
 15. Implement a routine to receive two arrays of integers and return an array with the intersection

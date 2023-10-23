@@ -210,3 +210,5 @@
 | 62 | [Array: Practices](https://youtube.com/live/XhPNYucWVbo) | [ 8. Implement a routine to generate an integer array with randon numbers from a provided interval: int[] GenerateRandomArray(length, minValue, maxValue)](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions08.cs) |
 | 63 | [Array: Practices](https://youtube.com/live/LyihWmeORSs) | [ 9. Implement a routine to indicate if two arrays of integer are equals (have the same values on same indexes)](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions09.cs) |
 | 64 | [Array: Practices](https://youtube.com/live/Eow596dYwzE) | [ 10. Implement a routine to check if an array of integer is palindrome](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions10.cs) |
+| 65 | [Array: Practices](https://youtube.com/live/aTXuovhA_RI) | [ 11. Implement a routine to reverse an integer array. Try it in-place](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions11.cs) |
+

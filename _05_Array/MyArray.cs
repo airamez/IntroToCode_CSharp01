@@ -57,4 +57,11 @@ public class MyArray
         }
     }
 
+    public static void swap(int[] array, int left, int right)
+    {
+        int aux = array[left];
+        array[left] = array[right];
+        array[right] = aux;
+    }
+
 }
