@@ -13,8 +13,9 @@ public class ArrayQuestion11
         int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         MyArray.Print(array, "Original");
         ArrayReverse(ref array);
+        MyArray.Print(array, "Reversed1");
         ArrayReverseinPlace(array);
-        MyArray.Print(array, "Reversed");
+        MyArray.Print(array, "Reversed2");
     }
 
     public static void ArrayReverseinPlace(int[] array)
@@ -38,8 +39,6 @@ public class ArrayQuestion11
             reversed[j] = array[i];
             j--;
         }
-        MyArray.Print(reversed, "Reversed");
         array = reversed;
-        MyArray.Print(array, "Reversed");
     }
 }
