@@ -40,6 +40,6 @@ public class ArrayQuestion12
         // Creating a new array with just values we found as duplicated
         int[] dupFinal = new int[iDuplicated];
         Array.Copy(duplicated, 0, dupFinal, 0, iDuplicated);
-        return dupFinal.Distinct().ToArray();;
+        return dupFinal.Distinct().ToArray();
     }
 }
