@@ -129,7 +129,7 @@
 ## .NET Data Access
 
 * ADO.NET
-* Entity Frame
+* Entity Framework
 
 ## Introduction to Web Development
 
