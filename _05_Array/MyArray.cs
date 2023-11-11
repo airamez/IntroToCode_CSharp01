@@ -29,6 +29,10 @@ public class MyArray
 
     public static void Print(int[] array, string label = "Array", bool inline = true)
     {
+        if (array == null) {
+            Console.WriteLine("Nothing to print: Array is null");
+            return;
+        }
         if (inline)
         {
             PrintInline(array, label);
