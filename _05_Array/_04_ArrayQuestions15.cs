@@ -45,7 +45,7 @@ public class ArrayQuestion15
         if (ii == 0) { // Better to deal with Exception
             return null;
         }
-        int[] result = new int[ii]; // Error with there is no exception
+        int[] result = new int[ii]; // Error with there is no intersection
         Array.Copy(intersection, 0, result, 0, ii);
        return intersection;
     }
