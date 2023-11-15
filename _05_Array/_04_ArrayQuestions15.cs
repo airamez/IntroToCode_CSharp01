@@ -47,6 +47,6 @@ public class ArrayQuestion15
         }
         int[] result = new int[ii]; // Error with there is no intersection
         Array.Copy(intersection, 0, result, 0, ii);
-       return intersection;
+        return result;
     }
 }
