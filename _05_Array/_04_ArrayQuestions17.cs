@@ -13,10 +13,10 @@ public class ArrayQuestion17
     {
         int[] a = {3, 1, 5, 9, 6, 2};
         int[] b = {8, 3, 4, 7, 9, 2, 6, 1, 0};
-        int[] intersection = ArrayUnion(a, b);
+        int[] union = ArrayUnion(a, b);
         MyArray.Print(a, "Array a");
         MyArray.Print(b, "Array b");
-        MyArray.Print(intersection, "Array Unon");
+        MyArray.Print(union, "Array Unon");
     }
 
     private static int[] ArrayUnion(int[] a, int[] b)
