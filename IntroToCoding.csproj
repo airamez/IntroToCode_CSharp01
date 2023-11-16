@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>ArrayQuestion16</StartupObject>
+		<StartupObject>ArrayQuestion17</StartupObject>
   </PropertyGroup>
 </Project>
