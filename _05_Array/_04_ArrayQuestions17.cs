@@ -16,7 +16,7 @@ public class ArrayQuestion17
         int[] union = ArrayUnion(a, b);
         MyArray.Print(a, "Array a");
         MyArray.Print(b, "Array b");
-        MyArray.Print(union, "Array Unon");
+        MyArray.Print(union, "Array Union");
     }
 
     private static int[] ArrayUnion(int[] a, int[] b)
