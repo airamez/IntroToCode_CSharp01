@@ -218,4 +218,5 @@
 | 70 | [Array: Practices](https://youtube.com/live/eQSZsHRDENM) | [ 16. Implement a routine to receive two arrays of integers (ascending order) and return an array with the intersection](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions16.cs) |
 | 71 | [Array: Practices](https://youtube.com/live/aJ2DpI1Ikxc) | [ 17. Implement a routine to receive two arrays of integers and return a new array with the union](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions17.cs) |
 | 72 | [Array: Practices](https://youtube.com/live/15_2EVT-XQ0) | [ 18. Implement a routine to receive two arrays of integers (ascending order) and return a new array with the union](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions18.cs) |
+| 73 | [Array: Practices](https://youtube.com/live/15_2EVT-XQ0) | [ 19. Implement a routine to indicate if an array is in ascendent order](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_05_Array/_04_ArrayQuestions19.cs) |
 
