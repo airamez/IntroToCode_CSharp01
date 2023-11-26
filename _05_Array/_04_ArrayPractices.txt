@@ -24,7 +24,8 @@
 21. Implement a routine to receive two sorted arrays and return a new array with all elements and sorted as well
 22. Implement a routine to rotate an array n positions to the left: RotateLeft(array, offset)
     Can you do it in-place?
-23. Implement a routine to move all zeros of an integer array to the left side
+23. Implement a routine to move all zeros of an integer array to the left side.
+    Can you do it in-place?
 24. Implement a routine to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
 25. Implement a routine to given an array of N non-negative integers representing an elevation map where the width of each bar is 1,
     compute how much water it is able to trap after raining.
