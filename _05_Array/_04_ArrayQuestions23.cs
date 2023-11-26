@@ -12,30 +12,54 @@ public class ArrayQuestion23
 {
     public static void Main(string[] args)
     {
+
         int[] array1 = {0, 1, 2, 0, 0, 3, 0, 0, 4, 5, 0, 0, 0, 7, 0, 0};
+        MyArray.Print(array1);
+//      MoveZersLeft(array1);
+        MoveZeroesLeftInPlaceBest(array1);
+        MyArray.Print(array1);
+        Console.WriteLine();
+
         int[] array2 = {1, 2, 3, 0, 0, 0, 0, 4, 5, 0, 0, 0, 7, 0, 8, 0, 0, 0, 0};
+        MyArray.Print(array2);
+//      MoveZersLeft(array2);
+        MoveZeroesLeftInPlaceBest(array2);
+        MyArray.Print(array2);
+        Console.WriteLine();
+
         int[] array3 = {1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6};
+        MyArray.Print(array3);
+//      MoveZersLeft(array3);
+        MoveZeroesLeftInPlaceBest(array3);
+        MyArray.Print(array3);
+        Console.WriteLine();
+
         int[] array4 = {1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 7, 8};
-
-       MyArray.Print(array1);
-//       MoveZersLeft(array1);
-       MoveZeroesLeftInPlace(array1);
-       MyArray.Print(array1);
-
-       MyArray.Print(array2);
-//       MoveZersLeft(array2);
-       MoveZeroesLeftInPlace(array2);
-       MyArray.Print(array2);
-
-        MyArray.Print(array3);
-//        MoveZersLeft(array3);
-        MoveZeroesLeftInPlace(array3);
-        MyArray.Print(array3);
-
         MyArray.Print(array4);
-//        MoveZersLeft(array4);
-        MoveZeroesLeftInPlace(array4);
+//      MoveZersLeft(array4);
+        MoveZeroesLeftInPlaceBest(array4);
         MyArray.Print(array4);
+        Console.WriteLine();
+
+        int[] array5 = {1, 0};
+        MyArray.Print(array5);
+//      MoveZersLeft(array5);
+        MoveZeroesLeftInPlaceBest(array5);
+        MyArray.Print(array5);
+        Console.WriteLine();
+
+        int[] array6 = {0, 1};
+        MyArray.Print(array6);
+//      MoveZersLeft(array6);
+        MoveZeroesLeftInPlaceBest(array6);
+        MyArray.Print(array6);
+        Console.WriteLine();
+
+        int[] array7 = {1, 2, 3, 4, 5};
+        MyArray.Print(array7);
+//      MoveZersLeft(array7);
+        MoveZeroesLeftInPlaceBest(array7);
+        MyArray.Print(array7);
     }
 
     private static void MoveZersLeft(int[] array)
@@ -57,7 +81,8 @@ public class ArrayQuestion23
         while (zero >= 0 && nonZero >= 0) {
             // Swap a zero with a non zero element
             if (array[zero] == 0 && array[nonZero] != 0) {
-                MyArray.swap(array, zero, nonZero);
+                array[zero] = array[nonZero];
+                array[nonZero] = 0;
             }
             if (array[zero] != 0) {
                 zero--;
@@ -71,4 +96,22 @@ public class ArrayQuestion23
             }
         }
     }
+
+        private static void MoveZeroesLeftInPlaceBest(int[] array) {
+            // If array legth is 1, no work need
+            if (array.Length == 1) {
+                return;
+            }
+            int end = array.Length - 1;
+            for (int i = end; i >= 0; i--)
+            {
+                if (array[i] != 0) {
+                    array[end] = array[i];
+                    if (i != end) {
+                        array[i] = 0;
+                    }
+                    end--;
+                }
+            }
+        }
 }
