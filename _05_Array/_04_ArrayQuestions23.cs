@@ -19,22 +19,22 @@ public class ArrayQuestion23
 
        MyArray.Print(array1);
 //       MoveZersLeft(array1);
-       MoveZersLeftInPlace(array1);
+       MoveZeroesLeftInPlace(array1);
        MyArray.Print(array1);
 
        MyArray.Print(array2);
 //       MoveZersLeft(array2);
-       MoveZersLeftInPlace(array2);
+       MoveZeroesLeftInPlace(array2);
        MyArray.Print(array2);
 
         MyArray.Print(array3);
 //        MoveZersLeft(array3);
-        MoveZersLeftInPlace(array3);
+        MoveZeroesLeftInPlace(array3);
         MyArray.Print(array3);
 
         MyArray.Print(array4);
 //        MoveZersLeft(array4);
-        MoveZersLeftInPlace(array4);
+        MoveZeroesLeftInPlace(array4);
         MyArray.Print(array4);
     }
 
@@ -51,17 +51,21 @@ public class ArrayQuestion23
         Array.Copy(aux, 0, array, 0, array.Length);
     }
 
-    private static void MoveZersLeftInPlace(int[] array) {
+    private static void MoveZeroesLeftInPlace(int[] array) {
         int zero = array.Length - 1; // Index looking for Zero
         int nonZero = zero; // Index looking for non zero
         while (zero >= 0 && nonZero >= 0) {
+            // Swap a zero with a non zero element
             if (array[zero] == 0 && array[nonZero] != 0) {
                 MyArray.swap(array, zero, nonZero);
-            } else if (array[zero] != 0) {
+            }
+            if (array[zero] != 0) {
                 zero--;
-            } else if (array[nonZero] == 0) {
+            }
+            if (array[nonZero] == 0) {
                 nonZero--;
             }
+            // Make sure the nonZero index is always at the left size of the zero index
             if (nonZero > zero) {
                 nonZero = zero - 1;
             }
