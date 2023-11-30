@@ -29,7 +29,7 @@
 24. Implement a routine to return the longest sequence of duplicated elements of an array of integers containing only 0s and 1s
 25. Implement a routine to given an array of N non-negative integers representing an elevation map where the width of each bar is 1,
     compute how much water it is able to trap after raining.
-26. Implement a routine to randomize an array of integer by changing the existing values indexes
+26. Implement a routine to randomize an array of integers
 27. Implement a game of decoding a sequence of integer digits
     The game rules are:
     - Generate an array of random integer digits without duplication
