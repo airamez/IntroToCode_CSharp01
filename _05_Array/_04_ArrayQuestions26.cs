@@ -27,7 +27,7 @@ public class ArrayQuestion26
         }
     }
 
-    private static void RandomizeArray(int[] array)
+    public static void RandomizeArray(int[] array)
     {
         Random random = new Random();
         for (int i = 0; i < array.Length - 1; i++)
