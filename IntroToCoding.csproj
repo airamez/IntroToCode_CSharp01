@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>_01_Bidimensonal</StartupObject>
+		<StartupObject>_03_TridimensionalDemo</StartupObject>
   </PropertyGroup>
 </Project>
