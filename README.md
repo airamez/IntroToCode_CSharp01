@@ -64,10 +64,9 @@
 * Multi-Dimensional Array
 * Char
 * Strings
-* Args on Main method
-* Tuple
-  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
-  * Swaping variable
+* Method Main with Args
+* Version Control
+  * Git
 * Objects Oriented Programming
   * Class
   * Object
@@ -80,6 +79,9 @@
   * Interfaces
 * Struct
 * Exceptions
+* Tuple
+  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
+  * Swaping variable
 * Unit Testing
 * Generic Data Structures
   * List
@@ -91,8 +93,6 @@
   * Binary Tree
     * BST
   * Graph
-* Version Control
-  * Git
 * .Net API
   * Files
     * Text
@@ -232,3 +232,4 @@
 | 85 | [Multidimensional Array](https://youtube.com/live/AcSo_oQ7vV0) | [_06_ArrayMultidimensional/_02_TriDimensional.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_06_ArrayMultidimensional/_02_TriDimensional.cs) <br> [_06_ArrayMultidimensional/_03_TridimensionalDemo.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_06_ArrayMultidimensional/_03_TridimensionalDemo.cs) |
 | 86 | [O tipo char (Character)](https://youtube.com/live/hRl3wr9T0) | [_07_CharString/_01_Char.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_07_CharString/_01_Char.cs) |
 | 87 | [O tipo string](https://youtube.com/live/JVmqf1i8qyg) | [_07_CharString/_02_String.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_07_CharString/_02_String.cs) |
+| 88 | [Main method with command line arguments](https://youtube.com/live/HitcMr3O73w) | [_08_MainArgs/_01_Args.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_08_MainArgs/_01_Args.cs) |
