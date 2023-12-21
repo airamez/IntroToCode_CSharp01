@@ -235,4 +235,5 @@
 | 88 | [Main method with command line arguments](https://youtube.com/live/HitcMr3O73w) | [_08_MainArgs/_01_Args.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_08_MainArgs/_01_Args.cs) |
 | 89 | [Intro to Version Control (GIT)](https://youtube.com/live/4C2vMwHKLio) | N/A |
 | 90 | [GIT: Resolving conflicts](https://youtube.com/live/zU2SgVWA8u8) | N/A |
-| 91 | [GIT: Branches](https://youtube.com/live/A_iXrSCQ8UI) | N/A |
+| 91 | [GIT: Branches (Theory)](https://youtube.com/live/A_iXrSCQ8UI) | N/A |
+| 92 | [GIT: Branches (Practice)](https://youtube.com/live/FCTiqD8tJjI) | N/A |
