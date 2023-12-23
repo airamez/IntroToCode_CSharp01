@@ -237,3 +237,4 @@
 | 90 | [GIT: Resolving conflicts](https://youtube.com/live/zU2SgVWA8u8) | N/A |
 | 91 | [GIT: Branches (Theory)](https://youtube.com/live/A_iXrSCQ8UI) | N/A |
 | 92 | [GIT: Branches (Practice)](https://youtube.com/live/FCTiqD8tJjI) | N/A |
+| 93 | [GIT: Pull Request (PR)](https://youtube.com/live/Xc0EktNpkvk) | N/A |
