@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>_01_Args</StartupObject>
+		<StartupObject>OO_Demo</StartupObject>
   </PropertyGroup>
 </Project>

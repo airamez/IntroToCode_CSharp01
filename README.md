@@ -67,7 +67,12 @@
 * Method Main with Args
 * Version Control
   * Git
+    * Introduction
+    * Conflicts
+    * Branches
+    * Pull Request (PR)
 * Objects Oriented Programming
+  * Abstraction
   * Class
   * Object
   * Encapsulation
@@ -77,6 +82,9 @@
   * Inheritance
   * Polymorphism
   * Interfaces
+  * Classes/Objects relationship
+    * Composition
+    * Aggregations
 * Struct
 * Exceptions
 * Tuple
@@ -238,3 +246,4 @@
 | 91 | [GIT: Branches (Theory)](https://youtube.com/live/A_iXrSCQ8UI) | N/A |
 | 92 | [GIT: Branches (Practice)](https://youtube.com/live/FCTiqD8tJjI) | N/A |
 | 93 | [GIT: Pull Request (PR)](https://youtube.com/live/Xc0EktNpkvk) | N/A |
+| 94 | [Intro to Object-Oriented Programming](https://youtube.com/live/x7lh9yk0zsE) | [_09_ObjectOrientedProgramming/_01_OO_Intro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_09_ObjectOrientedProgramming/_01_OO_Intro.cs) <br> [_09_ObjectOrientedProgramming/_02_OO_Demo.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_09_ObjectOrientedProgramming/_02_OO_Demo.cs) |
