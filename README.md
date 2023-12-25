@@ -76,31 +76,44 @@
   * Class
   * Object
   * Encapsulation
+    * Access Modifiers
+      * Private
+      * Public
+      * Protected
+      * Internal
     * Set and Get
-    * Properties
-    * Indexers
+    * Property
+  * Indexer
   * Inheritance
+  * Overload
+  * Overhide
   * Polymorphism
-  * Interfaces
-  * Classes/Objects relationship
+  * Interface
+  * Relationship
     * Composition
-    * Aggregations
+    * Aggregation
+  * Abstract
+  * Sealed
+  * Static
 * Struct
 * Exceptions
 * Tuple
   * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
   * Swaping variable
 * Unit Testing
+* Introduction to Data Structures
+  * Linked List
+  * Doubled Linked List
+  * Queue
+  * Stack
+  * Binary Tree
 * Generic Data Structures
   * List
   * Queue
   * Stack
-  * Heap
+  * Set
   * Hash/Map
   * Dictionary
-  * Binary Tree
-    * BST
-  * Graph
 * .Net API
   * Files
     * Text
