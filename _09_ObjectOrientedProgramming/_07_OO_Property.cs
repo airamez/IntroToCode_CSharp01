@@ -19,8 +19,50 @@ using System;
 namespace OurCompany.LearnCoding.OOP.Property {
 
     public class PropertyApp {
+      public static void Main(string[]  args) {
+        Car car1 = new Car();
+        car1.SetVin("123ABC");
+        string vin = car1.GetVin();
+        Console.WriteLine($"VIN: {vin}");
+
+        car1.Maker = "Toyota";
+        string maker = car1.Maker;
+        Console.WriteLine($"Maker: {maker}");
+
+        car1.Model = "Rav4";
+        string model = car1.Model;
+        Console.WriteLine($"Model: {model}");
+
+        car1.Year = 2023;
+        int year = car1.Year;
+        Console.WriteLine($"Year: {year}");
+
+      }
     }
 
     public class Car {
+      private string vin;
+      public void SetVin(string value) {
+        vin = value;
+      }
+      public string GetVin() {
+        return vin;
+      }
+
+      private string maker;
+      public string Maker {
+        set {
+          maker = value;
+        }
+        get {
+          return maker;
+        }
+      }
+
+      //private string model;
+      public string Model {set; get;}
+
+      private int year;
+      public int Year { get => year; set => year = value; }
     }
 }
