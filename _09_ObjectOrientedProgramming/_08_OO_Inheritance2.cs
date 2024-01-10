@@ -25,30 +25,32 @@
     Rectangle: Points(4)
     Circle: Point + Radius
  */
- using System;
+using System;
 
-namespace OurCompany.LearnCoding.OOP.Inheritance;
+namespace OurCompany.LearnCoding.OOP.Inheritance2;
 
-public class ShapeApp {
-  public static void Main(string[] args) {
+public class ShapeApp
+{
+  public static void Main(string[] args)
+  {
     Triangle t1 = new Triangle(
       "Gold", "Pink", 5,
-      new Point(1,10),
+      new Point(1, 10),
       new Point(4, 9),
-      new Point(15,17));
+      new Point(15, 17));
     Console.WriteLine($"Triangle: {t1.BackgroundColor}; {t1.BorderColor}; {t1.BorderWitdh}");
 
     Square s1 = new Square(
       "LightBlue", "Yellow", 3,
-      new Point(1,10),
+      new Point(1, 10),
       new Point(4, 9));
     Console.WriteLine($"Square: {s1.BackgroundColor}; {s1.BorderColor}; {s1.BorderWitdh}");
 
     Rectangle r1 = new Rectangle(
       "Gray", "Green", 3,
-      new Point(1,10),
+      new Point(1, 10),
       new Point(5, 10),
-      new Point(20,21),
+      new Point(20, 21),
       new Point(15, 25));
     Console.WriteLine($"Rectangle: {r1.BackgroundColor}; {r1.BorderColor}; {r1.BorderWitdh}");
 
@@ -57,61 +59,71 @@ public class ShapeApp {
   }
 }
 
-public class Point {
+public class Point
+{
   public int X { get; set; }
   public int Y { get; set; }
 
-  public Point (int x, int y) {
-      X = x;
-      Y = y;
+  public Point(int x, int y)
+  {
+    X = x;
+    Y = y;
   }
 }
-public class Shape {
-  public string BackgroundColor {set; get;}
+public class Shape
+{
+  public string BackgroundColor { set; get; }
   public string BorderColor { get; set; }
   public int BorderWitdh { get; set; }
-}
 
-public class Triangle : Shape {
-  public Point Point1 {set; get;}
-  public Point Point2 { get; set; }
-  public Point Point3 { get; set; }
-  public Triangle(string backgroundColor, string borderColor, int borderWidth,
-                  Point point1, Point point2, Point point3) {
+  public Shape(string backgroundColor, string borderColor, int borderWidth)
+  {
     BackgroundColor = backgroundColor;
     BorderColor = borderColor;
     BorderWitdh = borderWidth;
+  }
+}
+
+public class Triangle : Shape
+{
+  public Point Point1 { set; get; }
+  public Point Point2 { get; set; }
+  public Point Point3 { get; set; }
+  public Triangle(string backgroundColor, string borderColor, int borderWidth,
+                  Point point1, Point point2, Point point3)
+    : base(backgroundColor, borderColor, borderWidth)
+  {
     Point1 = point1;
     Point2 = point2;
     Point3 = point3;
   }
 }
 
-public class Square: Shape {
-  public Point Point1 {set; get;}
+public class Square : Shape
+{
+  public Point Point1 { set; get; }
   public Point Point2 { get; set; }
 
   public Square(string backgroundColor, string borderColor, int borderWidth,
-                Point point1, Point point2) {
-    BackgroundColor = backgroundColor;
-    BorderColor = borderColor;
-    BorderWitdh = borderWidth;
+                Point point1, Point point2)
+    : base(backgroundColor, borderColor, borderWidth)
+  {
     Point1 = point1;
     Point2 = point2;
   }
 }
 
-public class Rectangle: Shape {
-  public Point Point1 {set; get;}
+public class Rectangle : Shape
+{
+  public Point Point1 { set; get; }
   public Point Point2 { get; set; }
   public Point Point3 { get; set; }
   public Point Point4 { get; set; }
 
   public Rectangle(string backgroundColor, string borderColor, int borderWidth,
-                   Point point1, Point point2, Point point3, Point point4) {
-    BackgroundColor = backgroundColor;
-    BorderColor = borderColor;
-    BorderWitdh = borderWidth;
+                   Point point1, Point point2, Point point3, Point point4)
+    : base(backgroundColor, borderColor, borderWidth)
+  {
     Point1 = point1;
     Point2 = point2;
     Point3 = point3;
@@ -119,16 +131,16 @@ public class Rectangle: Shape {
   }
 }
 
-public class Circle: Shape {
+public class Circle : Shape
+{
   public Point Center { get; set; }
-  public int Radius {set; get;}
+  public int Radius { set; get; }
 
   public Circle(string backgroundColor, string borderColor, int borderWidth,
-                Point center, int radius) {
-      BackgroundColor = backgroundColor;
-      BorderColor = borderColor;
-      BorderWitdh = borderWidth;
-      Center = center;
-      Radius = radius;
+                Point center, int radius)
+      : base(backgroundColor, borderColor, borderWidth)
+  {
+    Center = center;
+    Radius = radius;
   }
 }

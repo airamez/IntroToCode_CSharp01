@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>OurCompany.LearnCoding.OOP.Inheritance.ShapeApp</StartupObject>
+		<StartupObject>OurCompany.LearnCoding.OOP.Inheritance2.ShapeApp</StartupObject>
   </PropertyGroup>
 </Project>
