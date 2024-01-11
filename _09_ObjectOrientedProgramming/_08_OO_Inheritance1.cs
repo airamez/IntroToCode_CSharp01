@@ -27,7 +27,7 @@
  */
  using System;
 
-namespace OurCompany.LearnCoding.OOP.Inheritance;
+namespace OurCompany.LearnCoding.OOP.Inheritance1;
 
 public class ShapeApp {
   public static void Main(string[] args) {
