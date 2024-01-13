@@ -95,11 +95,10 @@
   * Abstract
   * Sealed
   * Static
+* Parameter type: params
 * Struct
 * Exceptions
 * Tuple
-  * https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples
-  * Swaping variable
 * Unit Testing
 * Introduction to Data Structures
   * Linked List
