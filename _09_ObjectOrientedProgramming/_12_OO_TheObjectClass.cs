@@ -16,32 +16,48 @@ namespace OurCompany.LearnCoding.OOP.TheObjectClass;
 # Class Content:
   # Explain the code
   # Run the code and review the results
-  # Un-comment the ToString from MyClass
+  # Uncomment the override methods from MyClass
   # Run the code and review the results
 */
 public class ThObjectClass {
     public static void Main (string[] args) {
-        object[] objects = new object[8];
+        object[] objects = new object[10];
+
         objects[0] = new object();
         objects[1] = "Jose Santos";
         objects[2] = 5;
         objects[3] = 10.45;
         objects[4] = true;
-        objects[5] = false;
+        objects[5] = new MyClass("Leila", "Rodrigues");
         objects[6] = '#';
         objects[7] = new MyClass("Jose", "Santos");
+        objects[8] = "Jose Santos";
+        objects[9] = new MyClass("Jose", "Santos");
 
         for (int i = 0; i < objects.Length; i++)
         {
-            Console.WriteLine($"Type:{objects[i].GetType()}; ToString(): {objects[i]}");
+            Console.Write($"Type:{objects[i].GetType()}; ");
+            Console.Write($"ToString(): {objects[i]}; ");
+            Console.WriteLine($"HashCode: {objects[i].GetHashCode()}");
         }
+
+        Console.WriteLine($"[1] == [2]: {objects[1] == objects[2]}");
+        Console.WriteLine($"[1] == [8]: {objects[1] == objects[8]}");
+        Console.WriteLine($"[5] == [9]: {objects[5] == objects[9]}");
+        Console.WriteLine($"[7] == [9]: {objects[5] == objects[9]}");
+
+        Console.WriteLine($"[1].Equals([1]): {objects[1].Equals(objects[2])}");
+        Console.WriteLine($"[1].Equals([8]): {objects[1].Equals(objects[8])}");
+        Console.WriteLine($"[5].Equals([9]): {objects[5].Equals(objects[9])}");
+        Console.WriteLine($"[7].Equals([9]): {objects[7].Equals(objects[9])}");
     }
 }
 
 
-public class MyClass  {
+public class MyClass {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public string FullName { get => $"{FirstName} {LastName}";}
     
     public MyClass (string firstName, string lastName) {
         FirstName = firstName;
@@ -51,5 +67,20 @@ public class MyClass  {
     // public override string ToString()
     // {
     //     return $"{FirstName} {LastName}";
+    // }
+
+    // public override bool Equals(object otherObject)
+    // {
+    //   if (otherObject is not MyClass) {
+    //     return false;
+    //   }
+    //   MyClass other = (MyClass) otherObject;
+    //   return FirstName.Equals(other.FirstName) &&
+    //          LastName.Equals(other.LastName);
+    // }
+
+    // public override int GetHashCode()
+    // {
+    //     return FullName.GetHashCode();
     // }
 }
