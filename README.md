@@ -95,17 +95,18 @@
   * Abstract
   * Sealed
   * Static
+* Exceptions
+* Unit Testing
 * Parameter type: params
 * Struct
-* Exceptions
 * Tuple
-* Unit Testing
 * Introduction to Data Structures
   * Linked List
   * Doubled Linked List
   * Queue
   * Stack
   * Binary Tree
+* Generics
 * Generic Data Structures
   * List
   * Queue
