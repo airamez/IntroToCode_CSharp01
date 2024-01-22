@@ -18,6 +18,9 @@ using System;
   or a non-abstract class.
 # An abstract class can implement an interface.
 # An abstract class can not be sealed.
+
+# Class Content
+  # Use one of the inheritance examples to explain
  */
 
  public class AbstractApp {

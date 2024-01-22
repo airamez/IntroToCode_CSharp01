@@ -14,6 +14,10 @@ using System;
 # It is an error to use the abstract modifier with a sealed class, because
   an abstract class must be inherited by a class that provides an 
   implementation of the abstract methods or properties.
+
+# Class Content
+  # Create an example to show it
+
  */
 
  public class SealedApp {

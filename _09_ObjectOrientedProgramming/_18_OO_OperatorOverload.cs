@@ -17,6 +17,11 @@ Operators	                              Notes
 +, -, *, /, %, &, |, ^, <<, >>            Arithmetic and bitwise operators
 ==, !=, <, >, <=, >=	                     Comparison operators
 +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=  Compound assignment operators
+
+# Class Content
+  # Create an example to show it
+  # A combination of Customers and Customer classes and indexer by email
+
 */
  public class OperatorOverloadApp {
     public static void Main (string[] args) {
