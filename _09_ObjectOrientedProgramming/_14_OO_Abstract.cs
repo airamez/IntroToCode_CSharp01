@@ -29,28 +29,28 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.Abstract;
 
- public class AbstractApp {
-    public static void Main (string[] args) {
-      // Shape shap = new Shape ("Blue","Red", 5);
-      Triangle triangle = new Triangle("Blue", "Red", 5,
-      new Point(2,4),
-      new Point(3, -6),
-      new Point(7,8)
-      );
-      Circle circle = new Circle("Blue","Red", 5, new Point(5, 15), 50);
-      Square square = new Square("Blue","Red", 5, new Point(30, 50), new Point(70, 85));
-      Rectangle rectangle = new Rectangle("Blue", "Red", 5,
-      new Point(0, 0),
-      new Point(0, 5),
-      new Point(10, 5),
-      new Point(10, 0));
+public class AbstractApp {
+  public static void Main (string[] args) {
+    // Shape shap = new Shape ("Blue","Red", 5);
+    Triangle triangle = new Triangle("Blue", "Red", 5,
+    new Point(2,4),
+    new Point(3, -6),
+    new Point(7,8)
+    );
+    Circle circle = new Circle("Blue","Red", 5, new Point(5, 15), 50);
+    Square square = new Square("Blue","Red", 5, new Point(30, 50), new Point(70, 85));
+    Rectangle rectangle = new Rectangle("Blue", "Red", 5,
+    new Point(0, 0),
+    new Point(0, 5),
+    new Point(10, 5),
+    new Point(10, 0));
 
-      Console.WriteLine($"Triagle Area: {triangle.GetArea()}");
-      Console.WriteLine($"Rectangle Area: {rectangle.GetArea()}");
-    }
- }
+    Console.WriteLine($"Triagle Area: {triangle.GetArea()}");
+    Console.WriteLine($"Rectangle Area: {rectangle.GetArea()}");
+  }
+}
 
- public class Point
+public class Point
 {
   public int X { get; set; }
   public int Y { get; set; }

@@ -2,6 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp7.0</TargetFramework>
-		<StartupObject>OurCompany.LearnCoding.OOP.Sealed.SealedApp</StartupObject>
+		<StartupObject>OurCompany.LearnCoding.OOP.Static.StaticApp</StartupObject>
   </PropertyGroup>
 </Project>
