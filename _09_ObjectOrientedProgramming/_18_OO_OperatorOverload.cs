@@ -11,16 +11,14 @@
 # In each case, at least one parameter must have type T or T? where T is
   the type that contains the operator declaration.
 # The following table shows the operators that can be overloaded:
-Operators	                              Notes
+Operators	                                 Notes
 +x, -x, !x, ~x	                           Unary operators
-++, --                                    Increment and decrement operators
-+, -, *, /, %, &, |, ^, <<, >>            Arithmetic and bitwise operators
+++, --                                     Increment and decrement operators
++, -, *, /, %, &, |, ^, <<, >>             Arithmetic and bitwise operators
 ==, !=, <, >, <=, >=	                     Comparison operators
-+=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=  Compound assignment operators
++=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=   Compound assignment operators
 
 # Class Content
-  # Create an example to show it
-  # A combination of Customers and Customer classes and indexer by email
 
 */
  public class OperatorOverloadApp {
