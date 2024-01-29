@@ -75,6 +75,7 @@
   * Abstraction
   * Class
   * Object
+  * Constructors
   * Encapsulation
     * Access Modifiers
       * Private
@@ -83,18 +84,22 @@
       * Internal
     * Set and Get
     * Property
-  * Indexer
+  * Property
   * Inheritance
   * Overload
   * Overhide
   * Polymorphism
+  * The object class
   * Interface
-  * Relationship
-    * Composition
-    * Aggregation
   * Abstract
   * Sealed
   * Static
+  * Indexers
+  * Operator overload
+  * Relationship
+    * Composition
+    * Aggregation
+  * Full Demo
 * Exceptions
 * Unit Testing
 * Parameter type: params
