@@ -22,6 +22,7 @@
   # Show examples using Visio digrams
   # Show some implementations
   # Quick overview about the class List
+  # Show constructor usimg just new(params)
 */
 
 
