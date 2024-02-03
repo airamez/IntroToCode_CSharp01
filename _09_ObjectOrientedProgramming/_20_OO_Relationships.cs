@@ -9,7 +9,7 @@
     # The association can be:
       # One to One: 1:1
       # One to Many: 1:N
-      # Many to Many1: N:N
+      # Many to Many: N:N
   # Aggregation: This is a type of association where one class is a part of 
     another class. For example, if you have a Person class and an Address class,
     you might say that a Person has an aggregation relationship with an Address.
@@ -22,17 +22,69 @@
   # Show examples using Visio digrams
   # Show some implementations
   # Quick overview about the class List
-  # Show constructor usimg just new(params)
+  # Show constructor using just new(params)
 */
 
 
 using System;
+using System.Collections.Generic;
 
-namespace OurCompany.LearnCoding.OOP.Relationship;
+namespace UniversityX.ProjextA.DomainB;
 
 public class RelationshipApp {
 
-    public static void Main (string[] args) {
+  public static void Main (string[] args) {
+    Building mainBuilding = new("Main BLD", "Street A, San Diego, California, 923456");
+    Console.WriteLine(mainBuilding);
 
+    Department computerScience = new("Computer Science", mainBuilding);
+    Department history = new("History", mainBuilding);
+    Department medicine = new("Medicine", mainBuilding);
+    Department Biology = new("Biology", mainBuilding);
+
+    mainBuilding.PrintDepartments();
+  }
+}
+
+public class Building {
+  public string Name { get; set; }
+  public string Address { get; set; }
+  List<Department> Departments;
+
+  public Building (string name, string address) {
+    Name = name;
+    Address = address;
+    Departments = new List<Department>();
+  }
+
+  public void AddDepartment(Department department) {
+    Departments.Add(department);
+  }
+
+  public override string ToString()
+  {
+    return $"Building: {Name}; Address: {Address}";
+  }
+
+  public void PrintDepartments() {
+    foreach(Department department in Departments) {
+      Console.WriteLine(department);
     }
+  }
+}
+
+public class Department {
+  public string Name { get; set; }
+  public Building Building { get; set; }
+
+  public Department (string name, Building building) {
+    Name = name;
+    Building = building;
+    building.AddDepartment(this);
+  }
+
+  public override string ToString()
+  {
+      return $"Departament: {Name}; {Building}";
+  }
 }
