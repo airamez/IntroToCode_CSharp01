@@ -28,4 +28,16 @@ public class Customers {
         }
         return null;
     }
+
+        public void Print() {
+        Console.WriteLine("".PadLeft(150, '-'));
+        Console.WriteLine("Customer:");
+        foreach (Customer product in customers)
+        {
+            Console.Write("\t");
+            Console.WriteLine(product);
+        }
+        Console.WriteLine("".PadLeft(150, '-'));
+    }
+
 }
