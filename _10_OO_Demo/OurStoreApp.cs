@@ -14,15 +14,15 @@ public class OurStoreApp {
         customers.Add("customer2@noemail.com", "Customer 2", 
                       "4321 Street 2, San Diego, CA");
 
-        Customer find1 = customers.FindByEmail("customer1@noemail.com");
-        Console.WriteLine(find1);
+        Customer customer1 = customers.FindByEmail("customer1@noemail.com");
+        Console.WriteLine(customer1);
 
-        Customer find2 = customers.FindByEmail("customer2@noemail.com");
-        find2.Address = "4321 Street 2, San Diego, CA. 92189";
-        Console.WriteLine(find2);
+        Customer customer2 = customers.FindByEmail("customer2@noemail.com");
+        customer2.Address = "4321 Street 2, San Diego, CA. 92189";
+        Console.WriteLine(customer2);
 
-        Customer find3 = customers.FindByEmail("customer@noemail.com");
-        Console.WriteLine(find3);
+        Customer customerNotFound = customers.FindByEmail("customer@noemail.com");
+        Console.WriteLine(customerNotFound);
 
         Product product1 = new(1, "Product 1", 10.50);
         Product product2 = new(2, "Product 2", 20.75);
@@ -43,5 +43,16 @@ public class OurStoreApp {
 
         customers.Print();
         products.Print();
+
+        Order order1 = customer1.AddOrder();
+        Console.WriteLine(order1);
+        // _ = customer1.AddOrder();
+        // Order order3 = customer1.AddOrder();
+        // Console.WriteLine(order3);
+        Order currentOpenOrder = customer1.GetCurrentOpenOrder();
+        Console.WriteLine(currentOpenOrder);
+        currentOpenOrder.Status = OrderStatus.Cancelled;
+        Order newOrder2 = customer1.AddOrder();
+        Console.WriteLine(newOrder2);
     }
 }
