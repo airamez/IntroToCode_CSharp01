@@ -16,7 +16,7 @@ public class Order {
 
     public override string ToString()
     {
-        return $"Order: [ID: {ID}; Date: {Date}; Total: {Total}]";
+        return $"Order: [ID: {ID}; Date: {Date}; Total: {Total}; Status:{Status}]";
     }
 }
 

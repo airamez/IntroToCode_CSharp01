@@ -46,13 +46,17 @@ public class OurStoreApp {
 
         Order order1 = customer1.AddOrder();
         Console.WriteLine(order1);
-        // _ = customer1.AddOrder();
-        // Order order3 = customer1.AddOrder();
-        // Console.WriteLine(order3);
+        _ = customer1.AddOrder();
+        Order order3 = customer1.AddOrder();
+        Console.WriteLine(order3);
         Order currentOpenOrder = customer1.GetCurrentOpenOrder();
         Console.WriteLine(currentOpenOrder);
-        currentOpenOrder.Status = OrderStatus.Cancelled;
-        Order newOrder2 = customer1.AddOrder();
-        Console.WriteLine(newOrder2);
+        Order newOrder1 = customer1.AddOrder();
+        Console.WriteLine(newOrder1);
+
+        Order order3Ref = customer1.FindOrderById(3);
+        Console.WriteLine(order3Ref);
+
+        customer1.PrintOrders();
     }
 }

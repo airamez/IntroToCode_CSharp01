@@ -22,22 +22,35 @@ public class Customer {
     {
         return $"Customer: [Email:{Email}; Name: {Name}; Address: {Address}]";
     }
-
-    //TODO: Add methods: GetCurrentOpenOrder, FindOderById
-
+    
     public Order AddOrder () {
-        if (GetCurrentOpenOrder() != null) {
-            throw new Exception("This customer already have an open order");
+        Order currentOpenOrder = GetCurrentOpenOrder();
+        if (currentOpenOrder != null) {
+            currentOpenOrder.Status = OrderStatus.Cancelled;
         }
         Order newOrder = new Order(GetNextOrderId());
         orders.Add(newOrder);
         return newOrder;
     }
 
-    //TODO: Validate with the PM
-    // public void AddOrder (Order newOrder) {
-    //     orders.Add(newOrder);
-    // }
+    public Order FindOrderById (int id) {
+        foreach (Order order in orders)
+        {
+            if (order.ID == id) {
+                return order;
+            }
+        }
+        return null;
+    }
+    
+    public void PrintOrders() {
+        Console.WriteLine("".PadLeft(100,'='));
+        Console.WriteLine($"Order for Customer: {Name}");
+        foreach (Order order in orders)
+        {
+            Console.WriteLine(order);
+        }
+    }
 
     private int GetNextOrderId()
     {
