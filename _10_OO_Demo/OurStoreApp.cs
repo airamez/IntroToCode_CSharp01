@@ -58,5 +58,35 @@ public class OurStoreApp {
         Console.WriteLine(order3Ref);
 
         customer1.PrintOrders();
+
+        Order order4Ref = customer1.FindOrderById(4);
+
+        Console.WriteLine(order4Ref);
+        order4Ref.UpdateStatus(OrderStatus.Completed);
+        Console.WriteLine(order4Ref);
+
+        Console.WriteLine(customer1.FindOrderById(1));
+        customer1.FindOrderById(1).UpdateStatus(OrderStatus.Open);
+        Console.WriteLine(customer1.FindOrderById(1));
+
+        // OrderProduct orderProduct = new OrderProduct(products.FindById(1), 2);
+        // Console.WriteLine(orderProduct);
+        
+        customers.FindByEmail("customer1@noemail.com")
+            .FindOrderById(1)
+            .AddProduct(products.FindById(1), 5);
+        customers.FindByEmail("customer1@noemail.com")
+            .FindOrderById(1)
+            .AddProduct(products.FindById(2), 3);
+        customers.FindByEmail("customer1@noemail.com")
+            .FindOrderById(1)
+            .AddProduct(products.FindById(3), 2);
+
+        Order currentOrder = customers.FindByEmail("customer1@noemail.com")
+            .FindOrderById(2);
+        currentOrder.UpdateStatus(OrderStatus.Open);
+        currentOrder.AddProduct(products.FindById(1), 4);
+        currentOrder.AddProduct(products.FindById(2), 3);
+        currentOrder.AddProduct(products.FindById(3), 5);
     }
 }
