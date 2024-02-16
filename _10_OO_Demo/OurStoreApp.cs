@@ -8,20 +8,23 @@ namespace OurStore;
 
 public class OurStoreApp {
     public static void Main (string[] args) {
-        Customers customers = new();
+        Customers customers = new Customers();
         customers.Add("customer1@noemail.com","Customer One",
                       "1234 Street 1, San Diego, CA. 921278");
         customers.Add("customer2@noemail.com", "Customer 2", 
                       "4321 Street 2, San Diego, CA");
 
-        Customer customer1 = customers.FindByEmail("customer1@noemail.com");
+        Customer customer1 = 
+            customers.FindByEmail("customer1@noemail.com");
         Console.WriteLine(customer1);
 
-        Customer customer2 = customers.FindByEmail("customer2@noemail.com");
+        Customer customer2 =
+            customers.FindByEmail("customer2@noemail.com");
         customer2.Address = "4321 Street 2, San Diego, CA. 92189";
         Console.WriteLine(customer2);
 
-        Customer customerNotFound = customers.FindByEmail("customer@noemail.com");
+        Customer customerNotFound = 
+            customers.FindByEmail("customer@noemail.com");
         Console.WriteLine(customerNotFound);
 
         Product product1 = new(1, "Product 1", 10.50);
