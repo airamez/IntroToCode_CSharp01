@@ -32,10 +32,10 @@ public class Customers {
         public void Print() {
         Console.WriteLine("".PadLeft(150, '-'));
         Console.WriteLine("Customer:");
-        foreach (Customer product in customers)
+        foreach (Customer customer in customers)
         {
             Console.Write("\t");
-            Console.WriteLine(product);
+            Console.WriteLine(customer);
         }
         Console.WriteLine("".PadLeft(150, '-'));
     }
