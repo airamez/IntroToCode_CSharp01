@@ -6,7 +6,15 @@ namespace OurStore;
 public class Order {
     public int ID { get; set; }
     public DateTime Date {get; set;}
-    public decimal Total {get;}
+    public decimal Total {
+        get {
+            decimal total = 0;
+            foreach (OrderProduct orderProduct in Products) {
+                total += orderProduct.Total;
+            }
+            return total;
+        }
+    }
     public OrderStatus Status {get; set;}
 
     private List<OrderProduct> Products;
@@ -32,6 +40,16 @@ public class Order {
     public override string ToString()
     {
         return $"Order: [ID: {ID}; Date: {Date}; Total: {Total}; Status:{Status}]";
+    }
+
+    public void Print()
+    {
+        Console.WriteLine(ToString());
+        foreach (OrderProduct orderProduct in Products)
+        {
+            Console.WriteLine(orderProduct);
+        }
+        Console.WriteLine($"Order Total: {Total}");
     }
 }
 

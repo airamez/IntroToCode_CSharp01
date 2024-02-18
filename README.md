@@ -294,5 +294,4 @@
 | 121 | [Object-Oriented Programming: Demo Part 7](https://youtube.com/live/IxoRPt2CBA8) | [_10_OO_Demo/OurStoreApp.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp.cs) |
 | 122 | [Object-Oriented Programming: Demo Part 8](https://youtube.com/live/vWTI0cBjWoM) | [_10_OO_Demo/OurStoreApp.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp.cs) |
 | 123 | [Object-Oriented Programming: Demo Part 8](https://youtube.com/live/Um493drlw98) | [_10_OO_Demo/OurStoreApp2.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp2.cs) |
-
-
+| 124 | [Object-Oriented Programming: Demo Part 8](https://youtube.com/live/NYqkIPVYWwQ) | [_10_OO_Demo/OurStoreApp3.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp3.cs) |

@@ -27,8 +27,8 @@ public class OurStoreApp {
             customers.FindByEmail("customer@noemail.com");
         Console.WriteLine(customerNotFound);
 
-        Product product1 = new(1, "Product 1", 10.50);
-        Product product2 = new(2, "Product 2", 20.75);
+        Product product1 = new(1, "Product 1", (decimal) 10.50);
+        Product product2 = new(2, "Product 2", (decimal) 20.75);
 
         Console.WriteLine(product1);
         Console.WriteLine(product2);
@@ -36,7 +36,7 @@ public class OurStoreApp {
         Products products = new();
         products.Add(product1);
         products.Add(product2);
-        products.Add(3, "Product 3", 30.30);
+        products.Add(3, "Product 3", (decimal) 30.30);
 
         Product prod1 = products.FindById(1);
         Console.WriteLine(prod1);

@@ -48,7 +48,7 @@ public class Customer {
         Console.WriteLine($"Order for Customer: {Name}");
         foreach (Order order in orders)
         {
-            Console.WriteLine(order);
+            order.Print();
         }
     }
 
@@ -69,5 +69,17 @@ public class Customer {
             }
         }
         return null;
+    }
+
+    public static Customer ReadFromConsole() {
+        Console.WriteLine("Add Customer");
+        Console.Write("Email: ");
+        string email = Console.ReadLine();
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+        Console.Write("Address: ");
+        string address = Console.ReadLine();
+        Customer customer = new Customer(email, name, address);
+        return customer;
     }
 }

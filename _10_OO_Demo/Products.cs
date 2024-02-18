@@ -15,7 +15,7 @@ public class Products {
         products.Add(product);
     }
 
-    public Product Add(int id, string description, double price) {
+    public Product Add(int id, string description, decimal price) {
         Product product = new(id, description, price);
         Add(product);
         return product;

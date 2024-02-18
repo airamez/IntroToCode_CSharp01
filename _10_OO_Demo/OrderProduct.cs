@@ -4,10 +4,10 @@ namespace OurStore;
 
 public class OrderProduct {
     public Product Product { get; set; }
-    public double Price { get; set; }
+    public decimal Price { get; set; }
     public int Quantity { get; set; }
 
-    public double Total { 
+    public decimal Total { 
         get {
             return Price * Quantity;
         }

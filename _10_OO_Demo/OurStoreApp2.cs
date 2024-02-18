@@ -22,7 +22,11 @@ public class OurStoreApp2 {
         Console.WriteLine(customer);
         Order order = customer.AddOrder();
         order.AddProduct(prodcuts.FindById(3), 30);
-
-        
+        order.AddProduct(prodcuts.FindById(1), 5);
+        order.AddProduct(prodcuts.FindById(2), 15);
+        Console.WriteLine($"Order Total: {order.Total}");
+        customer.PrintOrders();
+        order.UpdateStatus(OrderStatus.Completed);
+        customer.PrintOrders();
     }
 }
