@@ -110,7 +110,6 @@
   * Queue
   * Stack
   * Binary Tree
-* Generics
 * Generic Data Structures
   * List
   * Queue
@@ -118,6 +117,7 @@
   * Set
   * Hash/Map
   * Dictionary
+* Generics
 * .Net API
   * Files
     * Text
@@ -295,4 +295,5 @@
 | 123 | [Object-Oriented Programming: Demo Part 9](https://youtube.com/live/Um493drlw98) | [_10_OO_Demo/OurStoreApp2.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp2.cs) |
 | 124 | [Object-Oriented Programming: Demo Part 10](https://youtube.com/live/NYqkIPVYWwQ) | [_10_OO_Demo/OurStoreApp3.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_10_OO_Demo/OurStoreApp3.cs) |
 | 125 | [Exceptions: Intro](https://youtube.com/live/D-wn3EwYaZ8) | [_11_Exceptions/_01_Intro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_01_Intro.css) |
-| 125 | [Exceptions: Handling multiple exceptions](https://youtube.com/live/eIZLh5SZQ_I) | [_11_Exceptions/_02_Multiple.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_02_Multiple.cs) |
+| 126 | [Exceptions: Handling multiple exceptions](https://youtube.com/live/eIZLh5SZQ_I) | [_11_Exceptions/_02_Multiple.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_02_Multiple.cs) |
+| 127 | [Exceptions: Handling multiple exceptions](https://youtube.com/live/-lOKpjnp0KU) | [_11_Exceptions/_03_Finally.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_03_Finally.cs) |
