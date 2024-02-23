@@ -86,7 +86,7 @@
   * Property
   * Inheritance
   * Overload
-  * Overhide
+  * Override
   * Polymorphism
   * The object class
   * Interface
@@ -297,3 +297,4 @@
 | 125 | [Exceptions: Intro](https://youtube.com/live/D-wn3EwYaZ8) | [_11_Exceptions/_01_Intro.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_01_Intro.css) |
 | 126 | [Exceptions: Handling multiple exceptions](https://youtube.com/live/eIZLh5SZQ_I) | [_11_Exceptions/_02_Multiple.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_02_Multiple.cs) |
 | 127 | [Exceptions: Handling multiple exceptions](https://youtube.com/live/-lOKpjnp0KU) | [_11_Exceptions/_03_Finally.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_03_Finally.cs) |
+| 128 | [Exceptions: Custom exceptions](https://youtube.com/live/UQx8WX0XMiQ) | [_11_Exceptions/_04_CustomException.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/_11_Exceptions/_04_CustomException.cs) |
