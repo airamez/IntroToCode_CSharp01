@@ -1,0 +1,43 @@
+# Software Testing
+  # Software testing is the critical process of evaluating and validating software
+    to ensure its functionality, reliability, and meet the requirements.
+  # Software testing is like checking a cake you baked to make sure it tastes good,
+    looks right, and follows the recipe.
+    It helps find any mistakes or problems before serving it to others.
+  # A significat part of the cost with software are related to testing.
+  # It is a vast and complex topic and there are multiple typs of testing.
+    # Unit: Verifies individual code components (like functions or methods) in isolation.
+    # Integration: Ensures that different parts of the software work together seamlessly.
+    # System: Validates the entire software system against requirements.
+    # Functional: Checks if software functions as expected based on business logic.
+    # Acceptance: Determines if the software meets user expectations.
+    # Regression: Ensures existing functionality remains intact after code changes.
+    # Performance: Evaluate how well the software performs under specific conditions.
+    # Scaling: Determine how the system scales as user/data load increases.
+# Unit Testing
+  # Unit testing is a fundamental practice in software development where individual
+    components (such as functions or methods) are tested in isolation to ensure they
+    function correctly.
+  # Purpose
+    # Identify and fix issues early in the development process.
+    # Enhance overall software quality by validating each code unit.
+    # Isolate specific sections of code for correctness testing.
+  # Performed By
+    # Primarily done by developers.
+  # Advantages
+    # Early bug detection.
+    # Improved code quality.
+    # Simplified debugging.
+    # Clear documentation of functionality.
+  # Execution
+    # Automatic and usually integrated on build/release process (CI/CD)
+    # Run before integration testing.
+  # Tools
+    # Unit testing frameworks:
+      # MSTest: Microsoft’s built-in testing framework for .NET.
+      # NUnit: Open-source testing framework with a rich feature set.
+      # xUnit: Open-source framework designed for extensibility.
+    # Mocking frameworks:
+      # Moq
+      # NSubstitute
+      # FakeItEasy
