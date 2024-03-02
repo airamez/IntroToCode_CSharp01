@@ -15,7 +15,7 @@ public class MyClassTest
         decimal result = MyClass.division(dividend, divisor);
 
         // Assert
-        Assert.AreEqual(MyClass.division(dividend, divisor), result);
+        Assert.AreEqual(expected, result);
     }
 
     [Test]
@@ -39,6 +39,12 @@ public class MyClassTest
     [Test]
     public void TestDivision5()
     {
-        // Assert.AreEqual(MyClass.division(7, 2), 3.5);
+        Assert.AreEqual(MyClass.division(7, 2), 3.5);
+    }
+
+    [Test]
+    public void TestDivision6()
+    {
+        Assert.AreEqual(MyClass.division(3, 2), 1.5);
     }
 }

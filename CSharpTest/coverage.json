@@ -10288,9 +10288,9 @@
       "MyClass": {
         "System.Decimal MyClass::division(System.Int32,System.Int32)": {
           "Lines": {
-            "6": 5,
-            "7": 5,
-            "8": 5
+            "6": 6,
+            "7": 6,
+            "8": 6
           },
           "Branches": []
         }
