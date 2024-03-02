@@ -41,3 +41,12 @@
       # Moq
       # NSubstitute
       # FakeItEasy
+# Installing nUnit
+  # Execute at the project folder:
+    dotnet add package NUnit
+    dotnet add package NUnit3TestAdapter
+    dotnet add package Microsoft.NET.Test.Sdk
+  # Run test:
+    dotnet test
+
+
