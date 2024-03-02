@@ -41,12 +41,26 @@
       # Moq
       # NSubstitute
       # FakeItEasy
-# Installing nUnit
-  # Execute at the project folder:
-    dotnet add package NUnit
-    dotnet add package NUnit3TestAdapter
-    dotnet add package Microsoft.NET.Test.Sdk
+# nUnit
+  # Installation
+    # Execute at the project folder:
+      dotnet add package NUnit
+      dotnet add package NUnit3TestAdapter
+      dotnet add package Microsoft.NET.Test.Sdk
+  # Create a project
+    # Create a project folder
+    # Run
+      dotnet new nunit
   # Run test:
     dotnet test
+# Coverage
+  # Install
+    dotnet add package coverlet.msbuild
+  # Run
+    dotnet test /p:CollectCoverage=true
+
+    
+
+  
 
 

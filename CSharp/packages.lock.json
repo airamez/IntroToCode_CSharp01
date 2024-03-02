@@ -2,6 +2,12 @@
   "version": 1,
   "dependencies": {
     "net7.0": {
+      "coverlet.msbuild": {
+        "type": "Direct",
+        "requested": "[6.0.1, )",
+        "resolved": "6.0.1",
+        "contentHash": "3XB8lTS4olP+ofINp2Zjf7N6d/F5ZCeTTa6uHauKEZhPWvD2eJuhW7GHclKBeTC1dL/G7hdfekTQrsLgE3oGFQ=="
+      },
       "Microsoft.NET.Test.Sdk": {
         "type": "Direct",
         "requested": "[17.9.0, )",
