@@ -351,3 +351,4 @@ MigrationBackup/
 
 bin/
 obj/
+CSharpTest/coverage.json

@@ -53,6 +53,7 @@
       dotnet new nunit
   # Run test:
     dotnet test
+    dotnet test --filter "FullyQualifiedName=NAMESPACE+TEST_CLASS_NAME"
 # Coverage
   # Install
     dotnet add package coverlet.msbuild
