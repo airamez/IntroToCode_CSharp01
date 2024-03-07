@@ -59,9 +59,6 @@
     dotnet add package coverlet.msbuild
   # Run
     dotnet test /p:CollectCoverage=true
-
-    
-
+# Mock API
+  # dotnet add package Moq
   
-
-
