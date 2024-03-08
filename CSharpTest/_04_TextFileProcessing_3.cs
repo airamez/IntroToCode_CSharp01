@@ -18,8 +18,7 @@ public class TextFileProcessing_3Test
             .Returns("20")
             .Returns("30")
             .Returns("invalid number")
-            .Returns("40")
-            .Returns((string)null);
+            .Returns("40");
         mockReader.SetupSequence(r => r.EndOfStream)
             .Returns(false)
             .Returns(false)
@@ -33,6 +32,8 @@ public class TextFileProcessing_3Test
         List<string> lines = processor.ProduceLines();
 
         // Assert
+        //TODO: Explain the Actual and Expected values: You made a confusion last class :(
+        //TODO: Fix the warnings below
         Assert.AreEqual(lines[0], "1: 10");
         Assert.AreEqual(lines[1], "2: 20");
         Assert.AreEqual(lines[2], "3: 30");

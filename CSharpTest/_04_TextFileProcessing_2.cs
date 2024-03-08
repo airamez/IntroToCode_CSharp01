@@ -18,6 +18,8 @@ public class TextFileProcessing_2Test
         List<string> lines = processor.ProduceLines();
 
         // Assert
+        //TODO: Explain the Actual and Expected values: You made a confusion last class :(
+        //TODO: Fix the warnings below
         Assert.AreEqual(lines[0], "1: 50");
         Assert.AreEqual(lines[1], "2: 60");
         Assert.AreEqual(lines[2], "3: 70");
