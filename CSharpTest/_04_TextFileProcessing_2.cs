@@ -12,9 +12,7 @@ public class TextFileProcessing_2Test
     public void TestProduceLines()
     {
         // Arrange
-        string projectDirectory = Directory.GetCurrentDirectory().Parent.Parent.Parent.FullName;
-        string filePath = Path.Combine(projectDirectory, "InputFile.txt");
-        TextFileProcessor processor = new TextFileProcessor(filePath);
+        TextFileProcessor processor = new TextFileProcessor("InputFile.txt");
 
         // Act
         List<string> lines = processor.ProduceLines();

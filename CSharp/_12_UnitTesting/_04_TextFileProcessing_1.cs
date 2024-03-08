@@ -26,13 +26,13 @@ Average: 25
 using System;
 using System.IO;
 
-namespace UnitTesting;
+namespace UnitTesting1;
 
 public class TextFileProcessing_1
 {
   public static void Main(string[] args)
   {
-    string filePath = "CSharp/_12_UnitTesting/InputFile.txt";
+    string filePath = "_12_UnitTesting/InputFile.txt";
     StreamReader reader = null;
     try
     {

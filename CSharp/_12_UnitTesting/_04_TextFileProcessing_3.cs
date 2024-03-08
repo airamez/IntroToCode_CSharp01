@@ -8,9 +8,9 @@ public class TextFileProcessing_3
 {
   public static void Main(string[] args)
   {
-    string filePath = "CSharp/_12_UnitTesting/InputFile.txt";
+    string filePath = "_12_UnitTesting/InputFile.txt";
     TextFileProcessor processor =
-     new TextFileProcessor(new StreamReaderWrapper(filePath));
+      new TextFileProcessor(new StreamReaderWrapper(filePath));
     processor.Run();
   }
 }

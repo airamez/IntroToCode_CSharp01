@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp8.0</TargetFramework>
-		<StartupObject>UnitTesting3.TextFileProcessing_3</StartupObject>
+		<StartupObject>UnitTesting1.TextFileProcessing_1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
       <PackageReference Include="coverlet.msbuild" Version="6.0.1">
@@ -11,5 +11,10 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NuGet.Frameworks" Version="6.9.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="_12_UnitTesting\InputFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

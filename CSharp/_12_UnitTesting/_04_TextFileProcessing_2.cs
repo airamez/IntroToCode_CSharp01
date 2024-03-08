@@ -6,12 +6,12 @@ namespace UnitTesting2;
 
 public class TextFileProcessing_2
 {
-  public static void Main(string[] args)
-  {
-    string filePath = "CSharp/_12_UnitTesting/InputFile.txt";
-    TextFileProcessor processor = new TextFileProcessor(filePath);
-    processor.Run();
-  }
+    public static void Main(string[] args)
+    {
+        string filePath = "_12_UnitTesting/InputFile.txt";
+        TextFileProcessor processor = new TextFileProcessor(filePath);
+        processor.Run();
+    }
 }
 
 public class TextFileProcessor
