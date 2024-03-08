@@ -20,7 +20,7 @@ public class TextFileProcessing_2Test
         // Assert
         //TODO: Explain the Actual and Expected values: You made a confusion last class :(
         //TODO: Fix the warnings below
-        Assert.AreEqual(lines[0], "1: 50");
+        Assert.That(lines[0], Is.EqualTo("1: 50"));
         Assert.AreEqual(lines[1], "2: 60");
         Assert.AreEqual(lines[2], "3: 70");
         Assert.AreEqual(lines[3], "Invalid value");
