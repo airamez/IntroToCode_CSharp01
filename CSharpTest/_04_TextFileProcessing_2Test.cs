@@ -20,13 +20,13 @@ public class TextFileProcessing_2Test
         // Assert
         //TODO: Explain the Actual and Expected values: You made a confusion last class :(
         //TODO: Fix the warnings below
-        Assert.AreEqual(lines[0], "1: 50");
-        Assert.AreEqual(lines[1], "2: 60");
-        Assert.AreEqual(lines[2], "3: 70");
-        Assert.AreEqual(lines[3], "Invalid value");
-        Assert.AreEqual(lines[4], "4: 80");
-        Assert.AreEqual(lines[5], "Sum: 260");
-        Assert.AreEqual(lines[6], "Average: 65");
-        Assert.AreEqual(lines.Count, 7);
+        Assert.That(lines[0], Is.EqualTo("1: 50"));
+        Assert.That(lines[1], Is.EqualTo("2: 60"));
+        Assert.That(lines[2], Is.EqualTo("3: 70"));
+        Assert.That(lines[3], Is.EqualTo("Invalid value"));
+        Assert.That(lines[4], Is.EqualTo("4: 80"));
+        Assert.That(lines[5], Is.EqualTo("Sum: 260"));
+        Assert.That(lines[6], Is.EqualTo("Average: 65"));
+        Assert.That(lines.Count, Is.EqualTo(7));
     }
 }

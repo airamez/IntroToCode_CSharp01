@@ -14,11 +14,11 @@ public class TextFileProcessing_3Test
         // Arrange
         var mockReader = new Mock<IStreamReader>();
         mockReader.SetupSequence(r => r.ReadLine())
-            .Returns("10")
-            .Returns("20")
-            .Returns("30")
+            .Returns("50")
+            .Returns("60")
+            .Returns("70")
             .Returns("invalid number")
-            .Returns("40");
+            .Returns("80");
         mockReader.SetupSequence(r => r.EndOfStream)
             .Returns(false)
             .Returns(false)
@@ -34,13 +34,13 @@ public class TextFileProcessing_3Test
         // Assert
         //TODO: Explain the Actual and Expected values: You made a confusion last class :(
         //TODO: Fix the warnings below
-        Assert.AreEqual(lines[0], "1: 10");
-        Assert.AreEqual(lines[1], "2: 20");
-        Assert.AreEqual(lines[2], "3: 30");
-        Assert.AreEqual(lines[3], "Invalid value");
-        Assert.AreEqual(lines[4], "4: 40");
-        Assert.AreEqual(lines[5], "Sum: 100");
-        Assert.AreEqual(lines[6], "Average: 25");
-        Assert.AreEqual(lines.Count, 7);
+        Assert.That(lines[0], Is.EqualTo("1: 50"));
+        Assert.That(lines[1], Is.EqualTo("2: 60"));
+        Assert.That(lines[2], Is.EqualTo("3: 70"));
+        Assert.That(lines[3], Is.EqualTo("Invalid value"));
+        Assert.That(lines[4], Is.EqualTo("4: 80"));
+        Assert.That(lines[5], Is.EqualTo("Sum: 260"));
+        Assert.That(lines[6], Is.EqualTo("Average: 65"));
+        Assert.That(lines.Count, Is.EqualTo(7));
     }
 }
