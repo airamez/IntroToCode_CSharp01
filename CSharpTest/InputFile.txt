@@ -1,0 +1,5 @@
+50
+60
+70
+invalid number
+80

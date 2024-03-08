@@ -1,3 +1,28 @@
+/*
+Create a program to read a test file with a number per line
+and produce the following output in the console:
+1 - Each number with a line number
+2 - The sum of all numbers
+3 - The average of all numbers
+4 - "Invalid value" for any line that is not a number
+Example:
+Input File:
+----------------
+10
+20
+30
+invalid number
+40
+----------------
+Output:
+1: 10
+2: 20
+3: 30
+Invalid value
+4: 40
+Sum: 100
+Average: 25
+*/
 using System;
 using System.IO;
 
@@ -26,7 +51,7 @@ public class TextFileProcessing_1
         }
         catch (FormatException ex)
         {
-          Console.WriteLine(ex.Message);
+          Console.WriteLine("Invalid value");
         }
       }
       decimal average = sum / (decimal)count;
@@ -35,7 +60,7 @@ public class TextFileProcessing_1
     }
     catch (Exception ex)
     {
-      Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+      throw new Exception($"An unexpected error occurred: {ex.Message}");
     }
     finally
     {

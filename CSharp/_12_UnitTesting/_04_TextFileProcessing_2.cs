@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace UnitTesting;
+namespace UnitTesting2;
 
 public class TextFileProcessing_2
 {
@@ -52,7 +52,7 @@ public class TextFileProcessor
         }
         catch (FormatException ex)
         {
-          Console.WriteLine(ex.Message);
+          lines.Add("Invalid value");
         }
       }
       decimal average = sum / (decimal)count;
@@ -61,7 +61,7 @@ public class TextFileProcessor
     }
     catch (Exception ex)
     {
-      lines.Add($"An unexpected error occurred: {ex.Message}");
+      throw new Exception($"An unexpected error occurred: {ex.Message}");
     }
     finally
     {

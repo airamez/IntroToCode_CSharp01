@@ -6,14 +6,13 @@ using UnitTesting3;
 using Moq;
 
 [TestFixture]
-public class TextFileProcessing_1Test
+public class TextFileProcessing_3Test
 {
     [Test]
     public void TestProduceLines()
     {
         // Arrange
         var mockReader = new Mock<IStreamReader>();
-        // setup the mock to return a sequence of values
         mockReader.SetupSequence(r => r.ReadLine())
             .Returns("10")
             .Returns("20")
@@ -28,8 +27,12 @@ public class TextFileProcessing_1Test
             .Returns(false)
             .Returns(false)
             .Returns(true);
+
+        // Act
         TextFileProcessor processor = new TextFileProcessor(mockReader.Object);
         List<string> lines = processor.ProduceLines();
+
+        // Assert
         Assert.AreEqual(lines[0], "1: 10");
         Assert.AreEqual(lines[1], "2: 20");
         Assert.AreEqual(lines[2], "3: 30");

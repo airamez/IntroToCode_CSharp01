@@ -91,7 +91,7 @@ public class TextFileProcessor
     }
     catch (Exception ex)
     {
-      lines.Add($"An unexpected error occurred: {ex.Message}");
+      throw new Exception($"An unexpected error occurred: {ex.Message}");
     }
     finally
     {
