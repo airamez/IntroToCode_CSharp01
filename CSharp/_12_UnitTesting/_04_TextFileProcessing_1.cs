@@ -1,5 +1,5 @@
 /*
-Create a program to read a test file with a number per line
+Create a program to read a test file with a integer number per line
 and produce the following output in the console:
 1 - Each number with a line number
 2 - The sum of all numbers
