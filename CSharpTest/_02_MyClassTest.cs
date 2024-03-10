@@ -15,36 +15,36 @@ public class MyClassTest
         decimal result = MyClass.division(dividend, divisor);
 
         // Assert
-        Assert.AreEqual(expected, result);
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void TestDivision2()
     {
-        Assert.AreEqual(MyClass.division(8, 2), 4);
+        Assert.That(MyClass.division(8, 2), Is.EqualTo(4));
     }
 
     [Test]
     public void TestDivision3()
     {
-        Assert.AreEqual(MyClass.division(9, 3), 3);
+        Assert.That(MyClass.division(9, 3), Is.EqualTo(3));
     }
 
     [Test]
     public void TestDivision4()
     {
-        Assert.AreEqual(MyClass.division(20, 2), 10);
+        Assert.That(MyClass.division(20, 2), Is.EqualTo(10));
     }
 
     [Test]
     public void TestDivision5()
     {
-        Assert.AreEqual(MyClass.division(7, 2), 3.5);
+        Assert.That(MyClass.division(7, 2), Is.EqualTo(3.5));
     }
 
     [Test]
     public void TestDivision6()
     {
-        Assert.AreEqual(MyClass.division(3, 2), 1.5);
+        Assert.That(MyClass.division(3, 2), Is.EqualTo(1.5));
     }
 }

@@ -9,7 +9,7 @@ public class BankAccountTest
     public void TestConstructor()
     {
         BankAccount account = new BankAccount("Account01", 1000);
-        Assert.AreEqual(account.Balance, 1000);
+        Assert.That(account.Balance, Is.EqualTo(1000));
     }
 
     [Test]
@@ -17,7 +17,7 @@ public class BankAccountTest
     {
         BankAccount account = new BankAccount("Account01", 1000);
         account.Deposit(500);
-        Assert.AreEqual(account.Balance, 1500);
+        Assert.That(account.Balance, Is.EqualTo(1500));
     }
 
     [Test]
@@ -39,9 +39,9 @@ public class BankAccountTest
     {
         BankAccount account = new BankAccount("Account01", 1000);
         account.Withdraw(500);
-        Assert.AreEqual(account.Balance, 500);
+        Assert.That(account.Balance, Is.EqualTo(500));
         account.Withdraw(200);
-        Assert.AreEqual(account.Balance, 300);
+        Assert.That(account.Balance, Is.EqualTo(300));
     }
 
     [Test]

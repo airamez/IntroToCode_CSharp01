@@ -6,12 +6,13 @@ namespace UnitTesting2;
 
 public class TextFileProcessing_2
 {
-    public static void Main(string[] args)
-    {
-        string filePath = "_12_UnitTesting/InputFile.txt";
-        TextFileProcessor processor = new TextFileProcessor(filePath);
-        processor.Run();
-    }
+  public static void Main(string[] args)
+  {
+    string filePath = "CSharp/_12_UnitTesting/InputFile.txt";
+    TextFileProcessor processor = new TextFileProcessor(filePath);
+    //List<string> lines = processor.ProduceLines();
+    processor.Run();
+  }
 }
 
 public class TextFileProcessor
@@ -52,7 +53,7 @@ public class TextFileProcessor
         }
         catch (FormatException ex)
         {
-          lines.Add("Invalid value");
+          lines.Add("Invalid number!");
         }
       }
       decimal average = sum / (decimal)count;
