@@ -1,5 +1,5 @@
 {
     "dotnet.defaultSolution": "IntroToCode_CSharp01.sln",
     "editor.formatOnSave": true,
-    "dotnet-test-explorer.testProjectPath": "**/*Test.@(csproj|vbproj|fsproj)",
+    "dotnet-test-explorer.testProjectPath": "CSharpTest/CSharpTest.csproj",
 }

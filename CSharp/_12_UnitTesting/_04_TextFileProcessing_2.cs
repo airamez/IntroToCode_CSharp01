@@ -18,6 +18,7 @@ public class TextFileProcessing_2
 public class TextFileProcessor
 {
   public string FilePath { get; private set; }
+
   public TextFileProcessor(string filePath)
   {
     FilePath = filePath;

@@ -24,7 +24,8 @@ public interface IStreamReader
 
 public class StreamReaderWrapper : IStreamReader
 {
-  private StreamReader _streamReader;
+  private readonly StreamReader _streamReader;
+
   public StreamReaderWrapper(string fileName)
   {
     _streamReader = new StreamReader(fileName);

@@ -40,8 +40,10 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.Indexers;
 
-public class IndexersApp {
-  public static void Main (string[] args) {
+public class IndexersApp
+{
+  public static void Main(string[] args)
+  {
     Customers customers = new Customers(10);
     customers.Add(new Customer("mjordan@nba.com", "Michael Jordan"));
     customers.Add(new Customer("ppipens@nba.com", "Scotch Pippens"));
@@ -61,44 +63,52 @@ public class IndexersApp {
   }
 }
 
-public class Customer {
+public class Customer
+{
   public string Email { get; set; }
   public string Name { get; set; }
 
-  public Customer (string email, string name) {
+  public Customer(string email, string name)
+  {
     Email = email;
     Name = name;
   }
   public override string ToString()
   {
-      return $"[Email:{Email}; Name:{Name}]";
+    return $"[Email:{Email}; Name:{Name}]";
   }
 }
 
-public class Customers {
+public class Customers
+{
   private Customer[] customers;
   private int newCustomerIndex;
 
-  public Customers (int capacity) {
+  public Customers(int capacity)
+  {
     customers = new Customer[capacity];
     newCustomerIndex = 0;
   }
 
   public Customer this[string email]
   {
-    get {
+    get
+    {
       for (int i = 0; i < newCustomerIndex; i++)
       {
-        if (customers[i].Email == email) {
+        if (customers[i].Email == email)
+        {
           return customers[i];
         }
       }
-      return null; 
+      return null;
     }
-    set { 
+    set
+    {
       for (int i = 0; i < newCustomerIndex; i++)
       {
-        if (customers[i].Email == email) {
+        if (customers[i].Email == email)
+        {
           customers[i] = value;
           return;
         }
@@ -106,7 +116,8 @@ public class Customers {
     }
   }
 
-  public void Add(Customer customer) {
+  public void Add(Customer customer)
+  {
     customers[newCustomerIndex] = customer;
     newCustomerIndex++;
   }

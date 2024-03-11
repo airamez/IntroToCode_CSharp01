@@ -32,8 +32,6 @@ public class TextFileProcessing_3Test
         List<string> lines = processor.ProduceLines();
 
         // Assert
-        //TODO: Explain the Actual and Expected values: You made a confusion last class :(
-        //TODO: Fix the warnings below
         Assert.That(lines[0], Is.EqualTo("1: 50"));
         Assert.That(lines[1], Is.EqualTo("2: 60"));
         Assert.That(lines[2], Is.EqualTo("3: 70"));

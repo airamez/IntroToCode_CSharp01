@@ -4,14 +4,16 @@ using System.Linq;
 
 namespace OurStore;
 
-public class Customer {
+public class Customer
+{
     public string Email { get; set; }
     public string Name { get; set; }
     public string Address { get; set; }
 
-    private List<Order> orders;
+    private readonly List<Order> orders;
 
-    public Customer (string email, string name, string address) {
+    public Customer(string email, string name, string address)
+    {
         Email = email;
         Name = name;
         Address = address;
@@ -22,10 +24,12 @@ public class Customer {
     {
         return $"Customer: [Email:{Email}; Name: {Name}; Address: {Address}]";
     }
-    
-    public Order AddOrder () {
+
+    public Order AddOrder()
+    {
         Order currentOpenOrder = GetCurrentOpenOrder();
-        if (currentOpenOrder != null) {
+        if (currentOpenOrder != null)
+        {
             currentOpenOrder.Status = OrderStatus.Cancelled;
         }
         Order newOrder = new Order(GetNextOrderId());
@@ -33,18 +37,21 @@ public class Customer {
         return newOrder;
     }
 
-    public Order FindOrderById (int id) {
+    public Order FindOrderById(int id)
+    {
         foreach (Order order in orders)
         {
-            if (order.ID == id) {
+            if (order.ID == id)
+            {
                 return order;
             }
         }
         return null;
     }
-    
-    public void PrintOrders() {
-        Console.WriteLine("".PadLeft(100,'='));
+
+    public void PrintOrders()
+    {
+        Console.WriteLine("".PadLeft(100, '='));
         Console.WriteLine($"Order for Customer: {Name}");
         foreach (Order order in orders)
         {
@@ -54,24 +61,30 @@ public class Customer {
 
     private int GetNextOrderId()
     {
-        if (orders.Count == 0) {
+        if (orders.Count == 0)
+        {
             return 1;
-        } else {
+        }
+        else
+        {
             return orders.Last().ID + 1;
         }
     }
 
-    public Order GetCurrentOpenOrder() {
+    public Order GetCurrentOpenOrder()
+    {
         foreach (Order order in orders)
         {
-            if (order.Status == OrderStatus.Open) {
+            if (order.Status == OrderStatus.Open)
+            {
                 return order;
             }
         }
         return null;
     }
 
-    public static Customer ReadFromConsole() {
+    public static Customer ReadFromConsole()
+    {
         Console.WriteLine("Add Customer");
         Console.Write("Email: ");
         string email = Console.ReadLine();
