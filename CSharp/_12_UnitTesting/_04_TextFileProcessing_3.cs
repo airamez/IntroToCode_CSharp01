@@ -50,6 +50,7 @@ public class StreamReaderWrapper : IStreamReader
 public class TextFileProcessor
 {
   public IStreamReader StreamReader { get; private set; }
+
   public TextFileProcessor(IStreamReader streamReader)
   {
     StreamReader = streamReader;
@@ -92,7 +93,8 @@ public class TextFileProcessor
     }
     catch (Exception ex)
     {
-      throw new Exception($"An unexpected error occurred: {ex.Message}");
+      string msg = $"An unexpected error occurred: {ex.Message}";
+      throw new Exception(msg);
     }
     finally
     {
