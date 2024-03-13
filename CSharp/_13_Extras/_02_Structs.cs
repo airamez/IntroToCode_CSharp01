@@ -1,5 +1,5 @@
 /*
-# Strcuts (Strcutures) is a value type data structure in C#
+# Structs (Strcutures) is a value type data structure in C#
 # Unlike classes, structs are value types rather than reference types.
 # It is similar to a class because it can contain constructors, methods, and fields
 # It represents lightweight objects that encapsulate data
@@ -8,21 +8,24 @@
   struct <struct_name>
   {
       // Fields
-        // Methods
+      // Methods
   }
 */
 using System;
 
 namespace Extras;
+
 public struct Coords
 {
+    public double X { set; get; }
+    public double Y { set; get; }
+
     public Coords(double x, double y)
     {
         X = x;
         Y = y;
     }
-    public double X { set; get; }
-    public double Y { set; get; }
+
     public override string ToString() => $"({X}, {Y})";
 }
 

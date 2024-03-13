@@ -1,6 +1,7 @@
 using System;
 
 namespace Extras;
+
 public class ParamsApp
 {
     public static void Main()
