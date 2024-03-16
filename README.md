@@ -109,7 +109,17 @@
   * Doubled Linked List
   * Queue
   * Stack
+  * Set, Hashtable and Dictionary
+  * Heap
   * Binary Tree
+  * Graphs
+* Sorting
+  * Bubble
+  * Selection
+  * Quick
+  * Merge
+  * Heap
+* Generics
 * Generic Data Structures
   * List
   * Queue
@@ -117,7 +127,6 @@
   * Set
   * Hash/Map
   * Dictionary
-* Generics
 * .Net API
   * Files
     * Text
@@ -306,3 +315,4 @@
 | 134 | [Unit Testing: Design for Unit Testing](https://youtube.com/live/dvXQZdV0mPg) | [CSharp/_12_UnitTesting/_04_TextFileProcessing_2.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_12_UnitTesting/_04_TextFileProcessing_2.cs) <br> [CSharpTest/_04_TextFileProcessing_2Test.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_04_TextFileProcessing_2Test.cs) |
 | 135 | [Unit Testing: Dependency Inject + Mocking](https://youtube.com/live/Y_4neCFm1A4) | [CSharp/_12_UnitTesting/_04_TextFileProcessing_3.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_12_UnitTesting/_04_TextFileProcessing_3.cs) <br> [CSharpTest/_04_TextFileProcessing_3Test.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_04_TextFileProcessing_3Test.cs) |
 | 136 | [Extras](https://youtube.com/live/GjYbssOcVuU) | [CSharp/_13_Extras/_01_Params.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_13_Extras/_01_Params.cs) <br> [CSharp/_13_Extras/_02_Structs.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_13_Extras/_02_Structs.cs) <br> [CSharp/_13_Extras/_03_Tuple.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_13_Extras/_03_Tuple.cs)|
+| 137 | [Extras](https://youtube.com/live/8JaqXjNFl64) | [CSharp/_14_DataStructures/_01_Intro.txt](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_01_Intro.txt)|
