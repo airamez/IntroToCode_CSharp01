@@ -1,15 +1,6 @@
 using System;
 
-namespace Datastructures.LinkedList;
-
-public class LinkedListApp
-{
-    public static void Main(string[] args)
-    {
-
-    }
-}
-
+namespace DataStructures.LinkedList;
 
 /// <summary>
 /// Represents a node in a linked list.
@@ -64,6 +55,7 @@ public class LinkedList
     {
         Head = null;
         Tail = null;
+        Count = 0;
     }
 
     /// <summary>
@@ -72,38 +64,48 @@ public class LinkedList
     /// <param name="data">The data to be added.</param>
     public void AddAtHead(string data)
     {
-        throw new NotImplementedException();
+        Node newNode = new Node(data);
+        Count++;
+        if (Head == null)
+        {
+            Head = newNode;
+            Tail = newNode;
+        }
+        else
+        {
+            newNode.Next = Head;
+            Head = newNode;
+        }
     }
 
     /// <summary>
     /// Adds a new node with the specified data at the tail of the linked list.
     /// </summary>
     /// <param name="data">The data to be added.</param>
-    /// <exception cref="System.IndexOutOfRangeException"></exception>
     public void AddAtTail(string data)
     {
         throw new NotImplementedException();
     }
 
     /// <summary>
-    /// Adds a new node with the specified data at the specified position in the linked list.
-    /// Raise exception if the position is out of range.
+    /// Adds a new node with the specified data at the specified index in the linked list.
+    /// Raise exception if the index is out of range.
     /// </summary>
     /// <param name="data">The data to be added.</param>
-    /// <param name="position">The position at which to add the node.</param>
+    /// <param name="index">The index at which to add the node.</param>
     /// <exception cref="System.IndexOutOfRangeException"></exception>
 
-    public void AddAt(string data, int position)
+    public void AddAt(string data, int index)
     {
         throw new NotImplementedException();
     }
 
     /// <summary>
-    /// Gets the node at the specified position in the linked list.
+    /// Gets the node at the specified index in the linked list.
     /// </summary>
-    /// <param name="position">The position of the node to retrieve.</param>
-    /// <returns>The node at the specified position.</returns>
-    public Node Get(int position)
+    /// <param name="index">The index of the node to retrieve.</param>
+    /// <returns>The node at the specified index.</returns>
+    public Node Get(int index)
     {
         throw new NotImplementedException();
     }
@@ -125,12 +127,12 @@ public class LinkedList
     }
 
     /// <summary>
-    /// Deletes the node at the specified position in the linked list.
-    /// Raise exception if the position is out of range.
+    /// Deletes the node at the specified index in the linked list.
+    /// Raise exception if the index is out of range.
     /// </summary>
-    /// <param name="position">The position of the node to delete.</param>
+    /// <param name="index">The index of the node to delete.</param>
     /// <exception cref="System.IndexOutOfRangeException"></exception>
-    public void DeleteAt(int position)
+    public void DeleteAt(int index)
     {
         throw new NotImplementedException();
     }

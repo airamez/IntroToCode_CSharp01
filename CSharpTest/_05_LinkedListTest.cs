@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Datastructures.LinkedList;
+using DataStructures.LinkedList;
 
 namespace Tests;
 
@@ -15,6 +15,13 @@ public class LinkedListTests
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 2"));
         linkedList.AddAtHead("Node 3");
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 3"));
+
+        Node first = linkedList.Head;
+        Node second = first.Next;
+        Node third = second.Next;
+        Assert.That(first.Data, Is.EqualTo("Node 3"));
+        Assert.That(second.Data, Is.EqualTo("Node 2"));
+        Assert.That(third.Data, Is.EqualTo("Node 1"));
     }
 
     [Test]
