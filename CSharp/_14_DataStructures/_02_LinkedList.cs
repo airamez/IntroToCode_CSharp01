@@ -7,7 +7,7 @@ public class LinkedListApp
 {
     public static void Main(string[] args)
     {
-        LinkedList linkedList = new LinkedList();
+        var linkedList = new LinkedList();
         linkedList.AddAtHead("Node 3");
         linkedList.AddAtHead("Node 2");
         linkedList.AddAtHead("Node 1");
