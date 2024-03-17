@@ -17,7 +17,7 @@ public class LinkedListApp
         }
         foreach (Node node in linkedList)
         {
-            Console.WriteLine($"Noda Data: {node.Data}");
+            Console.WriteLine($"Node Data: {node.Data}");
         }
     }
 }
