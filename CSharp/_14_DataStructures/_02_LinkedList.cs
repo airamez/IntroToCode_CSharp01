@@ -1,6 +1,27 @@
 using System;
+using System.Collections;
+using System.Net.NetworkInformation;
 
 namespace DataStructures.LinkedList;
+
+public class LinkedListApp
+{
+    public static void Main(string[] args)
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAtHead("Node 3");
+        linkedList.AddAtHead("Node 2");
+        linkedList.AddAtHead("Node 1");
+        foreach (var node in linkedList)
+        {
+            Console.WriteLine(node);
+        }
+        foreach (Node node in linkedList)
+        {
+            Console.WriteLine($"Noda Data: {node.Data}");
+        }
+    }
+}
 
 /// <summary>
 /// Represents a node in a linked list.
@@ -26,12 +47,17 @@ public class Node
         Data = data;
         Next = null;
     }
+
+    public override string ToString()
+    {
+        return $"[{Data}]";
+    }
 }
 
 /// <summary>
 /// Represents a singly linked list data structure.
 /// </summary>
-public class LinkedList
+public class LinkedList : IEnumerable
 {
     /// <summary>
     /// Gets the head node of the linked list.
@@ -135,5 +161,19 @@ public class LinkedList
     public void DeleteAt(int index)
     {
         throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Returns an enumerator that iterates through the linked list.
+    /// </summary>
+    /// <returns>Enumerator</returns>
+    public IEnumerator GetEnumerator()
+    {
+        Node current = Head;
+        while (current != null)
+        {
+            yield return current;
+            current = current.Next;
+        }
     }
 }
