@@ -139,9 +139,31 @@ public class LinkedList : IEnumerable
   /// </summary>
   /// <param name="index">The index of the node to retrieve.</param>
   /// <returns>The node at the specified index.</returns>
+  /// <exception cref="IndexOutOfRangeException">If invalid index</exception>
   public Node Get(int index)
   {
-    throw new NotImplementedException();
+    if (index < 0 || index >= Count)
+    {
+      string msg = $"Invalid Index: {index}. Valid range: 0 to {Count - 1}";
+      throw new IndexOutOfRangeException(msg);
+    }
+    else if (index == 0)
+    {
+      return Head;
+    }
+    else if (index == Count - 1)
+    {
+      return Tail;
+    }
+    else
+    {
+      Node runner = Head;
+      for (int i = 0; i < index; i++)
+      {
+        runner = runner.Next;
+      }
+      return runner;
+    }
   }
 
   /// <summary>

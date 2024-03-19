@@ -50,41 +50,98 @@ public class LinkedListTests
     }
 
     [Test]
-    public void GetTest()
+    public void GetTestInvalidIndexes()
     {
         LinkedList linkedList = new LinkedList();
         linkedList.AddAtTail("Node 0");
-        Assert.That(linkedList.Get(0).Data, Is.EqualTo("Node 0"));
         linkedList.AddAtTail("Node 1");
-        Assert.That(linkedList.Get(1).Data, Is.EqualTo("Node 1"));
         linkedList.AddAtTail("Node 2");
-        Assert.That(linkedList.Get(2).Data, Is.EqualTo("Node 2"));
+        linkedList.AddAtTail("Node 3");
+        linkedList.AddAtTail("Node 4");
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.Get(-5));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.Get(linkedList.Count));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.Get(5));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.Get(10));
     }
 
     [Test]
-    public void AddAtPosition()
+    public void GetTestHead()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.AddAt("Node 4", 0); // 4
-        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 4"));
+        linkedList.AddAtTail("Node 0");
+        linkedList.AddAtTail("Node 1");
+        linkedList.AddAtTail("Node 2");
+        linkedList.AddAtTail("Node 3");
+        linkedList.AddAtTail("Node 4");
+        Assert.That(linkedList.Get(0).Data, Is.EqualTo("Node 0"));
+    }
 
-        linkedList.AddAt("Node 0", 0); // 0 4
-        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
-        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 4"));
+    [Test]
+    public void GetTestTail()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAtTail("Node 0");
+        linkedList.AddAtTail("Node 1");
+        linkedList.AddAtTail("Node 2");
+        linkedList.AddAtTail("Node 3");
+        linkedList.AddAtTail("Node 4");
+        Assert.That(linkedList.Get(linkedList.Count - 1).Data, Is.EqualTo("Node 4"));
+    }
 
-        linkedList.AddAt("Node 1", 1); // 0 1 4
-        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
-        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 4"));
+    [Test]
+    public void GetTestMiddle()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAtTail("Node 0");
+        linkedList.AddAtTail("Node 1");
+        linkedList.AddAtTail("Node 2");
+        linkedList.AddAtTail("Node 3");
+        linkedList.AddAtTail("Node 4");
         Assert.That(linkedList.Get(1).Data, Is.EqualTo("Node 1"));
-
-        linkedList.AddAt("Node 2", 2); // 0 1 2 4
-        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
-        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 4"));
         Assert.That(linkedList.Get(2).Data, Is.EqualTo("Node 2"));
+        Assert.That(linkedList.Get(3).Data, Is.EqualTo("Node 3"));
+    }
 
-        linkedList.AddAt("Node 3", 3); // 0 1 2 3 4
+    [Test]
+    public void AddAtIndex0()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAt("Node 1", 0);
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
+
+        linkedList.AddAt("Node 0", 0);
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
-        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 4"));
+    }
+
+    [Test]
+    public void AddAtNegativeIndex()
+    {
+        LinkedList linkedList = new LinkedList();
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.AddAt("Node -1", -1));
+    }
+
+    [Test]
+    public void AddAtOutOfIndex()
+    {
+        LinkedList linkedList = new LinkedList();
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.AddAt("Node 0", 1));
+        linkedList.AddAt("Node 0", 0);
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.AddAt("Node 0", 2));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.AddAt("Node 5", 5));
+    }
+
+    [Test]
+    public void AddAtLength()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAt("Node 0", 0);
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
+        linkedList.AddAt("Node 1", 1);
+        Assert.That(linkedList.Get(1).Data, Is.EqualTo("Node 1"));
+        linkedList.AddAt("Node 2", 2);
+        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 2"));
+        linkedList.AddAt("Node 3", 3);
         Assert.That(linkedList.Get(3).Data, Is.EqualTo("Node 3"));
     }
 
