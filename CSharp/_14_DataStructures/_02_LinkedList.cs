@@ -123,7 +123,7 @@ public class LinkedList : IEnumerable
   }
 
   /// <summary>
-  /// Adds a new node with the specified data at the specified index in the linked list.
+  /// Adds a new node with the specified data at the give index
   /// Raise exception if the index is out of range.
   /// </summary>
   /// <param name="data">The data to be added.</param>
@@ -131,7 +131,36 @@ public class LinkedList : IEnumerable
   /// <exception cref="System.IndexOutOfRangeException"></exception>
   public void AddAt(string data, int index)
   {
-    throw new NotImplementedException();
+    if (index < 0 || index > Count)
+    {
+      string msg = $"Invalid Index: {index}. Valid range: 0 to {Count - 1}";
+      throw new IndexOutOfRangeException(msg);
+    }
+    else if (index == 0)
+    {
+      AddAtHead(data);
+    }
+    else if (index == Count)
+    {
+      AddAtTail(data);
+    }
+    else
+    {
+      Node newNode = new Node(data);
+      // Node runner = Head;
+      // Node follower = null;
+      // for (int i = 0; i < index; i++)
+      // {
+      //   follower = runner;
+      //   runner = runner.Next;
+      // }
+      Node previous = Get(index - 1);
+      Node next = previous.Next;
+
+      newNode.Next = next;
+      previous.Next = newNode;
+      Count++;
+    }
   }
 
   /// <summary>

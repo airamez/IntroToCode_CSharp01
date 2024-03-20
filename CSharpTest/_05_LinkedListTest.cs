@@ -108,9 +108,11 @@ public class LinkedListTests
         LinkedList linkedList = new LinkedList();
         linkedList.AddAt("Node 1", 0);
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
-
+        Assert.That(linkedList.Count, Is.EqualTo(1));
         linkedList.AddAt("Node 0", 0);
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 0"));
+        Assert.That(linkedList.Count, Is.EqualTo(2));
+        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 1"));
     }
 
     [Test]
@@ -143,6 +145,26 @@ public class LinkedListTests
         Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 2"));
         linkedList.AddAt("Node 3", 3);
         Assert.That(linkedList.Get(3).Data, Is.EqualTo("Node 3"));
+    }
+
+    [Test]
+    public void AddAtMiddle()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.AddAtTail("Node 0");
+        linkedList.AddAtTail("Node 1");
+        linkedList.AddAtTail("Node 3");
+        linkedList.AddAtTail("Node 5");
+        linkedList.AddAtTail("Node 7");
+        linkedList.AddAt("Node 2", 2);
+        Assert.That(linkedList.Get(2).Data, Is.EqualTo("Node 2"));
+        Assert.That(linkedList.Count, Is.EqualTo(6));
+        linkedList.AddAt("Node 4", 4);
+        Assert.That(linkedList.Get(4).Data, Is.EqualTo("Node 4"));
+        Assert.That(linkedList.Count, Is.EqualTo(7));
+        linkedList.AddAt("Node 6", 6);
+        Assert.That(linkedList.Get(6).Data, Is.EqualTo("Node 6"));
+        Assert.That(linkedList.Count, Is.EqualTo(8));
     }
 
     [Test]
