@@ -1,11 +1,38 @@
 using System;
 using System.Collections;
+using System.Diagnostics;
 
 namespace DataStructures.LinkedList;
 
 public class LinkedListApp
 {
   public static void Main(string[] args)
+  {
+    //ForEachDemo();
+    PerformanceConsiderations();
+  }
+
+  private static void PerformanceConsiderations()
+  {
+    Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
+
+    var list = new LinkedList();
+    Random random = new Random();
+    for (int i = 0; i < 10000; i++)
+    {
+      list.AddAt(random.Next(1000000).ToString(), random.Next(0, list.Count + 1));
+      //list.AddAtTail(random.Next(1000000).ToString());
+      if (i % 1000 == 0)
+        Console.Write(".");
+    }
+    Console.WriteLine($"\nList Count: {list.Count}");
+
+    stopwatch.Stop();
+    Console.WriteLine($"Elapsed Time: {stopwatch.Elapsed}");
+  }
+
+  private static void ForEachDemo()
   {
     var linkedList = new LinkedList();
     linkedList.AddAtHead("Node 3");
