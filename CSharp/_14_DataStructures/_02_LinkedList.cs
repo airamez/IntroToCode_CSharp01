@@ -227,7 +227,16 @@ public class LinkedList : IEnumerable
   /// </summary>
   public void DeleteAtHead()
   {
-    throw new NotImplementedException();
+    if (Count == 0)
+    {
+      throw new InvalidOperationException("The list is empty.");
+    }
+    Head = Head.Next;
+    Count--;
+    if (Count == 0) // Head == null
+    {
+      Tail = null;
+    }
   }
 
   /// <summary>
@@ -235,7 +244,21 @@ public class LinkedList : IEnumerable
   /// </summary>
   public void DeleteAtTail()
   {
-    throw new NotImplementedException();
+    if (Count == 0)
+    {
+      throw new InvalidOperationException("The list is empty.");
+    }
+    if (Count == 1)
+    {
+      DeleteAtHead();
+    }
+    else
+    {
+      var secondLast = Get(Count - 2);
+      Tail = secondLast;
+      Tail.Next = null;
+      Count--;
+    }
   }
 
   /// <summary>
@@ -246,7 +269,24 @@ public class LinkedList : IEnumerable
   /// <exception cref="System.IndexOutOfRangeException"></exception>
   public void DeleteAt(int index)
   {
-    throw new NotImplementedException();
+    if (Count == 0 || index < 0 || index >= Count)
+    {
+      throw new IndexOutOfRangeException("Invalid index.");
+    }
+    if (index == 0)
+    {
+      DeleteAtHead();
+    }
+    else if (index == Count - 1)
+    {
+      DeleteAtTail();
+    }
+    else
+    {
+      var previous = Get(index - 1);
+      previous.Next = previous.Next.Next;
+      Count--;
+    }
   }
 
   /// <summary>

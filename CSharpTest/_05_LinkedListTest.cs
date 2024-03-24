@@ -171,42 +171,87 @@ public class LinkedListTests
     public void DeleteAtHeadTest()
     {
         LinkedList linkedList = new LinkedList();
+        Assert.Throws<InvalidOperationException>(() =>
+            linkedList.DeleteAtHead());
         linkedList.AddAtTail("Node 0");
         linkedList.AddAtTail("Node 1");
         linkedList.AddAtTail("Node 2");
+        // Indixes : 0 1 2
+        // Elements: 
+        Assert.That(linkedList.Count, Is.EqualTo(3));
         linkedList.DeleteAtHead();
+        Assert.That(linkedList.Count, Is.EqualTo(2));
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
         linkedList.DeleteAtHead();
+        Assert.That(linkedList.Count, Is.EqualTo(1));
         Assert.That(linkedList.Head.Data, Is.EqualTo("Node 2"));
+        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 2"));
+        linkedList.DeleteAtHead();
+        Assert.That(linkedList.Count, Is.EqualTo(0));
+        Assert.That(linkedList.Head, Is.Null);
+        Assert.That(linkedList.Tail, Is.Null);
+        Assert.Throws<InvalidOperationException>(() =>
+            linkedList.DeleteAtHead());
     }
 
     [Test]
     public void DeleteAtTailTest()
     {
         LinkedList linkedList = new LinkedList();
+        Assert.Throws<InvalidOperationException>(() =>
+            linkedList.DeleteAtTail());
         linkedList.AddAtTail("Node 0");
         linkedList.AddAtTail("Node 1");
         linkedList.AddAtTail("Node 2");
+        Assert.That(linkedList.Count, Is.EqualTo(3));
         linkedList.DeleteAtTail();
+        Assert.That(linkedList.Count, Is.EqualTo(2));
         Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 1"));
         linkedList.DeleteAtTail();
+        Assert.That(linkedList.Count, Is.EqualTo(1));
         Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 0"));
+        linkedList.DeleteAtTail();
+        Assert.That(linkedList.Count, Is.EqualTo(0));
+        Assert.That(linkedList.Head, Is.Null);
+        Assert.That(linkedList.Tail, Is.Null);
+        Assert.Throws<InvalidOperationException>(() =>
+            linkedList.DeleteAtTail());
     }
 
     [Test]
-    public void DeleteAtPositionTest()
+    public void DeleteAtIndexTest()
     {
         LinkedList linkedList = new LinkedList();
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.DeleteAt(-1));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.DeleteAt(0));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.DeleteAt(1));
         linkedList.AddAtTail("Node 0");
         linkedList.AddAtTail("Node 1");
         linkedList.AddAtTail("Node 2");
         linkedList.AddAtTail("Node 3");
         linkedList.AddAtTail("Node 4");
-        linkedList.DeleteAt(0);
-        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
-        linkedList.DeleteAt(1);
-        Assert.That(linkedList.Get(1).Data, Is.EqualTo("Node 3"));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.DeleteAt(5));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.DeleteAt(10));
+        Assert.That(linkedList.Count, Is.EqualTo(5));
         linkedList.DeleteAt(2);
+        Assert.That(linkedList.Count, Is.EqualTo(4));
+        Assert.That(linkedList.Get(2).Data, Is.EqualTo("Node 3"));
+        linkedList.DeleteAt(0);
+        Assert.That(linkedList.Count, Is.EqualTo(3));
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
+        Assert.That(linkedList.Get(0).Data, Is.EqualTo("Node 1"));
+        linkedList.DeleteAt(2);
+        Assert.That(linkedList.Count, Is.EqualTo(2));
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
         Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 3"));
+        linkedList.DeleteAt(1);
+        Assert.That(linkedList.Count, Is.EqualTo(1));
+        Assert.That(linkedList.Tail.Data, Is.EqualTo("Node 1"));
+        Assert.That(linkedList.Head.Data, Is.EqualTo("Node 1"));
+        Assert.That(linkedList.Get(0).Data, Is.EqualTo("Node 1"));
+        linkedList.DeleteAt(0);
+        Assert.That(linkedList.Count, Is.EqualTo(0));
+        Assert.That(linkedList.Head, Is.Null);
+        Assert.That(linkedList.Tail, Is.Null);
     }
 }
