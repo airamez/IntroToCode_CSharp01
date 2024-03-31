@@ -51,4 +51,20 @@ public class DoubleLinkedList
         }
         Count++;
     }
+
+    public void AddAtTail(string data)
+    {
+        if (Count == 0)
+        {
+            AddAtHead(data);
+        }
+        else
+        {
+            var newNode = new Node(data);
+            Count++;
+            Tail.Next = newNode;
+            newNode.Previous = Tail;
+            Tail = newNode;
+        }
+    }
 }
