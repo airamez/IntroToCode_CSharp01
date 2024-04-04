@@ -78,4 +78,49 @@ public class DoubleLinkedListTests
         Assert.That(list.Tail.Data, Is.EqualTo(nodeThreeValue));
         Assert.That(list.Tail.Previous.Data, Is.EqualTo(nodeTwoValue));
     }
+
+    [Test]
+    public void GetAtIndexOutOfRangeTest()
+    {
+        var list = new DoubleLinkedList();
+        Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(-1));
+        Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(7));
+        Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(8));
+    }
+
+    [Test]
+    public void GetAtIndexHeadTest()
+    {
+        var list = new DoubleLinkedList();
+        for (int i = 0; i < 7; i++)
+        {
+            list.AddAtTail($"Node {i}");
+        }
+        Assert.That(list.GetAtIndex(0).Data, Is.EqualTo($"Node 0"));
+    }
+
+    [Test]
+    public void GetAtIndexTailTest()
+    {
+        var list = new DoubleLinkedList();
+        for (int i = 0; i < 7; i++)
+        {
+            list.AddAtTail($"Node {i}");
+        }
+        Assert.That(list.GetAtIndex(list.Count - 1).Data, Is.EqualTo($"Node 6"));
+    }
+
+    [Test]
+    public void GetAtIndexTest()
+    {
+        var list = new DoubleLinkedList();
+        for (int i = 0; i < 7; i++)
+        {
+            list.AddAtTail($"Node {i}");
+        }
+        for (int i = 0; i < 7; i++)
+        {
+            Assert.That(list.GetAtIndex(i).Data, Is.EqualTo($"Node {i}"));
+        }
+    }
 }

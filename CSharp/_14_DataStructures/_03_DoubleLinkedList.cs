@@ -1,6 +1,34 @@
 using System;
+using System.Diagnostics;
+using System.Runtime.ExceptionServices;
 
 namespace DataStructures.DoubleLinkedList;
+
+public class DoubleLinkedListApp
+{
+    public static void Main(string[] args)
+    {
+        const int LIMIT = 1000000;
+        DoubleLinkedList list = new DoubleLinkedList();
+        Random random = new Random();
+        for (int i = 0; i < LIMIT; i++)
+        {
+            list.AddAtTail($"Value: {random.Next(LIMIT)}");
+        }
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        for (int i = 0; i < 10000; i++)
+        {
+            Node node = list.GetAtIndex(random.Next(LIMIT));
+            if (i % 1000 == 0)
+            {
+                Console.Write(".");
+            }
+        }
+        stopwatch.Stop();
+        Console.WriteLine($"\nElapsedMilliseconds: {stopwatch.ElapsedMilliseconds}");
+    }
+}
 
 public class Node
 {
@@ -66,5 +94,37 @@ public class DoubleLinkedList
             newNode.Previous = Tail;
             Tail = newNode;
         }
+    }
+
+    /*
+    Get at Index
+    Check index boundary: > 0 && < Count
+    If index == 0 return Head
+    If index = Count – 1 return Tail
+    Else
+    loop moving a runner to the index position
+    Check if index is smaller o greater than half of Count, so we decide to start from head and move to the end or start from tail and move to the begin
+    */
+    public Node GetAtIndex(int index)
+    {
+        if (index < 0 || index >= Count)
+        {
+            throw new IndexOutOfRangeException();
+        }
+        if (index == 0)
+        {
+            return Head;
+        }
+        if (index == Count - 1)
+        {
+            return Tail;
+        }
+        Node runner = Head;
+        // Homework: Improve the code to start from the tail if Index is greater than half of Count
+        for (int i = 0; i < index; i++)
+        {
+            runner = runner.Next;
+        }
+        return runner;
     }
 }
