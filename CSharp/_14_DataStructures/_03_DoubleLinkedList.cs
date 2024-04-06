@@ -8,6 +8,20 @@ public class DoubleLinkedListApp
 {
     public static void Main(string[] args)
     {
+        PerformanceTest();
+        // DoubleLinkedList list = new DoubleLinkedList();
+        // for (int i = 0; i < 100; i++)
+        // {
+        //     list.AddAtTail($"Node {i}");
+        // }
+        // Node nodeAt2 = list.GetAtIndex(2);
+        // Node nodeAt50 = list.GetAtIndex(50);
+        // Node nodeAt90 = list.GetAtIndex(90);
+        // Node nodeAt98 = list.GetAtIndex(98);
+    }
+
+    private static void PerformanceTest()
+    {
         const int LIMIT = 1000000;
         DoubleLinkedList list = new DoubleLinkedList();
         Random random = new Random();
@@ -27,6 +41,11 @@ public class DoubleLinkedListApp
         }
         stopwatch.Stop();
         Console.WriteLine($"\nElapsedMilliseconds: {stopwatch.ElapsedMilliseconds}");
+
+        stopwatch.Restart();
+        list.GetAtIndex(list.Count - 5);
+        stopwatch.Stop();
+        Console.WriteLine($"ElapsedMilliseconds: {stopwatch.ElapsedMilliseconds}");
     }
 }
 
@@ -119,11 +138,23 @@ public class DoubleLinkedList
         {
             return Tail;
         }
-        Node runner = Head;
-        // Homework: Improve the code to start from the tail if Index is greater than half of Count
-        for (int i = 0; i < index; i++)
+
+        Node runner;
+        if (index < Count / 2)
         {
-            runner = runner.Next;
+            runner = Head;
+            for (int i = 0; i < index; i++)
+            {
+                runner = runner.Next;
+            }
+        }
+        else
+        {
+            runner = Tail;
+            for (int i = Count - 1; i > index; i--)
+            {
+                runner = runner.Previous;
+            }
         }
         return runner;
     }

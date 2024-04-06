@@ -114,11 +114,11 @@ public class DoubleLinkedListTests
     public void GetAtIndexTest()
     {
         var list = new DoubleLinkedList();
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 100; i++)
         {
             list.AddAtTail($"Node {i}");
         }
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 100; i++)
         {
             Assert.That(list.GetAtIndex(i).Data, Is.EqualTo($"Node {i}"));
         }
