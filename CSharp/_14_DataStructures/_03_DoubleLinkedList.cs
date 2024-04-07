@@ -108,22 +108,13 @@ public class DoubleLinkedList
         else
         {
             var newNode = new Node(data);
-            Count++;
             Tail.Next = newNode;
             newNode.Previous = Tail;
             Tail = newNode;
+            Count++;
         }
     }
 
-    /*
-    Get at Index
-    Check index boundary: > 0 && < Count
-    If index == 0 return Head
-    If index = Count – 1 return Tail
-    Else
-    loop moving a runner to the index position
-    Check if index is smaller o greater than half of Count, so we decide to start from head and move to the end or start from tail and move to the begin
-    */
     public Node GetAtIndex(int index)
     {
         if (index < 0 || index >= Count)
@@ -157,5 +148,43 @@ public class DoubleLinkedList
             }
         }
         return runner;
+    }
+
+    /*
+    Add at Index
+    - Check the index boundaries
+      >= 0 and <= Count
+      Raise Exception otherwise
+    - Index == 0 -> AddAtHead
+    - Index == Count -> AddAtTail
+    Else
+      atIndex.Previous.Next = NewNode
+      newNode.Previous = atIndex.Previous
+      newNode.Next = atIndex
+      atInidex.Previous = newNode*/
+    public void AddAtIndex(int index, string data)
+    {
+        if (index < 0 || index > Count)
+        {
+            throw new IndexOutOfRangeException();
+        }
+        if (index == 0)
+        {
+            AddAtHead(data);
+        }
+        else if (index == Count)
+        {
+            AddAtTail(data);
+        }
+        else
+        {
+            var newNode = new Node(data);
+            var atIndex = GetAtIndex(index);
+            atIndex.Previous.Next = newNode;
+            newNode.Previous = atIndex.Previous;
+            newNode.Next = atIndex;
+            atIndex.Previous = newNode;
+            Count++;
+        }
     }
 }

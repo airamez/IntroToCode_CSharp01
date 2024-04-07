@@ -123,4 +123,54 @@ public class DoubleLinkedListTests
             Assert.That(list.GetAtIndex(i).Data, Is.EqualTo($"Node {i}"));
         }
     }
+
+    [Test]
+    public void GetAtIndexTestCornerCaseWithTwoNodes()
+    {
+        var list = new DoubleLinkedList();
+        list.AddAtTail("A");
+        list.AddAtTail("B");
+        list.AddAtTail("C");
+
+        Assert.That(list.GetAtIndex(0).Data, Is.EqualTo("A"));
+        Assert.That(list.GetAtIndex(1).Data, Is.EqualTo("B"));
+        Assert.That(list.GetAtIndex(2).Data, Is.EqualTo("C"));
+    }
+
+    [Test]
+    public void AdddAtIndexTest()
+    {
+        // 0     1       2      3
+        // A <-> A2 <->  B0 <-> B
+
+        var list = new DoubleLinkedList();
+
+        list.AddAtIndex(0, "B");
+        Assert.That(list.Count, Is.EqualTo(1));
+        Assert.That(list.Head.Data, Is.EqualTo("B"));
+        Assert.That(list.Tail.Data, Is.EqualTo("B"));
+
+        list.AddAtIndex(0, "A");
+        Assert.That(list.Count, Is.EqualTo(2));
+        Assert.That(list.Head.Data, Is.EqualTo("A"));
+        Assert.That(list.Tail.Data, Is.EqualTo("B"));
+        Assert.That(list.Head.Next, Is.EqualTo(list.Tail));
+        Assert.That(list.Tail.Previous, Is.EqualTo(list.Head));
+
+        list.AddAtIndex(1, "A2");
+        Assert.That(list.Count, Is.EqualTo(3));
+        Assert.That(list.Head.Data, Is.EqualTo("A"));
+        Assert.That(list.Tail.Data, Is.EqualTo("B"));
+        Assert.That(list.GetAtIndex(1).Data, Is.EqualTo("A2"));
+
+        list.AddAtIndex(2, "B0");
+        Assert.That(list.Count, Is.EqualTo(4));
+        Assert.That(list.Head.Data, Is.EqualTo("A"));
+        Assert.That(list.Tail.Data, Is.EqualTo("B"));
+        Assert.That(list.GetAtIndex(1).Data, Is.EqualTo("A2"));
+        Assert.That(list.GetAtIndex(2).Data, Is.EqualTo("B0"));
+
+        Assert.Throws<IndexOutOfRangeException>(() => list.AddAtIndex(-1, "XXX"));
+        Assert.Throws<IndexOutOfRangeException>(() => list.AddAtIndex(20, "XXX"));
+    }
 }
