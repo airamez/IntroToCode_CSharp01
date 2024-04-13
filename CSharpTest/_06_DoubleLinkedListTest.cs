@@ -173,4 +173,31 @@ public class DoubleLinkedListTests
         Assert.Throws<IndexOutOfRangeException>(() => list.AddAtIndex(-1, "XXX"));
         Assert.Throws<IndexOutOfRangeException>(() => list.AddAtIndex(20, "XXX"));
     }
+
+    [Test]
+    public void RemoveAtHeadTest()
+    {
+        var list = new DoubleLinkedList();
+        Assert.Throws<InvalidOperationException>(() => list.RemoveAtHead());
+
+        const int LIST_SIZE = 10;
+        for (int i = 0; i < LIST_SIZE; i++)
+        {
+            list.AddAtTail($"Node {i}");
+        }
+
+        for (int i = 0; i < LIST_SIZE; i++)
+        {
+            list.RemoveAtHead();
+            Assert.That(list.Count, Is.EqualTo(LIST_SIZE - (i + 1)));
+            if (i < LIST_SIZE - 1)
+            {
+                Assert.That(list.Head.Data, Is.EqualTo($"Node {i + 1}"));
+            }
+            else
+            {
+                Assert.That(list.Head, Is.Null);
+            }
+        }
+    }
 }

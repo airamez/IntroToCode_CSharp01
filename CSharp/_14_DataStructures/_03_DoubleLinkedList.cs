@@ -150,18 +150,6 @@ public class DoubleLinkedList
         return runner;
     }
 
-    /*
-    Add at Index
-    - Check the index boundaries
-      >= 0 and <= Count
-      Raise Exception otherwise
-    - Index == 0 -> AddAtHead
-    - Index == Count -> AddAtTail
-    Else
-      atIndex.Previous.Next = NewNode
-      newNode.Previous = atIndex.Previous
-      newNode.Next = atIndex
-      atInidex.Previous = newNode*/
     public void AddAtIndex(int index, string data)
     {
         if (index < 0 || index > Count)
@@ -186,5 +174,24 @@ public class DoubleLinkedList
             atIndex.Previous = newNode;
             Count++;
         }
+    }
+
+    public void RemoveAtHead()
+    {
+        if (Head == null)
+        {
+            throw new InvalidOperationException("The list is empty");
+        }
+        if (Count == 1)
+        {
+            Head = null;
+            Tail = null;
+        }
+        else
+        {
+            Head = Head.Next;
+            Head.Previous = null;
+        }
+        Count--;
     }
 }
