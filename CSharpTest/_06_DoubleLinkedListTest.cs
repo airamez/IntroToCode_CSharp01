@@ -200,4 +200,48 @@ public class DoubleLinkedListTests
             }
         }
     }
+
+    [Test]
+    public void RemoveAtTailTest()
+    {
+        var list = new DoubleLinkedList();
+
+        Assert.Throws<InvalidOperationException>(() => list.RemoveAtTail());
+
+        Assert.That(list.IsEmpty, Is.True);
+        list.AddAtHead("1");
+        Assert.That(list.IsEmpty, Is.False);
+        list.AddAtTail("2");
+        list.AddAtTail("3");
+        list.AddAtTail("4");
+        list.AddAtTail("5");
+        Assert.That(list.Count, Is.EqualTo(5));
+        Assert.That(list.Head.Previous, Is.Null);
+
+        list.RemoveAtTail();
+        Assert.That(list.Count, Is.EqualTo(4));
+        Assert.That(list.Tail.Data, Is.EqualTo("4"));
+        Assert.That(list.Tail.Next, Is.Null);
+
+        list.RemoveAtTail();
+        Assert.That(list.Count, Is.EqualTo(3));
+        Assert.That(list.Tail.Data, Is.EqualTo("3"));
+        Assert.That(list.Tail.Next, Is.Null);
+
+        list.RemoveAtTail();
+        Assert.That(list.Count, Is.EqualTo(2));
+        Assert.That(list.Tail.Data, Is.EqualTo("2"));
+        Assert.That(list.Tail.Next, Is.Null);
+
+        list.RemoveAtTail();
+        Assert.That(list.Count, Is.EqualTo(1));
+        Assert.That(list.Tail.Data, Is.EqualTo("1"));
+        Assert.That(list.Tail.Next, Is.Null);
+        Assert.That(list.Head.Previous, Is.Null);
+
+        list.RemoveAtTail();
+        Assert.Throws<InvalidOperationException>(() => list.RemoveAtTail());
+        Assert.That(list.IsEmpty, Is.True);
+        Assert.That(list.Count, Is.EqualTo(0));
+    }
 }

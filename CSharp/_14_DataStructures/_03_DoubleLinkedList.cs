@@ -82,10 +82,12 @@ public class DoubleLinkedList
         Count = 0;
     }
 
+    public bool IsEmpty => Head == null;
+
     public void AddAtHead(string data)
     {
         var newNode = new Node(data);
-        if (Count == 0)
+        if (IsEmpty)
         {
             Head = newNode;
             Tail = newNode;
@@ -101,7 +103,7 @@ public class DoubleLinkedList
 
     public void AddAtTail(string data)
     {
-        if (Count == 0)
+        if (IsEmpty)
         {
             AddAtHead(data);
         }
@@ -178,7 +180,7 @@ public class DoubleLinkedList
 
     public void RemoveAtHead()
     {
-        if (Head == null)
+        if (IsEmpty)
         {
             throw new InvalidOperationException("The list is empty");
         }
@@ -193,5 +195,23 @@ public class DoubleLinkedList
             Head.Previous = null;
         }
         Count--;
+    }
+
+    public void RemoveAtTail()
+    {
+        if (IsEmpty)
+        {
+            throw new InvalidOperationException("List is empty!");
+        }
+        if (Count == 1)
+        {
+            RemoveAtHead();
+        }
+        else
+        {
+            Tail = Tail.Previous;
+            Tail.Next = null;
+            Count--;
+        }
     }
 }
