@@ -244,4 +244,51 @@ public class DoubleLinkedListTests
         Assert.That(list.IsEmpty, Is.True);
         Assert.That(list.Count, Is.EqualTo(0));
     }
+
+    [Test]
+    public void RemoveAtIndexTest()
+    {
+        var list = new DoubleLinkedList();
+        // Remove on an empty list
+        Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(5));
+        // Remove with an invalid index
+        Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(-5));
+
+        list.AddAtTail("Node 1");
+        // Remove with an invalid index
+        Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(1));
+        // Remove with an invalid index
+        Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(5));
+        // Remove when there only one node / At Head
+        list.RemoveAtIndex(0);
+        Assert.That(list.Count, Is.EqualTo(0));
+        Assert.That(list.Head, Is.Null);
+        Assert.That(list.IsEmpty, Is.True);
+        Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(0));
+
+        list.AddAtTail("Node 1");
+        list.AddAtTail("Node 2");
+        list.AddAtTail("Node 3");
+        list.AddAtTail("Node 4");
+        list.AddAtTail("Node 5");
+
+        // Remove at Head
+        list.RemoveAtIndex(0);
+        Assert.That(list.Head.Previous, Is.Null);
+        Assert.That(list.Count, Is.EqualTo(4));
+        Assert.That(list.IsEmpty, Is.False);
+        Assert.That(list.Head.Data, Is.EqualTo("Node 2"));
+        Assert.That(list.Tail.Data, Is.EqualTo("Node 5"));
+
+        // Remove at At
+        list.AddAtHead("Node 1");
+        list.RemoveAtIndex(2);
+        Assert.That(list.Count, Is.EqualTo(4));
+        Assert.That(list.Head.Next.Next.Data, Is.EqualTo("Node 4"));
+
+        // Remove at Tail
+        list.RemoveAtIndex(list.Count - 1);
+        Assert.That(list.Count, Is.EqualTo(3));
+        Assert.That(list.Tail.Data, Is.EqualTo("Node 4"));
+    }
 }

@@ -214,4 +214,27 @@ public class DoubleLinkedList
             Count--;
         }
     }
+
+    public void RemoveAtIndex(int index)
+    {
+        if (index < 0 || index >= Count)
+        {
+            throw new IndexOutOfRangeException($"Invali index: {index}");
+        }
+        if (index == 0)
+        {
+            RemoveAtHead();
+        }
+        else if (index == Count - 1)
+        {
+            RemoveAtTail();
+        }
+        else
+        {
+            var atIndex = GetAtIndex(index);
+            atIndex.Previous.Next = atIndex.Next;
+            atIndex.Next.Previous = atIndex.Previous;
+            Count--;
+        }
+    }
 }
