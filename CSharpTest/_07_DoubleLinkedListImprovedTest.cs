@@ -196,8 +196,7 @@ public class DoubleLinkedListTests
             }
             else
             {
-                //@todo: fix this
-                //Assert.Throws<InvalidOperationException>(() => list.Head);
+                Assert.Throws<InvalidOperationException>(() => { var value = list.Head; });
             }
         }
     }
