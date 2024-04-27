@@ -110,8 +110,8 @@
   * Queue
   * Stack
   * Set, Hashtable and Dictionary
-  * Heap
   * Binary Tree
+  * Heap
   * Graphs
 * Sorting
   * Bubble
@@ -121,7 +121,8 @@
   * Heap
 * Generics
 * Generic Data Structures
-  * List
+  * Linked List
+  * Double Linked List
   * Queue
   * Stack
   * Set
@@ -339,3 +340,4 @@
 | 158 | [Software Engineer Levels](https://youtube.com/live/Jdx8TeOd6zw) |
 | 159 | [Data Structures: Double Linked List Improved <br>](https://youtube.com/live/eNpT6mDtghU) | [CSharp/_14_DataStructures/_03_DoubleLinkedListImproved.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_03_DoubleLinkedListImproved.cs) <br> [CSharpTest/_06_DoubleLinkedListImprovedTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_06_DoubleLinkedListImprovedTest.cs) |
 | 160 | [The Importance of Networking](https://youtube.com/live/QJvAlEy62Sg) |  |
+| 161 | [Data Structures: Queue <br>](https://youtube.com/live/aiUzr0eRaEs) | [CSharp/_14_DataStructures/_04_Queue.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_04_Queue.cs) |
