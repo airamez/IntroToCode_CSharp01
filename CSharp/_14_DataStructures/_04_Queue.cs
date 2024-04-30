@@ -4,12 +4,14 @@ using System;
   # A queue is a type of data structure that stores elements in a sequence which is enforced by the operations used.
   # It follows the FIFO (First-In-First-Out) methodology, meaning the data that gets in first, gets out first.
   # The process to add an element into queue is called enqueue, and to remove an element from the queue is called dequeue.
-# Key Operations
+# Key Operations/Properties
   # Enqueue: Add an element to the end of the queue.
   # Dequeue: Remove an element from the front of the queue.
   # Peek/Top: Get the value of the front of the queue without removing it.
   # IsEmpty: Check if the queue is empty.
   # IsFull: Check if the queue is full.
+  # Length: Number of elements in the queue.
+  # Capacity: Max length of the queue
 # Real World Examples of Queues
   # Computer Buffers: Printers use queues to manage printing processes.
   # Call Center Systems: These use queues to hold people calling them in an order.
@@ -18,8 +20,7 @@ using System;
   # Queue Services: Scalling system by queueing requests and processing them as fast as possible with load balance
  */
 namespace DataStructures.Queue;
-
-public class Queue
+public class MyQueue
 {
     public string Peek
     {
@@ -45,8 +46,23 @@ public class Queue
         }
     }
 
+    public int Length
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
 
-    public Queue(int? capacity = null)
+    public int Capacity
+    {
+        get
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public MyQueue(int? capacity = null)
     {
         throw new NotImplementedException();
     }
