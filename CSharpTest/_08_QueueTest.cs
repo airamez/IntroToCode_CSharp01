@@ -74,11 +74,19 @@ public class QueueTests
             Assert.That(queue.Length, Is.EqualTo(100 - i));
         }
         Assert.That(queue.IsEmpty, Is.True);
+        Assert.That(queue.Length, Is.EqualTo(0));
+
     }
 
     [Test]
     public void QueueWithCapacityTest()
     {
-
+        var queue = new MyQueue(10);
+        for (int i = 0; i < 10; i++)
+        {
+            queue.Enqueue($"Item_{i}");
+        }
+        Assert.That(queue.IsFull, Is.True);
+        Assert.Throws<InvalidOperationException>(() => queue.Enqueue("XXX"));
     }
 }

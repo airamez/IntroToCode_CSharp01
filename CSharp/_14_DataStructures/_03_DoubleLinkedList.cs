@@ -23,7 +23,7 @@ public class DoubleLinkedListApp
     private static void PerformanceTest()
     {
         const int LIMIT = 1000000;
-        DoubleLinkedList list = new DoubleLinkedList();
+        MyDoubleLinkedList list = new MyDoubleLinkedList();
         Random random = new Random();
         for (int i = 0; i < LIMIT; i++)
         {
@@ -68,14 +68,14 @@ public class Node
     }
 }
 
-public class DoubleLinkedList
+public class MyDoubleLinkedList
 {
     public Node Head { get; private set; }
     public Node Tail { get; private set; }
 
     public int Count { get; private set; }
 
-    public DoubleLinkedList()
+    public MyDoubleLinkedList()
     {
         Head = null;
         Tail = null;

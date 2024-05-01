@@ -1,4 +1,3 @@
-using System;
 /*
 # What is a Queue?
   # A queue is a type of data structure that stores elements in a sequence which is enforced by the operations used.
@@ -19,14 +18,33 @@ using System;
   # E-commerce Websites: Customers making purchases follow a queue-like structure to make payments.
   # Queue Services: Scalling system by queueing requests and processing them as fast as possible with load balance
  */
+using System;
+using DataStructures.DoubleLinkedList.Improved;
+
 namespace DataStructures.Queue;
 public class MyQueue
 {
+    private const string QUEUE_EMPTY_MESSAGE = "The queue is Emtpy.";
+    private const string QUEUE_FULL_MESSAGE = "The queue is FULL.";
+
+    private MyDoubleLinkedList List { set; get; }
+
+    public MyQueue(int capacity = int.MaxValue)
+    {
+        List = new MyDoubleLinkedList();
+        Capacity = capacity;
+    }
+
+
     public string Peek
     {
         get
         {
-            throw new NotImplementedException();
+            if (IsEmpty)
+            {
+                throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
+            }
+            return List.Tail;
         }
     }
 
@@ -34,7 +52,7 @@ public class MyQueue
     {
         get
         {
-            throw new NotImplementedException();
+            return List.IsEmpty;
         }
     }
 
@@ -42,7 +60,7 @@ public class MyQueue
     {
         get
         {
-            throw new NotImplementedException();
+            return List.Count == Capacity;
         }
     }
 
@@ -50,30 +68,29 @@ public class MyQueue
     {
         get
         {
-            throw new NotImplementedException();
+            return List.Count;
         }
     }
 
-    public int Capacity
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public MyQueue(int? capacity = null)
-    {
-        throw new NotImplementedException();
-    }
+    public int Capacity { private set; get; }
 
     public void Enqueue(string data)
     {
-        throw new NotImplementedException();
+        if (IsFull)
+        {
+            throw new InvalidOperationException(QUEUE_FULL_MESSAGE);
+        }
+        List.AddAtHead(data);
     }
 
     public string Dequeue()
     {
-        throw new NotImplementedException();
+        if (IsEmpty)
+        {
+            throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
+        }
+        string value = List.Tail;
+        List.RemoveAtTail();
+        return value;
     }
 }

@@ -8,7 +8,7 @@ public class DoubleLinkedListTests
     [Test]
     public void AddAtHeadTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         Assert.That(list.Count, Is.EqualTo(0));
         Assert.That(list.Head, Is.Null);
         Assert.That(list.Tail, Is.Null);
@@ -43,7 +43,7 @@ public class DoubleLinkedListTests
     [Test]
     public void AddAtTailtest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         Assert.That(list.Count, Is.EqualTo(0));
         Assert.That(list.Head, Is.Null);
         Assert.That(list.Tail, Is.Null);
@@ -82,7 +82,7 @@ public class DoubleLinkedListTests
     [Test]
     public void GetAtIndexOutOfRangeTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(-1));
         Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(7));
         Assert.Throws<IndexOutOfRangeException>(() => list.GetAtIndex(8));
@@ -91,7 +91,7 @@ public class DoubleLinkedListTests
     [Test]
     public void GetAtIndexHeadTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         for (int i = 0; i < 7; i++)
         {
             list.AddAtTail($"Node {i}");
@@ -102,7 +102,7 @@ public class DoubleLinkedListTests
     [Test]
     public void GetAtIndexTailTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         for (int i = 0; i < 7; i++)
         {
             list.AddAtTail($"Node {i}");
@@ -113,7 +113,7 @@ public class DoubleLinkedListTests
     [Test]
     public void GetAtIndexTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         for (int i = 0; i < 100; i++)
         {
             list.AddAtTail($"Node {i}");
@@ -127,7 +127,7 @@ public class DoubleLinkedListTests
     [Test]
     public void GetAtIndexTestCornerCaseWithTwoNodes()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         list.AddAtTail("A");
         list.AddAtTail("B");
         list.AddAtTail("C");
@@ -143,7 +143,7 @@ public class DoubleLinkedListTests
         // 0     1       2      3
         // A <-> A2 <->  B0 <-> B
 
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
 
         list.AddAtIndex(0, "B");
         Assert.That(list.Count, Is.EqualTo(1));
@@ -177,7 +177,7 @@ public class DoubleLinkedListTests
     [Test]
     public void RemoveAtHeadTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         Assert.Throws<InvalidOperationException>(() => list.RemoveAtHead());
 
         const int LIST_SIZE = 10;
@@ -204,7 +204,7 @@ public class DoubleLinkedListTests
     [Test]
     public void RemoveAtTailTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
 
         Assert.Throws<InvalidOperationException>(() => list.RemoveAtTail());
 
@@ -248,7 +248,7 @@ public class DoubleLinkedListTests
     [Test]
     public void RemoveAtIndexTest()
     {
-        var list = new DoubleLinkedList();
+        var list = new MyDoubleLinkedList();
         // Remove on an empty list
         Assert.Throws<IndexOutOfRangeException>(() => list.RemoveAtIndex(5));
         // Remove with an invalid index
