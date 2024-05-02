@@ -59,6 +59,11 @@
     dotnet add package coverlet.msbuild
   # Run
     dotnet test /p:CollectCoverage=true
+  # Reporting
+    # Install
+      dotnet tool install -g dotnet-reportgenerator-globaltool
+    # Run
+      reportgenerator "-reports:./CSharpTest/TestResults/coverage.json" "-targetdir:coveragereport" "-reporttypes:Html"
+
 # Mock API
   # dotnet add package Moq
-  
