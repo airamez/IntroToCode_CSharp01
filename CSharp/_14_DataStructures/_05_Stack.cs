@@ -8,11 +8,13 @@
   # Pop: Remove an element from the top of the stack.
   # IsEmpty: Check if the stack is empty.
   # IsFull: Check if the stack is full.
+  # Length/Size
   # Peek/Top: Get the value of the top of the stack without removing it.
+
 # Real World Examples of Stacks
   # Back Button in Web Browsers
   # Undo Functionality
-  # Expression Evaluation
+  # Expression Evaluation ((x + 3) + (y / 2))
   # Memory Management
 */
 using System;
@@ -20,8 +22,8 @@ using System;
 namespace DataStructures.Stack;
 public class StackApp
 {
-    public static void Main(string[] args)
-    {
+  public static void Main(string[] args)
+  {
 
-    }
+  }
 }
