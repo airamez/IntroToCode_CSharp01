@@ -20,12 +20,14 @@
 using System;
 class RepetitionQuestion09
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    for (int i = 0; i <= 9; i++)
     {
-      for (int i = 0; i <= 9; i++) {
-        for (int j = 0; j <= 9; j++) {
-          Console.WriteLine($"{i} x {j} = {i * j}");
-        }
+      for (int j = 0; j <= 9; j++)
+      {
+        Console.WriteLine($"{i} x {j} = {i * j}");
       }
     }
+  }
 }

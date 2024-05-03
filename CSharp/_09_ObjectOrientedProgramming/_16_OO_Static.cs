@@ -17,8 +17,10 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.Static;
 
-public class StaticApp {
-  public static void Main (string[] args) {
+public class StaticApp
+{
+  public static void Main(string[] args)
+  {
     Console.WriteLine($"Player Count: {Player.PlayerCount}");
     Player player1 = new Player("Player 1");
     Player player2 = new Player("Player 2");
@@ -31,22 +33,27 @@ public class StaticApp {
   }
 }
 
-public class Player {
+public class Player
+{
   private static int _playerCount;
-  public static int PlayerCount {
-    get {
+  public static int PlayerCount
+  {
+    get
+    {
       return _playerCount;
     }
   }
 
   public string Name { get; set; }
 
-  public Player (string name) {
+  public Player(string name)
+  {
     Name = name;
     _playerCount++;
   }
 
-  static Player () {
+  static Player()
+  {
     _playerCount = 0;
   }
 }

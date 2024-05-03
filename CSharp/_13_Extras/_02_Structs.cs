@@ -17,28 +17,28 @@ namespace Extras;
 
 public struct Coords
 {
-    public double X { set; get; }
-    public double Y { set; get; }
+  public double X { set; get; }
+  public double Y { set; get; }
 
-    public Coords(double x, double y)
-    {
-        X = x;
-        Y = y;
-    }
+  public Coords(double x, double y)
+  {
+    X = x;
+    Y = y;
+  }
 
-    public override string ToString() => $"({X}, {Y})";
+  public override string ToString() => $"({X}, {Y})";
 }
 
 public class StructApp
 {
-    public static void Main()
-    {
-        Coords a = new Coords(3, 4);
-        Console.WriteLine(a);
-        Coords b = a; // Copy of a
-        Console.WriteLine(b);
-        a.X = 10;
-        Console.WriteLine(a);
-        Console.WriteLine(b);
-    }
+  public static void Main()
+  {
+    Coords a = new Coords(3, 4);
+    Console.WriteLine(a);
+    Coords b = a; // Copy of a
+    Console.WriteLine(b);
+    a.X = 10;
+    Console.WriteLine(a);
+    Console.WriteLine(b);
+  }
 }

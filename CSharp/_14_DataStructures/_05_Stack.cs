@@ -20,10 +20,7 @@
 using System;
 
 namespace DataStructures.Stack;
-public class StackApp
+public class MyStack
 {
-  public static void Main(string[] args)
-  {
 
-  }
 }

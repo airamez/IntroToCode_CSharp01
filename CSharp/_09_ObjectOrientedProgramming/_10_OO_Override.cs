@@ -20,43 +20,50 @@ using System;
      for the base class  
  */
 
-public class OverrideApp {
-    public static void Main (string[] args) {
-        BaseClass baseObject = new BaseClass();
-        baseObject.MethodA();
-        baseObject.MethodB();
+public class OverrideApp
+{
+  public static void Main(string[] args)
+  {
+    BaseClass baseObject = new BaseClass();
+    baseObject.MethodA();
+    baseObject.MethodB();
 
-        SubClass subObject1 = new SubClass();
-        subObject1.MethodA();
-        subObject1.MethodB();
+    SubClass subObject1 = new SubClass();
+    subObject1.MethodA();
+    subObject1.MethodB();
 
-        BaseClass subObject2 = new SubClass();
-        subObject2.MethodA();
-        subObject2.MethodB();
-    }
+    BaseClass subObject2 = new SubClass();
+    subObject2.MethodA();
+    subObject2.MethodB();
+  }
 }
 
-public class BaseClass {
-    public virtual void MethodA() {
-        Console.WriteLine("BaseClass.MethodA()");
-    }
+public class BaseClass
+{
+  public virtual void MethodA()
+  {
+    Console.WriteLine("BaseClass.MethodA()");
+  }
 
-    public virtual void MethodB() {
-        Console.WriteLine("BaseClass.MethodB()");
-    }
+  public virtual void MethodB()
+  {
+    Console.WriteLine("BaseClass.MethodB()");
+  }
 }
 
-public class SubClass : BaseClass {
-    public override void MethodA()
-    {
-        Console.WriteLine("SubClass.MethodA()");
-    }
-    public new void MethodB()
-    {
-        Console.WriteLine("SubClass.MethodB()");
-    }
+public class SubClass : BaseClass
+{
+  public override void MethodA()
+  {
+    Console.WriteLine("SubClass.MethodA()");
+  }
+  public new void MethodB()
+  {
+    Console.WriteLine("SubClass.MethodB()");
+  }
 
-    public void MethodC() {
-        Console.WriteLine("SubClass.MethodC()");
-    }
+  public void MethodC()
+  {
+    Console.WriteLine("SubClass.MethodC()");
+  }
 }

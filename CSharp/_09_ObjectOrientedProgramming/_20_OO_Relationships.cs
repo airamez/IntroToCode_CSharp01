@@ -31,9 +31,11 @@ using System.Collections.Generic;
 
 namespace UniversityX.ProjextA.DomainB;
 
-public class RelationshipApp {
+public class RelationshipApp
+{
 
-  public static void Main (string[] args) {
+  public static void Main(string[] args)
+  {
     Building mainBuilding = new("Main BLD", "Street A, San Diego, California, 923456");
     Console.WriteLine(mainBuilding);
 
@@ -46,18 +48,21 @@ public class RelationshipApp {
   }
 }
 
-public class Building {
+public class Building
+{
   public string Name { get; set; }
   public string Address { get; set; }
   List<Department> Departments;
 
-  public Building (string name, string address) {
+  public Building(string name, string address)
+  {
     Name = name;
     Address = address;
     Departments = new List<Department>();
   }
 
-  public void AddDepartment(Department department) {
+  public void AddDepartment(Department department)
+  {
     Departments.Add(department);
   }
 
@@ -66,18 +71,22 @@ public class Building {
     return $"Building: {Name}; Address: {Address}";
   }
 
-  public void PrintDepartments() {
-    foreach(Department department in Departments) {
+  public void PrintDepartments()
+  {
+    foreach (Department department in Departments)
+    {
       Console.WriteLine(department);
     }
   }
 }
 
-public class Department {
+public class Department
+{
   public string Name { get; set; }
   public Building Building { get; set; }
 
-  public Department (string name, Building building) {
+  public Department(string name, Building building)
+  {
     Name = name;
     Building = building;
     building.AddDepartment(this);
@@ -85,6 +94,6 @@ public class Department {
 
   public override string ToString()
   {
-      return $"Departament: {Name}; {Building}";
+    return $"Departament: {Name}; {Building}";
   }
 }

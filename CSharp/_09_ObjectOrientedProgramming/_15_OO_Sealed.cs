@@ -27,15 +27,19 @@ using System;
  */
 namespace OurCompany.LearnCoding.OOP.Sealed;
 
-public class SealedApp {
-  public static void Main (string[] args) {
-    MyBaseClass myBaseObject = new MyBaseClass {
+public class SealedApp
+{
+  public static void Main(string[] args)
+  {
+    MyBaseClass myBaseObject = new MyBaseClass
+    {
       ID = "MYid 001",
       Name = "Name 1"
     };
     myBaseObject.PrintID();
 
-    MySubClass mySubObject = new MySubClass {
+    MySubClass mySubObject = new MySubClass
+    {
       ID = "MYSUB 001",
       Name = "My Sub Name",
       Specialization = "My Sub Spec 1"
@@ -45,7 +49,8 @@ public class SealedApp {
     MyBaseClass mySubObjectCopy = mySubObject;
     mySubObjectCopy.PrintID();
 
-    MySubSubclass mySubSubObject = new MySubSubclass {
+    MySubSubclass mySubSubObject = new MySubSubclass
+    {
       ID = "MYsubSuB 001",
       Name = "My SubSUB Name",
       Specialization = "My Sub Sub Spec 1",
@@ -55,22 +60,27 @@ public class SealedApp {
   }
 }
 
-public class MyBaseClass {
+public class MyBaseClass
+{
   public string ID { get; set; }
   public string Name { get; set; }
-  public virtual void PrintID() {
+  public virtual void PrintID()
+  {
     Console.WriteLine($"ID: {ID.ToUpper()}");
   }
 }
 
-public class MySubClass : MyBaseClass {
+public class MySubClass : MyBaseClass
+{
   public string Specialization { get; set; }
-  public override sealed void PrintID() {
+  public override sealed void PrintID()
+  {
     Console.WriteLine($"ID: {ID.ToLower()}");
   }
 }
 
-public class MySubSubclass : MySubClass {
+public class MySubSubclass : MySubClass
+{
   public string Location { get; set; }
 
   // public override void PrintID() {

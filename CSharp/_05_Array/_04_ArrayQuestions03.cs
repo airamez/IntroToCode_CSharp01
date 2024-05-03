@@ -18,14 +18,14 @@ using OurCompany;
 */
 public class ArrayQuestion03
 {
-    public static void Main(string[] args)
-    {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+  public static void Main(string[] args)
+  {
+    int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-        MyArray.Print(array);
-        MyArray.Print(array, "Inline", true);
-        MyArray.Print(array, "My array", true);
-        MyArray.Print(array, "Multiline", false);
-        MyArray.Print(array, "My Array Multiline", false);
-    }
+    MyArray.Print(array);
+    MyArray.Print(array, "Inline", true);
+    MyArray.Print(array, "My array", true);
+    MyArray.Print(array, "Multiline", false);
+    MyArray.Print(array, "My Array Multiline", false);
+  }
 }

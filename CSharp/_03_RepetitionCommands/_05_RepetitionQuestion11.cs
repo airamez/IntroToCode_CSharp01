@@ -13,17 +13,18 @@
 using System;
 class RepetitionQuestion11
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    Console.Write("Number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int factorial = 1;
+    // for (int i = number; i > 1; i--) {
+    //     factorial *= i; // fatorial = fatorial * i;
+    // }
+    for (int i = 2; i <= number; i++)
     {
-        Console.Write("Number: ");
-        int number = Convert.ToInt32(Console.ReadLine());
-        int factorial = 1;
-        // for (int i = number; i > 1; i--) {
-        //     factorial *= i; // fatorial = fatorial * i;
-        // }
-        for (int i = 2; i <= number; i++) {
-            factorial *= i; // fatorial = fatorial * i;
-        }
-        Console.WriteLine($"The factorial is {factorial}");
+      factorial *= i; // fatorial = fatorial * i;
     }
+    Console.WriteLine($"The factorial is {factorial}");
+  }
 }

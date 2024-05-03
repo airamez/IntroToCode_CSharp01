@@ -6,7 +6,8 @@ public class HospitalApp
 {
   public static void Main(string[] args)
   {
-    Person person1 = new Person {
+    Person person1 = new Person
+    {
       FirstName = "Jose",
       LastName = "Santos",
       Email = "josesantos@email.com",
@@ -14,7 +15,8 @@ public class HospitalApp
     };
     person1.Print();
 
-    Patient patient1 = new Patient {
+    Patient patient1 = new Patient
+    {
       FirstName = "João",
       LastName = "Apolinário",
       Email = "japolinario@noemail.com",
@@ -24,7 +26,8 @@ public class HospitalApp
     };
     patient1.Print();
 
-    Nurse nurse1 = new Nurse {
+    Nurse nurse1 = new Nurse
+    {
       FirstName = "Maria",
       LastName = "Karmelita",
       Email = "mkarmelita@email.com",
@@ -39,18 +42,22 @@ public class HospitalApp
   }
 }
 
-public class Person {
+public class Person
+{
   public string FirstName { get; set; }
   public string LastName { get; set; }
-  public string FullName {
-    get {
+  public string FullName
+  {
+    get
+    {
       return $"{FirstName} {LastName}";
     }
   }
   public string Email { get; set; }
   public string Phone { get; set; }
 
-  public void Print() {
+  public void Print()
+  {
     Console.WriteLine("Person");
     Console.WriteLine($"FullName: {FullName}");
     Console.WriteLine($"Email: {Email}");
@@ -58,11 +65,13 @@ public class Person {
   }
 }
 
-public class Patient: Person {
+public class Patient : Person
+{
   public string PatientID { get; set; }
-  public string Symptoms {get; set;}
+  public string Symptoms { get; set; }
 
-  public void Print () {
+  public void Print()
+  {
     base.Print();
     Console.WriteLine("Patient");
     Console.WriteLine($"PatientId: {PatientID}");
@@ -70,11 +79,13 @@ public class Patient: Person {
   }
 }
 
-public class Employee : Person  {
+public class Employee : Person
+{
   public string EmployeeID { get; set; }
   public string BankAccount { get; set; }
   public string StartDate { get; set; }
-  public void Print () {
+  public void Print()
+  {
     base.Print();
     Console.WriteLine("Employee");
     Console.WriteLine($"EmployeeID: {EmployeeID}");
@@ -83,11 +94,13 @@ public class Employee : Person  {
   }
 }
 
-public class Nurse : Employee {
+public class Nurse : Employee
+{
   public string NurseID { get; set; }
   public string Shift { get; set; }
 
-  public void Print () {
+  public void Print()
+  {
     base.Print();
     Console.WriteLine("Nurse");
     Console.WriteLine($"NurseID: {NurseID}");

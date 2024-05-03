@@ -10,13 +10,13 @@ using System;
  */
 class doWhileCommand
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    int i = 1;
+    do
     {
-        int i = 1;
-        do
-        {
-            Console.Write($"{i}, ");
-            i++;
-        } while (i <= 10);
-    }
+      Console.Write($"{i}, ");
+      i++;
+    } while (i <= 10);
+  }
 }

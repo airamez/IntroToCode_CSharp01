@@ -11,36 +11,44 @@ using System;
   # Demo with a method to Add numbers
   # Show Math.Max()
 */
-public class OverloadApp {
-    public static void Main (string[] args) {
-        Console.WriteLine(Sum(5, 9));
-        Console.WriteLine(Sum(5, 9, 3));
-        Console.WriteLine(Sum(4, 8, 1, 3));
-        Console.WriteLine(Sum(9.6, 25.8));
-        Console.WriteLine(Math.Max(5, 9.5));
-    }
+public class OverloadApp
+{
+  public static void Main(string[] args)
+  {
+    Console.WriteLine(Sum(5, 9));
+    Console.WriteLine(Sum(5, 9, 3));
+    Console.WriteLine(Sum(4, 8, 1, 3));
+    Console.WriteLine(Sum(9.6, 25.8));
+    Console.WriteLine(Math.Max(5, 9.5));
+  }
 
-    public static int Sum (int number1, int number2) {
-        return number1 + number2;
-    }
+  public static int Sum(int number1, int number2)
+  {
+    return number1 + number2;
+  }
 
-    public static long Sum (int number1, long number2) {
-        return number1 + number2;
-    }
+  public static long Sum(int number1, long number2)
+  {
+    return number1 + number2;
+  }
 
-    public static long Sum (long number1, int number2) {
-        return number1 + number2;
-    }
+  public static long Sum(long number1, int number2)
+  {
+    return number1 + number2;
+  }
 
-    public static int Sum (int number1, int number2, int number3) {
-        return Sum(number1, number2) + number3;
-    }
+  public static int Sum(int number1, int number2, int number3)
+  {
+    return Sum(number1, number2) + number3;
+  }
 
-    public static int Sum (int number1, int number2, int number3, int number4) {
-        return number1 + number2 + number3 + number4;
-    }
+  public static int Sum(int number1, int number2, int number3, int number4)
+  {
+    return number1 + number2 + number3 + number4;
+  }
 
-    public static double Sum (double number1, double number2) {
-        return number1 + number2;
-    }
+  public static double Sum(double number1, double number2)
+  {
+    return number1 + number2;
+  }
 }

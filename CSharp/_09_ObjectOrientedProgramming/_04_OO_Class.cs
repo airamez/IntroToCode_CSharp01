@@ -38,47 +38,58 @@ using System;
    * Password
  */
 
- public class Customer {
-    private string firstName;
-    private  string lastName;
+public class Customer
+{
+  private string firstName;
+  private string lastName;
 
-    public Customer (string firstName, string lastName) {
-        SetFirstName(firstName);
-        SetLastName(lastName);
+  public Customer(string firstName, string lastName)
+  {
+    SetFirstName(firstName);
+    SetLastName(lastName);
+  }
+
+  public void SetFirstName(string firstName)
+  {
+    if (string.IsNullOrEmpty(firstName))
+    {
+      throw new Exception("First Name is required");
     }
+    this.firstName = firstName;
+  }
 
-    public void SetFirstName(string firstName) {
-        if (string.IsNullOrEmpty(firstName)) {
-            throw new Exception("First Name is required");
-        }
-        this.firstName = firstName;
+  public string GetFirstName()
+  {
+    return firstName;
+  }
+
+  public void SetLastName(string lastName)
+  {
+    if (string.IsNullOrEmpty(lastName))
+    {
+      throw new Exception("Last Name is required");
     }
+    this.lastName = lastName;
+  }
 
-    public string GetFirstName() {
-        return firstName;
-    }
+  public string GetLastName()
+  {
+    return lastName;
+  }
 
-    public void SetLastName(string lastName) {
-        if (string.IsNullOrEmpty(lastName)) {
-            throw new Exception("Last Name is required");
-        }
-        this.lastName = lastName;
-    }
+  public string GetFullname()
+  {
+    return $"{GetFirstName()} {GetLastName()}";
+  }
+}
 
-    public string GetLastName() {
-        return lastName;
-    }
+public class _04_OO_Class_App
+{
+  public static void Main(string[] args)
+  {
+    Customer customerA = new Customer("Jose", "Santos");
+    Console.WriteLine($"Fullname: {customerA.GetFullname()}");
 
-    public string GetFullname() {
-        return $"{GetFirstName()} {GetLastName()}";
-    }
- }
-
-public class _04_OO_Class_App {
-    public static void Main(string[] args) {
-        Customer customerA = new Customer("Jose", "Santos");
-        Console.WriteLine($"Fullname: {customerA.GetFullname()}");
-
-//        Customer customerB = new Customer("", null);
-    }
+    //        Customer customerB = new Customer("", null);
+  }
 }

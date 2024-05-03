@@ -4,25 +4,30 @@
 using System;
 class RepetitionQuestion04
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    int sum = 0;
+    int count = 0;
+    while (true)
     {
-        int sum = 0;
-        int count = 0;
-        while (true) {
-            Console.Write("Number = ");
-            string numAsString = Console.ReadLine();
-            if (numAsString == "") {
-                break;
-            }
-            int number = Convert.ToInt32(numAsString);
-            sum += number;
-            count++;
-        }
-        if (count == 0) {
-            Console.WriteLine("No numbers entered!");
-        } else {
-            double average = sum / (double) count;
-            Console.WriteLine($"Average = {average}");
-        }
+      Console.Write("Number = ");
+      string numAsString = Console.ReadLine();
+      if (numAsString == "")
+      {
+        break;
+      }
+      int number = Convert.ToInt32(numAsString);
+      sum += number;
+      count++;
     }
+    if (count == 0)
+    {
+      Console.WriteLine("No numbers entered!");
+    }
+    else
+    {
+      double average = sum / (double)count;
+      Console.WriteLine($"Average = {average}");
+    }
+  }
 }

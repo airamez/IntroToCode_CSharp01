@@ -24,73 +24,73 @@ using DataStructures.DoubleLinkedList.Improved;
 namespace DataStructures.Queue;
 public class MyQueue
 {
-    private const string QUEUE_EMPTY_MESSAGE = "The queue is Emtpy.";
-    private const string QUEUE_FULL_MESSAGE = "The queue is FULL.";
+  private const string QUEUE_EMPTY_MESSAGE = "The queue is Emtpy.";
+  private const string QUEUE_FULL_MESSAGE = "The queue is FULL.";
 
-    private MyDoubleLinkedList List { set; get; }
+  private MyDoubleLinkedList List { set; get; }
 
-    public MyQueue(int capacity = int.MaxValue)
+  public MyQueue(int capacity = int.MaxValue)
+  {
+    List = new MyDoubleLinkedList();
+    Capacity = capacity;
+  }
+
+
+  public string Peek
+  {
+    get
     {
-        List = new MyDoubleLinkedList();
-        Capacity = capacity;
+      if (IsEmpty)
+      {
+        throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
+      }
+      return List.Tail;
     }
+  }
 
-
-    public string Peek
+  public bool IsEmpty
+  {
+    get
     {
-        get
-        {
-            if (IsEmpty)
-            {
-                throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
-            }
-            return List.Tail;
-        }
+      return List.IsEmpty;
     }
+  }
 
-    public bool IsEmpty
+  public bool IsFull
+  {
+    get
     {
-        get
-        {
-            return List.IsEmpty;
-        }
+      return List.Count == Capacity;
     }
+  }
 
-    public bool IsFull
+  public int Length
+  {
+    get
     {
-        get
-        {
-            return List.Count == Capacity;
-        }
+      return List.Count;
     }
+  }
 
-    public int Length
+  public int Capacity { private set; get; }
+
+  public void Enqueue(string data)
+  {
+    if (IsFull)
     {
-        get
-        {
-            return List.Count;
-        }
+      throw new InvalidOperationException(QUEUE_FULL_MESSAGE);
     }
+    List.AddAtHead(data);
+  }
 
-    public int Capacity { private set; get; }
-
-    public void Enqueue(string data)
+  public string Dequeue()
+  {
+    if (IsEmpty)
     {
-        if (IsFull)
-        {
-            throw new InvalidOperationException(QUEUE_FULL_MESSAGE);
-        }
-        List.AddAtHead(data);
+      throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
     }
-
-    public string Dequeue()
-    {
-        if (IsEmpty)
-        {
-            throw new InvalidOperationException(QUEUE_EMPTY_MESSAGE);
-        }
-        string value = List.Tail;
-        List.RemoveAtTail();
-        return value;
-    }
+    string value = List.Tail;
+    List.RemoveAtTail();
+    return value;
+  }
 }

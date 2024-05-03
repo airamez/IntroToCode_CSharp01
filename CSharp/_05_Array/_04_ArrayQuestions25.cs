@@ -12,61 +12,61 @@ using OurCompany;
  */
 public class ArrayQuestion25
 {
-    public static void Main(string[] args)
-    {
-        int[] elevations = {
+  public static void Main(string[] args)
+  {
+    int[] elevations = {
             2, 1, 3, 0, 1, 3, 2, 0, 1, 2, 0, 1, 4, 1, 5, 0, 2, 1, 3, 0, 0, 2
         };
-        int trappedWater = GetTrappedWater(elevations);
-        Console.WriteLine($"Total trapped water = {trappedWater}");
-    }
+    int trappedWater = GetTrappedWater(elevations);
+    Console.WriteLine($"Total trapped water = {trappedWater}");
+  }
 
-    private static int GetTrappedWater(int[] elevations)
+  private static int GetTrappedWater(int[] elevations)
+  {
+    int[] maxLeft = GetMaxElevationsOnLeft(elevations);
+    int[] maxRight = GetMaxElevationsFromRight(elevations);
+    return GetTotalTrappedWater(elevations, maxLeft, maxRight);
+  }
+
+  private static int GetTotalTrappedWater(int[] elevations,
+                                          int[] maxLeft,
+                                          int[] maxRight)
+  {
+    int totaltrappedWater = 0;
+    for (int i = 0; i < elevations.Length; i++)
     {
-        int[] maxLeft = GetMaxElevationsOnLeft(elevations);
-        int[] maxRight = GetMaxElevationsFromRight(elevations);
-        return GetTotalTrappedWater(elevations, maxLeft, maxRight);
+      int max = Math.Min(maxLeft[i], maxRight[i]);
+      int trappedWaterLocal = max - elevations[i];
+      if (trappedWaterLocal > 0)
+      {
+        totaltrappedWater += trappedWaterLocal;
+      }
     }
 
-    private static int GetTotalTrappedWater(int[] elevations,
-                                            int[] maxLeft,
-                                            int[] maxRight)
+    return totaltrappedWater;
+  }
+
+  private static int[] GetMaxElevationsFromRight(int[] elevations)
+  {
+    int[] maxRight = new int[elevations.Length];
+    int maxElevationRight = 0;
+    for (int i = elevations.Length - 2; i >= 0; i--)
     {
-        int totaltrappedWater = 0;
-        for (int i = 0; i < elevations.Length; i++)
-        {
-            int max = Math.Min(maxLeft[i], maxRight[i]);
-            int trappedWaterLocal = max - elevations[i];
-            if (trappedWaterLocal > 0)
-            {
-                totaltrappedWater += trappedWaterLocal;
-            }
-        }
-
-        return totaltrappedWater;
+      maxElevationRight = Math.Max(maxElevationRight, elevations[i + 1]);
+      maxRight[i] = maxElevationRight;
     }
+    return maxRight;
+  }
 
-    private static int[] GetMaxElevationsFromRight(int[] elevations)
+  private static int[] GetMaxElevationsOnLeft(int[] elevations)
+  {
+    int[] maxLeft = new int[elevations.Length];
+    int maxElevationLeft = 0;
+    for (int i = 1; i < elevations.Length; i++)
     {
-        int[] maxRight = new int[elevations.Length];
-        int maxElevationRight = 0;
-        for (int i = elevations.Length - 2; i >= 0; i--)
-        {
-            maxElevationRight = Math.Max(maxElevationRight, elevations[i + 1]);
-            maxRight[i] = maxElevationRight;
-        }
-        return maxRight;
+      maxElevationLeft = Math.Max(maxElevationLeft, elevations[i - 1]);
+      maxLeft[i] = maxElevationLeft;
     }
-
-    private static int[] GetMaxElevationsOnLeft(int[] elevations)
-    {
-        int[] maxLeft = new int[elevations.Length];
-        int maxElevationLeft = 0;
-        for (int i = 1; i < elevations.Length; i++)
-        {
-            maxElevationLeft = Math.Max(maxElevationLeft, elevations[i - 1]);
-            maxLeft[i] = maxElevationLeft;
-        }
-        return maxLeft;
-    }
+    return maxLeft;
+  }
 }

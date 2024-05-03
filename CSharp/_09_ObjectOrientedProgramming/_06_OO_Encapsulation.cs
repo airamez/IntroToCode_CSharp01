@@ -17,53 +17,66 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.Encapsulation;
 
-public class Car {
+public class Car
+{
   private string vin;
   private string maker;
   private string model;
 
-  public Car (string vin, string maker, string model) {
+  public Car(string vin, string maker, string model)
+  {
     SetVIN(vin);
     SetMaker(maker);
     SetModel(model);
   }
 
-  private void SetVIN(string vin) {
-    if (string.IsNullOrEmpty(vin)) {
+  private void SetVIN(string vin)
+  {
+    if (string.IsNullOrEmpty(vin))
+    {
       throw new Exception("VIN is required");
     }
     this.vin = vin;
   }
 
-  public string GetVIN() {
+  public string GetVIN()
+  {
     return vin;
   }
 
-  public void SetMaker(string maker) {
-    if (string.IsNullOrEmpty(maker)) {
+  public void SetMaker(string maker)
+  {
+    if (string.IsNullOrEmpty(maker))
+    {
       throw new Exception("Maker is required");
     }
     this.maker = maker;
   }
 
-  public string GetMaker() {
+  public string GetMaker()
+  {
     return maker;
   }
 
-  public void SetModel(string model) {
-    if (string.IsNullOrEmpty(model)) {
+  public void SetModel(string model)
+  {
+    if (string.IsNullOrEmpty(model))
+    {
       throw new Exception("Model is required");
     }
     this.model = model;
   }
 
-  public string GetModel() {
+  public string GetModel()
+  {
     return model;
   }
 }
 
-public class CarApp {
-  public static void Main (string[] args) {
+public class CarApp
+{
+  public static void Main(string[] args)
+  {
     Car car1 = new Car("1234ABC", "Toyota", "Rav4");
     Console.WriteLine($"VIN: {car1.GetVIN()}; Maker: {car1.GetMaker()}; Model: {car1.GetModel()}");
     //car1.SetVin() // Not accessible

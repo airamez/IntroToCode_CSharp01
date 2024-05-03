@@ -9,17 +9,18 @@ public class _03_TridimensionalDemo
         demo2();
     }
 
-    private static void demo1() {
-        string[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "Octorber", "Nocvember", "December"};
-        int[] preciptationPerMonth = {5, 3, 6, 2, 1, 0, 0, 8, 10, 5, 3, 6};
-        
+    private static void demo1()
+    {
+        string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "Octorber", "Nocvember", "December" };
+        int[] preciptationPerMonth = { 5, 3, 6, 2, 1, 0, 0, 8, 10, 5, 3, 6 };
+
         // Printing precipitation per month
         for (int i = 0; i < preciptationPerMonth.Length; i++)
         {
             Console.WriteLine($"{months[i]}= {preciptationPerMonth[i]}");
         }
 
-        string[] states = {"California", "Florida", "Nevada", "Texas"};
+        string[] states = { "California", "Florida", "Nevada", "Texas" };
         int[,] preciptationPerMonthPerState =
         {
             {11, 13, 16, 15, 10, 10, 15, 18, 10, 15, 10, 12},
@@ -27,7 +28,7 @@ public class _03_TridimensionalDemo
             {10, 11, 12, 12, 15, 20, 11, 12, 15, 17, 15, 18},
             {11, 11, 13, 11, 21, 13, 10, 15, 14, 13, 15, 27},
         };
-        
+
         Console.WriteLine("Precipitation Per State/Month report:");
         for (int i = 0; i < states.Length; i++)
         {
@@ -39,7 +40,8 @@ public class _03_TridimensionalDemo
         }
     }
 
-    private static void demo2() {
+    private static void demo2()
+    {
         string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "Octorber", "November", "December" };
         int[] preciptationPerMonth = { 5, 3, 6, 2, 1, 0, 0, 8, 10, 5, 3, 6 };
 

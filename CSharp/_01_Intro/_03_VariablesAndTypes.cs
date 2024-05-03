@@ -38,21 +38,21 @@ Types
 using System;
 class VariablesAndTypes
 {
-    public static void Main(string[] args)
-    {
-      int age = 50;
-      Console.WriteLine(age);
+  public static void Main(string[] args)
+  {
+    int age = 50;
+    Console.WriteLine(age);
 
-      bool approved = true;
-      Console.WriteLine(approved);
+    bool approved = true;
+    Console.WriteLine(approved);
 
-      double height = 1.95;
-      Console.WriteLine(height);
+    double height = 1.95;
+    Console.WriteLine(height);
 
-      char c = 'Z';
-      Console.WriteLine(c);
+    char c = 'Z';
+    Console.WriteLine(c);
 
-      string name = "Jose Maria";
-      Console.WriteLine(name);
-    }
+    string name = "Jose Maria";
+    Console.WriteLine(name);
+  }
 }

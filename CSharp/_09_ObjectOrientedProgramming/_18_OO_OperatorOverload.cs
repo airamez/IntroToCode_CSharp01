@@ -35,15 +35,19 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.OperatorOveload;
 
-public class OperatorOverloadApp {
-  public static void Main (string[] args) {
+public class OperatorOverloadApp
+{
+  public static void Main(string[] args)
+  {
     // Example 1
-    Point pointA = new Point {
+    Point pointA = new Point
+    {
       X = 10,
       Y = 20
     };
     Console.WriteLine(pointA);
-    Point pointB = new Point {
+    Point pointB = new Point
+    {
       X = 30,
       Y = 40
     };
@@ -52,17 +56,20 @@ public class OperatorOverloadApp {
     Console.WriteLine(newPoint);
 
     // Example 2
-    Person personA = new Person {
+    Person personA = new Person
+    {
       FirstName = "Jose",
       LastName = "Santos"
     };
     Console.WriteLine(personA);
-    Person personB = new Person {
+    Person personB = new Person
+    {
       FirstName = "Jose",
       LastName = "Santos"
     };
     Console.WriteLine(personB);
-    Person personC = new Person {
+    Person personC = new Person
+    {
       FirstName = "Jose",
       LastName = "Maria"
     };
@@ -76,17 +83,20 @@ public class OperatorOverloadApp {
   }
 }
 
-public class Point {
+public class Point
+{
   public int X { get; set; }
   public int Y { get; set; }
 
   public override string ToString()
   {
-      return $"[X:{X}; Y:{Y}]";
+    return $"[X:{X}; Y:{Y}]";
   }
 
-  public static Point operator + (Point pointLeft, Point pointRight) {
-    Point newPoint = new Point {
+  public static Point operator +(Point pointLeft, Point pointRight)
+  {
+    Point newPoint = new Point
+    {
       X = pointLeft.X + pointRight.X,
       Y = pointLeft.Y + pointRight.Y
     };
@@ -94,35 +104,41 @@ public class Point {
   }
 }
 
-public class Person  {
+public class Person
+{
   public string FirstName { get; set; }
   public string LastName { get; set; }
 
   public override string ToString()
   {
-      return $"[Person: {FirstName} {LastName}]";
+    return $"[Person: {FirstName} {LastName}]";
   }
 
-  public static bool operator == (Person left, Person right) {
+  public static bool operator ==(Person left, Person right)
+  {
     return left.FirstName == right.FirstName &&
            left.LastName == right.LastName;
   }
 
-  public static bool operator != (Person left, Person right) {
+  public static bool operator !=(Person left, Person right)
+  {
     return !(left == right);
   }
 
   public override bool Equals(object obj)
   {
-    if (obj is Person) {
-      return this == (Person) obj;
-    } else {
+    if (obj is Person)
+    {
+      return this == (Person)obj;
+    }
+    else
+    {
       return false;
     }
   }
 
   public override int GetHashCode()
   {
-      return FirstName.GetHashCode() + LastName.GetHashCode();
+    return FirstName.GetHashCode() + LastName.GetHashCode();
   }
 }

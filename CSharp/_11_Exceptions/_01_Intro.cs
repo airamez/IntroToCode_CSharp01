@@ -32,21 +32,27 @@ using System;
 
 namespace Exceptions;
 
-public class IntroApp {
-    public static void Main (string[] args) {
-      while (true) {
-        try {
-          Console.Write("Number 1: ");
-          int number1 = Convert.ToInt32(Console.ReadLine());
+public class IntroApp
+{
+  public static void Main(string[] args)
+  {
+    while (true)
+    {
+      try
+      {
+        Console.Write("Number 1: ");
+        int number1 = Convert.ToInt32(Console.ReadLine());
 
-          Console.Write("Number 2: ");
-          int number2 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Number 2: ");
+        int number2 = Convert.ToInt32(Console.ReadLine());
 
-          decimal division = number1 /(decimal) number2;
-          Console.WriteLine($"{number1} / {number2} = {division}");
-        } catch (Exception ex) {
-          Console.WriteLine($"Error => {ex.Message}");
-        }
+        decimal division = number1 / (decimal)number2;
+        Console.WriteLine($"{number1} / {number2} = {division}");
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error => {ex.Message}");
       }
     }
+  }
 }

@@ -11,26 +11,35 @@ the total price using the rules below:
 using System;
 class SelectionQuestion15
 {
-    public static void Main(string[] args)
-    {
-        Console.Write("Quantity: ");
-        double quantity = Convert.ToDouble(Console.ReadLine());
+  public static void Main(string[] args)
+  {
+    Console.Write("Quantity: ");
+    double quantity = Convert.ToDouble(Console.ReadLine());
 
-        double unitPrice = 0;
-        // Getting the unit price
-        if (quantity <= 5) {
-            unitPrice = 1.5;
-        } else if (quantity <= 10) {
-            unitPrice = 1.45;
-        } else if (quantity <= 50) {
-            unitPrice = 1.40;
-        } else if (quantity <= 100) {
-            unitPrice = 1.3;
-        } else {
-            unitPrice = 1.2;
-        }
-        // Calculating the total  price
-        double totalPrice = quantity * unitPrice;
-        Console.WriteLine($"Total = {totalPrice}");
+    double unitPrice = 0;
+    // Getting the unit price
+    if (quantity <= 5)
+    {
+      unitPrice = 1.5;
     }
+    else if (quantity <= 10)
+    {
+      unitPrice = 1.45;
+    }
+    else if (quantity <= 50)
+    {
+      unitPrice = 1.40;
+    }
+    else if (quantity <= 100)
+    {
+      unitPrice = 1.3;
+    }
+    else
+    {
+      unitPrice = 1.2;
+    }
+    // Calculating the total  price
+    double totalPrice = quantity * unitPrice;
+    Console.WriteLine($"Total = {totalPrice}");
+  }
 }

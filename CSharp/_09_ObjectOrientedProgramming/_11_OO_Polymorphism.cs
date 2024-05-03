@@ -17,10 +17,13 @@ namespace OurCompany.LearnCoding.OOP.Polymorphism;
   # Show how to check and cast to a specific object type using the operator: is
 */
 
-public class PolymorphismApp {
-  public static void Main(string[] args) {
+public class PolymorphismApp
+{
+  public static void Main(string[] args)
+  {
     Person[] personDB = new Person[10];
-    personDB[0] = new Patient {
+    personDB[0] = new Patient
+    {
       FirstName = "Carlos",
       LastName = "Malta",
       Email = "cmalta@noemail.com",
@@ -28,7 +31,8 @@ public class PolymorphismApp {
       PatientID = "P001",
       Symptoms = "fever, headache"
     };
-    personDB[1] = new Nurse{
+    personDB[1] = new Nurse
+    {
       FirstName = "Marieta",
       LastName = "Silva",
       Email = "msilva@noemail.com",
@@ -39,7 +43,8 @@ public class PolymorphismApp {
       NurseID = "N001",
       Shift = "Morning"
     };
-    personDB[2] = new Doctor {
+    personDB[2] = new Doctor
+    {
       FirstName = "Jose",
       LastName = "Maria",
       Email = "joseMaria@noemail.com",
@@ -50,7 +55,8 @@ public class PolymorphismApp {
       DoctorID = "D0001",
       Specialization = "XRay"
     };
-    personDB[3] = new Doctor {
+    personDB[3] = new Doctor
+    {
       FirstName = "Zenilton",
       LastName = "Fonseca",
       Email = "zene@noemail.com",
@@ -62,46 +68,57 @@ public class PolymorphismApp {
       Specialization = "Images"
     };
     // Printing all badges
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++)
+    {
       personDB[i].PrintBadge();
     }
     // Printing only Employee Badges
-    for (int i = 0; i < 4; i++) {
-      if (personDB[i] is Employee) {
+    for (int i = 0; i < 4; i++)
+    {
+      if (personDB[i] is Employee)
+      {
         personDB[i].PrintBadge();
       }
     }
     // Printing Doctor Name and Specialization
-    for (int i = 0; i < 4; i++) {
-      if (personDB[i] is Doctor) {
-        Doctor doctor = (Doctor) personDB[i];
+    for (int i = 0; i < 4; i++)
+    {
+      if (personDB[i] is Doctor)
+      {
+        Doctor doctor = (Doctor)personDB[i];
         Console.WriteLine($"{doctor.FullName}:{doctor.Specialization}");
       }
     }
   }
 }
 
-public class Person {
+public class Person
+{
   public string FirstName { get; set; }
   public string LastName { get; set; }
-  public string FullName {
-    get {
+  public string FullName
+  {
+    get
+    {
       return $"{FirstName} {LastName}";
     }
   }
   public string Email { get; set; }
   public string Phone { get; set; }
 
-  public virtual void PrintBadge() {
+  public virtual void PrintBadge()
+  {
     Console.WriteLine($"FullName: {FullName}");
   }
 }
 
-public class Patient: Person {
+public class Patient : Person
+{
   public string PatientID { get; set; }
-  public string Symptoms {get; set;}
+  public string Symptoms { get; set; }
 
-  public override void PrintBadge () {
+  public override void PrintBadge()
+  {
     Console.WriteLine("Patient");
     base.PrintBadge();
     Console.WriteLine($"PatientId: {PatientID}");
@@ -109,11 +126,13 @@ public class Patient: Person {
   }
 }
 
-public class Employee : Person  {
+public class Employee : Person
+{
   public string EmployeeID { get; set; }
   public string BankAccount { get; set; }
   public string StartDate { get; set; }
-  public override void PrintBadge () {
+  public override void PrintBadge()
+  {
     Console.WriteLine("Employee");
     base.PrintBadge();
     Console.WriteLine($"EmployeeID: {EmployeeID}");
@@ -121,11 +140,13 @@ public class Employee : Person  {
   }
 }
 
-public class Nurse : Employee {
+public class Nurse : Employee
+{
   public string NurseID { get; set; }
   public string Shift { get; set; }
 
-  public override void PrintBadge () {
+  public override void PrintBadge()
+  {
     Console.WriteLine("Nurse");
     base.PrintBadge();
     Console.WriteLine($"NurseID: {NurseID}");
@@ -133,11 +154,13 @@ public class Nurse : Employee {
   }
 }
 
-public class Doctor : Employee {
+public class Doctor : Employee
+{
   public string DoctorID { get; set; }
   public string Specialization { get; set; }
 
-  public override void PrintBadge() {
+  public override void PrintBadge()
+  {
     Console.WriteLine("Doctor");
     base.PrintBadge();
     Console.WriteLine($"Doctor ID: {DoctorID}");

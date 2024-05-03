@@ -1,5 +1,5 @@
 using System;
-namespace OurCompany.LearnCoding.OOP.TheObjectClass; 
+namespace OurCompany.LearnCoding.OOP.TheObjectClass;
 /*
 # The object class is the root of the C# class hierarchy.
   It is the base class for all types in C#, including 
@@ -19,8 +19,10 @@ namespace OurCompany.LearnCoding.OOP.TheObjectClass;
   # Uncomment the override methods from MyClass
   # Run the code and review the results
 */
-public class ThObjectClassApp {
-  public static void Main (string[] args) {
+public class ThObjectClassApp
+{
+  public static void Main(string[] args)
+  {
     object[] objects = new object[10];
 
     objects[0] = new object();
@@ -38,7 +40,7 @@ public class ThObjectClassApp {
     {
       Console.Write($"Type:{objects[i].GetType()}; ");
       Console.Write($"ToString(): {objects[i]}; ");
-//      string stringRepresentation = objects[i].ToString();
+      //      string stringRepresentation = objects[i].ToString();
       Console.WriteLine($"HashCode: {objects[i].GetHashCode()}");
     }
 
@@ -56,12 +58,14 @@ public class ThObjectClassApp {
 }
 
 
-public class MyClass {
+public class MyClass
+{
   public string FirstName { get; set; }
   public string LastName { get; set; }
-  public string FullName { get => $"{FirstName} {LastName}";}
-  
-  public MyClass (string firstName, string lastName) {
+  public string FullName { get => $"{FirstName} {LastName}"; }
+
+  public MyClass(string firstName, string lastName)
+  {
     FirstName = firstName;
     LastName = lastName;
   }
@@ -73,10 +77,11 @@ public class MyClass {
 
   public override bool Equals(object otherObject)
   {
-    if (otherObject is not MyClass) {
+    if (otherObject is not MyClass)
+    {
       return false;
     }
-    MyClass other = (MyClass) otherObject;
+    MyClass other = (MyClass)otherObject;
     return FullName.Equals(other.FullName);
   }
 

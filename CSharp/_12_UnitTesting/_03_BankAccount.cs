@@ -4,50 +4,50 @@ namespace MyBankTest;
 
 public class BankAccount
 {
-    private decimal balance;
-    private string id;
-    public string CustomerName { get; set; }
+  private decimal balance;
+  private string id;
+  public string CustomerName { get; set; }
 
-    public string ID
+  public string ID
+  {
+    get
     {
-        get
-        {
-            return id;
-        }
+      return id;
     }
+  }
 
-    public decimal Balance
+  public decimal Balance
+  {
+    get
     {
-        get
-        {
-            return balance;
-        }
+      return balance;
     }
+  }
 
-    public BankAccount(string id, decimal initialBalance)
-    {
-        balance = initialBalance;
-    }
+  public BankAccount(string id, decimal initialBalance)
+  {
+    balance = initialBalance;
+  }
 
-    public void Deposit(decimal ammount)
+  public void Deposit(decimal ammount)
+  {
+    if (ammount <= 0)
     {
-        if (ammount <= 0)
-        {
-            throw new Exception("Amount has to be a positive value");
-        }
-        balance += ammount;
+      throw new Exception("Amount has to be a positive value");
     }
+    balance += ammount;
+  }
 
-    public void Withdraw(decimal amount)
+  public void Withdraw(decimal amount)
+  {
+    if (amount <= 0)
     {
-        if (amount <= 0)
-        {
-            throw new Exception("Amount has to be a positive value");
-        }
-        if (amount > balance)
-        {
-            throw new Exception("Amount has to be less or equal than balance");
-        }
-        balance -= amount;
+      throw new Exception("Amount has to be a positive value");
     }
+    if (amount > balance)
+    {
+      throw new Exception("Amount has to be less or equal than balance");
+    }
+    balance -= amount;
+  }
 }

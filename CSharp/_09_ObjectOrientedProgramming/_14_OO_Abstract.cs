@@ -29,16 +29,18 @@ using System;
 
 namespace OurCompany.LearnCoding.OOP.Abstract;
 
-public class AbstractApp {
-  public static void Main (string[] args) {
+public class AbstractApp
+{
+  public static void Main(string[] args)
+  {
     // Shape shap = new Shape ("Blue","Red", 5);
     Triangle triangle = new Triangle("Blue", "Red", 5,
-    new Point(2,4),
+    new Point(2, 4),
     new Point(3, -6),
-    new Point(7,8)
+    new Point(7, 8)
     );
-    Circle circle = new Circle("Blue","Red", 5, new Point(5, 15), 50);
-    Square square = new Square("Blue","Red", 5, new Point(30, 50), new Point(70, 85));
+    Circle circle = new Circle("Blue", "Red", 5, new Point(5, 15), 50);
+    Square square = new Square("Blue", "Red", 5, new Point(30, 50), new Point(70, 85));
     Rectangle rectangle = new Rectangle("Blue", "Red", 5,
     new Point(0, 0),
     new Point(0, 5),
@@ -91,12 +93,13 @@ public class Triangle : Shape
     Point3 = point3;
   }
 
-  public override double GetArea() {
+  public override double GetArea()
+  {
     double sum = Point1.X * (Point2.Y - Point3.Y) +
                  Point2.X * (Point3.Y - Point1.Y) +
                  Point3.X * (Point1.Y - Point2.Y);
     sum = Math.Abs(sum);
-    double area = 0.5 *  sum;
+    double area = 0.5 * sum;
     return area;
   }
 }
@@ -114,7 +117,8 @@ public class Square : Shape
     Point2 = point2;
   }
 
-  public override double GetArea() {
+  public override double GetArea()
+  {
     Console.WriteLine("Square Area");
     return 250;
   }
@@ -137,10 +141,11 @@ public class Rectangle : Shape
     Point4 = point4;
   }
 
-  public override double GetArea() {
-    double length = Math.Sqrt(Math.Pow(Point1.X - Point2.X, 2) + 
+  public override double GetArea()
+  {
+    double length = Math.Sqrt(Math.Pow(Point1.X - Point2.X, 2) +
                     Math.Pow(Point1.Y - Point2.Y, 2));
-    double width = Math.Sqrt(Math.Pow(Point2.X - Point3.X, 2) + 
+    double width = Math.Sqrt(Math.Pow(Point2.X - Point3.X, 2) +
                     Math.Pow(Point2.Y - Point3.Y, 2));
     return length * width;
   }
@@ -159,7 +164,8 @@ public class Circle : Shape
     Radius = radius;
   }
 
-  public override double GetArea() {
+  public override double GetArea()
+  {
     Console.WriteLine("Circle Area");
     return 500;
   }

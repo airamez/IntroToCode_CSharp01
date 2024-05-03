@@ -34,18 +34,18 @@
 using System;
 class LogicalExpressions
 {
-    public static void Main(string[] args)
-    {
-      bool isMarried = true;
-      int salary = 120000;
-      bool isManager = false;
+  public static void Main(string[] args)
+  {
+    bool isMarried = true;
+    int salary = 120000;
+    bool isManager = false;
 
-      Console.WriteLine($"isMarried = {isMarried}");
-      Console.WriteLine($"Is married and is a manager = {isMarried && isManager}");
-      Console.WriteLine($"Salary greater than 150.000 and is a manager = {salary > 150000 && isManager}");
-      Console.WriteLine($"Is married, salary greater than 150.000 and is manager = {isMarried && salary > 150000 && isManager}");
-      Console.Write("Not married and Salary greater than or equal to 150.000 or is not a manager = ");
-      Console.WriteLine( ((!isMarried) && salary >= 150000) || (!isManager) );
+    Console.WriteLine($"isMarried = {isMarried}");
+    Console.WriteLine($"Is married and is a manager = {isMarried && isManager}");
+    Console.WriteLine($"Salary greater than 150.000 and is a manager = {salary > 150000 && isManager}");
+    Console.WriteLine($"Is married, salary greater than 150.000 and is manager = {isMarried && salary > 150000 && isManager}");
+    Console.Write("Not married and Salary greater than or equal to 150.000 or is not a manager = ");
+    Console.WriteLine(((!isMarried) && salary >= 150000) || (!isManager));
 
-    }
+  }
 }

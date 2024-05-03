@@ -109,13 +109,15 @@
   * Doubled Linked List
   * Queue
   * Stack
-  * Set, Hashtable and Dictionary
+  * Set / Hashtable
+  * Dictionary
   * Binary Tree
   * Heap
   * Graphs
 * Sorting
   * Bubble
   * Selection
+  * Insertion
   * Quick
   * Merge
   * Heap

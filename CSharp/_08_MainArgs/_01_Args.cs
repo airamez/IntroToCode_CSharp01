@@ -19,12 +19,14 @@ using System;
   dotnet run param1 param2 param3 param4 "parameter five5"
   */
 
-public class _01_Args {
-  public static void Main (string[] arguments) {
+public class _01_Args
+{
+  public static void Main(string[] arguments)
+  {
     Console.WriteLine($"Arguments #: {arguments.Length}");
     for (int i = 0; i < arguments.Length; i++)
     {
-        Console.WriteLine($"Parameter[{i}]:{arguments[i]}");
+      Console.WriteLine($"Parameter[{i}]:{arguments[i]}");
     }
   }
 }

@@ -5,14 +5,17 @@
 using System;
 class SelectionQuestion06
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    Console.Write("Number = ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    if (number < 0)
     {
-        Console.Write("Number = ");
-        int number = Convert.ToInt32(Console.ReadLine());
-        if (number < 0) {
-            Console.WriteLine("Negative");
-        } else if (number > 0){
-            Console.WriteLine("Positive");
-        }
+      Console.WriteLine("Negative");
     }
+    else if (number > 0)
+    {
+      Console.WriteLine("Positive");
+    }
+  }
 }

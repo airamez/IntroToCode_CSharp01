@@ -37,51 +37,59 @@ using OurCompany;
  */
 public class ArrayQuestion27
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    int[] sequence = GetRandomSequence();
+    int turn = 1;
+    while (true)
     {
-        int[] sequence = GetRandomSequence();
-        int turn = 1;
-        while (true) {
-            Console.WriteLine($"Turn {turn}");
-            Console.Write("Input:  ");
-            string guess = Console.ReadLine();
-            if (guess.Length != sequence.Length) {
-                Console.WriteLine($"Please provide {sequence.Length} digits");
-                continue;
-            }
-            Console.Write("Output: ");
-            int correctDigitsCount = 0;
-            for (int i = 0; i < sequence.Length; i++)
-            {
-                int guessDigit = Convert.ToInt32(guess[i].ToString());
-                if (Array.IndexOf(sequence, guessDigit) == - 1) {
-                    Console.Write("-");
-                } else if (sequence[i] == guessDigit) {
-                    Console.Write("*");
-                    correctDigitsCount++;
-                } else {
-                    Console.Write("+");
-                }
-            }
-            Console.WriteLine();
-            if (correctDigitsCount == sequence.Length) {
-                Console.WriteLine($"Congrats, You won in {turn} turns!");
-                break;
-            }
-            turn++;
+      Console.WriteLine($"Turn {turn}");
+      Console.Write("Input:  ");
+      string guess = Console.ReadLine();
+      if (guess.Length != sequence.Length)
+      {
+        Console.WriteLine($"Please provide {sequence.Length} digits");
+        continue;
+      }
+      Console.Write("Output: ");
+      int correctDigitsCount = 0;
+      for (int i = 0; i < sequence.Length; i++)
+      {
+        int guessDigit = Convert.ToInt32(guess[i].ToString());
+        if (Array.IndexOf(sequence, guessDigit) == -1)
+        {
+          Console.Write("-");
         }
+        else if (sequence[i] == guessDigit)
+        {
+          Console.Write("*");
+          correctDigitsCount++;
+        }
+        else
+        {
+          Console.Write("+");
+        }
+      }
+      Console.WriteLine();
+      if (correctDigitsCount == sequence.Length)
+      {
+        Console.WriteLine($"Congrats, You won in {turn} turns!");
+        break;
+      }
+      turn++;
     }
+  }
 
-    /// <summary>
-    /// Return an array with 5 random integer digits, from 0 to 9
-    /// </summary>
-    /// <returns>Random array with 5 integers digits</returns>
-    private static int[] GetRandomSequence()
-    {
-        int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        ArrayQuestion26.RandomizeArray(array);
-        int[] sequence = new int[5];
-        Array.Copy(array, sequence, sequence.Length);
-        return sequence;
-    }
+  /// <summary>
+  /// Return an array with 5 random integer digits, from 0 to 9
+  /// </summary>
+  /// <returns>Random array with 5 integers digits</returns>
+  private static int[] GetRandomSequence()
+  {
+    int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    ArrayQuestion26.RandomizeArray(array);
+    int[] sequence = new int[5];
+    Array.Copy(array, sequence, sequence.Length);
+    return sequence;
+  }
 }

@@ -5,17 +5,18 @@
 using System;
 class RepetitionQuestion08
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    int term1 = 0;
+    int term2 = 1;
+    Console.Write($"{term1}, ");
+    int newTerm = term1 + term2;
+    while (newTerm < 5000)
     {
-        int term1 = 0;
-        int term2 = 1;
-        Console.Write($"{term1}, ");
-        int newTerm = term1 + term2;
-        while (newTerm < 5000) {
-            Console.Write($"{newTerm}, ");
-            newTerm = term1 + term2;
-            term1 = term2;
-            term2 = newTerm; 
-        }
+      Console.Write($"{newTerm}, ");
+      newTerm = term1 + term2;
+      term1 = term2;
+      term2 = newTerm;
     }
+  }
 }

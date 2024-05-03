@@ -18,36 +18,44 @@ Congratulations you guessed the right number with 6 attempts!
 using System;
 class RepetitionQuestion12
 {
-    public static void Main(string[] args)
-    {
-        Random rnd = new Random();
-        int left = 1;
-        int right = 100;
-        int number = rnd.Next(1, right + 1); // Random number from 1 to 100 (inclusive)
-        // int number = rnd.Next(right) + 1
-        int attempts = 0;
-        int guess;
+  public static void Main(string[] args)
+  {
+    Random rnd = new Random();
+    int left = 1;
+    int right = 100;
+    int number = rnd.Next(1, right + 1); // Random number from 1 to 100 (inclusive)
+                                         // int number = rnd.Next(right) + 1
+    int attempts = 0;
+    int guess;
 
-        while (true) {
-            Console.Write($"{left} to {right} => ");
-            guess = Convert.ToInt32(Console.ReadLine());
-            attempts++;
-            // Checking if the guess is invalid
-            if (guess < left || guess > right) {
-                continue; // Skip to next guess
-            }
-            if (guess == number) {
-                Console.WriteLine($"Congratulations you guessed the right number with {attempts} attempts !");
-                break;
-            } else if (guess < number) {
-                left = guess + 1;
-            } else {
-                right = guess - 1;
-            }
-            if (left == right) {
-                Console.WriteLine($"Your lost!!! With {attempts} attempts");
-                break;
-            }
-        }
+    while (true)
+    {
+      Console.Write($"{left} to {right} => ");
+      guess = Convert.ToInt32(Console.ReadLine());
+      attempts++;
+      // Checking if the guess is invalid
+      if (guess < left || guess > right)
+      {
+        continue; // Skip to next guess
+      }
+      if (guess == number)
+      {
+        Console.WriteLine($"Congratulations you guessed the right number with {attempts} attempts !");
+        break;
+      }
+      else if (guess < number)
+      {
+        left = guess + 1;
+      }
+      else
+      {
+        right = guess - 1;
+      }
+      if (left == right)
+      {
+        Console.WriteLine($"Your lost!!! With {attempts} attempts");
+        break;
+      }
     }
+  }
 }

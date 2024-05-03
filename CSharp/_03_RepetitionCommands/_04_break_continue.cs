@@ -6,8 +6,10 @@ class breakAndContinue
 {
     public static void Main(string[] args)
     {
-        for (int i = 0; i <= 9; i++) {
-            if (i == 4) {
+        for (int i = 0; i <= 9; i++)
+        {
+            if (i == 4)
+            {
                 break;
             }
             Console.Write($"{i}, ");
@@ -15,8 +17,10 @@ class breakAndContinue
 
         Console.WriteLine();
 
-        for (int i = 0; i <= 9; i++) {
-            if (i % 2 == 0) {
+        for (int i = 0; i <= 9; i++)
+        {
+            if (i % 2 == 0)
+            {
                 continue;
             }
             Console.Write($"{i}, ");

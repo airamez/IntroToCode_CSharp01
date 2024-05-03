@@ -11,26 +11,33 @@
 using System;
 class SelectionQuestion20
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    Console.Write("Name: ");
+    string name = Console.ReadLine();
+    Console.Write("Salary: ");
+    double salary = Convert.ToDouble(Console.ReadLine());
+
+    int raisingPercentual = 0;
+    if (salary <= 50000)
     {
-        Console.Write("Name: ");
-        string name = Console.ReadLine();
-        Console.Write("Salary: ");
-        double salary = Convert.ToDouble(Console.ReadLine());
-
-        int raisingPercentual = 0;
-        if (salary <= 50000) {
-            raisingPercentual = 20;
-        } else if (salary <= 100000) {
-            raisingPercentual = 15;
-        } else if (salary <= 150000) {
-            raisingPercentual = 10;
-        } else {
-            raisingPercentual = 5;
-        }
-        double salaryIncrease = salary * (raisingPercentual / 100.00);
-        double newSalary = salary + salaryIncrease;
-
-        Console.WriteLine($"Name: {name}; Salary: {newSalary}; Increase: {salaryIncrease}");
+      raisingPercentual = 20;
     }
+    else if (salary <= 100000)
+    {
+      raisingPercentual = 15;
+    }
+    else if (salary <= 150000)
+    {
+      raisingPercentual = 10;
+    }
+    else
+    {
+      raisingPercentual = 5;
+    }
+    double salaryIncrease = salary * (raisingPercentual / 100.00);
+    double newSalary = salary + salaryIncrease;
+
+    Console.WriteLine($"Name: {name}; Salary: {newSalary}; Increase: {salaryIncrease}");
+  }
 }

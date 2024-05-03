@@ -5,22 +5,25 @@
 using System;
 class SelectionQuestion08
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    Console.Write("Age: ");
+    int age = Convert.ToInt32(Console.ReadLine());
+
+    if (age < 18)
     {
-        Console.Write("Age: ");
-        int age = Convert.ToInt32(Console.ReadLine());
-
-        if (age < 18) {
-            Console.WriteLine("Minor");
-        } else {
-            Console.WriteLine("ADULT");
-        }
-
-        // if (age >= 18) {
-        //     Console.WriteLine("ADULT");
-        // } else {
-        //     Console.WriteLine("Minor");
-        // }
-
+      Console.WriteLine("Minor");
     }
+    else
+    {
+      Console.WriteLine("ADULT");
+    }
+
+    // if (age >= 18) {
+    //     Console.WriteLine("ADULT");
+    // } else {
+    //     Console.WriteLine("Minor");
+    // }
+
+  }
 }

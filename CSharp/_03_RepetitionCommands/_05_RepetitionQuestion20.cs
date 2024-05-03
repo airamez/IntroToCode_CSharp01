@@ -6,42 +6,50 @@
 using System;
 class RepetitionQuestion20
 {
-    public static void Main(string[] args)
-    {
-        /*
-        3 = Fizz
-        5 = Buzz
+  public static void Main(string[] args)
+  {
+    /*
+    3 = Fizz
+    5 = Buzz
 
-        1
-        2
-        Fizz
-        4
-        Buzz
-        Fizz
-        7
-        8
-        Fizz
-        10
-        11
-        Fizz
-        13
-        14
-        FizzBuzz
-        16
-        17
-        Fizz
-        ..
-        */
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                Console.WriteLine("FizzBuzz");
-            } else if (i % 3 == 0) {
-                Console.WriteLine("Fizz");
-            } else if (i % 5 == 0) {
-                Console.WriteLine("Buzz");
-            } else {
-                Console.WriteLine(i);
-            }
-        }
+    1
+    2
+    Fizz
+    4
+    Buzz
+    Fizz
+    7
+    8
+    Fizz
+    10
+    11
+    Fizz
+    13
+    14
+    FizzBuzz
+    16
+    17
+    Fizz
+    ..
+    */
+    for (int i = 1; i <= 100; i++)
+    {
+      if (i % 3 == 0 && i % 5 == 0)
+      {
+        Console.WriteLine("FizzBuzz");
+      }
+      else if (i % 3 == 0)
+      {
+        Console.WriteLine("Fizz");
+      }
+      else if (i % 5 == 0)
+      {
+        Console.WriteLine("Buzz");
+      }
+      else
+      {
+        Console.WriteLine(i);
+      }
     }
+  }
 }

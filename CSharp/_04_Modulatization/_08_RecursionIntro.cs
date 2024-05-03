@@ -16,27 +16,31 @@ using OurCompany;
 
 public class RecursionIntro
 {
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    int value = Library.ReadInteger("Number");
+    CountingReverse(value);
+    Console.WriteLine();
+    Counting(value);
+  }
+
+  public static void CountingReverse(int number)
+  {
+    if (number == 0)
     {
-        int value = Library.ReadInteger("Number");
-        CountingReverse(value);
-        Console.WriteLine();
-        Counting(value);
+      return;
     }
+    Console.Write($"{number}, ");
+    CountingReverse(number - 1);
+  }
 
-    public static void CountingReverse (int number) {
-        if (number == 0) {
-            return;
-        }
-        Console.Write($"{number}, ");
-        CountingReverse(number - 1);
+  public static void Counting(int number)
+  {
+    if (number == 0)
+    {
+      return;
     }
-
-    public static void Counting (int number) {
-        if (number == 0) {
-            return;
-        }
-        Counting(number - 1);
-        Console.Write($"{number}, ");
-    }
+    Counting(number - 1);
+    Console.Write($"{number}, ");
+  }
 }

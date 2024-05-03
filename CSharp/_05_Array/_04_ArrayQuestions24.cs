@@ -11,28 +11,32 @@ using OurCompany;
  */
 public class ArrayQuestion24
 {
-    public static void Main(string[] args)
-    {
-        int[] array = {1,0,1,1,0,0,0,1,0,1,1,1,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0};
-        int longest = GetLongestSequenceLength(array);
-        Console.WriteLine(longest);
-    }
+  public static void Main(string[] args)
+  {
+    int[] array = { 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 };
+    int longest = GetLongestSequenceLength(array);
+    Console.WriteLine(longest);
+  }
 
-    private static int GetLongestSequenceLength(int[] array)
+  private static int GetLongestSequenceLength(int[] array)
+  {
+    int longest = 1;
+    int longestLocal = 1;
+    for (int i = 0; i < array.Length - 1; i++)
     {
-        int longest = 1;
-        int longestLocal = 1;
-        for (int i = 0; i < array.Length - 1; i++)
-        {
-            if (array[i] == array[i+1]) {
-                longestLocal++;
-            } else {
-                longestLocal = 1;
-            }
-            if (longestLocal > longest) {
-                longest = longestLocal;
-            }
-        }
-        return longest;
+      if (array[i] == array[i + 1])
+      {
+        longestLocal++;
+      }
+      else
+      {
+        longestLocal = 1;
+      }
+      if (longestLocal > longest)
+      {
+        longest = longestLocal;
+      }
     }
+    return longest;
+  }
 }

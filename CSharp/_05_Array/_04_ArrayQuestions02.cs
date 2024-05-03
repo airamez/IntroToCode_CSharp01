@@ -7,9 +7,9 @@ using OurCompany;
  */
 public class ArrayQuestion02
 {
-    public static void Main(string[] args)
-    {
-        int[] myArray1 = MyArray.ReadIntArray("My Array", 10);
-        Library.PrintIntArray(myArray1, "My Array 1");
-    }
+  public static void Main(string[] args)
+  {
+    int[] myArray1 = MyArray.ReadIntArray("My Array", 10);
+    Library.PrintIntArray(myArray1, "My Array 1");
+  }
 }

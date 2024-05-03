@@ -20,4 +20,5 @@
 # Remember, understanding data structures is fundamental for 
   designing efficient algorithms and optimizing software performance.
 
-"Bad programmers worry about the code. Good programmers worry about data structures and their relationships." Linus Torvalds
+"Bad programmers worry about the code. Good programmers worry about data structures and their relationships."
+Linus Torvalds

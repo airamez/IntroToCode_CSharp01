@@ -12,25 +12,28 @@ Read an year and print if it is a Leap Year or Not
 using System;
 class SelectionQuestion17
 {
-    public static void Main(string[] args)
-    {
-        Console.Write("Year: ");
-        int year = Convert.ToInt32(Console.ReadLine());
+   public static void Main(string[] args)
+   {
+      Console.Write("Year: ");
+      int year = Convert.ToInt32(Console.ReadLine());
 
-        // if (year % 4 != 0) {
-        //     Console.WriteLine("Not Leap Year");
-        // } else if (year % 100 != 0) {
-        //     Console.WriteLine("Leap Year");
-        // } else if (year % 400 == 0) {
-        //     Console.WriteLine("Leap Year");
-        // } else {
-        //     Console.WriteLine("Not Leap Year");
-        // }
-        
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            Console.WriteLine($"{year} Leap Year");
-        } else {
-            Console.WriteLine($"{year} Not Leap Year");
-        }
-    }
+      // if (year % 4 != 0) {
+      //     Console.WriteLine("Not Leap Year");
+      // } else if (year % 100 != 0) {
+      //     Console.WriteLine("Leap Year");
+      // } else if (year % 400 == 0) {
+      //     Console.WriteLine("Leap Year");
+      // } else {
+      //     Console.WriteLine("Not Leap Year");
+      // }
+
+      if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+      {
+         Console.WriteLine($"{year} Leap Year");
+      }
+      else
+      {
+         Console.WriteLine($"{year} Not Leap Year");
+      }
+   }
 }
