@@ -18,9 +18,78 @@
   # Memory Management
 */
 using System;
+using DataStructures.DoubleLinkedList.Improved;
 
 namespace DataStructures.Stack;
 public class MyStack
 {
+  private const string STACK_EMPTY_MESSAGE = "The stack is Emtpy.";
+  private const string STACK_FULL_MESSAGE = "The stack is FULL.";
 
+  private MyDoubleLinkedList List { set; get; }
+
+  public MyStack(int capacity = int.MaxValue)
+  {
+    List = new MyDoubleLinkedList();
+    Capacity = capacity;
+  }
+
+
+  public string Peek
+  {
+    get
+    {
+      if (IsEmpty)
+      {
+        throw new InvalidOperationException(STACK_EMPTY_MESSAGE);
+      }
+      return List.Head;
+    }
+  }
+
+  public bool IsEmpty
+  {
+    get
+    {
+      return List.IsEmpty;
+    }
+  }
+
+  public bool IsFull
+  {
+    get
+    {
+      return List.Count == Capacity;
+    }
+  }
+
+  public int Length
+  {
+    get
+    {
+      return List.Count;
+    }
+  }
+
+  public int Capacity { private set; get; }
+
+  public void Push(string data)
+  {
+    if (IsFull)
+    {
+      throw new InvalidOperationException(STACK_FULL_MESSAGE);
+    }
+    List.AddAtHead(data);
+  }
+
+  public string Pop()
+  {
+    if (IsEmpty)
+    {
+      throw new InvalidOperationException(STACK_EMPTY_MESSAGE);
+    }
+    string value = List.Head;
+    List.RemoveAtHead();
+    return value;
+  }
 }
