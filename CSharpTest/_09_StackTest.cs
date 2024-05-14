@@ -1,4 +1,3 @@
-using DataStructures.Queue;
 using DataStructures.Stack;
 
 namespace Tests.Stack;
