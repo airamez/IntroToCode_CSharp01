@@ -24,35 +24,51 @@
 
 using System;
 
+
 namespace DataStructures.Set;
 
 public class MySet
 {
+  private readonly bool[] values;
+
+
   public MySet(int capacity)
   {
+    values = new bool[capacity];
+    Size = 0;
   }
 
   public void Add(int value)
   {
-    throw new NotImplementedException();
+    if (value < 0 || value >= values.Length)
+    {
+      throw new InvalidOperationException($"Value is out of bound: {value}");
+    }
+    if (!values[value])
+    {
+      Size++;
+      values[value] = true;
+    }
   }
 
   public void Remove(int value)
   {
-    throw new NotImplementedException();
-  }
-
-  public int Size
-  {
-    get
+    if (value < 0 || value >= values.Length)
     {
-      throw new NotImplementedException();
+      throw new InvalidOperationException($"Value is out of bound: {value}");
+    }
+    if (values[value])
+    {
+      Size--;
+      values[value] = false;
     }
   }
 
+  public int Size { private set; get; }
+
   public bool Contains(int value)
   {
-    throw new NotImplementedException();
+    return values[value];
   }
 }
 

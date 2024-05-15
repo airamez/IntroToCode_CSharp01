@@ -10,6 +10,8 @@ public class SetTests
   {
     var mySet = new MySet(100);
 
+    Assert.That(mySet.Size, Is.EqualTo(0));
+
     mySet.Add(5);
     Assert.That(mySet.Size, Is.EqualTo(1));
     mySet.Add(5);
@@ -37,10 +39,9 @@ public class SetTests
     Assert.That(mySet.Contains(7), Is.True);
     Assert.That(mySet.Contains(8), Is.False);
 
-    mySet.Add(100);
-
-    Assert.Throws<InvalidDataException>(() => mySet.Add(101));
-    Assert.Throws<InvalidDataException>(() => mySet.Add(500));
-    Assert.Throws<InvalidDataException>(() => mySet.Add(-1));
+    Assert.Throws<InvalidOperationException>(() => mySet.Add(100));
+    Assert.Throws<InvalidOperationException>(() => mySet.Add(101));
+    Assert.Throws<InvalidOperationException>(() => mySet.Add(500));
+    Assert.Throws<InvalidOperationException>(() => mySet.Add(-1));
   }
 }
