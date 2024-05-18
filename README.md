@@ -353,3 +353,5 @@
 | 167 | [Data Structures: Set (Theory + TDD)](https://youtube.com/live/kkZI9CGj0I) | [CSharp/_14_DataStructures/_06_Set.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_06_Set.cs) <br> [CSharpTest/_10_SetTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_10_SetTest.c) |
 | 168 | [Data Structures: Set (Theory + TDD)](https://youtube.com/live/rFqEspUH6DA) <br> [Part 2](https://youtube.com/live/kXOKEUZYFVE) | [CSharp/_14_DataStructures/_06_Set.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_06_Set.cs) <br> [CSharpTest/_10_SetTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_10_SetTest.c) |
 | 169 | [Data Structures: Hashtable (Introduction)](https://youtube.com/live/rrI3ayXlotQ) | |
+| 170 | [Finding Jobs](https://youtube.com/live/TO5ehJFPZ_o) | |
+| 169 | [Data Structures: Hashtable (Design)](https://youtube.com/live/7Gn79j7Ng6k) | |
