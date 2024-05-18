@@ -356,3 +356,4 @@
 | 170 | [Finding Jobs](https://youtube.com/live/TO5ehJFPZ_o) | |
 | 171 | [Data Structures: Hashtable (Design Part 1)](https://youtube.com/live/7Gn79j7Ng6k) | |
 | 172 | [Data Structures: Hashtable (Design Part 2)](https://youtube.com/live/pZIs6mzn_dE) | |
+| 173 | [Data Structures: Hashtable (Implementation)](https://youtube.com/live/hOJ1bYeW4ME) | [CSharp/_14_DataStructures/_07_HashTable.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_07_HashTable.cs) <br> [CSharpTest/_11_HashTableTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_11_HashTableTest.cs) |
