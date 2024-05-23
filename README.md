@@ -138,7 +138,7 @@
     * XML
     * JSON
   * DateTime
-  * etc.
+  * etc
 
 ## Introduction to SQL
 
