@@ -1,6 +1,6 @@
 using DataStructures.HashTable;
 
-namespace Tests.HashSet;
+namespace Tests.HashTable;
 
 public class HashTableTest
 {
@@ -57,5 +57,25 @@ public class HashTableTest
     Assert.That(myHashTable.Contains(50), Is.True);
     Assert.That(myHashTable.Contains(6), Is.True);
 
+    myHashTable.Remove(15);
+    Assert.That(myHashTable.Size, Is.EqualTo(8));
+    myHashTable.Remove(1);
+    Assert.That(myHashTable.Contains(1), Is.False);
+    Assert.That(myHashTable.Size, Is.EqualTo(7));
+    myHashTable.Remove(9);
+    Assert.That(myHashTable.Contains(9), Is.False);
+    Assert.That(myHashTable.Size, Is.EqualTo(6));
+    myHashTable.Remove(50);
+    Assert.That(myHashTable.Contains(50), Is.False);
+    Assert.That(myHashTable.Size, Is.EqualTo(5));
+    myHashTable.Remove(6);
+    Assert.That(myHashTable.Contains(6), Is.False);
+    Assert.That(myHashTable.Size, Is.EqualTo(4));
+    myHashTable.Remove(2);
+    myHashTable.Remove(5);
+    myHashTable.Remove(6);
+    myHashTable.Remove(7);
+    myHashTable.Remove(8);
+    Assert.That(myHashTable.Size, Is.EqualTo(0));
   }
 }

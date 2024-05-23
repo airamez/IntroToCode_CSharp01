@@ -112,7 +112,9 @@
   * Stack
   * Set
   * Hashtable
-  * Binary Tree
+  * Tree
+    * Binary Tree
+    * Binary Search Tree (BST)
   * Heap
   * Graphs
 * Binary Search
