@@ -1,47 +1,63 @@
-1. Introduction
+# Recommended Sources
+  # https://www.geeksforgeeks.org/tree-meaning-in-dsa/
+  # https://www.geeksforgeeks.org/introduction-to-tree-data-structure-and-algorithm-tutorials/
+# Definition
+  # A tree is a hierarchical data structure that consists of nodes connected by edges.
+  # Each node contains a value or data, and it can have zero or multiple child nodes.
+  # Importance: Trees are used in various fields of computer science, including operating systems,
+    graphics, database systems, and computer networking. Tree data structures enable us to write 
+    efficient algorithms for different tasks.
+# Properties
+  # Acyclic: A tree does not contain any cycles. There is exactly one path between any two nodes,
+    ensuring no closed loops.
+  # Connected: All nodes in a tree are connected, meaning there is a path between any pair of nodes.
+  # Directed or Undirected: While trees can be either directed (each edge has a direction) or 
+    undirected, common tree structures like binary trees are usually directed, with edges pointing
+    from parent to child.
+  # Single Root Node: A tree has a unique root node from which all other nodes descend.
+    This root serves as the starting point for traversing the tree.
+  # N-1 Edges: A tree with N nodes always has N-1 edges, ensuring it remains acyclic and connected.
 
-Definition: A tree is a hierarchical data structure that consists of nodes connected by edges. Each node contains a value or data, and it can have a child node or multiple child nodes.
-Importance: Trees are used in various fields of computer science, including operating systems, graphics, database systems, and computer networking. Tree data structures enable us to write efficient algorithms for different tasks.
-2. Basic Terminology
+# Basic Terminology
+  # Root: The top node in a tree.
+  # Child: A node directly connected to another node when moving away from the Root.
+  # Parent: The converse notion of a child.
+  # Siblings: Nodes with the same parent.
+  # Leaf: A node with no children.
+  # Edge: Connection between one node to another.
+  # Path: A sequence of nodes and edges connecting a node with a descendant.
+  # Height of a node: The number of edges on the longest path between that node and a leaf.
+  # Depth of a node: The number of edges in the path to the root.
+  # Level: All nodes at the same depth.
 
-Root: The top node in a tree.
-Child: A node directly connected to another node when moving away from the Root.
-Parent: The converse notion of a child.
-Siblings: Nodes with the same parent.
-Leaf: A node with no children.
-Edge: Connection between one node to another.
-Path: A sequence of nodes and edges connecting a node with a descendant.
-Height of a node: The number of edges on the longest path between that node and a leaf.
-Depth of a node: The number of edges in the path to the root.
-Level: All nodes at the same depth.
-3. Types of Trees
+# Types of Trees
+  # Binary Tree: A tree in which each node has at most two children, 
+    which are referred to as the left child and the right child.
+  # Binary Search Tree (BST): A binary tree in which for each node, the values of all the nodes in 
+    left subtree are lesser(or equal) and the values of all nodes in right subtree are greater.
+  # Ternary Tree: It is a tree data structure in which each node has at most three child nodes, 
+    usually distinguished as “left”, “mid” and “right”.
+  # AVL Tree: A self-balancing binary search tree.
+  # B-Tree: A self-balancing tree data structure that maintains sorted data and allows for 
+    efficient insertion, deletion and search operations.
+  # Red-Black Tree: A kind of self-balancing binary search tree where each node contains an 
+    extra bit for denoting the color of the node, either red or black.
+  # Heap: A special tree-based data structure that satisfies the heap property.
 
-Binary Tree: A tree in which each node has at most two children, which are referred to as the left child and the right child.
-Binary Search Tree: A binary tree in which for each node, the values of all the nodes in left subtree are lesser(or equal) and the values of all nodes in right subtree are greater.
-AVL Tree: A self-balancing binary search tree, and it was the first such data structure to be invented.
-B-Tree: A self-balancing tree data structure that maintains sorted data and allows for efficient insertion, deletion and search operations.
-Red-Black Tree: A kind of self-balancing binary search tree where each node contains an extra bit for denoting the color of the node, either red or black.
-Heap: A special tree-based data structure that satisfies the heap property.
-4. Tree Traversals
+# Tree Traversals
+  # In-Order: left subtree -> node -> right subtree.
+  # Pre-Order: node -> left subtree -> right subtree.
+  # Post-Order: left subtree -> right subtree -> node
+  # Level-Order: starting from root, transverse each level from left to right
 
-In-Order Traversal: In this traversal method, the left subtree is visited first, then the root and later the right subtree.
-Pre-Order Traversal: In this traversal method, the root is visited first, then the left subtree and finally the right subtree.
-Post-Order Traversal: In this traversal method, the root is visited last, so the order is left subtree, right subtree, and then the root.
-Level-Order Traversal: This involves traversing through each level of the tree starting from the root, and going from left to right.
-5. Operations on Trees
+# Operations on Trees
+  # Insertion: Adding a new node to the tree in a way that maintains the tree property.
+  # Deletion: Removing a node from the tree in a way that maintains the tree property.
+  # Searching: Finding a node with a specified value in the tree.
 
-Insertion: Adding a new node to the tree in a way that maintains the tree property.
-Deletion: Removing a node from the tree in a way that maintains the tree property.
-Searching: Finding a node with a specified value in the tree.
-6. Complexity Analysis
-
-Discuss the time and space complexity of the operations on different types of trees.
-7. Applications of Trees
-
-Trees in Databases: Trees are used in databases to perform operations like insertion, deletion, and retrieval in less time.
-Trees in Computer Networking: Trees are used in network algorithms.
-Trees in Machine Learning: Decision Trees are used in machine learning algorithms to make decisions and predictions.
-8. Conclusion
-
-Recap of the importance of trees in computer science.
-Future trends and research areas related to trees.
+# Applications of Trees
+  # Trees in Databases: Trees are used in databases to perform operations like insertion, deletion, and retrieval in less time.
+  # Operational System: File system structure
+  # Web pages: HTML DOM structure
+  # Computer Networking: Trees are used in network algorithms.
+  # Machine Learning: Decision Trees are used in machine learning algorithms to make decisions and predictions.
