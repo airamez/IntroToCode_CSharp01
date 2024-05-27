@@ -21,18 +21,39 @@ public class BinaryTreeApp
     root.Right.Right.Left = new Node("N");
     root.Right.Right.Right = new Node("O");
 
-    TransversalInOrder(root);
+    InOrder(root);
   }
 
-  public static void TransversalInOrder(Node node)
+  public static void InOrder(Node node)
   {
     if (node == null)
     {
       return;
     }
-    TransversalInOrder(node.Left);
+    InOrder(node.Left);
     Console.Write($"{node.Data} ");
-    TransversalInOrder(node.Right);
+    InOrder(node.Right);
+  }
+  public static void PreOrder(Node node)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    Console.Write($"{node.Data} ");
+    InOrder(node.Left);
+    InOrder(node.Right);
+  }
+
+  public static void PostOrder(Node node)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    InOrder(node.Left);
+    InOrder(node.Right);
+    Console.Write($"{node.Data} ");
   }
 }
 
