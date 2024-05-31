@@ -114,7 +114,16 @@
   * Hashtable
   * Tree
     * Binary Tree
+      * Traversal
+        * In-Order
+        * Pre-Order
+        * Post-Order
+        * By level
     * Binary Search Tree (BST)
+      * Insert
+      * Find
+      * In-Order Traversal
+      * Remove
   * Heap
   * Graphs
 * Binary Search

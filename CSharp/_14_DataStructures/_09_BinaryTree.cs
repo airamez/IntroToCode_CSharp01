@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 namespace DataStructures.BinaryTree;
 
 public class BinaryTreeApp
@@ -22,6 +24,46 @@ public class BinaryTreeApp
     root.Right.Right.Right = new Node("O");
 
     InOrder(root);
+
+    Console.WriteLine();
+    foreach (var data in InOrderAsList(root))
+    {
+      Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
+    foreach (string data in InOrderEnumerable(root))
+    {
+      Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
+    PreOrder(root);
+
+    Console.WriteLine();
+    foreach (var data in PreOrderAsList(root))
+    {
+      Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
+    foreach (string data in PreOrderEnumerable(root))
+    {
+      Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
+    PostOrder(root);
+
+    Console.WriteLine();
+    foreach (var data in PostOrderAsList(root))
+    {
+      Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
+    foreach (string data in PostOrderEnumerable(root))
+      Console.Write($"{data} ");
   }
 
   public static void InOrder(Node node)
@@ -34,6 +76,7 @@ public class BinaryTreeApp
     Console.Write($"{node.Data} ");
     InOrder(node.Right);
   }
+
   public static void PreOrder(Node node)
   {
     if (node == null)
@@ -41,8 +84,8 @@ public class BinaryTreeApp
       return;
     }
     Console.Write($"{node.Data} ");
-    InOrder(node.Left);
-    InOrder(node.Right);
+    PreOrder(node.Left);
+    PreOrder(node.Right);
   }
 
   public static void PostOrder(Node node)
@@ -51,9 +94,119 @@ public class BinaryTreeApp
     {
       return;
     }
-    InOrder(node.Left);
-    InOrder(node.Right);
+    PostOrder(node.Left);
+    PostOrder(node.Right);
     Console.Write($"{node.Data} ");
+  }
+
+  public static List<string> InOrderAsList(Node root)
+  {
+    List<string> result = new List<string>();
+    _InOrderAsList(root, result);
+    return result;
+  }
+
+  private static void _InOrderAsList(Node node, List<string> result)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    _InOrderAsList(node.Left, result);
+    result.Add(node.Data);
+    _InOrderAsList(node.Right, result);
+  }
+
+  public static List<string> PreOrderAsList(Node root)
+  {
+    List<string> result = new List<string>();
+    _PreOrderAsList(root, result);
+    return result;
+  }
+
+  private static void _PreOrderAsList(Node node, List<string> result)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    result.Add(node.Data);
+    _PreOrderAsList(node.Left, result);
+    _PreOrderAsList(node.Right, result);
+  }
+
+  public static List<string> PostOrderAsList(Node root)
+  {
+    List<string> result = new List<string>();
+    _PostOrderAsList(root, result);
+    return result;
+  }
+
+  private static void _PostOrderAsList(Node node, List<string> result)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    _PostOrderAsList(node.Left, result);
+    _PostOrderAsList(node.Right, result);
+    result.Add(node.Data);
+  }
+
+  public static IEnumerable<string> InOrderEnumerable(Node node)
+  {
+    if (node == null) // @explain about using: if (node != null)
+    {
+      yield break;
+    }
+    foreach (var data in InOrderEnumerable(node.Left))
+    {
+      yield return data;
+    }
+    yield return node.Data;
+    foreach (var data in InOrderEnumerable(node.Right))
+    {
+      yield return data;
+    }
+  }
+
+  public static IEnumerable<string> PreOrderEnumerable(Node node)
+  {
+    if (node == null) // @explain about using: if (node != null)
+    {
+      yield break;
+    }
+    yield return node.Data;
+    foreach (var data in PreOrderEnumerable(node.Left))
+    {
+      yield return data;
+    }
+    foreach (var data in PreOrderEnumerable(node.Right))
+    {
+      yield return data;
+    }
+  }
+
+  public static IEnumerable<string> PostOrderEnumerable(Node node)
+  {
+    if (node == null) // @explain about using: if (node != null)
+    {
+      yield break;
+    }
+    foreach (var data in PostOrderEnumerable(node.Left))
+    {
+      yield return data;
+    }
+    foreach (var data in PostOrderEnumerable(node.Right))
+    {
+      yield return data;
+    }
+    yield return node.Data;
+  }
+
+  public static void ByLevel(Node node)
+  {
+
   }
 }
 
