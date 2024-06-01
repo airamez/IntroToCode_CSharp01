@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 namespace DataStructures.BinaryTree;
 
 public class BinaryTreeApp
@@ -23,51 +22,53 @@ public class BinaryTreeApp
     root.Right.Right.Left = new Node("N");
     root.Right.Right.Right = new Node("O");
 
-    InOrder(root);
+    ByLevel(root);
 
-    Console.WriteLine();
-    foreach (var data in InOrderAsList(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // InOrder(root);
 
-    Console.WriteLine();
-    foreach (string data in InOrderEnumerable(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // Console.WriteLine();
+    // foreach (var data in InOrderAsList(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
 
-    Console.WriteLine();
-    PreOrder(root);
+    // Console.WriteLine();
+    // foreach (string data in InOrderEnumerable(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
 
-    Console.WriteLine();
-    foreach (var data in PreOrderAsList(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // Console.WriteLine();
+    // PreOrder(root);
 
-    Console.WriteLine();
-    foreach (string data in PreOrderEnumerable(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // Console.WriteLine();
+    // foreach (var data in PreOrderAsList(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
 
-    Console.WriteLine();
-    PostOrder(root);
+    // Console.WriteLine();
+    // foreach (string data in PreOrderEnumerable(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
 
-    Console.WriteLine();
-    foreach (var data in PostOrderAsList(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // Console.WriteLine();
+    // PostOrder(root);
 
-    Console.WriteLine();
-    foreach (string data in PostOrderEnumerable(root))
-    {
-      Console.Write($"{data} ");
-    }
+    // Console.WriteLine();
+    // foreach (var data in PostOrderAsList(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
 
-    Console.WriteLine();
+    // Console.WriteLine();
+    // foreach (string data in PostOrderEnumerable(root))
+    // {
+    //   Console.Write($"{data} ");
+    // }
+
+    // Console.WriteLine();
   }
 
   public static void InOrder(Node node)
@@ -210,7 +211,33 @@ public class BinaryTreeApp
 
   public static void ByLevel(Node node)
   {
+    var dic = new Dictionary<int, List<string>>();
+    ByLevel(dic, node, 0);
+    for (int level = 0; level < dic.Count; level++)
+    {
+      Console.Write($"[{level}]: ");
+      var listAtLevel = dic[level];
+      foreach (var value in listAtLevel)
+      {
+        Console.Write($"{value}, ");
+      }
+      Console.WriteLine();
+    }
+  }
 
+  private static void ByLevel(Dictionary<int, List<string>> dic, Node node, int level)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    if (!dic.ContainsKey(level))
+    {
+      dic[level] = new List<string>();
+    }
+    dic[level].Add(node.Data);
+    ByLevel(dic, node.Left, level + 1);
+    ByLevel(dic, node.Right, level + 1);
   }
 }
 
