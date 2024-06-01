@@ -63,7 +63,11 @@ public class BinaryTreeApp
 
     Console.WriteLine();
     foreach (string data in PostOrderEnumerable(root))
+    {
       Console.Write($"{data} ");
+    }
+
+    Console.WriteLine();
   }
 
   public static void InOrder(Node node)
@@ -155,7 +159,7 @@ public class BinaryTreeApp
 
   public static IEnumerable<string> InOrderEnumerable(Node node)
   {
-    if (node == null) // @explain about using: if (node != null)
+    if (node == null)
     {
       yield break;
     }
@@ -172,7 +176,7 @@ public class BinaryTreeApp
 
   public static IEnumerable<string> PreOrderEnumerable(Node node)
   {
-    if (node == null) // @explain about using: if (node != null)
+    if (node == null)
     {
       yield break;
     }
@@ -189,7 +193,7 @@ public class BinaryTreeApp
 
   public static IEnumerable<string> PostOrderEnumerable(Node node)
   {
-    if (node == null) // @explain about using: if (node != null)
+    if (node == null)
     {
       yield break;
     }
@@ -218,7 +222,7 @@ public class Node
 
   public Node(string data)
   {
-    this.Data = data;
+    Data = data;
     Left = null;
     Right = null;
   }
