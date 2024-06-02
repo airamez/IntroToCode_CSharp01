@@ -22,7 +22,11 @@ public class BinaryTreeApp
     root.Right.Right.Left = new Node("N");
     root.Right.Right.Right = new Node("O");
 
-    ByLevel(root);
+    ByLevelWithRecursion(root);
+
+    Console.WriteLine();
+
+    ByLevelWithoutRecursion(root);
 
     // InOrder(root);
 
@@ -209,7 +213,7 @@ public class BinaryTreeApp
     yield return node.Data;
   }
 
-  public static void ByLevel(Node node)
+  public static void ByLevelWithRecursion(Node node)
   {
     var dic = new Dictionary<int, List<string>>();
     ByLevel(dic, node, 0);
@@ -238,6 +242,38 @@ public class BinaryTreeApp
     dic[level].Add(node.Data);
     ByLevel(dic, node.Left, level + 1);
     ByLevel(dic, node.Right, level + 1);
+  }
+  public static void ByLevelWithoutRecursion(Node root)
+  {
+    var currentLevel = new Queue<Node>();
+    var nextLevel = new Queue<Node>();
+    currentLevel.Enqueue(root);
+    var i = 0;
+    Console.Write($"[{i}]:");
+    while (currentLevel.Count > 0)
+    {
+      var currentNode = currentLevel.Dequeue();
+      Console.Write($"{currentNode.Data}, ");
+      if (currentNode.Left != null)
+      {
+        nextLevel.Enqueue(currentNode.Left);
+      }
+      if (currentNode.Right != null)
+      {
+        nextLevel.Enqueue(currentNode.Right);
+      }
+      if (currentLevel.Count == 0)
+      {
+        Console.WriteLine();
+        if (nextLevel.Count != 0)
+        {
+          i++;
+          Console.Write($"[{i}]:");
+        }
+        currentLevel = nextLevel;
+        nextLevel = new Queue<Node>();
+      }
+    }
   }
 }
 
