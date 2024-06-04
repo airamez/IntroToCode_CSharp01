@@ -1,6 +1,18 @@
+/*
+# Binary Search Tree (BST)
+  # Definition:
+    * A Binary Search Tree is a binary tree data structure where for all nodes: 
+      * The left subtree’s keys are less than the node’s key, and
+      * The right subtree’s keys are greater than the node’s key.
+      * These properties apply recursively for all nodes in the tree.
+  # Usage: 
+    * BSTs are commonly used in computer science for efficient searching and sorting of data.
+      They allow for fast lookup, addition, and removal of items, and can be used to implement
+      dynamic sets and lookup tables.
+    * OBS: A BST can be unbalanced and provide poor performance like a list
+*/
 using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 namespace DataStructures.BinarySearchTree;
 
 public class BinarySearchTreeApp
