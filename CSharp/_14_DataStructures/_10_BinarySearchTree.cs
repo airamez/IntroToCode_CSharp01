@@ -27,6 +27,8 @@ public class BST
 {
   Node root { set; get; }
 
+  public int Count { private set; get; }
+
   public BST()
   {
     root = null;
