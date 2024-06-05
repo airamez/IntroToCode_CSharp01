@@ -34,7 +34,43 @@ public class BST
 
   public void Add(int value)
   {
-    throw new NotImplementedException();
+    if (root == null)
+    {
+      root = new Node(value);
+    }
+    else
+    {
+      Add(root, value);
+    }
+  }
+
+  private void Add(Node node, int value)
+  {
+    if (node.Data != value)
+    {
+      if (value < node.Data)
+      {
+        if (node.Left == null)
+        {
+          node.Left = new Node(value);
+        }
+        else
+        {
+          Add(node.Left, value);
+        }
+      }
+      else
+      {
+        if (node.Right == null)
+        {
+          node.Right = new Node(value);
+        }
+        else
+        {
+          Add(node.Right, value);
+        }
+      }
+    }
   }
 
   public bool Exists(int value)
@@ -44,7 +80,20 @@ public class BST
 
   public List<int> TraverseInOrder()
   {
-    throw new NotImplementedException();
+    var result = new List<int>();
+    TraverseInOrder(root, result);
+    return result;
+  }
+
+  private void TraverseInOrder(Node node, List<int> result)
+  {
+    if (node == null)
+    {
+      return;
+    }
+    TraverseInOrder(node.Left, result);
+    result.Add(node.Data);
+    TraverseInOrder(node.Right, result);
   }
 
   public List<int> TraversePreOrder()
