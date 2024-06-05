@@ -352,4 +352,4 @@ MigrationBackup/
 bin/
 obj/
 CSharpTest/coverage.json
-CSharp/_14_DataStructures/.~lock.*
+*/.~lock.*
