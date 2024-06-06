@@ -31,6 +31,7 @@ public class BST
 
   public BST()
   {
+    Count = 0;
     root = null;
   }
 
@@ -39,6 +40,7 @@ public class BST
     if (root == null)
     {
       root = new Node(value);
+      Count = 1;
     }
     else
     {
@@ -55,6 +57,7 @@ public class BST
         if (node.Left == null)
         {
           node.Left = new Node(value);
+          Count++;
         }
         else
         {
@@ -66,6 +69,7 @@ public class BST
         if (node.Right == null)
         {
           node.Right = new Node(value);
+          Count++;
         }
         else
         {
@@ -77,7 +81,29 @@ public class BST
 
   public bool Exists(int value)
   {
-    throw new NotImplementedException();
+    return Exists(root, value);
+  }
+
+  private bool Exists(Node node, int value)
+  {
+    if (node == null)
+    {
+      return false;
+    }
+
+    if (node.Data == value)
+    {
+      return true;
+    }
+
+    if (value < node.Data)
+    {
+      return Exists(node.Left, value);
+    }
+    else
+    {
+      return Exists(node.Right, value);
+    }
   }
 
   public List<int> TraverseInOrder()
@@ -89,23 +115,47 @@ public class BST
 
   private void TraverseInOrder(Node node, List<int> result)
   {
-    if (node == null)
+    if (node != null)
     {
-      return;
+      TraverseInOrder(node.Left, result);
+      result.Add(node.Data);
+      TraverseInOrder(node.Right, result);
     }
-    TraverseInOrder(node.Left, result);
-    result.Add(node.Data);
-    TraverseInOrder(node.Right, result);
   }
 
   public List<int> TraversePreOrder()
   {
-    throw new NotImplementedException();
+    var result = new List<int>();
+    TraversePreOrder(root, result);
+    return result;
+  }
+
+  private void TraversePreOrder(Node node, List<int> result)
+  {
+    if (node != null)
+    {
+      result.Add(node.Data);
+      TraversePreOrder(node.Left, result);
+      TraversePreOrder(node.Right, result);
+    }
   }
 
   public List<int> TraversePostOrder()
   {
-    throw new NotImplementedException();
+    var result = new List<int>();
+    TraversePostOrder(root, result);
+    return result;
+
+  }
+
+  private void TraversePostOrder(Node node, List<int> result)
+  {
+    if (node != null)
+    {
+      TraversePostOrder(node.Left, result);
+      TraversePostOrder(node.Right, result);
+      result.Add(node.Data);
+    }
   }
 
   public List<List<int>> TraversePerLevel()
