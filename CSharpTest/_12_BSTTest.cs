@@ -6,7 +6,7 @@ public class BSTTest
 {
 
   [Test]
-  public void HBSTTests()
+  public void BstTest()
   {
     var bst = new BST();
 
