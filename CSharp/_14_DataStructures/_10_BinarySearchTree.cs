@@ -20,59 +20,68 @@ public class BinarySearchTreeApp
 {
   public static void Main(string[] args)
   {
+    Console.Clear();
+
     var testData = new List<int> { 50, 25, 12, 35, 75, 65, 90, 85, 100, 47, 5, 6, 40, 49, 4, 89 };
     var bst = InitBST(testData);
 
-    bst.RemoveRecursive(500);
+    bst.RemoveNonRecursive(500);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(4);
-    PrintByLevel(bst);
-
-    bst = InitBST(testData);
-    bst.RemoveRecursive(49);
+    bst.RemoveNonRecursive(4);
     PrintByLevel(bst);
 
     bst = InitBST(testData);
-    bst.RemoveRecursive(12);
+    bst.RemoveNonRecursive(49);
     PrintByLevel(bst);
 
     bst = InitBST(testData);
-    bst.RemoveRecursive(25);
+    bst.RemoveNonRecursive(12);
     PrintByLevel(bst);
 
     bst = InitBST(testData);
-    bst.RemoveRecursive(50);
+    bst.RemoveNonRecursive(25);
+    PrintByLevel(bst);
+
+    bst = InitBST(testData);
+    bst.RemoveNonRecursive(50);
     PrintByLevel(bst);
 
     // Not initing any more
 
-    bst.RemoveRecursive(12);
+    bst.RemoveNonRecursive(12);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(89);
+    bst.RemoveNonRecursive(89);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(5);
+    bst.RemoveNonRecursive(5);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(35);
+    bst.RemoveNonRecursive(35);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(75);
+    bst.RemoveNonRecursive(75);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(100);
+    bst.RemoveNonRecursive(100);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(65);
+    bst.RemoveNonRecursive(65);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(85);
+    bst.RemoveNonRecursive(85);
     PrintByLevel(bst);
 
-    bst.RemoveRecursive(25);
+    bst.RemoveNonRecursive(25);
     PrintByLevel(bst);
+
+    foreach (var value in testData)
+    {
+      Console.WriteLine($"\nRemoving: {value}");
+      bst.RemoveNonRecursive(value);
+      PrintByLevel(bst);
+    }
   }
 
   private static BST InitBST(List<int> data)
@@ -102,7 +111,6 @@ public class BinarySearchTreeApp
       Console.WriteLine();
     }
   }
-
 }
 
 public class BST
@@ -278,9 +286,12 @@ public class BST
     }
   }
 
+  private bool _nodeRemoved;
   public void RemoveRecursive(int value)
   {
-    if (RemoveRecursive(root, value) != null)
+    _nodeRemoved = false;
+    root = RemoveRecursive(root, value);
+    if (_nodeRemoved)
     {
       Count--;
     }
@@ -288,7 +299,7 @@ public class BST
 
   private Node RemoveRecursive(Node node, int value)
   {
-    if (node == null)
+    if (node == null) // not found
     {
       return null;
     }
@@ -302,15 +313,24 @@ public class BST
     }
     else
     {
+      _nodeRemoved = true;
+      // Leaf
+      if (node.Left == null && node.Right == null)
+      {
+        return null;
+      }
+      // Only right child
       if (node.Left == null)
       {
         return node.Right;
       }
-      else if (node.Right == null)
+      // Only left child
+      if (node.Right == null) // Only left child
       {
         return node.Left;
       }
-      node.Data = GetSuccessor(node.Right);
+      // Both children
+      node.Data = GetSuccessor(node);
       node.Right = RemoveRecursive(node.Right, node.Data);
     }
     return node;
@@ -318,10 +338,10 @@ public class BST
 
   public void RemoveNonRecursive(int value)
   {
-    Remove(root, value);
+    RemoveNonRecursive(root, value);
   }
 
-  private void Remove(Node node, int value)
+  private void RemoveNonRecursive(Node node, int value)
   {
     if (node == null)
     {
@@ -385,7 +405,7 @@ public class BST
     else
     {
       var successor = GetSuccessor(target); // Find the node to replace the target one
-      Remove(target, successor);
+      RemoveNonRecursive(target, successor);
       target.Data = successor;
     }
   }
