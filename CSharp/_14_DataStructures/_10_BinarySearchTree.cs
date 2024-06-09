@@ -25,74 +25,89 @@ public class BinarySearchTreeApp
     var testData = new List<int> { 50, 25, 12, 35, 75, 65, 90, 85, 100, 47, 5, 6, 40, 49, 4, 89 };
     var bst = InitBST(testData);
 
+    bst.Print();
+
+    Console.WriteLine($"\nRemoving: 500");
     bst.RemoveNonRecursive(500);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 4");
     bst.RemoveNonRecursive(4);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 49");
     bst = InitBST(testData);
     bst.RemoveNonRecursive(49);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 12");
     bst = InitBST(testData);
     bst.RemoveNonRecursive(12);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 25");
     bst = InitBST(testData);
     bst.RemoveNonRecursive(25);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 50");
     bst = InitBST(testData);
     bst.RemoveNonRecursive(50);
-    PrintByLevel(bst);
+    bst.Print();
 
     // Not initing any more
 
+    Console.WriteLine($"\nRemoving: 12");
     bst.RemoveNonRecursive(12);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 89");
     bst.RemoveNonRecursive(89);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 5");
     bst.RemoveNonRecursive(5);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 35");
     bst.RemoveNonRecursive(35);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 75");
     bst.RemoveNonRecursive(75);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 100");
     bst.RemoveNonRecursive(100);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 65");
     bst.RemoveNonRecursive(65);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 85");
     bst.RemoveNonRecursive(85);
-    PrintByLevel(bst);
+    bst.Print();
 
+    Console.WriteLine($"\nRemoving: 85");
     bst.RemoveNonRecursive(25);
-    PrintByLevel(bst);
+    bst.Print();
 
     foreach (var value in testData)
     {
       Console.WriteLine($"\nRemoving: {value}");
       bst.RemoveNonRecursive(value);
-      PrintByLevel(bst);
+      bst.Print();
     }
   }
 
   private static BST InitBST(List<int> data)
   {
-    Console.Clear();
     var bst = new BST();
     foreach (var value in data)
     {
       bst.Add(value);
     }
-    PrintByLevel(bst);
     return bst;
   }
 
@@ -341,15 +356,15 @@ public class BST
     RemoveNonRecursive(root, value);
   }
 
-  private void RemoveNonRecursive(Node node, int value)
+  private void RemoveNonRecursive(Node root, int value)
   {
-    if (node == null)
+    if (root == null)
     {
       return;
     }
 
-    Node target = node;
-    Node parent = node;
+    Node target = root;
+    Node parent = root;
     bool isTargetLeftChild = true; // flag to indicate if the target is on left o right
 
     while (target.Data != value)
@@ -373,8 +388,8 @@ public class BST
     if (target.Left == null && target.Right == null)
     {
       Count--;
-      if (target == root) // Checking removing root
-        root = null;
+      if (target == this.root) // Checking removing root
+        this.root = null;
       else if (isTargetLeftChild) // Set the parent left to null
         parent.Left = null;
       else // set the partent right to null
@@ -384,8 +399,8 @@ public class BST
     else if (target.Right == null) // Has a subtree on Left
     {
       Count--;
-      if (target == root) // If removing root
-        root = target.Left;
+      if (target == this.root) // If removing root
+        this.root = target.Left;
       else if (isTargetLeftChild) // If the target node is on left of its parent
         parent.Left = target.Left;
       else // If the target node is on the right of its parent
@@ -394,8 +409,8 @@ public class BST
     else if (target.Left == null) // Has a subtree on Right
     {
       Count--;
-      if (target == root) // If removing root
-        root = target.Right;
+      if (target == this.root) // If removing root
+        this.root = target.Right;
       else if (isTargetLeftChild) // If the target node is on the left of its parent
         parent.Left = target.Right;
       else // If atrget node is on the right of its parent
@@ -420,6 +435,40 @@ public class BST
       current = current.Left; // move left
     }
     return successor.Data;
+  }
+
+  public void Print()
+  {
+    Console.WriteLine($"Count: {Count}");
+    PrintPretty(root, "", true);
+  }
+
+  public void PrintPretty(Node node, string indent, bool last)
+  {
+    if (node != null)
+    {
+      Console.Write(indent);
+      if (last)
+      {
+        Console.Write("|->");
+        indent += "  ";
+      }
+      else
+      {
+        Console.Write("|->");
+        indent += "| ";
+      }
+      Console.WriteLine(node.Data);
+
+      var children = new List<Node>();
+      if (node.Left != null)
+        children.Add(node.Left);
+      if (node.Right != null)
+        children.Add(node.Right);
+
+      for (int i = 0; i < children.Count; i++)
+        PrintPretty(children[i], indent, i == children.Count - 1);
+    }
   }
 }
 
