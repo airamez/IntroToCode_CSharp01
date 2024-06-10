@@ -28,75 +28,75 @@ public class BinarySearchTreeApp
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 500");
-    bst.RemoveNonRecursive(500);
+    bst.RemoveRecursive(500);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 4");
-    bst.RemoveNonRecursive(4);
+    bst.RemoveRecursive(4);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 49");
     bst = InitBST(testData);
-    bst.RemoveNonRecursive(49);
+    bst.RemoveRecursive(49);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 12");
     bst = InitBST(testData);
-    bst.RemoveNonRecursive(12);
+    bst.RemoveRecursive(12);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 25");
     bst = InitBST(testData);
-    bst.RemoveNonRecursive(25);
+    bst.RemoveRecursive(25);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 50");
     bst = InitBST(testData);
-    bst.RemoveNonRecursive(50);
+    bst.RemoveRecursive(50);
     bst.Print();
 
     // Not initing any more
 
     Console.WriteLine($"\nRemoving: 12");
-    bst.RemoveNonRecursive(12);
+    bst.RemoveRecursive(12);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 89");
-    bst.RemoveNonRecursive(89);
+    bst.RemoveRecursive(89);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 5");
-    bst.RemoveNonRecursive(5);
+    bst.RemoveRecursive(5);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 35");
-    bst.RemoveNonRecursive(35);
+    bst.RemoveRecursive(35);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 75");
-    bst.RemoveNonRecursive(75);
+    bst.RemoveRecursive(75);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 100");
-    bst.RemoveNonRecursive(100);
+    bst.RemoveRecursive(100);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 65");
-    bst.RemoveNonRecursive(65);
+    bst.RemoveRecursive(65);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 85");
-    bst.RemoveNonRecursive(85);
+    bst.RemoveRecursive(85);
     bst.Print();
 
     Console.WriteLine($"\nRemoving: 85");
-    bst.RemoveNonRecursive(25);
+    bst.RemoveRecursive(25);
     bst.Print();
 
     foreach (var value in testData)
     {
       Console.WriteLine($"\nRemoving: {value}");
-      bst.RemoveNonRecursive(value);
+      bst.RemoveRecursive(value);
       bst.Print();
     }
   }
@@ -383,22 +383,27 @@ public class BST
       if (target == null) // Value not found
         return;
     }
-
-    // Case 1: leaf
+    Count--; // value found, decrement Count
+    // Case 1: leaf = Left and Right equal to null
     if (target.Left == null && target.Right == null)
     {
-      Count--;
       if (target == this.root) // Checking removing root
         this.root = null;
       else if (isTargetLeftChild) // Set the parent left to null
         parent.Left = null;
-      else // set the partent right to null
+      else // set the parent right to null
         parent.Right = null;
     }
-    // Case 2: One child
-    else if (target.Right == null) // Has a subtree on Left
+    // Case 3: Has two children = Left and Right not null
+    else if (target.Left != null && target.Right != null)
     {
-      Count--;
+      // var successor = GetSuccessor(target); // Find the node to replace the target one
+      // RemoveNonRecursive(target, successor);
+      // target.Data = successor;
+      target.Data = GetValueAndAdjustSuccessor(target);
+    }
+    else if (target.Left != null) // Has a subtree on Left
+    {
       if (target == this.root) // If removing root
         this.root = target.Left;
       else if (isTargetLeftChild) // If the target node is on left of its parent
@@ -406,23 +411,37 @@ public class BST
       else // If the target node is on the right of its parent
         parent.Right = target.Left;
     }
-    else if (target.Left == null) // Has a subtree on Right
+    else // Has a subtree on Right
     {
-      Count--;
       if (target == this.root) // If removing root
         this.root = target.Right;
       else if (isTargetLeftChild) // If the target node is on the left of its parent
         parent.Left = target.Right;
-      else // If atrget node is on the right of its parent
+      else // If rarget node is on the right of its parent
         parent.Right = target.Right;
     }
-    // Case 3: Both children
+  }
+
+  // Return the successor value and adjust the successor parent left reference
+  private int GetValueAndAdjustSuccessor(Node target)
+  {
+    Node successor = target.Right;
+    Node parent = target;
+    while (successor.Left != null)
+    {
+      parent = successor;
+      successor = successor.Left;
+    }
+    // Corner case, if the successor is the right node of target
+    if (parent == target)
+    {
+      parent.Right = successor.Right;
+    }
     else
     {
-      var successor = GetSuccessor(target); // Find the node to replace the target one
-      RemoveNonRecursive(target, successor);
-      target.Data = successor;
+      parent.Left = successor.Right;
     }
+    return successor.Data;
   }
 
   private int GetSuccessor(Node target)
@@ -450,24 +469,23 @@ public class BST
       Console.Write(indent);
       if (last)
       {
-        Console.Write("|->");
+        Console.Write("└─");
         indent += "  ";
       }
       else
       {
-        Console.Write("|->");
-        indent += "| ";
+        Console.Write("├─");
+        indent += "│ ";
       }
       Console.WriteLine(node.Data);
-
-      var children = new List<Node>();
       if (node.Left != null)
-        children.Add(node.Left);
+      {
+        PrintPretty(node.Left, indent, node.Right == null);
+      }
       if (node.Right != null)
-        children.Add(node.Right);
-
-      for (int i = 0; i < children.Count; i++)
-        PrintPretty(children[i], indent, i == children.Count - 1);
+      {
+        PrintPretty(node.Right, indent, true);
+      }
     }
   }
 }
