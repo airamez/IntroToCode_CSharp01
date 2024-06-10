@@ -89,7 +89,7 @@ public class BinarySearchTreeApp
     bst.RemoveRecursive(85);
     bst.Print();
 
-    Console.WriteLine($"\nRemoving: 85");
+    Console.WriteLine($"\nRemoving: 25");
     bst.RemoveRecursive(25);
     bst.Print();
 
@@ -345,8 +345,7 @@ public class BST
         return node.Left;
       }
       // Both children
-      node.Data = GetSuccessor(node);
-      node.Right = RemoveRecursive(node.Right, node.Data);
+      node.Data = GetValueAndAdjustSuccessor(node);
     }
     return node;
   }
@@ -459,10 +458,10 @@ public class BST
   public void Print()
   {
     Console.WriteLine($"Count: {Count}");
-    PrintPretty(root, "", true);
+    PrintPretty(root, "", true, "Root");
   }
 
-  public void PrintPretty(Node node, string indent, bool last)
+  public void PrintPretty(Node node, string indent, bool last, string indicator)
   {
     if (node != null)
     {
@@ -477,14 +476,14 @@ public class BST
         Console.Write("├─");
         indent += "│ ";
       }
-      Console.WriteLine(node.Data);
+      Console.WriteLine($"{indicator}:{node.Data}");
       if (node.Left != null)
       {
-        PrintPretty(node.Left, indent, node.Right == null);
+        PrintPretty(node.Left, indent, node.Right == null, "L");
       }
       if (node.Right != null)
       {
-        PrintPretty(node.Right, indent, true);
+        PrintPretty(node.Right, indent, true, "R");
       }
     }
   }
