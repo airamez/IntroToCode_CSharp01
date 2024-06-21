@@ -126,6 +126,7 @@
       * Remove
   * Heap
   * Graphs
+* Big O Notation
 * Binary Search
 * Sorting
   * Bubble

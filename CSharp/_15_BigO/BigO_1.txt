@@ -1,0 +1,34 @@
+# Introduction to Big O Notation
+  # Definition 
+    # Big O notation is a mathematical notation that describes the limiting behavior
+      of a function when the argument tends towards a particular value or infinity. 
+      In computer science, it’s used to classify algorithms according to how their
+      running time or space requirements grow as the input size grows.
+  # Time Complexity
+    # Time complexity is a computational concept that describes the amount of computational
+      effort required to run an algorithm. More specifically, it measures the number of
+      individual steps or operations an algorithm performs as a function of the size of
+      the input data.
+    # Describes the upper bound of the time complexity in the worst-case scenario.
+  # Common Time Complexities
+    # O(1): Constant.
+      - The algorithm takes the same amount of time to complete, regardless of the input size.
+    # O(log n):Logarithmic
+      - The running time increases logarithmically with the input size.
+    # O(n): Linear
+      - The running time increases linearly with the input size.
+    # O(n log n): Linear x Logarithmic
+    # O(n^2): Quadratic.
+      - The running time is proportional to the square of the input size.
+    # O(n^3): Cubic.
+      - The running time is proportional to the cubic square of the input size.
+  # Space Complexity
+    # Space complexity of an algorithm quantifies the amount of space or memory taken by an 
+      algorithm to run as a function of the length of the input.
+      Similar to time complexity, it’s often expressed using Big O notation.
+  # Analyzing Code with Big O Notation
+    # To analyze a piece of code with Big O notation, identify the operations that are 
+      performed in a loop or recursively. The number of these operations usually determines
+      the time complexity. 
+      For example, a single loop over an array might suggest O(n) time complexity,
+      while a nested loop might suggest O(n^2).

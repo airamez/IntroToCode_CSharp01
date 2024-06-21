@@ -352,5 +352,4 @@ MigrationBackup/
 bin/
 obj/
 CSharpTest/coverage.json
-*/.~lock.*
-CSharp/_14_DataStructures/.~lock._10_BinarySearchTree.odg#
+.~lock.*
