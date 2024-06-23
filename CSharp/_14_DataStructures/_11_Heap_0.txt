@@ -14,11 +14,11 @@
     # Order statistics: The Heap data structure can be used to efficiently find the kth smallest 
       (or largest) element in data set.
   # Operations:
-    # Insertion (Push): Add a new key at the end of the tree.
-      If the new key is greater than its parent, then we swap the key with its parent.
-      We keep repeating the above step, until the heap property is satisfied.
-    # Extract Min (or Max): It is the process of retrieving and removing the node with the highest 
-      (or lowest) value from a heap and ensuring that the heap property is maintained.
     # Heapify: This is the process of creating a heap from an array. 
       Heapify procedure can be applied to a node only if its children nodes are heapified.
       So the heapification must be performed in the bottom-up way.
+    # Insertion (Push): Add a new key at the end of the tree.
+      If the new key is greater than its parent, then we swap the key with its parent.
+      We keep repeating the above step, until the heap property is satisfied.
+    # Extract (Pop) Min (or Max): It is the process of retrieving and removing the node with the highest 
+      (or lowest) value from a heap and ensuring that the heap property is maintained.
