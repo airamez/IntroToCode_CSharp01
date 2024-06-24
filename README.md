@@ -10,13 +10,19 @@
 
   Logo abaixo tem uma tabelas com todas as aulas com links para os vídeos e arquivos.
 
+  * [Playlist no Youtube](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
+  * [Canal no Discord](https://discord.gg/QUxmPTZeNz)
+
+
 # Sobre o autor
-  José Santos (mais conhecido como Zé Maria :)) é um engenheiro de software e professor veterano que iniciou no mundo da informática na adolescência e antes do advento da internet.
+  [José Santos] (mais conhecido como Zé Maria) é um engenheiro de software e professor veterano que iniciou no mundo da informática na adolescência e antes do advento da internet.
   Teve uma carreira diferenciada por atuar no meio acadêmico sendo professor da Escola Técnica Federal de Sergipe, Universidade Tiradentes, FANESE e Universidade Federal de Sergipe.
   Atuou como consultor de TI, programador, amalista de sistemas no Brasil, Canada e atualmente nos Estados Unidos, trabalhando em grandes empresas, mais recentemente na Microsoft e atualmente Intuit.
   Foi bastante ativo como atleta e ganhou vários títulos em esportes diferentes, entre eles: natação, volleyball, tae-kwo-do e full-contact.
   
-  Além de Nerd foi atleta competente em diferentes esportes :P
+  Além de Nerd foi atleta competente em diferentes esportes 
+
+  [LinkedIn Profile](https://www.linkedin.com/in/jose-rodrigues-santos/)
 
 # Porque o material está em inglês?
   Um dos principais focos do curso é preparar os participantes para ingressar no mercado (nacional e internacional) e um requisito fundamental para a área é pelo menos ler em inglês.
@@ -26,26 +32,21 @@
 
 # Course Content
 
-## Media
-
-* [Playlist no Youtube](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
-* [Canal no Discord](https://discord.gg/QUxmPTZeNz)
-
 ## Quick Overview about Software Engineering
 
-* Layers
+* Application Layers
   * User Interface (UI) or Front-End
     * Console
     * Windows
     * Mobile
     * Web
-    * Server-Side
-    * Data
-  * Data Processing Model
+  * Server-Side
+  * Data
+* Data Processing Model
     * Input: Data
-    * Process
+    * Processing
     * Output: Information
-  * Algorithm
+* Algorithm
 
 ## Introduction to Coding with "C#"
 
@@ -110,7 +111,7 @@
       * Protected
       * Internal
     * Set and Get
-  * Property
+    * Property
   * Inheritance
   * Overload
   * Override
@@ -151,6 +152,11 @@
       * In-Order Traversal
       * Remove
   * Heap
+    * Definition
+    * Heapify
+    * Add (Push)
+    * Remove (Pop)
+    * Heap as array
   * Graphs
 * Big O Notation
 * Binary Search
