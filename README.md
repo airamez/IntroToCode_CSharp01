@@ -30,7 +30,8 @@
   A partir desse ponto, todo o contéudo escrito será em inglês.
   Aproveitem e fiquem com Deus.
 
-# Course Content
+<details>
+ <summary>Course Content</summary>
 
 ## Quick Overview about Software Engineering
 
@@ -224,9 +225,12 @@
 
 ## Web Services/API
 
-## Classes
+</details>
 
-| Class # | Content/Video | File |
+<details>
+ <summary>Classes</summary>
+
+| Class # | Youtube Video | Files |
 | ------- | ------- | ---- |
 | 1 | [Overview about Software Enginner](https://youtube.com/live/YEfi_kZcaeU) |  |
 | 2 | [Introduction](https://youtube.com/live/41j7Gd-EX0c) | [CSharp/_01_Intro/_00_Overview.txt](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_01_Intro/_00_Overview.txt)  [CSharp/_01_HelloWorld.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_01_Intro/_01_HelloWorld.cs) <br> [CSharp/_02_Comments.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_01_Intro/_02_Comments.cs) <br> [CSharp/_03_VariablesAndTypes.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_01_Intro/_03_VariablesAndTypes.cs)|
@@ -415,4 +419,5 @@
 | 185 | [Data Structures: Binary Search Tree (Part 4: Remove - Theory)](https://youtube.com/live/Rs3dw1HCtUc) | [CSharp/_14_DataStructures/_10_BinarySearchTree.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.cs) <br> [CSharp/_14_DataStructures/_10_BinarySearchTree.odg](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.odg) <br> [CSharpTest/_12_BSTTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_12_BSTTest.cs)|
 | 186 | [Data Structures: Binary Search Tree (Part 5: Remove - Implementation NonRecursice)](https://youtube.com/live/uQvT7aC1fKs) | [CSharp/_14_DataStructures/_10_BinarySearchTree.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.cs) <br> [CSharp/_14_DataStructures/_10_BinarySearchTree.odg](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.odg) <br> [CSharpTest/_12_BSTTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_12_BSTTest.cs)|
 | 187 | [Data Structures: Binary Search Tree (Part 6: Remove - Implementation NonRecursive))](https://youtube.com/live/tLj3q353tPc) | [CSharp/_14_DataStructures/_10_BinarySearchTree.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.cs) <br> [CSharp/_14_DataStructures/_10_BinarySearchTree.odg](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.odg) <br> [CSharpTest/_12_BSTTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_12_BSTTest.cs)|
-| 188 | [Data Structures: Binary Search Tree (Part 7: Remove - Implementation Recursive))](https://youtube.com/live/VZUk9UCBsQU) | [CSharp/_14_DataStructures/_10_BinarySearchTree.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.cs) <br> [CSharp/_14_DataStructures/_10_BinarySearchTree.odg](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.odg) <br> [CSharpTest/_12_BSTTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_12_BSTTest.cs)|
+| 188 | [Data Structures: Binary Search Tree (Part 7: Remove - Implementation Recursive))](https://youtube.com/live/VZUk9UCBsQU) | [CSharp/_14_DataStructures/_10_BinarySearchTree.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.cs) <br> [CSharp/_14_DataStructures/_10_BinarySearchTree.odg](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_14_DataStructures/_10_BinarySearchTree.odg) <br> [CSharpTest/_12_BSTTest.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharpTest/_12_BSTTest.cs)| 
+</details>
