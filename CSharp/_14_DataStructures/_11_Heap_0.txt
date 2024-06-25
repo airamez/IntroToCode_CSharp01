@@ -14,7 +14,7 @@
     # Order statistics: The Heap data structure can be used to efficiently find the kth smallest 
       (or largest) element in data set.
   # Operations:
-    # Heapify: This is the process of creating a heap from an array. 
+    # Heapify: This is the process of creating a heap from an data source. 
       Heapify procedure can be applied to a node only if its children nodes are heapified.
       So the heapification must be performed in the bottom-up way.
     # Insertion (Push): Add a new key at the end of the tree.
