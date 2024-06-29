@@ -16,27 +16,91 @@ public class MyHeapApp
 
 public class MyHeap
 {
-    public MyHeap(int[] data)
+    private List<int> Data;
+
+    public MyHeap(int[] data = null)
     {
+        if (data == null)
+        {
+            Data = new List<int>();
+        }
+        else
+        {
+            Data = data.ToList();
+            Heapify();
+        }
+    }
+
+
+    private void Heapify()
+    {
+        /*
+            Heapify up each node
+            On every swap heapify down        
+        */
+        for (int i = Data.Count - 1; i >= 0; i--)
+        {
+            Heapify(i);
+        }
+    }
+
+    private void Heapify(int index)
+    {
+        var childrenIndexes = GetChildrenIndexes(index);
+        int greaterIndex = index;
+        if (childrenIndexes.Left < Data.Count && Data[childrenIndexes.Left] > Data[greaterIndex])
+        {
+            greaterIndex = childrenIndexes.Left;
+        }
+        if (childrenIndexes.Right < Data.Count && Data[childrenIndexes.Right] > Data[greaterIndex])
+        {
+            greaterIndex = childrenIndexes.Right;
+        }
+        if (index != greaterIndex)
+        { // We found a greater chield value
+            Swap(index, greaterIndex);
+            Heapify(greaterIndex);
+        }
+    }
+
+    private void Swap(int left, int right)
+    {
+        int aux = Data[left];
+        Data[left] = Data[right];
+        Data[right] = aux;
+    }
+
+    private (int Left, int Right) GetChildrenIndexes(int index)
+    {
+        return (index * 2 + 1, index * 2 + 2);
     }
 
     public void Add(int value)
     {
+        /*
+            Add leaf and check-heap up
+        */
         throw new NotImplementedException();
     }
 
     public int Pop()
     {
-        throw new NotImplementedException();
-    }
-
-    public void Heapify()
-    {
+        /*
+            Save root value to return
+            Set root to -infinite
+            Heapify down
+            Remove the node with -infinite
+          */
         throw new NotImplementedException();
     }
 
     public void Print()
     {
-        throw new NotImplementedException();
+        Console.WriteLine();
+        foreach (int value in Data)
+        {
+            Console.Write($"{value} ");
+        }
+        Console.WriteLine();
     }
 }
