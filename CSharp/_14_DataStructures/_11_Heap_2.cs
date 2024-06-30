@@ -8,8 +8,14 @@ public class MyHeapApp
 {
     public static void Main(string[] args)
     {
-        int[] data = { 5, 70, 4, 2, 30, 11, 81, 7, 84, 15, 75, 85, 28, 90, 80 };
+        int[] data = { 93, 90, 85, 84, 75, 28, 81, 7, 2, 15, 30, 11, 5, 4, 80 };
         var myHeap = new MyHeap(data);
+        myHeap.Print();
+
+        myHeap.Add(70);
+        myHeap.Print();
+
+        myHeap.Add(99);
         myHeap.Print();
     }
 }
@@ -80,7 +86,20 @@ public class MyHeap
         /*
             Add leaf and check-heap up
         */
-        throw new NotImplementedException();
+        Data.Add(value);
+        int index = Data.Count - 1;
+        int parentIndex = GetParentIndex(index);
+        while (Data[index] > Data[parentIndex])
+        {
+            Swap(parentIndex, index);
+            index = parentIndex;
+            parentIndex = GetParentIndex(index);
+        }
+    }
+
+    private int GetParentIndex(int index)
+    {
+        return (index - 1) / 2;
     }
 
     public int Pop()
