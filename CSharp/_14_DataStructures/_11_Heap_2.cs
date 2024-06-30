@@ -8,7 +8,7 @@ public class MyHeapApp
 {
     public static void Main(string[] args)
     {
-        int[] data = { 93, 90, 85, 84, 75, 28, 81, 7, 2, 15, 30, 11, 5, 4, 80 };
+        int[] data = { 11, 7, 2, 81, 4, 80, 5, 93, 15, 90, 28, 75, 30, 84, 85 };
         var myHeap = new MyHeap(data);
         myHeap.Print();
 
@@ -17,12 +17,25 @@ public class MyHeapApp
 
         myHeap.Add(99);
         myHeap.Print();
+
+        int max = myHeap.Pop();
+        Console.WriteLine($"Max: {max}");
+        myHeap.Print();
+
+        while (myHeap.Count > 0)
+        {
+            Console.WriteLine();
+            myHeap.Print();
+            Console.WriteLine($"Max: {myHeap.Pop()}");
+        }
     }
 }
 
 public class MyHeap
 {
     private List<int> Data;
+
+    public int Count => Data.Count;
 
     public MyHeap(int[] data = null)
     {
@@ -44,7 +57,7 @@ public class MyHeap
             Heapify up each node
             On every swap heapify down        
         */
-        for (int i = Data.Count - 1; i >= 0; i--)
+        for (int i = Data.Count / 2; i >= 0; i--)
         {
             Heapify(i);
         }
@@ -62,8 +75,8 @@ public class MyHeap
         {
             greaterIndex = childrenIndexes.Right;
         }
-        if (index != greaterIndex)
-        { // We found a greater chield value
+        if (index != greaterIndex) // We found a greater chield value
+        {
             Swap(index, greaterIndex);
             Heapify(greaterIndex);
         }
@@ -110,7 +123,15 @@ public class MyHeap
             Heapify down
             Remove the node with -infinite
           */
-        throw new NotImplementedException();
+        if (Data.Count == 0)
+        {
+            throw new Exception("The heap is empty");
+        }
+        int max = Data[0];
+        Data[0] = Data[Data.Count - 1];
+        Data.RemoveAt(Data.Count - 1);
+        Heapify(0);
+        return max;
     }
 
     public void Print()
