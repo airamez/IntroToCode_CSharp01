@@ -15,12 +15,12 @@
 
 
 # Sobre o autor
-  [José Santos] (mais conhecido como Zé Maria) é um engenheiro de software e professor veterano que iniciou no mundo da informática na adolescência e antes do advento da internet.
+  José Santos (mais conhecido como Zé Maria) é um engenheiro de software e professor veterano que iniciou no mundo da informática na adolescência e antes do advento da internet.
   Teve uma carreira diferenciada por atuar no meio acadêmico sendo professor da Escola Técnica Federal de Sergipe, Universidade Tiradentes, FANESE e Universidade Federal de Sergipe.
-  Atuou como consultor de TI, programador, amalista de sistemas no Brasil, Canada e atualmente nos Estados Unidos, trabalhando em grandes empresas, mais recentemente na Microsoft e atualmente Intuit.
+  Atuou como consultor de TI, programador, Administrador de redes, analista de sistemas e lider tecnico no Brasil, Canada e atualmente nos Estados Unidos, trabalhando em grandes empresas, mais recentemente na Microsoft e atualmente Intuit.
   Foi bastante ativo como atleta e ganhou vários títulos em esportes diferentes, entre eles: natação, volleyball, tae-kwo-do e full-contact.
   
-  Além de Nerd foi atleta competente em diferentes esportes 
+  Além de Nerd foi atleta competente em diferentes esportes.
 
   [LinkedIn Profile](https://www.linkedin.com/in/jose-rodrigues-santos/)
 
