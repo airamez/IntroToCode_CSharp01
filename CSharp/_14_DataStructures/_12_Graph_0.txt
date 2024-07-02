@@ -1,0 +1,22 @@
+# Definition:
+  # A graph is a non-linear data structure composed of vertices (also called nodes) and 
+    edges that connect pairs of vertices.
+  # Vertices represent entities, and edges represent relationships or connections between them.
+# Components:
+  # Vertices (Nodes): Represent entities or objects.
+  # Edges: Connect vertices and represent relationships.
+# Types of Graphs:
+  # Undirected Graphs: Edges have no direction (e.g., social network friendships).
+  # Directed Graphs (Digraphs): Edges have a direction (e.g., web page links).
+  # Weighted Graphs: Edges have associated weights or costs (e.g., road networks).
+  # Unweighted Graphs: Edges have no weights (e.g., social networks).
+  # Complete Graphs: Every vertex is connected to every other vertex.
+  # Trees: Connected graphs with no cycles.
+  # Cycles: Graphs with at least one cycle.
+# Applications:
+  # Computer Networks: Represent network topology.
+  # Social Media: Connections between users.
+  # Routing Algorithms: Find shortest paths.
+  # Recommendation Systems: Suggest related items.
+  # Dependency Resolution: Model dependencies between tasks/events.
+  # Graph Databases: Store and query complex relationships.
