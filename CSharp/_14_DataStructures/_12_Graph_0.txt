@@ -1,7 +1,11 @@
+# Material
+  # Best video about Graphs:
+    # https://www.youtube.com/watch?v=09_LlHjoEiY
 # Definition:
   # A graph is a non-linear data structure composed of vertices (also called nodes) and 
     edges that connect pairs of vertices.
-  # Vertices represent entities, and edges represent relationships or connections between them.
+  # Vertices represent entities, and edges represent relationships or 
+    connections between the vertices.
 # Components:
   # Vertices (Nodes): Represent entities or objects.
   # Edges: Connect vertices and represent relationships.
