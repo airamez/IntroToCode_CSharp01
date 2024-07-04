@@ -25,18 +25,36 @@ public class MyGraphApp
         graph.Connect("E", "B");
         graph.Connect("E", "J");
         graph.Connect("F", "G");
-        graph.Connect("F", "I");
+        graph.Connect("F", "E");
         graph.Connect("G", "D");
         graph.Connect("G", "E");
         graph.Connect("H", "L");
+        graph.Connect("I", "F");
         graph.Connect("I", "G");
+        graph.Connect("I", "K");
+        graph.Connect("I", "J");
         graph.Connect("J", "F");
         graph.Connect("J", "N");
         graph.Connect("K", "J");
         graph.Connect("K", "N");
         graph.Connect("L", "O");
         graph.Connect("M", "H");
+        graph.Connect("N", "E");
         graph.Connect("O", "M");
+        graph.Print();
+        graph.Connect("O", "A");
+        graph.Connect("O", "B");
+        graph.Connect("O", "C");
+        graph.Connect("O", "D");
+        graph.Connect("O", "E");
+        Console.WriteLine("O Adjacentes");
+        graph.GetAdjacents("O").ForEach(Console.WriteLine);
+        graph.Print();
+        graph.Disconnect("O", "A");
+        graph.Disconnect("O", "B");
+        graph.Disconnect("O", "C");
+        graph.Disconnect("O", "D");
+        graph.Disconnect("O", "E");
         graph.Print();
     }
 }
@@ -83,16 +101,19 @@ public class MyGraph
 {
     private Dictionary<string, Node> Nodes;
 
+    public int EdgesCount { private set; get; }
+
     public MyGraph()
     {
         Nodes = new Dictionary<string, Node>();
+        EdgesCount = 0;
     }
 
     public void Add(string data)
     {
         if (Nodes.ContainsKey(data))
         {
-            throw new Exception("$There is a node with the data {data} already");
+            throw new Exception($"There is a node with the data {data} already");
         }
         var newNode = new Node(data);
         Nodes.Add(newNode.Data, newNode);
@@ -113,29 +134,43 @@ public class MyGraph
 
     public void Connect(string sourceNodeData, string targetNodeData)
     {
-        if (string.IsNullOrWhiteSpace(sourceNodeData) ||
-            string.IsNullOrWhiteSpace(targetNodeData))
-        {
-            string msg = $"Data can't be null";
-            throw new Exception(msg);
-        }
-        if (sourceNodeData == targetNodeData)
-        {
-            var msg = $"Connecting a node to itself is not allowed: {sourceNodeData}";
-            throw new Exception(msg);
-        }
         var nodes = FindNodes(sourceNodeData, targetNodeData);
         nodes.Source.Connect(nodes.Target);
+        EdgesCount++;
     }
 
     public void Disconnect(string sourceNodeData, string targetNodeData)
     {
         var nodes = FindNodes(sourceNodeData, targetNodeData);
         nodes.Source.Disconnect(nodes.Target);
+        EdgesCount--;
+    }
+
+    public List<string> GetAdjacents(string data)
+    {
+        var node = Nodes[data];
+        if (node == null)
+        {
+            throw new Exception($"Node not found: {data}");
+        }
+        var adjacents = new List<string>();
+        node.Adjacents.ToList().ForEach(adj => adjacents.Add(adj.Data));
+        return adjacents;
     }
 
     private (Node Source, Node Target) FindNodes(string sourceNodeData, string targetNodeData)
     {
+        if (string.IsNullOrWhiteSpace(sourceNodeData) ||
+            string.IsNullOrWhiteSpace(targetNodeData))
+        {
+            string msg = $"Data can't be null: [{sourceNodeData}] [{targetNodeData}]";
+            throw new Exception(msg);
+        }
+        if (sourceNodeData == targetNodeData)
+        {
+            var msg = $"Connecting/Disconnecting a node to itself is not allowed: {sourceNodeData}";
+            throw new Exception(msg);
+        }
         var sourceNode = Nodes[sourceNodeData];
         var targetNode = Nodes[targetNodeData];
         if (sourceNode == null)
@@ -151,11 +186,11 @@ public class MyGraph
 
     public void Print()
     {
-        Console.WriteLine();
+        Console.WriteLine($"Nodes: {Nodes.Count}; Edges: {EdgesCount}");
         foreach (var node in Nodes.Values.OrderBy(n => n.Data))
         {
             Console.Write($"{node} => [ ");
-            foreach (var adjacent in node.Adjacents)
+            foreach (var adjacent in node.Adjacents.OrderBy(n => n.Data))
             {
                 Console.Write($"{adjacent} ");
             }
