@@ -72,25 +72,18 @@ public class MyGraphApp
         Console.WriteLine();
 
         // HasPathBFS
-        Console.WriteLine($"HasPath[A to B]: {graph.HasPathBFS("A", "B")}");
-        Console.WriteLine($"HasPath[A to C]: {graph.HasPathBFS("A", "C")}");
-        Console.WriteLine($"HasPath[A to E]: {graph.HasPathBFS("A", "E")}");
-        Console.WriteLine($"HasPath[A to I]: {graph.HasPathBFS("A", "I")}");
-        Console.WriteLine($"HasPath[A to J]: {graph.HasPathBFS("A", "J")}");
+        // Console.WriteLine($"HasPath[A to B]: {graph.HasPathBFS("A", "B")}");
+        // Console.WriteLine($"HasPath[A to C]: {graph.HasPathBFS("A", "C")}");
+        // Console.WriteLine($"HasPath[A to E]: {graph.HasPathBFS("A", "E")}");
+        // Console.WriteLine($"HasPath[A to I]: {graph.HasPathBFS("A", "I")}");
+        // Console.WriteLine($"HasPath[A to J]: {graph.HasPathBFS("A", "J")}");
 
-        Console.WriteLine($"HasPath[A to L]: {graph.HasPathBFS("A", "L")}");
-        Console.WriteLine($"HasPath[A to N]: {graph.HasPathBFS("A", "N")}");
+        // Console.WriteLine($"HasPath[A to L]: {graph.HasPathBFS("A", "L")}");
+        // Console.WriteLine($"HasPath[A to N]: {graph.HasPathBFS("A", "N")}");
 
-        Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
-        Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
+        // Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
+        // Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
     }
-}
-
-public enum VisitingStatus
-{
-    NOT_VISITED,
-    VISITING,
-    VISITED
 }
 
 public class Node
@@ -98,8 +91,6 @@ public class Node
     public string Data { private set; get; }
 
     public HashSet<Node> Adjacents { private set; get; }
-
-    public VisitingStatus VisitingStatus { set; get; }
 
     public Node(string data)
     {
@@ -235,23 +226,23 @@ public class MyGraph
 
     public bool HasPathDFS(string sourceData, string targetData)
     {
-        Nodes.Values.ToList().ForEach(n => n.VisitingStatus = VisitingStatus.NOT_VISITED);
+        var visited = new HashSet<Node>();
         var nodes = FindNodes(sourceData, targetData);
-        return HasPathDFS(nodes.Source, nodes.Target);
+        return HasPathDFS(nodes.Source, nodes.Target, visited);
     }
 
-    private bool HasPathDFS(Node current, Node target)
+    private bool HasPathDFS(Node current, Node target, HashSet<Node> visited)
     {
-        current.VisitingStatus = VisitingStatus.VISITED;
         if (current.Data.Equals(target.Data))
         {
             return true;
         }
-        foreach (var node in current.Adjacents)
+        visited.Add(current);
+        foreach (var adjacent in current.Adjacents.OrderBy(n => n.Data))
         {
-            if (node.VisitingStatus == VisitingStatus.NOT_VISITED)
-            {
-                if (HasPathDFS(node, target))
+            if (!visited.Contains(adjacent))
+            { // if not visited
+                if (HasPathDFS(adjacent, target, visited))
                 {
                     return true;
                 }
@@ -262,26 +253,6 @@ public class MyGraph
 
     public bool HasPathBFS(string sourceData, string targetData)
     {
-        Nodes.Values.ToList().ForEach(n => n.VisitingStatus = VisitingStatus.NOT_VISITED);
-        var nodes = FindNodes(sourceData, targetData);
-        var toVisit = new Queue<Node>();
-        toVisit.Enqueue(nodes.Source);
-        while (toVisit.Count > 0)
-        {
-            var node = toVisit.Dequeue();
-            if (node.VisitingStatus == VisitingStatus.NOT_VISITED)
-            {
-                node.VisitingStatus = VisitingStatus.VISITED;
-                if (node.Data.Equals(nodes.Target.Data))
-                {
-                    return true;
-                }
-                foreach (var adjacent in node.Adjacents)
-                {
-                    toVisit.Enqueue(adjacent);
-                }
-            }
-        }
-        return false;
+        throw new NotImplementedException();
     }
 }
