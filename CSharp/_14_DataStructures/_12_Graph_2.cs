@@ -72,17 +72,17 @@ public class MyGraphApp
         Console.WriteLine();
 
         // HasPathBFS
-        // Console.WriteLine($"HasPath[A to B]: {graph.HasPathBFS("A", "B")}");
-        // Console.WriteLine($"HasPath[A to C]: {graph.HasPathBFS("A", "C")}");
-        // Console.WriteLine($"HasPath[A to E]: {graph.HasPathBFS("A", "E")}");
-        // Console.WriteLine($"HasPath[A to I]: {graph.HasPathBFS("A", "I")}");
-        // Console.WriteLine($"HasPath[A to J]: {graph.HasPathBFS("A", "J")}");
+        Console.WriteLine($"HasPath[A to B]: {graph.HasPathBFS("A", "B")}");
+        Console.WriteLine($"HasPath[A to C]: {graph.HasPathBFS("A", "C")}");
+        Console.WriteLine($"HasPath[A to E]: {graph.HasPathBFS("A", "E")}");
+        Console.WriteLine($"HasPath[A to I]: {graph.HasPathBFS("A", "I")}");
+        Console.WriteLine($"HasPath[A to J]: {graph.HasPathBFS("A", "J")}");
 
-        // Console.WriteLine($"HasPath[A to L]: {graph.HasPathBFS("A", "L")}");
-        // Console.WriteLine($"HasPath[A to N]: {graph.HasPathBFS("A", "N")}");
+        Console.WriteLine($"HasPath[A to L]: {graph.HasPathBFS("A", "L")}");
+        Console.WriteLine($"HasPath[A to N]: {graph.HasPathBFS("A", "N")}");
 
-        // Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
-        // Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
+        Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
+        Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
     }
 }
 
@@ -240,8 +240,8 @@ public class MyGraph
         visited.Add(current);
         foreach (var adjacent in current.Adjacents.OrderBy(n => n.Data))
         {
-            if (!visited.Contains(adjacent))
-            { // if not visited
+            if (!visited.Contains(adjacent)) // if not visited
+            {
                 if (HasPathDFS(adjacent, target, visited))
                 {
                     return true;
@@ -253,6 +253,26 @@ public class MyGraph
 
     public bool HasPathBFS(string sourceData, string targetData)
     {
-        throw new NotImplementedException();
+        var visited = new HashSet<Node>();
+        var nodes = FindNodes(sourceData, targetData);
+        var toVisit = new Queue<Node>();
+        toVisit.Enqueue(nodes.Source);
+        while (toVisit.Count > 0)
+        {
+            var current = toVisit.Dequeue();
+            if (current.Data.Equals(nodes.Target.Data))
+            {
+                return true;
+            }
+            visited.Add(current);
+            foreach (var adjacent in current.Adjacents.OrderBy(n => n.Data))
+            {
+                if (!visited.Contains(adjacent))
+                {
+                    toVisit.Enqueue(adjacent);
+                }
+            }
+        }
+        return false;
     }
 }
