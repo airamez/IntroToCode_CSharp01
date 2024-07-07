@@ -83,6 +83,75 @@ public class MyGraphApp
 
         Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
         Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
+
+        // GetPathDFS
+        PrintGetPathDFS(graph, "A", "B");
+        PrintGetPathDFS(graph, "A", "C");
+        PrintGetPathDFS(graph, "A", "E");
+        PrintGetPathDFS(graph, "A", "I");
+        PrintGetPathDFS(graph, "A", "J");
+        PrintGetPathDFS(graph, "A", "L");
+        PrintGetPathDFS(graph, "A", "N");
+        PrintGetPathDFS(graph, "J", "I");
+        PrintGetPathDFS(graph, "J", "K");
+        PrintGetPathDFS(graph, "K", "B");
+        PrintGetPathDFS(graph, "K", "I");
+        PrintGetPathDFS(graph, "K", "H");
+        PrintGetPathDFS(graph, "K", "C");
+
+        PrintGetPathDFS(graph, "O", "C");
+        PrintGetPathDFS(graph, "O", "A");
+
+        // GetPathBFS
+        Console.WriteLine();
+        PrintGetPathBFS(graph, "A", "B");
+        PrintGetPathBFS(graph, "A", "C");
+        PrintGetPathBFS(graph, "A", "E");
+        PrintGetPathBFS(graph, "A", "I");
+        PrintGetPathBFS(graph, "A", "J");
+        PrintGetPathBFS(graph, "A", "L");
+        PrintGetPathBFS(graph, "A", "N");
+        PrintGetPathBFS(graph, "J", "I");
+        PrintGetPathBFS(graph, "J", "K");
+        PrintGetPathBFS(graph, "K", "B");
+        PrintGetPathBFS(graph, "K", "I");
+        PrintGetPathBFS(graph, "K", "H");
+        PrintGetPathBFS(graph, "K", "C");
+
+        PrintGetPathBFS(graph, "O", "C");
+        PrintGetPathBFS(graph, "O", "A");
+    }
+
+    private static void PrintGetPathDFS(MyGraph graph, string source, string target)
+    {
+        List<Node> path;
+        Console.Write($"GetPathDPS {source} to {target}: ");
+        path = graph.GetPathDFS(source, target);
+        if (path.Count == 0)
+        {
+            Console.Write("No path");
+        }
+        else
+        {
+            path.ForEach(n => Console.Write($"{n.Data} "));
+        }
+        Console.WriteLine();
+    }
+
+    private static void PrintGetPathBFS(MyGraph graph, string source, string target)
+    {
+        List<Node> path;
+        Console.Write($"GetPathDPS {source} to {target}: ");
+        path = graph.GetPathBFS(source, target);
+        if (path.Count == 0)
+        {
+            Console.Write("No path");
+        }
+        else
+        {
+            path.ForEach(n => Console.Write($"{n.Data} "));
+        }
+        Console.WriteLine();
     }
 }
 
@@ -274,5 +343,76 @@ public class MyGraph
             }
         }
         return false;
+    }
+
+    public List<Node> GetPathDFS(string sourceData, string targetData)
+    {
+        var visited = new HashSet<Node>();
+        var path = new List<Node>();
+        var nodes = FindNodes(sourceData, targetData);
+        GetPathDFS(nodes.Source, nodes.Target, visited, path);
+        return path.ToList();
+    }
+
+    private bool GetPathDFS(Node current, Node target, HashSet<Node> visited, List<Node> path)
+    {
+        if (current.Data.Equals(target.Data))
+        {
+            path.Insert(0, current);
+            return true;
+        }
+        visited.Add(current);
+        foreach (var adjacent in current.Adjacents.OrderBy(n => n.Data))
+        {
+            if (!visited.Contains(adjacent)) // if not visited
+            {
+                if (GetPathDFS(adjacent, target, visited, path))
+                {
+                    path.Insert(0, current);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public List<Node> GetPathBFS(string sourceData, string targetData)
+    {
+        var visitingOrder = new Dictionary<Node, Node>();
+        var visited = new HashSet<Node>();
+        var nodes = FindNodes(sourceData, targetData);
+        var toVisit = new Queue<Node>();
+        toVisit.Enqueue(nodes.Source);
+        visitingOrder[nodes.Source] = null;
+        bool foundTarget = false;
+        while (toVisit.Count > 0)
+        {
+            var current = toVisit.Dequeue();
+            if (current.Data.Equals(nodes.Target.Data))
+            {
+                foundTarget = true;
+                break;
+            }
+            visited.Add(current);
+            foreach (var adjacent in current.Adjacents.OrderBy(n => n.Data))
+            {
+                if (!visited.Contains(adjacent))
+                {
+                    toVisit.Enqueue(adjacent);
+                    visitingOrder[adjacent] = current;
+                }
+            }
+        }
+        var path = new List<Node>();
+        if (foundTarget)
+        {
+            var runner = nodes.Target;
+            while (runner != null)
+            {
+                path.Insert(0, runner);
+                runner = visitingOrder[runner];
+            }
+        }
+        return path;
     }
 }
