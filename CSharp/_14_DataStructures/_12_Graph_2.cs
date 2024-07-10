@@ -124,9 +124,8 @@ public class MyGraphApp
 
     private static void PrintGetPathDFS(MyGraph graph, string source, string target)
     {
-        List<Node> path;
         Console.Write($"GetPathDPS {source} to {target}: ");
-        path = graph.GetPathDFS(source, target);
+        List<Node> path = graph.GetPathDFS(source, target);
         if (path.Count == 0)
         {
             Console.Write("No path");
@@ -351,7 +350,7 @@ public class MyGraph
         var path = new List<Node>();
         var nodes = FindNodes(sourceData, targetData);
         GetPathDFS(nodes.Source, nodes.Target, visited, path);
-        return path.ToList();
+        return path;
     }
 
     private bool GetPathDFS(Node current, Node target, HashSet<Node> visited, List<Node> path)
