@@ -124,7 +124,7 @@ public class MyGraphApp
 
     private static void PrintGetPathDFS(MyGraph graph, string source, string target)
     {
-        Console.Write($"GetPathDPS {source} to {target}: ");
+        Console.Write($"GetPathDFS {source} to {target}: ");
         List<Node> path = graph.GetPathDFS(source, target);
         if (path.Count == 0)
         {
@@ -140,7 +140,7 @@ public class MyGraphApp
     private static void PrintGetPathBFS(MyGraph graph, string source, string target)
     {
         List<Node> path;
-        Console.Write($"GetPathDPS {source} to {target}: ");
+        Console.Write($"GetPathBFS {source} to {target}: ");
         path = graph.GetPathBFS(source, target);
         if (path.Count == 0)
         {
@@ -405,13 +405,18 @@ public class MyGraph
         var path = new List<Node>();
         if (foundTarget)
         {
-            var runner = nodes.Target;
-            while (runner != null)
-            {
-                path.Insert(0, runner);
-                runner = visitingOrder[runner];
-            }
+            ConstrusctPath(visitingOrder, nodes, path);
         }
         return path;
+    }
+
+    private static void ConstrusctPath(Dictionary<Node, Node> visitingOrder, (Node Source, Node Target) nodes, List<Node> path)
+    {
+        var runner = nodes.Target;
+        while (runner != null)
+        {
+            path.Insert(0, runner);
+            runner = visitingOrder[runner];
+        }
     }
 }
