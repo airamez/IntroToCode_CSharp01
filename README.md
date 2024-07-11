@@ -161,6 +161,16 @@
     * Remove (Pop)
     * Heap as array
   * Graphs
+    * Definition
+    * Components
+    * Types
+    * Basic Operation
+    * Find Connection
+      * Depth First Search (DFS)
+      * Breadth First Search (BFS)
+    * Find Path
+      * Depth First Search (DFS)
+      * Breadth First Search (BFS)
 * Big O Notation
 * Binary Search
 * Sorting
