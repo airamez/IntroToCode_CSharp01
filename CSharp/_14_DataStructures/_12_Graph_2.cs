@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
+using NUnit.Framework.Constraints;
 
 
 namespace DataStructures.Graph;
@@ -120,6 +121,14 @@ public class MyGraphApp
 
         PrintGetPathBFS(graph, "O", "C");
         PrintGetPathBFS(graph, "O", "A");
+
+        // Has Cycle
+        Console.WriteLine("Has cycle");
+        Console.WriteLine($"All: {graph.HasCycle()}");
+        foreach (var letter in "ABCDEFGHIJKLMNO")
+        {
+            Console.WriteLine($"{letter}: {graph.HasCycle(letter.ToString())}");
+        }
     }
 
     private static void PrintGetPathDFS(MyGraph graph, string source, string target)
@@ -405,12 +414,12 @@ public class MyGraph
         var path = new List<Node>();
         if (foundTarget)
         {
-            ConstrusctPath(visitingOrder, nodes, path);
+            BuildPath(visitingOrder, nodes, path);
         }
         return path;
     }
 
-    private static void ConstrusctPath(Dictionary<Node, Node> visitingOrder, (Node Source, Node Target) nodes, List<Node> path)
+    private static void BuildPath(Dictionary<Node, Node> visitingOrder, (Node Source, Node Target) nodes, List<Node> path)
     {
         var runner = nodes.Target;
         while (runner != null)
@@ -418,5 +427,56 @@ public class MyGraph
             path.Insert(0, runner);
             runner = visitingOrder[runner];
         }
+    }
+
+
+    public bool HasCycle(string startingAt)
+    {
+        var node = Nodes[startingAt];
+        if (node == null)
+        {
+            throw new Exception("Value not found in the Graph");
+        }
+        var visited = new HashSet<Node>();
+        var visiting = new HashSet<Node>();
+        return HasCycle(node, visited, visiting);
+    }
+
+    public bool HasCycle()
+    {
+        var visited = new HashSet<Node>();
+        var visiting = new HashSet<Node>();
+        foreach (var node in Nodes.Values)
+        {
+            if (HasCycle(node, visited, visiting))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool HasCycle(Node node, HashSet<Node> visited, HashSet<Node> visiting)
+    {
+        if (visiting.Contains(node))
+        {
+            return true;
+        }
+        if (!visited.Contains(node))
+        {
+            visited.Add(node);
+            visiting.Add(node);
+            foreach (var adjacent in node.Adjacents)
+            {
+                if (HasCycle(adjacent, visited, visiting))
+                {
+                    return true;
+                }
+            }
+            // This is the trick; The recursion will remove the current from visiting
+            // after visiting all its adjacents
+            visiting.Remove(node);
+        }
+        return false;
     }
 }
