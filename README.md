@@ -239,8 +239,6 @@
 
 # Classes
 
-# Learning Coding
-
 | Class # | Youtube Video | Files |
 | ------- | ------- | ---- |
 | 1 | [Overview about Software Enginner](https://youtube.com/live/YEfi_kZcaeU) |  |
