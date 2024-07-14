@@ -12,6 +12,28 @@ public class MyGraphApp
 {
     public static void Main(string[] args)
     {
+        MyGraph graph = BuildDemoGraph();
+
+        AdjacentsDemo(graph);
+
+        DisconnectDemo(graph);
+
+        HasPathDFSDemo(graph);
+
+        HasPathBFSDemo(graph);
+
+        GetPathDFSDemo(graph);
+
+        GetPathBFSDemo(graph);
+
+        HasCycleDemo(graph);
+
+        MyGraph graphTopSort = BuildGrapForTopSort();
+        TopologicalSortingDemo(graphTopSort);
+    }
+
+    private static MyGraph BuildDemoGraph()
+    {
         MyGraph graph = new MyGraph();
         "ABCDEFGHIJKLMNO".ToList().ForEach(letter => graph.Add(letter.ToString()));
         graph.Print();
@@ -41,14 +63,23 @@ public class MyGraphApp
         graph.Connect("O", "N");
         graph.Print();
 
+        return graph;
+    }
+
+    private static void AdjacentsDemo(MyGraph graph)
+    {
+        Console.WriteLine("O Adjacentes");
+        graph.GetAdjacents("O").ForEach(Console.WriteLine);
+    }
+
+    private static void DisconnectDemo(MyGraph graph)
+    {
+        graph.Print();
         graph.Connect("O", "A");
         graph.Connect("O", "B");
         graph.Connect("O", "C");
         graph.Connect("O", "D");
         graph.Connect("O", "E");
-        Console.WriteLine("O Adjacentes");
-        graph.GetAdjacents("O").ForEach(Console.WriteLine);
-        graph.Print();
 
         graph.Disconnect("O", "A");
         graph.Disconnect("O", "B");
@@ -56,8 +87,10 @@ public class MyGraphApp
         graph.Disconnect("O", "D");
         graph.Disconnect("O", "E");
         graph.Print();
+    }
 
-        // HasPathDFS
+    private static void HasPathDFSDemo(MyGraph graph)
+    {
         Console.WriteLine($"HasPath[A to B]: {graph.HasPathDFS("A", "B")}");
         Console.WriteLine($"HasPath[A to C]: {graph.HasPathDFS("A", "C")}");
         Console.WriteLine($"HasPath[A to E]: {graph.HasPathDFS("A", "E")}");
@@ -71,8 +104,10 @@ public class MyGraphApp
         Console.WriteLine($"HasPath[O to A]: {graph.HasPathDFS("O", "A")}");
 
         Console.WriteLine();
+    }
 
-        // HasPathBFS
+    private static void HasPathBFSDemo(MyGraph graph)
+    {
         Console.WriteLine($"HasPath[A to B]: {graph.HasPathBFS("A", "B")}");
         Console.WriteLine($"HasPath[A to C]: {graph.HasPathBFS("A", "C")}");
         Console.WriteLine($"HasPath[A to E]: {graph.HasPathBFS("A", "E")}");
@@ -84,8 +119,10 @@ public class MyGraphApp
 
         Console.WriteLine($"HasPath[O to C]: {graph.HasPathBFS("O", "C")}");
         Console.WriteLine($"HasPath[O to A]: {graph.HasPathBFS("O", "A")}");
+    }
 
-        // GetPathDFS
+    private static void GetPathDFSDemo(MyGraph graph)
+    {
         PrintGetPathDFS(graph, "A", "B");
         PrintGetPathDFS(graph, "A", "C");
         PrintGetPathDFS(graph, "A", "E");
@@ -102,33 +139,6 @@ public class MyGraphApp
 
         PrintGetPathDFS(graph, "O", "C");
         PrintGetPathDFS(graph, "O", "A");
-
-        // GetPathBFS
-        Console.WriteLine();
-        PrintGetPathBFS(graph, "A", "B");
-        PrintGetPathBFS(graph, "A", "C");
-        PrintGetPathBFS(graph, "A", "E");
-        PrintGetPathBFS(graph, "A", "I");
-        PrintGetPathBFS(graph, "A", "J");
-        PrintGetPathBFS(graph, "A", "L");
-        PrintGetPathBFS(graph, "A", "N");
-        PrintGetPathBFS(graph, "J", "I");
-        PrintGetPathBFS(graph, "J", "K");
-        PrintGetPathBFS(graph, "K", "B");
-        PrintGetPathBFS(graph, "K", "I");
-        PrintGetPathBFS(graph, "K", "H");
-        PrintGetPathBFS(graph, "K", "C");
-
-        PrintGetPathBFS(graph, "O", "C");
-        PrintGetPathBFS(graph, "O", "A");
-
-        // Has Cycle
-        Console.WriteLine("Has cycle");
-        Console.WriteLine($"All: {graph.HasCycle()}");
-        foreach (var letter in "ABCDEFGHIJKLMNO")
-        {
-            Console.WriteLine($"{letter}: {graph.HasCycle(letter.ToString())}");
-        }
     }
 
     private static void PrintGetPathDFS(MyGraph graph, string source, string target)
@@ -146,6 +156,27 @@ public class MyGraphApp
         Console.WriteLine();
     }
 
+
+    private static void GetPathBFSDemo(MyGraph graph)
+    {
+        Console.WriteLine();
+        PrintGetPathBFS(graph, "A", "B");
+        PrintGetPathBFS(graph, "A", "C");
+        PrintGetPathBFS(graph, "A", "E");
+        PrintGetPathBFS(graph, "A", "I");
+        PrintGetPathBFS(graph, "A", "J");
+        PrintGetPathBFS(graph, "A", "L");
+        PrintGetPathBFS(graph, "A", "N");
+        PrintGetPathBFS(graph, "J", "I");
+        PrintGetPathBFS(graph, "J", "K");
+        PrintGetPathBFS(graph, "K", "B");
+        PrintGetPathBFS(graph, "K", "I");
+        PrintGetPathBFS(graph, "K", "H");
+        PrintGetPathBFS(graph, "K", "C");
+        PrintGetPathBFS(graph, "O", "C");
+        PrintGetPathBFS(graph, "O", "A");
+    }
+
     private static void PrintGetPathBFS(MyGraph graph, string source, string target)
     {
         List<Node> path;
@@ -160,6 +191,66 @@ public class MyGraphApp
             path.ForEach(n => Console.Write($"{n.Data} "));
         }
         Console.WriteLine();
+    }
+
+    private static void HasCycleDemo(MyGraph graph)
+    {
+        Console.WriteLine("Has cycle");
+        Console.WriteLine($"All: {graph.HasCycle()}");
+        foreach (var letter in "ABCDEFGHIJKLMNO")
+        {
+            Console.WriteLine($"{letter}: {graph.HasCycle(letter.ToString())}");
+        }
+    }
+
+    private static void TopologicalSortingDemo(MyGraph graph)
+    {
+        graph.Print();
+        List<Node> topSort = graph.TopSort();
+        Console.WriteLine("Topological Sorting");
+        for (int i = 0; i < topSort.Count; i++)
+        {
+            Console.WriteLine($"{i}: {topSort[i]}");
+        }
+    }
+
+    private static MyGraph BuildGrapForTopSort()
+    {
+        var graph = new MyGraph();
+        string HTML_CSS = "HTML/CSS";
+        string ALGORITHM = "Algorithm";
+        string FRONTEND = "Frontend";
+        string PROGRAMMING_LANGUAGE = "Programming Language";
+        string OBJECT_ORIENTED_PROGRAMMING = "Object Oriented Programming";
+        string DATA_STRUCTURE = "Data Structure";
+        string DATABASE = "Database";
+        string DATA_SCIENCE = "Data Science";
+        string BACKEND = "Backend";
+        string FULLSTACK = "Fullstack";
+
+        graph.Add(HTML_CSS);
+        graph.Add(ALGORITHM);
+        graph.Add(FRONTEND);
+        graph.Add(PROGRAMMING_LANGUAGE);
+        graph.Add(OBJECT_ORIENTED_PROGRAMMING);
+        graph.Add(DATA_STRUCTURE);
+        graph.Add(DATABASE);
+        graph.Add(DATA_SCIENCE);
+        graph.Add(BACKEND);
+        graph.Add(FULLSTACK);
+
+        graph.Connect(HTML_CSS, FRONTEND);
+        graph.Connect(ALGORITHM, PROGRAMMING_LANGUAGE);
+        graph.Connect(PROGRAMMING_LANGUAGE, FRONTEND);
+        graph.Connect(PROGRAMMING_LANGUAGE, OBJECT_ORIENTED_PROGRAMMING);
+        graph.Connect(FRONTEND, FULLSTACK);
+        graph.Connect(OBJECT_ORIENTED_PROGRAMMING, DATA_STRUCTURE);
+        graph.Connect(DATA_STRUCTURE, DATABASE);
+        graph.Connect(DATABASE, DATA_SCIENCE);
+        graph.Connect(DATABASE, BACKEND);
+        graph.Connect(BACKEND, FULLSTACK);
+
+        return graph;
     }
 }
 
@@ -429,7 +520,6 @@ public class MyGraph
         }
     }
 
-
     public bool HasCycle(string startingAt)
     {
         var node = Nodes[startingAt];
@@ -478,5 +568,37 @@ public class MyGraph
             visiting.Remove(node);
         }
         return false;
+    }
+
+    public List<Node> TopSort()
+    {
+        if (HasCycle())
+        {
+            throw new Exception("Thge graph is not Acycle");
+        }
+        var topSortList = new List<Node>();
+        var visited = new HashSet<Node>();
+        foreach (var node in Nodes.Values)
+        {
+            TopSort(node, visited, topSortList);
+        }
+        return topSortList;
+    }
+
+    private void TopSort(Node node, HashSet<Node> visited, List<Node> topSortList)
+    {
+        if (visited.Contains(node))
+        {
+            return;
+        }
+        visited.Add(node);
+        foreach (var adjacent in node.Adjacents)
+        {
+            if (!visited.Contains(adjacent))
+            {
+                TopSort(adjacent, visited, topSortList);
+            }
+        }
+        topSortList.Insert(0, node);
     }
 }
