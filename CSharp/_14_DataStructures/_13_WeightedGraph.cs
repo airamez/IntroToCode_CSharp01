@@ -21,31 +21,43 @@ public class WeightedGraphApp
         graph.Connect("C", "D", 5);
         graph.Connect("C", "E", 10);
         graph.Connect("D", "E", 1);
-        graph.Connect("D", "F", 3);
+        graph.Connect("D", "F", 4);
         graph.Connect("E", "F", 2);
         graph.Print();
-        Console.WriteLine($"[A=>B]: {graph.GetShortetsDistance("A", "B")}");
-        Console.WriteLine($"[A=>C]: {graph.GetShortetsDistance("A", "C")}");
-        Console.WriteLine($"[A=>D]: {graph.GetShortetsDistance("A", "D")}");
-        Console.WriteLine($"[A=>E]: {graph.GetShortetsDistance("A", "E")}");
-        Console.WriteLine($"[A=>F]: {graph.GetShortetsDistance("A", "F")}");
 
-        Console.WriteLine($"[B=>B]: {graph.GetShortetsDistance("B", "B")}");
-        Console.WriteLine($"[B=>D]: {graph.GetShortetsDistance("B", "D")}");
-        Console.WriteLine($"[B=>E]: {graph.GetShortetsDistance("B", "E")}");
-        Console.WriteLine($"[B=>F]: {graph.GetShortetsDistance("B", "F")}");
+        // PrintShortestPath(graph, "A", "B");
+        // PrintShortestPath(graph, "A", "C");
+        // PrintShortestPath(graph, "A", "D");
+        // PrintShortestPath(graph, "A", "E");
+        PrintShortestPath(graph, "A", "F");
 
-        Console.WriteLine($"[D=>E]: {graph.GetShortetsDistance("D", "E")}");
-        Console.WriteLine($"[D=>F]: {graph.GetShortetsDistance("D", "F")}");
+        // PrintShortestPath(graph, "B", "B");
+        // PrintShortestPath(graph, "B", "D");
+        // PrintShortestPath(graph, "B", "E");
+        // PrintShortestPath(graph, "B", "F");
 
-        try
-        {
-            Console.WriteLine($"[F=>A]: {graph.GetShortetsDistance("F", "A")}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+        // PrintShortestPath(graph, "D", "E");
+        // PrintShortestPath(graph, "D", "F");
+
+        // try
+        // {
+        //     Console.WriteLine($"[F=>A]: {graph.GetShortetsPath("F", "A")}");
+        // }
+        // catch (Exception ex)
+        // {
+        //     Console.WriteLine(ex.Message);
+        // }
+    }
+
+    public static void PrintShortestPath(
+        MyWeightedGraph graph,
+        string source,
+        string target)
+    {
+        Console.Write($"[{source}=>{target}]: ");
+        graph.GetShortetsPath(source, target)
+            .ForEach(n => Console.Write($"{n.node.Data}({n.Weight}) "));
+        Console.WriteLine();
     }
 }
 
@@ -86,6 +98,18 @@ public class Node : IComparable
     }
 }
 
+public class DijkstraTableEntry
+{
+    public int Weight { set; get; }
+    public Node Previous { set; get; }
+
+    public DijkstraTableEntry(int weight, Node previous)
+    {
+        Weight = weight;
+        Previous = previous;
+    }
+}
+
 public class MyWeightedGraph
 {
     public Dictionary<string, Node> Nodes;
@@ -104,7 +128,10 @@ public class MyWeightedGraph
         Nodes[value] = new Node(value);
     }
 
-    public void Connect(string sourceValue, string targetValue, int weight)
+    public void Connect(
+        string sourceValue,
+        string targetValue,
+        int weight)
     {
         var source = GetNode(sourceValue);
         var target = GetNode(targetValue);
@@ -134,17 +161,19 @@ public class MyWeightedGraph
         }
     }
 
-    public int GetShortetsDistance(string sourceValue, string targetValue)
+    public List<(Node node, int Weight)> GetShortetsPath(
+        string sourceValue,
+        string targetValue)
     {
         var visited = new HashSet<Node>();
         var source = GetNode(sourceValue);
         var target = GetNode(targetValue);
-        var weightTable = new Dictionary<Node, int>();
+        var dijkstraTable = new Dictionary<Node, DijkstraTableEntry>();
         foreach (var node in Nodes.Values)
         {
-            weightTable[node] = int.MaxValue;
+            dijkstraTable[node] = new DijkstraTableEntry(int.MaxValue, null);
         }
-        weightTable[source] = 0;
+        dijkstraTable[source].Weight = 0;
         var toVisit = new PriorityQueue<Node, int>();
         toVisit.Enqueue(source, 0);
         while (toVisit.Count > 0)
@@ -155,23 +184,41 @@ public class MyWeightedGraph
                 continue;
             }
             visited.Add(current);
-            var currentWeight = weightTable[current];
+            var currentWeight = dijkstraTable[current].Weight;
             foreach (var edge in current.Edges)
             {
-                int weightFromTable = weightTable[edge.Adjacent];
-                int candidateWeight = Math.Min(weightFromTable, currentWeight + edge.Weight);
-                weightTable[edge.Adjacent] = candidateWeight;
+                int weightFromTable = dijkstraTable[edge.Adjacent].Weight;
+                int candidateWeight = currentWeight + edge.Weight;
+                if (candidateWeight < weightFromTable)
+                {
+                    dijkstraTable[edge.Adjacent].Weight = candidateWeight;
+                    dijkstraTable[edge.Adjacent].Previous = current;
+                }
                 if (!visited.Contains(edge.Adjacent))
                 {
-                    toVisit.Enqueue(edge.Adjacent, weightTable[edge.Adjacent]);
+                    toVisit.Enqueue(edge.Adjacent, dijkstraTable[edge.Adjacent].Weight);
                 }
             }
         }
-        if (weightTable[target].Equals(int.MaxValue))
+        if (dijkstraTable[target].Equals(int.MaxValue))
         {
             string msg = $"Node ({targetValue}) is not reachable from Source ({sourceValue})";
             throw new Exception(msg);
         }
-        return weightTable[target];
+        return GetShortestPath(target, dijkstraTable);
+    }
+
+    private List<(Node node, int Weight)> GetShortestPath(
+        Node target,
+        Dictionary<Node, DijkstraTableEntry> dijkstraTable)
+    {
+        var path = new List<(Node node, int Weight)>();
+        Node runner = target;
+        while (runner != null)
+        {
+            path.Insert(0, (runner, dijkstraTable[runner].Weight));
+            runner = dijkstraTable[runner].Previous;
+        }
+        return path;
     }
 }
