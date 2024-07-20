@@ -1,16 +1,30 @@
-# Introduction to Big O Notation
-  # Definition 
+# Introduction to Big O Notation (asymptotic notation)
+  # Definition (https://en.wikipedia.org/wiki/Big_O_notation)
     # Big O notation is a mathematical notation that describes the limiting behavior
       of a function when the argument tends towards a particular value or infinity. 
       In computer science, it’s used to classify algorithms according to how their
       running time or space requirements grow as the input size grows.
+    # The letter O was chosen by Bachmann to stand for Ordnung, 
+      meaning the order of approximation.
+    # In mathematicsIn mathematics:
+      # Describes a function, formula, or two functions that approach a limit or infinity.
+    # In computer science:
+      # A way to measure the speed and efficiency of an algorithm whern processing
+        large inputs.
+    # Simplifier version:
+      A theorical way to verify how costly an alrorithm is (time/space) based on 
+      the size of the input.
   # Time Complexity
     # Time complexity is a computational concept that describes the amount of computational
       effort required to run an algorithm. More specifically, it measures the number of
       individual steps or operations an algorithm performs as a function of the size of
       the input data.
     # Describes the upper bound of the time complexity in the worst-case scenario.
-  # Common Time Complexities
+  # Space Complexity
+    # Space complexity of an algorithm quantifies the amount of space or memory taken by an 
+      algorithm to run as a function of the length of the input.
+      Similar to time complexity, it’s often expressed using Big O notation.
+  # Common Complexities
     # O(1): Constant.
       - The algorithm takes the same amount of time to complete, regardless of the input size.
     # O(log n):Logarithmic
@@ -22,13 +36,10 @@
       - The running time is proportional to the square of the input size.
     # O(n^3): Cubic.
       - The running time is proportional to the cubic square of the input size.
-  # Space Complexity
-    # Space complexity of an algorithm quantifies the amount of space or memory taken by an 
-      algorithm to run as a function of the length of the input.
-      Similar to time complexity, it’s often expressed using Big O notation.
   # Analyzing Code with Big O Notation
     # To analyze a piece of code with Big O notation, identify the operations that are 
       performed in a loop or recursively. The number of these operations usually determines
-      the time complexity. 
+      the time complexity. When calculating, all the contants are ignored.
       For example, a single loop over an array might suggest O(n) time complexity,
-      while a nested loop might suggest O(n^2).
+      while a nested loop might suggest O(n^2). However it is important to notice if the
+      loop are really targerting the n (inpput size)
