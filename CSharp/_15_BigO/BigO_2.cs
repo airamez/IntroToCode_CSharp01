@@ -27,15 +27,23 @@ public class BiOApp
 
         // What is the Big O Notation?
         // Attention, it is a trick question
-        // int sum = 0;
+
+        // var stopwatch = new Stopwatch();
+        // stopwatch.Start();
+        // long sum = 0;
         // for (int i = 0; i < 1000; i++)
         // {
         //     for (int j = 0; j < 1000; j++)
         //     {
-        //         sum += i + j;
+        //         for (int k = 0; k < 1000; k++)
+        //         {
+        //             sum += i + j + k;
+        //         }
         //     }
         // }
         // Console.WriteLine($"Sum: {sum}");
+        // stopwatch.Stop();
+        // Console.WriteLine($"Elapsed: {stopwatch.Elapsed}");
     }
 
     private static void Check_O_N(int N, Random rnd)

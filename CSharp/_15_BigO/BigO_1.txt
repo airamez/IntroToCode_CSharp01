@@ -8,16 +8,13 @@
       of a function when the argument tends towards a particular value or infinity. 
       In computer science, it’s used to classify algorithms according to how their
       running time or space requirements grow as the input size grows.
-    # The letter O was chosen by Bachmann to stand for Ordnung, 
-      meaning the order of approximation.
-    # In mathematicsIn mathematics:
+    # The letter O was chosen by Bachmann to stand for Ordnung, meaning the order of approximation.
+    # In mathematics:
       # Describes a function, formula, or two functions that approach a limit or infinity.
     # In computer science:
-      # A way to measure the speed and efficiency of an algorithm whern processing
-        large inputs.
+      # A way to measure the speed and efficiency of an algorithm when processing large inputs.
     # Simplifier version:
-      A theorical way to verify how costly an alrorithm is (time/space) based on 
-      the size of the input.
+      A theorical way to verify how costly an algorithm is (time/space) based on the size of the input.
   # Purpose
     - Performance Comparison
       Helps compare the efficiency of different algorithms by providing a high-level 
@@ -31,7 +28,7 @@
     - Predictability
       Provides a way to predict the behavior of an algorithm under different conditions,
       aiding in decision-making for software development.
-  # Time Complexity
+  # Time Complexity (not time as hours, minutes, seconds, etc)
     # Time complexity is a computational concept that describes the amount of computational
       effort required to run an algorithm. More specifically, it measures the number of
       individual steps or operations an algorithm performs as a function of the size of
@@ -60,5 +57,5 @@
       For example, a single loop over an array might suggest O(n) time complexity,
       while a nested loop might suggest O(n^2). However it is important to notice if the
       loop are really targerting the n (inpput size)
-  # It is crucial to know the Big O notation for Data Structure
+  # It is crucial to know the Big O notation for Data Structures
   # HashTable is a "magic" thing. O(1)
