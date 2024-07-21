@@ -18,12 +18,12 @@ public class BiOApp
         }
         Console.WriteLine("O(N) completed");
 
-        // Console.WriteLine("Checking O(N²)");
-        // for (int i = 0; i < 10; i++)
-        // {
-        //     Check_O_N2((int)Math.Pow(10, i), rnd);
-        // }
-        // Console.WriteLine("O(N²) completed");
+        Console.WriteLine("Checking O(N²)");
+        for (int i = 0; i < 6; i++)
+        {
+            Check_O_N2((int)Math.Pow(10, i), rnd);
+        }
+        Console.WriteLine("O(N²) completed");
 
         // What is the Big O Notation?
         // Attention, it is a trick question
@@ -71,7 +71,7 @@ public class BiOApp
             {
                 sum += list[j];
             }
-            Console.WriteLine($"{i} = {sum}");
+            //Console.WriteLine($"{i} = {sum}");
         }
         stopwatch.Stop();
         Console.WriteLine($"{stopwatch.Elapsed}");

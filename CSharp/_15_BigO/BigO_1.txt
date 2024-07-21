@@ -1,5 +1,9 @@
 # Introduction to Big O Notation (asymptotic notation)
   # Definition (https://en.wikipedia.org/wiki/Big_O_notation)
+    # A mathematical notation used to describe the upper bound of an algorithm’s running time
+      or space requirements in terms of the input size.
+    # Big O notation expresses the asymptotic behavior of a function, focusing on the dominant
+      term as the input size grows.
     # Big O notation is a mathematical notation that describes the limiting behavior
       of a function when the argument tends towards a particular value or infinity. 
       In computer science, it’s used to classify algorithms according to how their
@@ -14,6 +18,19 @@
     # Simplifier version:
       A theorical way to verify how costly an alrorithm is (time/space) based on 
       the size of the input.
+  # Purpose
+    - Performance Comparison
+      Helps compare the efficiency of different algorithms by providing a high-level 
+      understanding of their time and space complexities.
+    - Scalability Insight
+      Offers insight into how an algorithm’s performance scales with increasing input size,
+      which is crucial for large datasets.
+    - Optimization Guidance
+      Assists in identifying bottlenecks and optimizing code by choosing the most efficient
+      algorithms for a given problem.
+    - Predictability
+      Provides a way to predict the behavior of an algorithm under different conditions,
+      aiding in decision-making for software development.
   # Time Complexity
     # Time complexity is a computational concept that describes the amount of computational
       effort required to run an algorithm. More specifically, it measures the number of
@@ -43,3 +60,5 @@
       For example, a single loop over an array might suggest O(n) time complexity,
       while a nested loop might suggest O(n^2). However it is important to notice if the
       loop are really targerting the n (inpput size)
+  # It is crucial to know the Big O notation for Data Structure
+  # HashTable is a "magic" thing. O(1)
