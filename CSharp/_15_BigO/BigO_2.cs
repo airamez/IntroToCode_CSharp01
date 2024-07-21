@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace BigO;
 
-public class BiOApp
+public class BigO_2App
 {
     // Remember to open the System Monitor
     public static void Main(string[] args)
@@ -27,23 +27,22 @@ public class BiOApp
 
         // What is the Big O Notation?
         // Attention, it is a trick question
-
-        // var stopwatch = new Stopwatch();
-        // stopwatch.Start();
-        // long sum = 0;
-        // for (int i = 0; i < 1000; i++)
-        // {
-        //     for (int j = 0; j < 1000; j++)
-        //     {
-        //         for (int k = 0; k < 1000; k++)
-        //         {
-        //             sum += i + j + k;
-        //         }
-        //     }
-        // }
-        // Console.WriteLine($"Sum: {sum}");
-        // stopwatch.Stop();
-        // Console.WriteLine($"Elapsed: {stopwatch.Elapsed}");
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+        long sum = 0;
+        for (int i = 0; i < 1000; i++) // O(1) because all loops have a constant
+        {
+            for (int j = 0; j < 1000; j++)
+            {
+                for (int k = 0; k < 1000; k++)
+                {
+                    sum += i + j + k;
+                }
+            }
+        }
+        Console.WriteLine($"Sum: {sum}");
+        stopwatch.Stop();
+        Console.WriteLine($"Elapsed: {stopwatch.Elapsed}");
     }
 
     private static void Check_O_N(int N, Random rnd)
@@ -71,7 +70,6 @@ public class BiOApp
             list.Add(rnd.NextInt64(N));
         }
         // "Print" the sum from each index to the end of the list
-        // How to solve this in O(N)
         for (int i = 0; i < N; i++)
         {
             long sum = 0;
