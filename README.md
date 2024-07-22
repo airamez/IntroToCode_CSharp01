@@ -171,6 +171,8 @@
     * Find Path
       * Depth First Search (DFS)
       * Breadth First Search (BFS)
+    * Find Cycle
+    * Find shortest path using Dijkstra Algorithm
 * Big O Notation
 * Binary Search
 * Sorting
