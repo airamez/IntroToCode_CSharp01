@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp8.0</TargetFramework>
-		<StartupObject>BigO.BigO_3App</StartupObject>
+		<StartupObject>BinarySearch.BinarySearchApp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
       <PackageReference Include="coverlet.msbuild" Version="6.0.1">
