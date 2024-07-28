@@ -239,6 +239,18 @@
 
 ## Web Services/API
 
+# Live Experience classes
+
+| Class # | Youtube Video | Files |
+| ------- | ------- | ---- |
+| 151 | [Coding interview](https://www.youtube.com/watch?v=pMdm3xn4yTY) | [LifeExperiences/CodingInterview.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/CodingInterview.pptx) |
+| 158 | [Software Engineers Levels](https://www.youtube.com/watch?v=Jdx8TeOd6zw) |  |
+| 160 | [The Importance of Networking](https://www.youtube.com/watch?v=QJvAlEy62Sg) | [LifeExperiences/WorkModel.odp](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/WorkModel.odpx) |
+| 180 | [Linux](https://www.youtube.com/watch?v=h8QslpE5PQ) | [LifeExperiences/Linux.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/Linux.pptx) |
+| 190 | [How to start in coding](https://www.youtube.com/watch?v=D784jXfNDRY) |  |
+| 200 | [Work Model (In-Person, Remote & Hybrid)](https://www.youtube.com/watch?v=WiXj7NMhTD0) | [LifeExperiences/Linux.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/Linux.pptx) |
+| N/A | [Biking from work](https://www.youtube.com/watch?v=kjSwWBscI8M) |  |
+
 # Classes
 
 | Class # | Youtube Video | Files |
