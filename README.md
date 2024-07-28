@@ -248,7 +248,7 @@
 | 160 | [The Importance of Networking](https://www.youtube.com/watch?v=QJvAlEy62Sg) | [LifeExperiences/TheImportanceOfNetworking.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/TheImportanceOfNetworking.pptx) |
 | 180 | [Linux](https://www.youtube.com/watch?v=-h8QslpE5PQ) | [LifeExperiences/Linux.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/Linux.pptx) |
 | 190 | [How to start in coding](https://www.youtube.com/watch?v=D784jXfNDRY) |  |
-| 200 | [Work Model (In-Person, Remote & Hybrid)](https://www.youtube.com/watch?v=WiXj7NMhTD0) | [LifeExperiences/Linux.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/Linux.pptx) |
+| 200 | [Work Model (In-Person, Remote & Hybrid)](https://www.youtube.com/watch?v=WiXj7NMhTD0) | [LifeExperiences/WorkModel.odp](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/WorkModel.odp) |
 | N/A | [Biking from work](https://www.youtube.com/watch?v=kjSwWBscI8M) |  |
 
 # Classes
