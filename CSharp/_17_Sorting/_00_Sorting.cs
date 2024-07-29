@@ -1,14 +1,15 @@
 using System;
 using System.Diagnostics;
+using DataStructures.Heap;
 using Exceptions;
 
 namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 50;
+    const int LENGTH = 1000000;
     const int MIN = 0;
-    const int MAX = 100;
+    const int MAX = 10000;
 
     public static void Main(string[] args)
     {
@@ -17,47 +18,56 @@ public class SortingApp
         var input = GeneratedSortedArray(LENGTH, MIN, MAX);
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
 
-
+        Console.WriteLine("Bubble Sort");
         stopwatch.Start();
-        var sortedBubble = Bubble((int[])input.Clone());
-        Console.WriteLine($"\nBubble Sort Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedBubble)}");
-        PrintArray(sortedBubble);
+        var bubbleArray = (int[])input.Clone();
+        BubbleSort(bubbleArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
+        //PrintArray(bubbleArray);
 
-        Console.WriteLine();
-
+        Console.WriteLine("Selection Sort");
         stopwatch.Restart();
-        var sortedSelection = Selecion((int[])input.Clone());
-        Console.WriteLine($"\nSelection Sort Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedSelection)}");
-        PrintArray(sortedSelection);
+        var selectionArray = (int[])input.Clone();
+        SelecionSort((int[])input.Clone());
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        //PrintArray(selectionArray);
 
+        Console.WriteLine("Insertion Sort");
         stopwatch.Restart();
-        var sortedInsertion = Insertion((int[])input.Clone());
-        Console.WriteLine($"\nInsertion Sorte Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedInsertion)}");
-        PrintArray(sortedInsertion);
+        var insertionArray = (int[])input.Clone();
+        InsertionSort(insertionArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        //PrintArray(insertionArray);
 
+        Console.WriteLine("Quick Sort");
         stopwatch.Restart();
-        var sortedMerge = Merge((int[])input.Clone());
-        Console.WriteLine($"\nMerge Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedMerge)}");
-        PrintArray(sortedMerge);
+        var quickArray = (int[])input.Clone();
+        QuickSort(quickArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
+        //PrintArray(quickArray);
 
+        Console.WriteLine("Merge Sort");
         stopwatch.Restart();
-        var sortedQuick = Quick((int[])input.Clone());
-        Console.WriteLine($"\nQuick Sort Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedQuick)}");
-        PrintArray(sortedQuick);
+        var mergeArray = (int[])input.Clone();
+        MergeSort(mergeArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
+        //PrintArray(mergeArray);
 
+        Console.WriteLine("Heap Sort");
         stopwatch.Restart();
-        var sortedHeap = Heap((int[])input.Clone());
-        Console.WriteLine($"\nHeap Sort Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(sortedHeap)}");
-        PrintArray(sortedHeap);
+        var heapArray = (int[])input.Clone();
+        HeapSort(heapArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
+        //PrintArray(heapArray);
     }
 
-    public static int[] Bubble(int[] array)
+    public static void BubbleSort(int[] array)
     {
         int limit = array.Length - 1;
         while (true)
@@ -77,10 +87,9 @@ public class SortingApp
                 break;
             }
         }
-        return array;
     }
 
-    public static int[] Selecion(int[] array)
+    public static void SelecionSort(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -92,10 +101,9 @@ public class SortingApp
             }
             Swap(array, i, minIndex);
         }
-        return array;
     }
 
-    public static int[] Insertion(int[] array)
+    public static void InsertionSort(int[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -108,18 +116,66 @@ public class SortingApp
             }
             array[j + 1] = current;
         }
-        return array;
     }
 
-    public static int[] Merge(int[] array)
+    public static void MergeSort(int[] array)
     {
-        return array;
+        MergeSort(array, 0, array.Length - 1);
     }
 
-    public static int[] Quick(int[] array)
+    private static void MergeSort(int[] array, int left, int right)
+    {
+        if (left < right)
+        {
+            int middle = (left + right) / 2;
+            MergeSort(array, left, middle);
+            MergeSort(array, middle + 1, right);
+            Merge(array, left, middle, right);
+        }
+    }
+
+    public static void Merge(int[] array, int left, int middle, int right)
+    {
+        int leftArrayLength = middle - left + 1;
+        int rightArrayLenght = right - middle;
+
+        int[] leftArray = new int[leftArrayLength];
+        int[] rightArray = new int[rightArrayLenght];
+
+        Array.Copy(array, left, leftArray, 0, leftArrayLength);
+        Array.Copy(array, middle + 1, rightArray, 0, rightArrayLenght);
+
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int mergedIndex = left;
+
+        while (leftIndex < leftArrayLength && rightIndex < rightArrayLenght)
+        {
+            if (leftArray[leftIndex] <= rightArray[rightIndex])
+            {
+                array[mergedIndex] = leftArray[leftIndex];
+                leftIndex++;
+            }
+            else
+            {
+                array[mergedIndex] = rightArray[rightIndex];
+                rightIndex++;
+            }
+            mergedIndex++;
+        }
+        while (leftIndex < leftArrayLength)
+        {
+            array[mergedIndex++] = leftArray[leftIndex++];
+        }
+        while (rightIndex < rightArrayLenght)
+        {
+            array[mergedIndex++] = rightArray[rightIndex++];
+        }
+    }
+
+    public static void QuickSort(int[] array)
     {
         Quick_Sort(array, 0, array.Length - 1);
-        return array;
     }
 
     private static void Quick_Sort(int[] array, int left, int right)
@@ -148,9 +204,15 @@ public class SortingApp
         return i + 1;
     }
 
-    public static int[] Heap(int[] array)
+    public static void HeapSort(int[] array)
     {
-        return array;
+        MyHeap myHeap = new MyHeap(array);
+        int i = array.Length - 1;
+        while (myHeap.Count > 0)
+        {
+            array[i] = myHeap.Pop();
+            i--;
+        }
     }
 
     public static void Swap(int[] array, int left, int right)
@@ -168,7 +230,6 @@ public class SortingApp
         {
             array[i] = random.Next(minValue, maxValue);
         }
-
         return array;
     }
 
