@@ -7,9 +7,9 @@ namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 1000000;
+    const int LENGTH = 100;
     const int MIN = 0;
-    const int MAX = 10000;
+    const int MAX = 1000;
 
     public static void Main(string[] args)
     {
