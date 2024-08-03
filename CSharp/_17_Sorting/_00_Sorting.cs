@@ -16,7 +16,9 @@ public class SortingApp
         var stopwatch = new Stopwatch();
 
         var input = GeneratedSortedArray(LENGTH, MIN, MAX);
+        //var input = GetDemoArray();
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
+        //PrintArray(input);
 
         Console.WriteLine("Bubble Sort");
         stopwatch.Start();
@@ -26,45 +28,57 @@ public class SortingApp
         Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
         //PrintArray(bubbleArray);
 
-        Console.WriteLine("Selection Sort");
-        stopwatch.Restart();
-        var selectionArray = (int[])input.Clone();
-        SelecionSort((int[])input.Clone());
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
-        //PrintArray(selectionArray);
+        // Console.WriteLine("Selection Sort");
+        // stopwatch.Restart();
+        // var selectionArray = (int[])input.Clone();
+        // SelecionSort((int[])input.Clone());
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        // //PrintArray(selectionArray);
 
-        Console.WriteLine("Insertion Sort");
-        stopwatch.Restart();
-        var insertionArray = (int[])input.Clone();
-        InsertionSort(insertionArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
-        //PrintArray(insertionArray);
+        // Console.WriteLine("Insertion Sort");
+        // stopwatch.Restart();
+        // var insertionArray = (int[])input.Clone();
+        // InsertionSort(insertionArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        // //PrintArray(insertionArray);
 
-        Console.WriteLine("Quick Sort");
-        stopwatch.Restart();
-        var quickArray = (int[])input.Clone();
-        QuickSort(quickArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
-        //PrintArray(quickArray);
+        // Console.WriteLine("Quick Sort");
+        // stopwatch.Restart();
+        // var quickArray = (int[])input.Clone();
+        // QuickSort(quickArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
+        // //PrintArray(quickArray);
 
-        Console.WriteLine("Merge Sort");
-        stopwatch.Restart();
-        var mergeArray = (int[])input.Clone();
-        MergeSort(mergeArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
-        //PrintArray(mergeArray);
+        // Console.WriteLine("Merge Sort");
+        // stopwatch.Restart();
+        // var mergeArray = (int[])input.Clone();
+        // MergeSort(mergeArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
+        // //PrintArray(mergeArray);
 
-        Console.WriteLine("Heap Sort");
-        stopwatch.Restart();
-        var heapArray = (int[])input.Clone();
-        HeapSort(heapArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
-        //PrintArray(heapArray);
+        // Console.WriteLine("Heap Sort");
+        // stopwatch.Restart();
+        // var heapArray = (int[])input.Clone();
+        // HeapSort(heapArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
+        // //PrintArray(heapArray);
+    }
+
+    private static int[] GetDemoArray()
+    {
+        return [
+            95, 35, 15, 49, 12,
+            99, 65,  2,  7, 19,
+            10, 99,  1,  2,  7,
+            52, 37, 16, 81, 59,
+            44, 61, 12,  3,  0,
+            33
+        ];
     }
 
     public static void BubbleSort(int[] array)
