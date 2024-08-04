@@ -28,12 +28,12 @@ public class SortingApp
         Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
         //PrintArray(bubbleArray);
 
-        // Console.WriteLine("Selection Sort");
-        // stopwatch.Restart();
-        // var selectionArray = (int[])input.Clone();
-        // SelecionSort((int[])input.Clone());
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        Console.WriteLine("Selection Sort");
+        stopwatch.Restart();
+        var selectionArray = (int[])input.Clone();
+        SelecionSort((int[])input.Clone());
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
         // //PrintArray(selectionArray);
 
         // Console.WriteLine("Insertion Sort");
