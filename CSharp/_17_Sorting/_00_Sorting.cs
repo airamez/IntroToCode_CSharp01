@@ -7,7 +7,7 @@ namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 100;
+    const int LENGTH = 10000000;
     const int MIN = 0;
     const int MAX = 1000;
 
@@ -36,13 +36,13 @@ public class SortingApp
         Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
         // //PrintArray(selectionArray);
 
-        // Console.WriteLine("Insertion Sort");
-        // stopwatch.Restart();
-        // var insertionArray = (int[])input.Clone();
-        // InsertionSort(insertionArray);
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
-        // //PrintArray(insertionArray);
+        Console.WriteLine("Insertion Sort");
+        stopwatch.Restart();
+        var insertionArray = (int[])input.Clone();
+        InsertionSort(insertionArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        //PrintArray(insertionArray);
 
         // Console.WriteLine("Quick Sort");
         // stopwatch.Restart();
@@ -119,7 +119,7 @@ public class SortingApp
 
     public static void InsertionSort(int[] array)
     {
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 1; i < array.Length; i++)
         {
             int current = array[i];
             int j = i - 1;
