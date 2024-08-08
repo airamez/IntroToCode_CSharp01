@@ -15,42 +15,42 @@ public class SortingApp
     {
         var stopwatch = new Stopwatch();
 
-        var input = GeneratedSortedArray(LENGTH, MIN, MAX);
-        //var input = GetDemoArray();
+        //var input = GeneratedSortedArray(LENGTH, MIN, MAX);
+        var input = GetDemoArray();
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
-        //PrintArray(input);
+        PrintArray(input);
 
-        Console.WriteLine("Bubble Sort");
-        stopwatch.Start();
-        var bubbleArray = (int[])input.Clone();
-        BubbleSort(bubbleArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
-        //PrintArray(bubbleArray);
-
-        Console.WriteLine("Selection Sort");
-        stopwatch.Restart();
-        var selectionArray = (int[])input.Clone();
-        SelecionSort((int[])input.Clone());
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
-        // //PrintArray(selectionArray);
-
-        Console.WriteLine("Insertion Sort");
-        stopwatch.Restart();
-        var insertionArray = (int[])input.Clone();
-        InsertionSort(insertionArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
-        //PrintArray(insertionArray);
-
-        // Console.WriteLine("Quick Sort");
-        // stopwatch.Restart();
-        // var quickArray = (int[])input.Clone();
-        // QuickSort(quickArray);
+        // Console.WriteLine("Bubble Sort");
+        // stopwatch.Start();
+        // var bubbleArray = (int[])input.Clone();
+        // BubbleSort(bubbleArray);
         // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
-        // //PrintArray(quickArray);
+        // Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
+        // //PrintArray(bubbleArray);
+
+        // Console.WriteLine("Selection Sort");
+        // stopwatch.Restart();
+        // var selectionArray = (int[])input.Clone();
+        // SelecionSort((int[])input.Clone());
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        // // //PrintArray(selectionArray);
+
+        // Console.WriteLine("Insertion Sort");
+        // stopwatch.Restart();
+        // var insertionArray = (int[])input.Clone();
+        // InsertionSort(insertionArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        // //PrintArray(insertionArray);
+
+        Console.WriteLine("Quick Sort");
+        stopwatch.Restart();
+        var quickArray = (int[])input.Clone();
+        QuickSort(quickArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
+        PrintArray(quickArray);
 
         // Console.WriteLine("Merge Sort");
         // stopwatch.Restart();
@@ -204,18 +204,38 @@ public class SortingApp
 
     private static int Partition(int[] array, int left, int right)
     {
-        int pivot = array[right];
-        int i = left - 1;
-        for (int j = left; j < right; j++)
+        int mid = left + (right - left) / 2;
+        int pivot = array[mid];
+        while (true)
         {
-            if (array[j] < pivot)
+            while (array[right] > pivot)
             {
-                i++;
-                Swap(array, i, j);
+                right--;
             }
+            while (array[left] < pivot)
+            {
+                left++;
+            }
+            if (left >= right)
+            {
+                return right;
+            }
+            Swap(array, left, right);
+            left++;
+            right--;
         }
-        Swap(array, i + 1, right);
-        return i + 1;
+        // int pivot = array[right];
+        // int i = left - 1;
+        // for (int j = left; j < right; j++)
+        // {
+        //     if (array[j] < pivot)
+        //     {
+        //         i++;
+        //         Swap(array, i, j);
+        //     }
+        // }
+        // Swap(array, i + 1, right);
+        // return i + 1;
     }
 
     public static void HeapSort(int[] array)
