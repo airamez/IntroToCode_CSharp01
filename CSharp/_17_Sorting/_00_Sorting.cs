@@ -7,7 +7,7 @@ namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 100000000;
+    const int LENGTH = 10000;
     const int MIN = 0;
     const int MAX = 1000000;
 
@@ -20,29 +20,29 @@ public class SortingApp
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
         //PrintArray(input);
 
-        // Console.WriteLine("Bubble Sort");
-        // stopwatch.Start();
-        // var bubbleArray = (int[])input.Clone();
-        // BubbleSort(bubbleArray);
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
-        // //PrintArray(bubbleArray);
+        Console.WriteLine("Bubble Sort");
+        stopwatch.Start();
+        var bubbleArray = (int[])input.Clone();
+        BubbleSort(bubbleArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
+        //PrintArray(bubbleArray);
 
-        // Console.WriteLine("Selection Sort");
-        // stopwatch.Restart();
-        // var selectionArray = (int[])input.Clone();
-        // SelecionSort((int[])input.Clone());
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
-        // // //PrintArray(selectionArray);
+        Console.WriteLine("Selection Sort");
+        stopwatch.Restart();
+        var selectionArray = (int[])input.Clone();
+        SelecionSort((int[])input.Clone());
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        // //PrintArray(selectionArray);
 
-        // Console.WriteLine("Insertion Sort");
-        // stopwatch.Restart();
-        // var insertionArray = (int[])input.Clone();
-        // InsertionSort(insertionArray);
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
-        // //PrintArray(insertionArray);
+        Console.WriteLine("Insertion Sort");
+        stopwatch.Restart();
+        var insertionArray = (int[])input.Clone();
+        InsertionSort(insertionArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        //PrintArray(insertionArray);
 
         Console.WriteLine("Quick Sort");
         stopwatch.Restart();
