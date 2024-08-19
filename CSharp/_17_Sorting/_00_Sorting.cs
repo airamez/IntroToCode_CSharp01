@@ -7,18 +7,18 @@ namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 10000000;
+    const int LENGTH = 100000000;
     const int MIN = 0;
-    const int MAX = 1000;
+    const int MAX = 1000000;
 
     public static void Main(string[] args)
     {
         var stopwatch = new Stopwatch();
 
-        //var input = GeneratedSortedArray(LENGTH, MIN, MAX);
-        var input = GetDemoArray();
+        var input = GeneratedSortedArray(LENGTH, MIN, MAX);
+        //var input = GetDemoArray();
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
-        PrintArray(input);
+        //PrintArray(input);
 
         // Console.WriteLine("Bubble Sort");
         // stopwatch.Start();
@@ -50,7 +50,7 @@ public class SortingApp
         QuickSort(quickArray);
         Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
         Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
-        PrintArray(quickArray);
+        //PrintArray(quickArray);
 
         // Console.WriteLine("Merge Sort");
         // stopwatch.Restart();
@@ -132,6 +132,61 @@ public class SortingApp
         }
     }
 
+    public static void QuickSort(int[] array)
+    {
+        Quick_Sort(array, 0, array.Length - 1);
+    }
+
+    private static void Quick_Sort(int[] array, int left, int right)
+    {
+        if (left < right)
+        {
+            int pivot = Partition(array, left, right);
+            Quick_Sort(array, left, pivot - 1);
+            Quick_Sort(array, pivot + 1, right);
+        }
+    }
+
+    private static int Partition(int[] array, int left, int right)
+    {
+        int pivot = array[right];
+        int smaller = left - 1;
+        for (int greater = left; greater < right; greater++)
+        {
+            if (array[greater] < pivot)
+            {
+                smaller++;
+                Swap(array, smaller, greater);
+            }
+        }
+        Swap(array, smaller + 1, right);
+        return smaller + 1;
+    }
+
+    private static int PartitionB(int[] array, int left, int right)
+    {
+        int mid = left + (right - left) / 2;
+        int pivot = array[mid];
+        while (true)
+        {
+            while (array[right] > pivot)
+            {
+                right--;
+            }
+            while (array[left] < pivot)
+            {
+                left++;
+            }
+            if (left >= right)
+            {
+                return right;
+            }
+            Swap(array, left, right);
+            left++;
+            right--;
+        }
+    }
+
     public static void MergeSort(int[] array)
     {
         MergeSort(array, 0, array.Length - 1);
@@ -185,57 +240,6 @@ public class SortingApp
         {
             array[mergedIndex++] = rightArray[rightIndex++];
         }
-    }
-
-    public static void QuickSort(int[] array)
-    {
-        Quick_Sort(array, 0, array.Length - 1);
-    }
-
-    private static void Quick_Sort(int[] array, int left, int right)
-    {
-        if (left < right)
-        {
-            int pivot = Partition(array, left, right);
-            Quick_Sort(array, left, pivot - 1);
-            Quick_Sort(array, pivot + 1, right);
-        }
-    }
-
-    private static int Partition(int[] array, int left, int right)
-    {
-        int mid = left + (right - left) / 2;
-        int pivot = array[mid];
-        while (true)
-        {
-            while (array[right] > pivot)
-            {
-                right--;
-            }
-            while (array[left] < pivot)
-            {
-                left++;
-            }
-            if (left >= right)
-            {
-                return right;
-            }
-            Swap(array, left, right);
-            left++;
-            right--;
-        }
-        // int pivot = array[right];
-        // int i = left - 1;
-        // for (int j = left; j < right; j++)
-        // {
-        //     if (array[j] < pivot)
-        //     {
-        //         i++;
-        //         Swap(array, i, j);
-        //     }
-        // }
-        // Swap(array, i + 1, right);
-        // return i + 1;
     }
 
     public static void HeapSort(int[] array)
