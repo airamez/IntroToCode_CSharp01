@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using DataStructures.Heap;
-using Exceptions;
 
 namespace Sorting;
 
