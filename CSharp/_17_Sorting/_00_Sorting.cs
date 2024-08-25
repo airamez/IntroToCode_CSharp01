@@ -20,49 +20,49 @@ public class SortingApp
         Console.WriteLine($"Is Sorted Input: {IsSorted(input)}");
         //PrintArray(input);
 
-        Console.WriteLine("Bubble Sort");
-        stopwatch.Start();
-        var bubbleArray = (int[])input.Clone();
-        BubbleSort(bubbleArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
-        //PrintArray(bubbleArray);
+        // Console.WriteLine("Bubble Sort");
+        // var bubbleArray = (int[])input.Clone();
+        // stopwatch.Start();
+        // BubbleSort(bubbleArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(bubbleArray)}");
+        // //PrintArray(bubbleArray);
 
-        Console.WriteLine("Selection Sort");
-        stopwatch.Restart();
-        var selectionArray = (int[])input.Clone();
-        SelecionSort((int[])input.Clone());
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
-        // //PrintArray(selectionArray);
+        // Console.WriteLine("Selection Sort");
+        // var selectionArray = (int[])input.Clone();
+        // stopwatch.Restart();
+        // SelecionSort((int[])input.Clone());
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(selectionArray)}");
+        // // //PrintArray(selectionArray);
 
-        Console.WriteLine("Insertion Sort");
-        stopwatch.Restart();
-        var insertionArray = (int[])input.Clone();
-        InsertionSort(insertionArray);
-        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
-        //PrintArray(insertionArray);
+        // Console.WriteLine("Insertion Sort");
+        // var insertionArray = (int[])input.Clone();
+        // stopwatch.Restart();
+        // InsertionSort(insertionArray);
+        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        // Console.WriteLine($"Is Sorted: {IsSorted(insertionArray)}");
+        // //PrintArray(insertionArray);
 
         Console.WriteLine("Quick Sort");
-        stopwatch.Restart();
         var quickArray = (int[])input.Clone();
+        stopwatch.Restart();
         QuickSort(quickArray);
         Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
         Console.WriteLine($"Is Sorted: {IsSorted(quickArray)}");
         //PrintArray(quickArray);
 
-        // Console.WriteLine("Merge Sort");
-        // stopwatch.Restart();
-        // var mergeArray = (int[])input.Clone();
-        // MergeSort(mergeArray);
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
-        // //PrintArray(mergeArray);
+        Console.WriteLine("Merge Sort");
+        var mergeArray = (int[])input.Clone();
+        stopwatch.Restart();
+        MergeSort(mergeArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
+        //PrintArray(mergeArray);
 
         // Console.WriteLine("Heap Sort");
-        // stopwatch.Restart();
         // var heapArray = (int[])input.Clone();
+        // stopwatch.Restart();
         // HeapSort(heapArray);
         // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
         // Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
@@ -78,6 +78,7 @@ public class SortingApp
             52, 37, 16, 81, 59,
             44, 61, 12,  3,  0,
             33
+
         ];
     }
 
