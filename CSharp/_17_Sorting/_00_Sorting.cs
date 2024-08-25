@@ -7,12 +7,14 @@ namespace Sorting;
 
 public class SortingApp
 {
-    const int LENGTH = 10000;
+    const int LENGTH = 1000000;
     const int MIN = 0;
-    const int MAX = 1000000;
+    const int MAX = 10000000;
 
     public static void Main(string[] args)
     {
+        Console.WriteLine($"Lenght: {LENGTH}");
+
         var stopwatch = new Stopwatch();
 
         var input = GeneratedSortedArray(LENGTH, MIN, MAX);
@@ -60,13 +62,13 @@ public class SortingApp
         Console.WriteLine($"Is Sorted: {IsSorted(mergeArray)}");
         //PrintArray(mergeArray);
 
-        // Console.WriteLine("Heap Sort");
-        // var heapArray = (int[])input.Clone();
-        // stopwatch.Restart();
-        // HeapSort(heapArray);
-        // Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
-        // Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
-        // //PrintArray(heapArray);
+        Console.WriteLine("Heap Sort");
+        var heapArray = (int[])input.Clone();
+        stopwatch.Restart();
+        HeapSortCoPilot(heapArray);
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed}");
+        Console.WriteLine($"Is Sorted: {IsSorted(heapArray)}");
+        //PrintArray(heapArray);
     }
 
     private static int[] GetDemoArray()
@@ -251,6 +253,45 @@ public class SortingApp
         {
             array[i] = myHeap.Pop();
             i--;
+        }
+    }
+
+    public static void HeapSortCoPilot(int[] array)
+    {
+        int length = array.Length;
+        // Build the max heap
+        for (int i = length / 2 - 1; i >= 0; i--)
+        {
+            Heapify(array, length, i);
+        }
+        // Extract elements from the heap and sort
+        for (int i = length - 1; i >= 0; i--)
+        {
+            Swap(array, 0, i);
+            Heapify(array, i, 0);
+        }
+    }
+
+    private static void Heapify(int[] array, int length, int root)
+    {
+        int largest = root;
+        int left = 2 * root + 1;
+        int right = 2 * root + 2;
+        if (left < length && array[left] > array[largest])
+        {
+            largest = left;
+        }
+        if (right < length && array[right] > array[largest])
+        {
+            largest = right;
+        }
+        if (largest != root)
+        {
+            int temp = array[root];
+            array[root] = array[largest];
+            array[largest] = temp;
+
+            Heapify(array, length, largest);
         }
     }
 
