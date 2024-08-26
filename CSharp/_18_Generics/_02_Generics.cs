@@ -36,6 +36,8 @@ public class GenericsApp
         // Problem with Non Generic
         int n1 = (int)intNonGeneric.Get(0); // Must cast to int
         string s1 = (string)strNonGeneric.Get(0); // Must cast to string
+        intNonGeneric.Add("Not an integer");
+        // show the problem in a better way
 
         // Advantage of Generic
         int n2 = intGeneric.Get(1); // No cast need
@@ -82,7 +84,7 @@ public class MyNonGenericList
     }
 }
 
-public class MyGenericList<T> : IEnumerable
+public class MyGenericList<T>
 {
 
     private T[] data;
@@ -104,8 +106,4 @@ public class MyGenericList<T> : IEnumerable
         return data[index];
     }
 
-    public IEnumerator GetEnumerator()
-    {
-        return data.GetEnumerator();
-    }
 }
