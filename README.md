@@ -184,14 +184,19 @@
   * Merge
   * Heap
 * Generics
-* Generic Data Structures
-  * Linked List
-  * Double Linked List
-  * Queue
-  * Stack
-  * Set
-  * Hash/Map
+* C# Generic Collections
   * Dictionary
+  * HashSet
+  * KeyValuePair
+  * LinkedList
+  * List
+  * PriorityQueue
+  * Queue
+  * SortedDictionary
+  * SortedList
+  * SortedSet
+  * Stack
+
 * .Net API
   * Files
     * Text

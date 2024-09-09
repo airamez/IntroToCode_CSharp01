@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp8.0</TargetFramework>
-		<StartupObject>Generics.GenericsApp</StartupObject>
+		<StartupObject>Collections.Product</StartupObject>
   </PropertyGroup>
   <ItemGroup>
       <PackageReference Include="coverlet.msbuild" Version="6.0.1">
