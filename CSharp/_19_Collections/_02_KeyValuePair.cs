@@ -3,7 +3,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Collections.KeyValuePair;
+
+namespace Collections;
 
 public class KeyValuePairApp
 {
@@ -16,5 +17,9 @@ public class KeyValuePairApp
 
     var month = new KeyValuePair<string, string>("DEC", "December");
     Console.WriteLine($"{month.Key} = {month.Value}");
+
+    var product1 = new Product(1, "Product 1", 450.12);
+    var productKeyValuePair = new KeyValuePair<int, Product>(product1.Id, product1);
+    Console.WriteLine($"Key: {productKeyValuePair.Key} => {productKeyValuePair.Value}");
   }
 }

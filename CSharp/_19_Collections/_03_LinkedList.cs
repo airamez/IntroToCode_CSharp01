@@ -30,6 +30,8 @@ public class LinkedListApp
     Console.WriteLine(firstValue);
     var firstNode = months.First; // First Node
     Console.WriteLine(firstNode.Value);
+    Console.WriteLine(firstNode.Previous);
+    Console.WriteLine(firstNode.Next.Value);
 
     var lastValue = months.Last(); // Last Value
     Console.WriteLine(lastValue);

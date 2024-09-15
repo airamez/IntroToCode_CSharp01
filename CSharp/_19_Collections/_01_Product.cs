@@ -12,6 +12,7 @@ public class Product
   public int Id { get; set; }
   public string Description { get; set; }
   public double Price { get; set; }
+
   public Product(int id, string description, double price)
   {
     Id = id;
@@ -20,7 +21,7 @@ public class Product
   }
 
   public override string ToString()
-    => $"ID: {Id}; Description: {Description}; Price: ${Price:#.##}";
+    => $"[ID: {Id}; Description: {Description}; Price: ${Price:#.##}]";
 
   public static Product GenerateRandom()
   {
