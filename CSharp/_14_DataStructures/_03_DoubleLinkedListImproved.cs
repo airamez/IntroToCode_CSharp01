@@ -237,7 +237,7 @@ public class MyDoubleLinkedList
   {
     if (IsEmpty)
     {
-      throw new InvalidOperationException("List is empty!");
+      throw new InvalidOperationException("The list is empty!");
     }
     if (Count == 1)
     {
@@ -255,7 +255,7 @@ public class MyDoubleLinkedList
   {
     if (index < 0 || index >= Count)
     {
-      throw new IndexOutOfRangeException($"Invali index: {index}");
+      throw new IndexOutOfRangeException($"Invalid index: {index}");
     }
     if (index == 0)
     {
