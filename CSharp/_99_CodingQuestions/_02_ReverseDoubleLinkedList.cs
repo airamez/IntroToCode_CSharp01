@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
@@ -20,6 +21,10 @@ public class ReverseDoubleLinedListApp
     {
       listOfStrings.AddLast(item.ToString());
     }
+
+    // Candidate Zero
+    var reversedList0 = new LinkedList<string>(listOfStrings.Reverse());
+    Print(reversedList0);
 
     // Candidate one
     var reversedList1 = new LinkedList<string>();
