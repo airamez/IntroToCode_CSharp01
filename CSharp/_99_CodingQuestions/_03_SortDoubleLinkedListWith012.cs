@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace CodingQuestions;
@@ -8,19 +9,33 @@ public class SortDoubleLinkedListApp
 {
   public static void Main(string[] args)
   {
-    LinkedList<int> list = Generate(100);
-    Print(list);
+    Process currentProcess = Process.GetCurrentProcess();
+
+    LinkedList<int> list = Generate(100000000);
+    //Print(list);
+
+    Stopwatch stopwatch = new Stopwatch();
 
     // Option 1: Time = O(NLog(N)); Space = O(N)
+    stopwatch.Start();
     var sorted = new LinkedList<int>(list.OrderBy(x => x));
-    Print(sorted);
+    //Print(sorted);
+    stopwatch.Stop();
+    Console.WriteLine($"Execution Time: {stopwatch.Elapsed}");
 
     // Option 2: Time = O(N); Space = in-place
-    Sort(list);
-    Print(sorted);
+    stopwatch.Reset();
+    stopwatch.Start();
+    SortInPlace(list);
+    //Print(list);
+    stopwatch.Stop();
+    Console.WriteLine($"Execution Time: {stopwatch.Elapsed}");
+
+    var memoryUsageMB = currentProcess.WorkingSet64 / (1024.0 * 1024.0);
+    Console.WriteLine($"Memory Usage: {memoryUsageMB:F2} MB");
   }
 
-  public static void Sort(LinkedList<int> list)
+  public static void SortInPlace(LinkedList<int> list)
   {
     int[] counters = new int[3];
     foreach (var item in list)
