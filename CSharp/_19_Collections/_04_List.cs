@@ -29,9 +29,9 @@ public class ListApp
     Console.WriteLine(names.IndexOf("Roberto Carlos"));
     names.Insert(4, "Roberto Carlos");
     Console.WriteLine(names.Count);
-    Console.WriteLine(names.Contains("Roberto Calors"));
+    Console.WriteLine(names.Contains("Roberto Carlos"));
     names.Remove("Roberto Carlos");
-    Console.WriteLine(names.Contains("Robert Carlos"));
+    Console.WriteLine(names.Contains("Roberto Carlos"));
 
     names.Sort();
     names.ForEach(name => Console.WriteLine(name));
@@ -86,7 +86,7 @@ public class ListApp
 
     Console.WriteLine("Products with price between 10 and 45 and start with letter B");
     foreach (var productsBelow45 in products.FindAll(
-      p => p.Price > 10 && p.Price < 45 && prod1.Description.StartsWith("B"))
+      p => p.Price > 10 && p.Price < 45 && p.Description.StartsWith("B"))
     )
     {
       Console.WriteLine(productsBelow45);
