@@ -9,6 +9,7 @@ public class HashSetApp
 {
   public static void Main(string[] args)
   {
+    // Show documentation of method about Big O Notation
     var odd = new HashSet<int>();
     odd.Add(1);
     odd.Add(3);
@@ -22,7 +23,7 @@ public class HashSetApp
     Console.WriteLine(odd.Count);
     PrintSet(odd);
 
-    Console.WriteLine(odd.Contains(1)); // Show documentation comparing to List
+    Console.WriteLine(odd.Contains(1));
     Console.WriteLine(odd.Contains(2));
 
     var even = new HashSet<int>();
@@ -34,6 +35,7 @@ public class HashSetApp
     PrintSet(even);
 
     var all = new HashSet<int>(even);
+    PrintSet(all);
     all.UnionWith(odd);
     Console.WriteLine(all.Count);
     PrintSet(all);
@@ -51,6 +53,8 @@ public class HashSetApp
     setB.Add(1);
     setB.Add(4);
     var diff = new HashSet<int>(setA);
+    PrintSet(setA);
+    PrintSet(setB);
     diff.ExceptWith(setB);
     PrintSet(diff);
 
@@ -59,8 +63,8 @@ public class HashSetApp
     Console.WriteLine(even.Count(e => e > 5));
     Console.WriteLine(even.All(e => e % 2 == 0));
     Console.WriteLine(odd.All(e => e % 2 == 0));
-    Console.WriteLine(even.Max());
     Console.WriteLine(even.Min());
+    Console.WriteLine(even.Max());
     Console.WriteLine(even.Average());
     Console.WriteLine(even.Sum());
   }
