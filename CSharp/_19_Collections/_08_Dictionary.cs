@@ -44,10 +44,9 @@ public class DictionaryApp
       Console.WriteLine(ex.Message);
     }
 
-    string six = numbers.GetValueOrDefault(6);
+    string six = numbers.GetValueOrDefault(6); // No exception if does not exist, return the default value
     Console.WriteLine($"Six = {six}");
 
-    Console.WriteLine(two);
 
     for (int i = 0; i <= 4; i++)
     {
@@ -66,6 +65,6 @@ public class DictionaryApp
       Console.WriteLine($"{key} = {numbers[key]}");
     }
 
-    numbers.Remove(9); // Does not raise exception
+    numbers.Remove(9); // Does not raise exception if does not exist
   }
 }
