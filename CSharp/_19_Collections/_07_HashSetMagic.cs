@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Exceptions;
 
-namespace DataStructures;
+namespace Collections;
 
 public class HashSetMagicApp
 {

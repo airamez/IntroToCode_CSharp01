@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DataStructures;
+namespace Collections;
 
 public class DictionaryApp
 {
