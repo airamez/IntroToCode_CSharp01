@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Collections;
 
@@ -15,17 +16,87 @@ public class SortedDictionaryDemoApp
 {
   public static void Main(string[] args)
   {
-    var musicPlays = new Dictionary<string, HashSet<int>>();
-    musicPlays.Add("Music 1", new HashSet<int> { 1, 2, 3, });
-    musicPlays.Add("Music 2", new HashSet<int> { 4, 5, 6, 7 });
-    musicPlays.Add("Music 3", new HashSet<int> { 1, 2, 3, 4, 5 });
-    musicPlays.Add("Music 4", new HashSet<int> { 3, 4, 5 });
-    musicPlays.Add("Music 5", new HashSet<int> { 3, 4, 5, 8, 1, 2, 3, 4, 9, 0 });
-    musicPlays.Add("Music 6", new HashSet<int> { 11, 12, 13 });
-    musicPlays.Add("Music 7", new HashSet<int> { 8, 9, 10 });
-    musicPlays.Add("Music 8", new HashSet<int> { 0, 1, 2 });
-    musicPlays.Add("Music 9", new HashSet<int> { 8, 1, 2 });
+    MusicPlayer player = new MusicPlayer();
+    player.PlaySong("Bohemian Rhapsody", 1);
+    player.PlaySong("Bohemian Rhapsody", 1);
+    player.PlaySong("Bohemian Rhapsody", 2);
+    player.PlaySong("Bohemian Rhapsody", 2);
+    player.PlaySong("Bohemian Rhapsody", 3);
+    player.PlaySong("Bohemian Rhapsody", 4);
+    player.PrintMusicPlayingSummary();
 
+    player.PlaySong("Imagine", 1);
+    player.PlaySong("Imagine", 2);
+    player.PlaySong("Imagine", 3);
+    player.PlaySong("Imagine", 1);
+    player.PlaySong("Imagine", 2);
+    player.PlaySong("Imagine", 3);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Despacito", 1);
+    player.PlaySong("Despacito", 1);
+    player.PlaySong("Despacito", 1);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Three Little Birds", 1);
+    player.PlaySong("Three Little Birds", 2);
+    player.PlaySong("Three Little Birds", 3);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Hotel California", 1);
+    player.PlaySong("Hotel California", 2);
+    player.PlaySong("Hotel California", 2);
+    player.PlaySong("Hotel California", 3);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Wonderwall", 1);
+    player.PlaySong("Wonderwall", 1);
+    player.PlaySong("Wonderwall", 2);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Hey Jude", 1);
+    player.PlaySong("Hey Jude", 1);
+    player.PlaySong("Hey Jude", 2);
+    player.PlaySong("Hey Jude", 3);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Smells Like Teen Spirit", 1);
+    player.PlaySong("Smells Like Teen Spirit", 2);
+    player.PlaySong("Smells Like Teen Spirit", 3);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Rolling in the Deep", 1);
+    player.PlaySong("Rolling in the Deep", 2);
+    player.PrintMusicPlayingSummary();
+
+    player.PlaySong("Stairway to Heaven", 1);
+    player.PlaySong("Stairway to Heaven", 2);
+    player.PlaySong("Stairway to Heaven", 3);
+    player.PlaySong("Stairway to Heaven", 4);
+    player.PrintMusicPlayingSummary();
+  }
+}
+
+public class MusicPlayer
+{
+  private Dictionary<string, HashSet<int>> musicPlays;
+
+  public MusicPlayer()
+  {
+    musicPlays = new Dictionary<string, HashSet<int>>();
+  }
+  public void PlaySong(string musicId, int playerId)
+  {
+    if (!musicPlays.ContainsKey(musicId))
+    {
+      musicPlays[musicId] = new HashSet<int>();
+    }
+    musicPlays[musicId].Add(playerId);
+  }
+
+  public void PrintMusicPlayingSummary()
+  {
+    Console.WriteLine("Music plays summary");
     var summary = new SortedDictionary<int, List<string>>();
     foreach (var musicId in musicPlays.Keys)
     {
@@ -37,13 +108,13 @@ public class SortedDictionaryDemoApp
       summary[playsCount].Add(musicId);
     }
 
-    foreach (var playsCount in summary.Keys)
+    foreach (var playsCount in summary.Keys.Reverse())
     {
       Console.Write($"{playsCount}: ");
       summary[playsCount].Sort();
       foreach (var music in summary[playsCount])
       {
-        Console.Write($"{music}, ");
+        Console.Write($"[{music}], ");
       }
       Console.WriteLine();
     }

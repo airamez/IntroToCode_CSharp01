@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-		<StartupObject>Collections.SortedDictionaryApp</StartupObject>
+		<StartupObject>Collections.SortedDictionaryDemoApp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
       <PackageReference Include="coverlet.msbuild" Version="6.0.1">
