@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework.Constraints;
 
 namespace Collections;
 
@@ -32,6 +31,11 @@ public class SortedDictionaryApp
       Console.Write($"{value} ");
     }
     Console.WriteLine();
+
+    foreach (var key in dic.Keys)
+    {
+      Console.WriteLine($"{key} = {dic[key]}");
+    }
 
     foreach (var value in dic.OrderBy(entry => entry.Value))
     {
