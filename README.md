@@ -14,7 +14,7 @@
 * [Playlist no Youtube](https://www.youtube.com/playlist?list=PLBQmBWUPdMJSCssCE1uEkqIA6f2o_zYWZ)
 * [Canal no Discord](https://discord.gg/QUxmPTZeNz)
 
-# Sobre o autor
+## Sobre o autor
 
   José Santos (mais conhecido como Zé Maria) é um engenheiro de software e professor veterano que iniciou no mundo da informática na adolescência e antes do advento da internet.
   Teve uma carreira diferenciada por atuar no meio acadêmico sendo professor da Escola Técnica Federal de Sergipe, Universidade Tiradentes, FANESE e Universidade Federal de Sergipe.
@@ -25,7 +25,7 @@
 
   [LinkedIn Profile](https://www.linkedin.com/in/jose-rodrigues-santos/)
 
-# Porque o material está em inglês?
+## Porque o material está em inglês?
 
   Um dos principais focos do curso é preparar os participantes para ingressar no mercado (nacional e internacional) e um requisito fundamental para a área é pelo menos ler em inglês.
   Assim, todo o material escrito será em inglês, mas o aúdio será em portugues, com traduções quando oportuno. Dessa forma, o participante irá naturalmente adiquir o inglês técnico.
@@ -33,231 +33,12 @@
   Aproveitem e fiquem com Deus.
   
   A partir desse ponto, todo o contéudo escrito será em inglês.
-  
-# Course Content
 
-## Quick Overview about Software Engineering
+## Course Content
 
-* Application Layers
-  * User Interface (UI) or Front-End
-    * Console
-    * Windows
-    * Mobile
-    * Web
-  * Server-Side
-  * Data
-* Data Processing Model
-  * Input: Data
-  * Processing
-  * Output: Information
-* Algorithm
+  [Content Page](README_COURSE_CONTENT.md)
 
-## Introduction to Coding with "C#"
-
-* IDE - Integrated Development Environment
-  * [Visual Studio](https://visualstudio.microsoft.com/)
-  * [Visual Studio Code](https://code.visualstudio.com/)
-  * [Replit](https://replit.com/)
-  * Demonstration of Application types with Visual Studio
-    * Console
-    * Windows
-    * Web
-    * Mobile
-* Hello World
-* Comments
-* Variables and Types
-* Input & Output (I/O)
-  * Type Casting
-  * Type Conversion
-  * String Interpolation
-* Basic Operations
-* Random Numbers
-* Logical Expression
-* Math Operations
-* if
-* switch
-* for
-* while
-* do while
-* break and continue
-* Modularization
-  * Subprogram, Subroutine, Routine
-  * Function
-  * Procedure
-  * Parameters types
-    * by value
-    * by reference (ref)
-    * default or optional
-    * out
-    * named
-    * params (see later when we learn array)
-  * Recursion
-* Array
-* Multi-Dimensional Array
-* Char
-* Strings
-* Method Main with Args
-* Version Control
-  * Git
-    * Introduction
-    * Conflicts
-    * Branches
-    * Pull Request (PR)
-* Objects Oriented Programming
-  * Abstraction
-  * Class
-  * Object
-  * Constructors
-  * Encapsulation
-    * Access Modifiers
-      * Private
-      * Public
-      * Protected
-      * Internal
-    * Set and Get
-    * Property
-  * Inheritance
-  * Overload
-  * Override
-  * Polymorphism
-  * The object class
-  * Interface
-  * Abstract
-  * Sealed
-  * Static
-  * Indexers
-  * Operator overload
-  * Relationship
-    * Composition
-    * Aggregation
-  * Full Demo
-* Exceptions
-* Unit Testing
-* Parameter type: params
-* Struct
-* Tuple
-* Introduction to Data Structures
-  * Linked List
-  * Doubled Linked List
-  * Queue
-  * Stack
-  * Set
-  * Hashtable
-  * Tree
-    * Binary Tree
-      * Traversal
-        * In-Order
-        * Pre-Order
-        * Post-Order
-        * By level
-    * Binary Search Tree (BST)
-      * Insert
-      * Find
-      * In-Order Traversal
-      * Remove
-  * Heap
-    * Definition
-    * Heapify
-    * Add (Push)
-    * Remove (Pop)
-    * Heap as array
-  * Graphs
-    * Definition
-    * Components
-    * Types
-    * Basic Operation
-    * Find Connection
-      * Depth First Search (DFS)
-      * Breadth First Search (BFS)
-    * Find Path
-      * Depth First Search (DFS)
-      * Breadth First Search (BFS)
-    * Find Cycle
-    * Find shortest path using Dijkstra Algorithm
-* Big O Notation
-* Binary Search
-* Sorting
-  * Bubble
-  * Selection
-  * Insertion
-  * Quick
-  * Merge
-  * Heap
-* Generics
-* C# Generic Collections
-  * Dictionary
-  * HashSet
-  * KeyValuePair
-  * LinkedList
-  * List
-  * PriorityQueue
-  * Queue
-  * SortedDictionary
-  * SortedList
-  * SortedSet
-  * Stack
-
-* .Net API
-  * Files
-    * Text
-    * XML
-    * JSON
-  * DateTime
-  * etc
-
-## Introduction to SQL
-
-* Database Server
-  * SQL Server
-* Relational Database
-  * Table
-  * Field
-  * Record
-  * Data Modeling
-    * Relationships
-      * Primary Key
-      * Foreign Key
-* SQL
-  * Create Table
-  * Insert
-  * Update
-  * Delete
-  * Select
-    * Sorting
-    * Join
-    * MAX, MIN, SUM and AVG
-    * Count
-    * Group By
-
-## .NET Data Access
-
-* ADO.NET
-* Entity Framework
-
-## Introduction to Web Development
-
-* HTML
-* CSS
-* JavaScript
-* Web Development Java Script Framework
-  * Angular
-  * React
-
-## Web Services/API
-
-# Live Experience classes
-
-| Class # | Youtube Video | Files |
-| ------- | ------- | ---- |
-| 151 | [Coding interview](https://www.youtube.com/watch?v=pMdm3xn4yTY) | [LifeExperiences/CodingInterview.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/CodingInterview.pptx) |
-| 158 | [Software Engineers Levels](https://www.youtube.com/watch?v=Jdx8TeOd6zw) |  |
-| 160 | [The Importance of Networking](https://www.youtube.com/watch?v=QJvAlEy62Sg) | [LifeExperiences/TheImportanceOfNetworking.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/TheImportanceOfNetworking.pptx) |
-| 180 | [Linux](https://www.youtube.com/watch?v=-h8QslpE5PQ) | [LifeExperiences/Linux.pptx](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/Linux.pptx) |
-| 190 | [How to start in coding](https://www.youtube.com/watch?v=D784jXfNDRY) |  |
-| 200 | [Work Model (In-Person, Remote & Hybrid)](https://www.youtube.com/watch?v=WiXj7NMhTD0) | [LifeExperiences/WorkModel.odp](https://github.com/airamez/IntroToCode_CSharp01/blob/main/LifeExperiences/WorkModel.odp) |
-| N/A | [Biking from work](https://www.youtube.com/watch?v=kjSwWBscI8M) |  |
-
-# Classes
+## Classes
 
 | Class # | Youtube Video | Files |
 | ------- | ------- | ---- |
@@ -488,8 +269,9 @@
 | 225 | [Question: Sort a LinkedList with 0, 1 and 2 (Performance Considerations)](https://youtube.com/live/bmkzS_YwFVE) | [CSharp/_99_CodingQuestions/_03_SortDoubleLinkedListWith012.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_99_CodingQuestions/_03_SortDoubleLinkedListWith012.cs) |
 | 226 | [Generic Collections - List](https://youtube.com/live/P-8WX2bz1Pg) | [CSharp/_19_Collections/_04_List.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/_04_List.cs) |
 | 227 | [Generic Collections - Queue and Stack](https://youtube.com/live/KsO6kSlaW9w) | [CSharp/_19_Collections/_05_Queue.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_05_Queue.cs) <br> [CSharp/_19_Collections/_06_Stack.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_06_Stack.cs) |
-| 228 | [Generic Collections - HashSet](<https://youtube.com/live/Iub9rWdA3-c>) | [CSharp/_19_Collections/_07_HashSet.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_07_HashSet.cs) |
-| 229 | [Generic Collections - HashSet Magic](<https://youtube.com/live/g_p5BLuzwgU>) | [CSharp/_19_Collections/_07_HashSetMagic.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_07_HashSetMagic.cs) |
-| 230 | [Generic Collections - Dictionary](<https://youtube.com/live/44zjptNcj_I>) | [CSharp/_19_Collections/_08_Dictionary.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_08_Dictionary.cs) |
-| 231 | [Generic Collections - Dictioanry Demo](<https://youtube.com/live/IsDr5all5Us>) | [CSharp/_19_Collections/_08_DictionaryDemo.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_08_DictionaryDemo.cs) |
-| 232 | [Generic Collections - Dictioanry Demo](<https://youtube.com/live/SeC-MLIorsA>) | [CSharp/_19_Collections/_09_SortedDictionary.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_09_SortedDictionary.cs) |
+| 228 | [Generic Collections - HashSet](https://youtube.com/live/Iub9rWdA3-c) | [CSharp/_19_Collections/_07_HashSet.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_07_HashSet.cs) |
+| 229 | [Generic Collections - HashSet Magic](https://youtube.com/live/g_p5BLuzwgU) | [CSharp/_19_Collections/_07_HashSetMagic.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_07_HashSetMagic.cs) |
+| 230 | [Generic Collections - Dictionary](https://youtube.com/live/44zjptNcj_I) | [CSharp/_19_Collections/_08_Dictionary.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_08_Dictionary.cs) |
+| 231 | [Generic Collections - Dictioanry Demo](https://youtube.com/live/IsDr5all5Us) | [CSharp/_19_Collections/_08_DictionaryDemo.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_08_DictionaryDemo.cs) |
+| 232 | [Generic Collections - Sorted Dictionary](https://youtube.com/live/SeC-MLIorsA) | [CSharp/_19_Collections/_09_SortedDictionary.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_09_SortedDictionary.cs) |
+| 232 | [Generic Collections - Sorted Dictionary Demo](https://youtube.com/live/F1T2zGQwQBs) | [CSharp/_19_Collections/_09_SortedDictionaryDemo.cs](https://github.com/airamez/IntroToCode_CSharp01/blob/main/CSharp/_19_Collections/CSharp/_19_Collections/_09_SortedDictionaryDemo.cs) |

@@ -1,9 +1,9 @@
 /*
-   Create a C# program that processes inputs of song names along with the 
-   users who played them. At the end, generate a summary of the most played songs,
-   ranked by the number of unique users who played each song.
-   Display the results in ascending order of play count, and for songs with the 
-   same play count, sort them alphabetically.
+   Create a C# program that processes inputs of candidates along with the 
+   voters who voted for them. At the end, generate a summary of the most 
+   voted candidates, ranked by the number of unique voters who voted for
+   each candidate. Display the results in descending order of vote count,
+   and for candidates with the same vote count, sort them alphabetically.
  */
 
 using System;
@@ -12,109 +12,104 @@ using System.Linq;
 
 namespace Collections;
 
-public class SortedDictionaryDemoApp
+public class ElectionApp
 {
   public static void Main(string[] args)
   {
-    MusicPlayer player = new MusicPlayer();
-    player.PlaySong("Bohemian Rhapsody", 1);
-    player.PlaySong("Bohemian Rhapsody", 1);
-    player.PlaySong("Bohemian Rhapsody", 2);
-    player.PlaySong("Bohemian Rhapsody", 2);
-    player.PlaySong("Bohemian Rhapsody", 3);
-    player.PlaySong("Bohemian Rhapsody", 4);
-    player.PrintMusicPlayingSummary();
+    Election election = new Election();
+    election.CastVote("Alice", 1);
+    election.CastVote("Bob", 1);
+    election.CastVote("Charlie", 1);
+    election.CastVote("Hannah", 1);
+    election.CastVote("Jack", 1);
+    election.PrintVotingSummary();
 
-    player.PlaySong("Imagine", 1);
-    player.PlaySong("Imagine", 2);
-    player.PlaySong("Imagine", 3);
-    player.PlaySong("Imagine", 1);
-    player.PlaySong("Imagine", 2);
-    player.PlaySong("Imagine", 3);
-    player.PrintMusicPlayingSummary();
+    election.CastVote("Alice", 1);
+    election.CastVote("Bob", 1);
+    election.CastVote("Charlie", 1);
+    election.CastVote("David", 1);
+    election.CastVote("Eve", 1);
+    election.CastVote("Eve", 2);
+    election.CastVote("Hannah", 2);
+    election.CastVote("Isaac", 1);
+    election.CastVote("Jack", 1);
+    election.PrintVotingSummary();
 
-    player.PlaySong("Despacito", 1);
-    player.PlaySong("Despacito", 1);
-    player.PlaySong("Despacito", 1);
-    player.PrintMusicPlayingSummary();
+    election.CastVote("Alice", 2);
+    election.CastVote("Alice", 2);
+    election.CastVote("Bob", 1);
+    election.CastVote("Bob", 2);
+    election.CastVote("Bob", 3);
+    election.CastVote("Charlie", 1);
+    election.CastVote("David", 2);
+    election.CastVote("Isaac", 2);
+    election.CastVote("Jack", 3);
+    election.PrintVotingSummary();
 
-    player.PlaySong("Three Little Birds", 1);
-    player.PlaySong("Three Little Birds", 2);
-    player.PlaySong("Three Little Birds", 3);
-    player.PrintMusicPlayingSummary();
+    election.CastVote("Alice", 3);
+    election.CastVote("Alice", 4);
+    election.CastVote("Alice", 4);
+    election.CastVote("Bob", 2);
+    election.CastVote("Bob", 3);
+    election.CastVote("Eve", 1);
+    election.CastVote("Eve", 2);
+    election.CastVote("Eve", 2);
+    election.CastVote("Eve", 3);
+    election.CastVote("Frank", 1);
+    election.CastVote("Jack", 4);
+    election.PrintVotingSummary();
 
-    player.PlaySong("Hotel California", 1);
-    player.PlaySong("Hotel California", 2);
-    player.PlaySong("Hotel California", 2);
-    player.PlaySong("Hotel California", 3);
-    player.PrintMusicPlayingSummary();
+    election.CastVote("Frank", 1);
+    election.CastVote("Frank", 2);
+    election.CastVote("Frank", 3);
+    election.PrintVotingSummary();
 
-    player.PlaySong("Wonderwall", 1);
-    player.PlaySong("Wonderwall", 1);
-    player.PlaySong("Wonderwall", 2);
-    player.PrintMusicPlayingSummary();
-
-    player.PlaySong("Hey Jude", 1);
-    player.PlaySong("Hey Jude", 1);
-    player.PlaySong("Hey Jude", 2);
-    player.PlaySong("Hey Jude", 3);
-    player.PrintMusicPlayingSummary();
-
-    player.PlaySong("Smells Like Teen Spirit", 1);
-    player.PlaySong("Smells Like Teen Spirit", 2);
-    player.PlaySong("Smells Like Teen Spirit", 3);
-    player.PrintMusicPlayingSummary();
-
-    player.PlaySong("Rolling in the Deep", 1);
-    player.PlaySong("Rolling in the Deep", 2);
-    player.PrintMusicPlayingSummary();
-
-    player.PlaySong("Stairway to Heaven", 1);
-    player.PlaySong("Stairway to Heaven", 2);
-    player.PlaySong("Stairway to Heaven", 3);
-    player.PlaySong("Stairway to Heaven", 4);
-    player.PrintMusicPlayingSummary();
+    election.CastVote("Grace", 1);
+    election.CastVote("Grace", 2);
+    election.CastVote("Hannah", 3);
+    election.CastVote("Alice", 7);
+    election.PrintVotingSummary();
   }
 }
 
-public class MusicPlayer
+public class Election
 {
-  private Dictionary<string, HashSet<int>> musicPlays;
+  private Dictionary<string, HashSet<int>> votes;
 
-  public MusicPlayer()
+  public Election()
   {
-    musicPlays = new Dictionary<string, HashSet<int>>();
+    votes = new Dictionary<string, HashSet<int>>();
   }
-  public void PlaySong(string musicId, int playerId)
+  public void CastVote(string candidate, int voterId)
   {
-    if (!musicPlays.ContainsKey(musicId))
+    if (!votes.ContainsKey(candidate))
     {
-      musicPlays[musicId] = new HashSet<int>();
+      votes[candidate] = new HashSet<int>();
     }
-    musicPlays[musicId].Add(playerId);
+    votes[candidate].Add(voterId);
   }
 
-  public void PrintMusicPlayingSummary()
+  public void PrintVotingSummary()
   {
-    Console.WriteLine("Music plays summary");
+    Console.WriteLine("Voting summary");
     var summary = new SortedDictionary<int, List<string>>();
-    foreach (var musicId in musicPlays.Keys)
+    foreach (var candidate in votes.Keys)
     {
-      int playsCount = musicPlays[musicId].Count;
-      if (!summary.ContainsKey(playsCount))
+      int voteCount = votes[candidate].Count;
+      if (!summary.ContainsKey(voteCount))
       {
-        summary.Add(playsCount, new List<string>());
+        summary.Add(voteCount, new List<string>());
       }
-      summary[playsCount].Add(musicId);
+      summary[voteCount].Add(candidate);
     }
 
-    foreach (var playsCount in summary.Keys.Reverse())
+    foreach (var voteCount in summary.Keys.Reverse())
     {
-      Console.Write($"{playsCount}: ");
-      summary[playsCount].Sort();
-      foreach (var music in summary[playsCount])
+      Console.Write($"{voteCount}: ");
+      summary[voteCount].Sort();
+      foreach (var candidate in summary[voteCount])
       {
-        Console.Write($"[{music}], ");
+        Console.Write($"[{candidate}], ");
       }
       Console.WriteLine();
     }
