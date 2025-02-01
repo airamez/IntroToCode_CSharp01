@@ -28,7 +28,7 @@
 ## Porque o material está em inglês?
 
   Um dos principais focos do curso é preparar os participantes para ingressar no mercado (nacional e internacional) e um requisito fundamental para a área é pelo menos ler em inglês.
-  Assim, todo o material escrito será em inglês, mas o aúdio será em portugues, com traduções quando oportuno. Dessa forma, o participante irá naturalmente adiquir o inglês técnico.
+  Assim, todo o material escrito será em inglês, mas o áudio será em portugues, com traduções quando oportuno. Dessa forma, o participante irá naturalmente adquirir o inglês técnico.
 
   Aproveitem e fiquem com Deus.
   
