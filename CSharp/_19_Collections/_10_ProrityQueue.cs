@@ -14,9 +14,23 @@ public class PriorityQueueApp
     heap.Enqueue("Three", 3);
     heap.Enqueue("Four", 4);
     heap.Enqueue("One", 1);
+    heap.Enqueue("Zero", 0);
     heap.Enqueue("Five", 5);
     heap.Enqueue("Two", 2);
+    while (heap.Count > 0)
+    {
+      var number = heap.Dequeue();
+      Console.Write($"{number} ");
+    }
+    Console.WriteLine();
 
+    heap.Clear();
+    heap.Enqueue("Three", -3);
+    heap.Enqueue("Four", -4);
+    heap.Enqueue("One", -1);
+    heap.Enqueue("Zero", 0);
+    heap.Enqueue("Five", -5);
+    heap.Enqueue("Two", -2);
     while (heap.Count > 0)
     {
       var number = heap.Dequeue();
@@ -37,7 +51,7 @@ public class PriorityQueueApp
     taskQueue.Enqueue("Watch funny cat videos for 'research'", 7);
     taskQueue.Enqueue("Fix typo in the company email signature", 4);
 
-    Console.WriteLine("Processing tasks by priority:");
+    Console.WriteLine("\nProcessing tasks by priority:");
 
     while (taskQueue.Count > 0)
     {
